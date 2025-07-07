@@ -61,14 +61,101 @@
             border-left: 4px solid var(--rh-orange);
             background: white;
             border-radius: 12px;
-            padding: 32px;
+            padding: 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         
         .sector-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .sector-image-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        /* Reset any conflicting styles - ONLY for main sector images */
+        .sector-card .sector-image-container > img:first-child {
+            width: 100% !important;
+            height: 240px !important;
+            object-fit: cover !important;
+            transition: transform 0.3s ease !important;
+            display: block !important;
+            background: transparent !important;
+            position: relative !important;
+            z-index: 1 !important;
+            min-height: 240px !important;
+            border: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Override any orange backgrounds */
+        .sector-card .sector-image-container {
+            background: #f8f9fa !important;
+        }
+        
+        /* Remove any background colors from parent elements */
+        .sector-card.hover-lift {
+            background: white !important;
+        }
+        
+        .sector-card:hover .sector-image-container img {
+            transform: scale(1.05);
+        }
+        
+        .sector-icon-overlay {
+            position: absolute !important;
+            bottom: 16px !important;
+            right: 16px !important;
+            width: 64px !important;
+            height: 64px !important;
+            background: #FF6B35 !important;
+            border-radius: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+            transition: all 0.3s ease !important;
+            z-index: 10 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .sector-card:hover .sector-icon-overlay {
+            transform: scale(1.05) !important;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .sector-icon-overlay img {
+            width: 48px !important;
+            height: 48px !important;
+            max-width: 48px !important;
+            max-height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+            filter: brightness(0) invert(100%) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            flex-shrink: 0 !important;
+        }
+        
+        /* Override any image container styles that might affect icons */
+        .sector-icon-overlay img:not(.sector-image-container > img) {
+            height: 48px !important;
+        }
+        
+        .sector-card-content {
+            padding: 32px;
         }
         
         .product-tag {
@@ -118,9 +205,11 @@
             transform: translateY(-2px);
         }
         
-        /* SVG Icon Styling */
-        .sector-card img {
-            filter: brightness(0) saturate(100%) invert(42%) sepia(85%) saturate(1352%) hue-rotate(4deg) brightness(103%) contrast(102%);
+        /* SVG Icon Styling - White icons on orange background */
+        
+        /* Ensure main images don't get any filters */
+        .sector-card .sector-image-container > img {
+            filter: none !important;
         }
         
         .icon-container img {
@@ -284,8 +373,28 @@
         }
 
         @media (max-width: 768px) {
-            .sector-card {
+            .sector-card-content {
                 padding: 24px;
+            }
+            
+            .sector-icon-overlay {
+                width: 48px !important;
+                height: 48px !important;
+                bottom: 12px !important;
+                right: 12px !important;
+                border-radius: 10px !important;
+                background: #FF6B35 !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            .sector-icon-overlay img {
+                width: 36px !important;
+                height: 36px !important;
+                filter: brightness(0) invert(100%) !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                object-fit: contain !important;
             }
             
             .product-tag {
@@ -578,15 +687,17 @@
                 
                 <!-- Road Safety Solutions -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="road_safety.jpg" alt="Road Safety Solutions" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Road Safety Solutions</h3>
                             <span class="text-rh-orange font-medium">Highways Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         Comprehensive traffic management systems designed to protect cyclists, pedestrians and vehicles while supporting sustainable infrastructure development.
@@ -606,27 +717,30 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://highways.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Highways Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://highways.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Highways Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Rail Infrastructure -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="rail_infrastructure.jpg" alt="Rail Infrastructure" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Rail Infrastructure</h3>
                             <span class="text-rh-orange font-medium">Rail Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         Engineered solutions for railway networks including crossing systems and safety barriers that deliver long-term performance with reduced environmental impact.
@@ -646,27 +760,30 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://rail.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Rail Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://rail.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Rail Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Defence & Security -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="security.jpg" alt="Defence & Security" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Defence & Security</h3>
                             <span class="text-rh-orange font-medium">Security Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         Advanced protection systems for critical infrastructure combining proven security performance with innovative sustainable manufacturing processes.
@@ -682,27 +799,30 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://security.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Security Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://security.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Security Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Energy & Subsea -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Energy & Subsea</h3>
                             <span class="text-rh-orange font-medium">Energy Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.
@@ -722,27 +842,30 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://energy.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Energy Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://energy.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Energy Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Sports & Recreation -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Sports & Recreation</h3>
                             <span class="text-rh-orange font-medium">TPV Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         High-performance surfacing materials for sports and play areas that prioritise safety, durability and environmental responsibility in community spaces.
@@ -764,27 +887,30 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://tpv.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Sports Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://tpv.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Sports Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Drainage Solutions -->
                 <div class="sector-card hover-lift">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-grey-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-12 h-12 text-rh-orange">
+                    <div class="sector-image-container">
+                        <img src="drainage.jpg" alt="Drainage Solutions" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-12 h-12">
                         </div>
-                        <div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2">Drainage Solutions</h3>
                             <span class="text-rh-orange font-medium">Drainage Division</span>
                         </div>
-                    </div>
                     
                     <p class="text-grey-600 mb-6 leading-relaxed">
                         Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects.
@@ -798,13 +924,14 @@
                         </div>
                     </div>
                     
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://drainage.rosehill.group/" target="_blank" class="btn-primary">
-                            Visit Drainage Site
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Quote
-                        </a>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://drainage.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Drainage Site
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
