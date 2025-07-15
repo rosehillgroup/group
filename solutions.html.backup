@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions by Sector - Rosehill Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rh-orange: #FF6B35;
+            --rh-orange-dark: #E55A2B;
+            --rh-blue: #1A365D;
+            --rh-blue-mid: #2D4A71;
+            --grey-900: #333333;
+            --grey-600: #6C757D;
+            --grey-100: #F8F9FA;
+            --grey-200: #E9ECEF;
+            --grey-300: #DEE2E6;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--grey-900);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Overpass', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.3;
+        }
+        
+        .bg-rh-orange { background-color: var(--rh-orange); }
+        .bg-rh-orange-dark { background-color: var(--rh-orange-dark); }
+        .bg-rh-blue { background-color: var(--rh-blue); }
+        .bg-rh-blue-mid { background-color: var(--rh-blue-mid); }
+        .text-rh-orange { color: var(--rh-orange); }
+        .text-rh-blue { color: var(--rh-blue); }
+        .text-grey-600 { color: var(--grey-600); }
+        .bg-grey-100 { background-color: var(--grey-100); }
+        .bg-grey-200 { background-color: var(--grey-200); }
+        .border-grey-300 { border-color: var(--grey-300); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.8) 0%, rgba(45, 74, 113, 0.8) 100%), url('rosehill_group_hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .sector-card {
+            border-left: 4px solid var(--rh-orange);
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .sector-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .sector-image-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        /* Reset any conflicting styles - ONLY for main sector images */
+        .sector-card .sector-image-container > img:first-child {
+            width: 100% !important;
+            height: 240px !important;
+            object-fit: cover !important;
+            transition: transform 0.3s ease !important;
+            display: block !important;
+            background: transparent !important;
+            position: relative !important;
+            z-index: 1 !important;
+            min-height: 240px !important;
+            border: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        /* Override any orange backgrounds */
+        .sector-card .sector-image-container {
+            background: #f8f9fa !important;
+        }
+        
+        /* Remove any background colors from parent elements */
+        .sector-card.hover-lift {
+            background: white !important;
+        }
+        
+        .sector-card:hover .sector-image-container img {
+            transform: scale(1.05);
+        }
+        
+        .sector-icon-overlay {
+            position: absolute !important;
+            bottom: 16px !important;
+            right: 16px !important;
+            width: 64px !important;
+            height: 64px !important;
+            background: #FF6B35 !important;
+            border-radius: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+            transition: all 0.3s ease !important;
+            z-index: 10 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .sector-card:hover .sector-icon-overlay {
+            transform: scale(1.05) !important;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .sector-icon-overlay img {
+            width: 48px !important;
+            height: 48px !important;
+            max-width: 48px !important;
+            max-height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+            filter: brightness(0) invert(100%) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            flex-shrink: 0 !important;
+        }
+        
+        /* Override any image container styles that might affect icons */
+        .sector-icon-overlay img:not(.sector-image-container > img) {
+            height: 48px !important;
+        }
+        
+        .sector-card-content {
+            padding: 32px;
+        }
+        
+        .product-tag {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--rh-orange);
+            font-size: 0.875rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 4px 4px 4px 0;
+        }
+        
+        .btn-primary {
+            background-color: var(--rh-orange);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--rh-orange-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--rh-blue);
+            border: 2px solid var(--rh-blue);
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--rh-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* SVG Icon Styling - White icons on orange background */
+        
+        /* Ensure main images don't get any filters */
+        .sector-card .sector-image-container > img {
+            filter: none !important;
+        }
+        
+        .icon-container img {
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Specific icon color overrides */
+        img[alt="Sustainable Innovation"] {
+            filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(1800%) hue-rotate(86deg) brightness(95%) contrast(95%);
+        }
+        
+        img[alt="Multi-Sector Expertise"], img[alt="Quality Certified"] {
+            filter: brightness(0) saturate(100%) invert(15%) sepia(51%) saturate(1334%) hue-rotate(193deg) brightness(95%) contrast(90%);
+        }
+        
+        img[alt="Proven Performance"] {
+            filter: brightness(0) saturate(100%) invert(42%) sepia(85%) saturate(1352%) hue-rotate(4deg) brightness(103%) contrast(102%);
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--rh-orange);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-white:hover {
+            background: var(--rh-orange-dark);
+            color: white;
+            transform: translateY(-4px);
+        }
+        
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--rh-orange);
+            transform: translateY(-4px);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--grey-900);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-nav-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+            border-top: 1px solid var(--grey-200);
+        }
+
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+
+        .mobile-nav-menu a {
+            color: var(--grey-900);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--grey-200);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-menu a:hover {
+            color: var(--rh-orange);
+        }
+
+        .mobile-nav-menu a.active {
+            color: var(--rh-orange);
+            font-weight: 600;
+        }
+
+        .mobile-nav-menu a.contact-btn {
+            background: var(--rh-orange);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-top: 10px;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .mobile-nav-menu a.contact-btn:hover {
+            background: var(--rh-orange-dark);
+            color: white;
+        }
+
+        .breadcrumb {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 24px;
+        }
+        
+        .breadcrumb a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--rh-orange);
+        }
+
+        @media (max-width: 1023px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sector-card-content {
+                padding: 24px;
+            }
+            
+            .sector-icon-overlay {
+                width: 48px !important;
+                height: 48px !important;
+                bottom: 12px !important;
+                right: 12px !important;
+                border-radius: 10px !important;
+                background: #FF6B35 !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            .sector-icon-overlay img {
+                width: 36px !important;
+                height: 36px !important;
+                filter: brightness(0) invert(100%) !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                object-fit: contain !important;
+            }
+            
+            .product-tag {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+            }
+        }
+        
+        /* Mega menu icon styling */
+        .menu-icon {
+            filter: brightness(0) invert(100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="Rosehill_Group_2025.png" alt="Rosehill Group" class="w-auto" style="height: 60px;">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Home</a>
+                    <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">About</a>
+                    <div class="relative group">
+                        <a href="solutions.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors flex items-center">
+                            Solutions
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                        <!-- Solutions Dropdown -->
+                        <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-lg font-semibold text-rh-blue">Solutions by Sector</h3>
+                                    <a href="solutions.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
+                                        View all
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <a href="https://highways.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Road Safety</h4>
+                                        <p class="text-xs text-grey-600">Traffic management systems</p>
+                                    </a>
+                                    <a href="https://rail.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Rail Infrastructure</h4>
+                                        <p class="text-xs text-grey-600">Railway systems & safety</p>
+                                    </a>
+                                    <a href="https://security.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Defence & Security</h4>
+                                        <p class="text-xs text-grey-600">HVM & Ballistic protection</p>
+                                    </a>
+                                    <a href="https://energy.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Energy & Subsea</h4>
+                                        <p class="text-xs text-grey-600">Marine & offshore solutions</p>
+                                    </a>
+                                    <a href="https://tpv.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Sports & Recreation</h4>
+                                        <p class="text-xs text-grey-600">Rubber surfacing solutions</p>
+                                    </a>
+                                    <a href="https://drainage.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
+                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
+                                            <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-5 h-5 menu-icon">
+                                        </div>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Drainage Solutions</h4>
+                                        <p class="text-xs text-grey-600">Water management systems</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                            Products
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                        <!-- Products Dropdown -->
+                        <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="p-6">
+                                <h3 class="text-lg font-semibold text-rh-blue mb-4">Complete Product Range</h3>
+                                <div class="grid grid-cols-3 gap-6">
+                                    <!-- Road Safety Column -->
+                                    <div>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Road Safety Solutions</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://highways.rosehill.group/ncld-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cycle Lane Defenders</a>
+                                            <a href="https://highways.rosehill.group/ncld-lite-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">NCLD Lite</a>
+                                            <a href="https://highways.rosehill.group/lane-separator-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Lane Separators</a>
+                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Traffic Islands</a>
+                                            <a href="https://highways.rosehill.group/pedestrian-refuges-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pedestrian Refuges</a>
+                                            <a href="https://highways.rosehill.group/speed-cushions-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Cushions</a>
+                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Chicanes</a>
+                                            <a href="https://highways.rosehill.group/raised-tables-zebra-crossings-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Raised Tables & Zebra Crossings</a>
+                                            <a href="https://highways.rosehill.group/speed-calmers-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Calmers</a>
+                                        </div>
+                                        
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Infrastructure</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://rail.rosehill.group/connect" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Connect System</a>
+                                            <a href="https://rail.rosehill.group/baseplate" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Baseplated System</a>
+                                            <a href="https://rail.rosehill.group/link" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Link System</a>
+                                            <a href="https://rail.rosehill.group/interlocking" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Interlocking System</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Defence & Energy Column -->
+                                    <div>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Defence & Security</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://security.rosehill.group/rapid-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Rapid Defender</a>
+                                            <a href="https://security.rosehill.group/impakt-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Impakt Defender</a>
+                                            <a href="https://security.rosehill.group/ballistic-blocks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Blocks</a>
+                                            <a href="https://security.rosehill.group/ballistic-tiles" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Tiles</a>
+                                        </div>
+                                        
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Energy & Subsea</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Castable Polyurethanes</a>
+                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cable Protection</a>
+                                        </div>
+                                        
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Safety & Access</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://rail.rosehill.group/titan" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Titan Heavy Duty Crossing</a>
+                                            <a href="https://rail.rosehill.group/antitrespass" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Anti-Trespass Panels</a>
+                                            <a href="https://rail.rosehill.group/walkway" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Walkway Panels</a>
+                                            <a href="https://rail.rosehill.group/edgebeams" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Edge Beams</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sports & Drainage Column -->
+                                    <div>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Sports & Recreation</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://tpv.rosehill.group/applications#playground-surfaces" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Playground Surfaces</a>
+                                            <a href="https://tpv.rosehill.group/applications#multi-use-games-areas" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Multi-use Games Areas</a>
+                                            <a href="https://tpv.rosehill.group/applications#running-tracks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Running Tracks</a>
+                                            <a href="https://tpv.rosehill.group/applications#sports-pitches" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Sports Pitches</a>
+                                            <a href="https://tpv.rosehill.group/applications#footpaths" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Footpaths</a>
+                                            <a href="https://tpv.rosehill.group/applications#splash-parks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Splash Parks</a>
+                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pool Surrounds</a>
+                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Turf Infill</a>
+                                            <a href="https://tpv.rosehill.group/products" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Flexilon Binders</a>
+                                        </div>
+                                        
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Drainage Solutions</h4>
+                                        <div class="space-y-2">
+                                            <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Trough & Stacker System</a>
+                                            <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Drainage Mats</a>
+                                        </div>
+                                        
+                                        <div class="mt-6 pt-4 border-t border-grey-200">
+                                            <a href="products.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
+                                                Browse Product Catalog
+                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="projects.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Projects</a>
+                    <a href="contact.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Contact</a>
+                </div>
+                
+                <!-- Search and CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button id="search-toggle" class="p-2 hover:bg-grey-100 rounded-lg transition-colors" aria-label="Search">
+                        <svg class="w-5 h-5 text-grey-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                    <a href="contact.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">Get Quote</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-toggle lg:hidden" id="mobile-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="mobile-nav-menu" id="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="solutions.html" class="active">Solutions</a>
+                <a href="products.html">Products</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="contact-btn">Get Quote</a>
+            </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-start justify-center pt-20">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-rh-blue">Search Rosehill</h3>
+                        <button id="search-close" class="text-grey-600 hover:text-grey-900">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <input type="text" id="search-input" placeholder="Search products, solutions, or information..." class="w-full px-4 py-3 pr-12 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-grey-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-sm font-semibold text-grey-900 mb-2">Quick Links</h4>
+                        <div class="space-y-1">
+                            <a href="products.html" class="block text-sm text-grey-600 hover:text-rh-orange transition-colors">All Products</a>
+                            <a href="solutions.html" class="block text-sm text-grey-600 hover:text-rh-orange transition-colors">Solutions by Sector</a>
+                            <a href="projects.html" class="block text-sm text-grey-600 hover:text-rh-orange transition-colors">Case Studies</a>
+                            <a href="contact.html" class="block text-sm text-grey-600 hover:text-rh-orange transition-colors">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-20 pb-16">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb text-sm mb-6">
+                <a href="index.html">Home</a> / <span class="text-rh-orange">Solutions by Sector</span>
+            </nav>
+            
+            <div class="max-w-4xl">
+                <h1 class="text-4xl lg:text-6xl font-light text-white mb-6">
+                    Solutions by Sector
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Discover our comprehensive range of engineering solutions across six key sectors. Each division combines decades of expertise with innovative approaches to deliver sustainable infrastructure solutions for modern challenges.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">30+ Years Experience</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">500k+ Products Installed</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">ISO 9001 Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Road Safety Solutions -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="road_safety.jpg" alt="Road Safety Solutions" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Road Safety Solutions</h3>
+                            <span class="text-rh-orange font-medium">Highways Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Surface-mounted systems that enhance road safety for all users. Designed for quick installation and long-term performance, they support safer, more efficient transport networks.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">Cycle Lane Defenders</span>
+                            <span class="product-tag">Lane Separators</span>
+                            <span class="product-tag">Traffic Islands</span>
+                            <span class="product-tag">Pedestrian Refuges</span>
+                            <span class="product-tag">Speed Cushions</span>
+                            <span class="product-tag">Chicanes</span>
+                            <span class="product-tag">Raised Tables</span>
+                            <span class="product-tag">Speed Calmers</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://highways.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Highways Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rail Infrastructure -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="rail_infrastructure.jpg" alt="Rail Infrastructure" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Rail Infrastructure</h3>
+                            <span class="text-rh-orange font-medium">Rail Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Robust, low-maintenance components that improve safety across the rail network, including level crossings and anti-trespass panels engineered for long service life.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">Connect System</span>
+                            <span class="product-tag">Baseplated System</span>
+                            <span class="product-tag">Link System</span>
+                            <span class="product-tag">Interlocking System</span>
+                            <span class="product-tag">Titan Heavy Duty Crossing</span>
+                            <span class="product-tag">Anti-Trespass Panels</span>
+                            <span class="product-tag">Walkway Panels</span>
+                            <span class="product-tag">Edge Beams</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://rail.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Rail Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Defence & Security -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="security.jpg" alt="Defence & Security" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Defence & Security</h3>
+                            <span class="text-rh-orange font-medium">Security Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Modular ballistic protection and hostile vehicle mitigation systems. Developed for high-risk environments where speed, flexibility, and reliability are essential.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">Rapid Defender</span>
+                            <span class="product-tag">Impakt Defender</span>
+                            <span class="product-tag">Ballistic Blocks</span>
+                            <span class="product-tag">Ballistic Tiles</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://security.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Security Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Energy & Subsea -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Energy & Subsea</h3>
+                            <span class="text-rh-orange font-medium">Energy Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">Castable Polyurethanes</span>
+                            <span class="product-tag">Cable Protection</span>
+                            <span class="product-tag">Static Bend Stiffeners</span>
+                            <span class="product-tag">Thermal Insulation</span>
+                            <span class="product-tag">General Mouldings</span>
+                            <span class="product-tag">Flexilon 3060</span>
+                            <span class="product-tag">Flexilon 3173</span>
+                            <span class="product-tag">Flexilon 3604</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://energy.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Energy Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports & Recreation -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Sports & Recreation</h3>
+                            <span class="text-rh-orange font-medium">TPV Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Durable, impact-absorbing surfacing for public play areas and sports facilities, delivering long-lasting safety and colour stability that stands up to heavy use and harsh weather.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">TPV Rubber Granules</span>
+                            <span class="product-tag">Playground Surfaces</span>
+                            <span class="product-tag">Multi-use Games Areas</span>
+                            <span class="product-tag">Running Tracks</span>
+                            <span class="product-tag">Sports Pitches</span>
+                            <span class="product-tag">Footpaths</span>
+                            <span class="product-tag">Splash Parks</span>
+                            <span class="product-tag">Pool Surrounds</span>
+                            <span class="product-tag">Turf Infill</span>
+                            <span class="product-tag">Flexilon Binders</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://tpv.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Sports Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drainage Solutions -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <img src="drainage.jpg" alt="Drainage Solutions" class="w-full h-full object-cover">
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2">Drainage Solutions</h3>
+                            <span class="text-rh-orange font-medium">Drainage Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed">
+                        Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-semibold text-grey-900">Key Products:</h4>
+                        <div class="flex flex-wrap">
+                            <span class="product-tag">Trough & Stacker System</span>
+                            <span class="product-tag">Drainage Mats</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://drainage.rosehill.group/" target="_blank" class="btn-primary">
+                                Visit Drainage Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Rosehill Section -->
+    <section class="bg-grey-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6">
+                    Why Choose Rosehill Group?
+                </h2>
+                <p class="text-xl text-grey-600 leading-relaxed">
+                    With over three decades of engineering excellence, we deliver innovative solutions across multiple sectors with a commitment to sustainability and performance.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="icon-container w-20 h-20 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <img src="icons/Glyph/Factory, Industrial, Manufacturing, Engineering, Production.svg" alt="Multi-Sector Expertise" class="w-14 h-14 text-rh-blue">
+                    </div>
+                    <h3 class="text-xl font-semibold text-rh-blue mb-2">Multi-Sector Expertise</h3>
+                    <p class="text-grey-600">Comprehensive solutions across six key infrastructure sectors</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="icon-container w-20 h-20 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <img src="icons/Glyph/leaf, energy, nature, eco-friendly, green, plant, environment, sustainability.svg" alt="Sustainable Innovation" class="w-14 h-14 text-green-600">
+                    </div>
+                    <h3 class="text-xl font-semibold text-rh-blue mb-2">Sustainable Innovation</h3>
+                    <p class="text-grey-600">Circular economy principles integrated into all product development</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="icon-container w-20 h-20 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <img src="icons/Glyph/Certificate ,award, certification, quality, document, officia.svg" alt="Quality Certified" class="w-14 h-14 text-rh-blue">
+                    </div>
+                    <h3 class="text-xl font-semibold text-rh-blue mb-2">Quality Certified</h3>
+                    <p class="text-grey-600">ISO 9001 certified with rigorous testing and validation processes</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="icon-container w-20 h-20 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <img src="icons/Glyph/Rocket, Space, Engineering, Launch, Technology.svg" alt="Proven Performance" class="w-14 h-14 text-rh-orange">
+                    </div>
+                    <h3 class="text-xl font-semibold text-rh-blue mb-2">Proven Performance</h3>
+                    <p class="text-grey-600">500,000+ products installed worldwide with 30+ years experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-rh-orange py-20 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-4xl font-light mb-6">
+                Ready to Start Your Project?
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                Connect with our technical experts to discuss your specific requirements. We'll help you find the right solution for your infrastructure challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="contact.html" class="bg-white text-rh-orange px-8 py-4 rounded-lg font-semibold text-lg transition-all inline-flex items-center justify-center" style="background-color: white; color: #FF6B35; transform: translateY(0px);" onmouseover="this.style.backgroundColor='#E55A2B'; this.style.color='white'; this.style.transform='translateY(-4px)';" onmouseout="this.style.backgroundColor='white'; this.style.color='#FF6B35'; this.style.transform='translateY(0px)';">
+                    Get Expert Consultation
+                </a>
+                <a href="projects.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all inline-flex items-center justify-center" style="color: white; border-color: white; background-color: transparent; transform: translateY(0px);" onmouseover="this.style.backgroundColor='white'; this.style.color='#FF6B35'; this.style.transform='translateY(-4px)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; this.style.transform='translateY(0px)';">
+                    View Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rh-blue text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-6 lg:gap-8 mb-8">
+                <!-- Made in UK -->
+                <div>
+                    <div class="mb-4">
+                        <img src="rosehill_madeinuk.png" alt="Made in UK" class="h-32 mb-4">
+                    </div>
+                    <p class="text-blue-100 text-sm leading-relaxed max-w-xs">
+                        All Rosehill products are manufactured at our state-of-the-art facilities in Yorkshire using unique polyurethane chemistry, tailor-made for the toughest environments.
+                    </p>
+                </div>
+                
+                <!-- About -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">About</h4>
+                    <ul class="space-y-2 text-blue-100">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Rosehill</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors">Our Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">All Products</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Our Solutions -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Our Solutions</h4>
+                    <ul class="space-y-2 text-blue-100">
+                        <li><a href="https://highways.rosehill.group/" class="hover:text-white transition-colors">Road Safety</a></li>
+                        <li><a href="https://rail.rosehill.group/" class="hover:text-white transition-colors">Rail Infrastructure</a></li>
+                        <li><a href="https://security.rosehill.group/" class="hover:text-white transition-colors">Defence & Security</a></li>
+                        <li><a href="https://energy.rosehill.group/" class="hover:text-white transition-colors">Energy & Subsea</a></li>
+                        <li><a href="https://tpv.rosehill.group/" class="hover:text-white transition-colors">Sports & Recreation</a></li>
+                        <li><a href="https://drainage.rosehill.group/" class="hover:text-white transition-colors">Drainage Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Get in touch</h4>
+                    <div class="space-y-3 text-blue-100">
+                        <p class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            Rosehill Group<br>
+                            Beech Road<br>
+                            Sowerby Bridge<br>
+                            HX6 2JT
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            +44 (0)1422 839 610
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@rosehill.group" class="hover:text-white transition-colors">info@rosehill.group</a>
+                        </p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.linkedin.com/company/rosehillgroup" class="text-blue-100 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/rosehillpolymrs" class="text-blue-100 hover:text-white transition-colors" aria-label="Twitter">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@RosehillVideo" class="text-blue-100 hover:text-white transition-colors" aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-blue-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-100">
+                    <p>&copy; 2025 Rosehill Group. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                        <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Quick Contact (Mobile) -->
+    <div class="fixed bottom-6 right-6 lg:hidden z-40">
+        <button class="bg-rh-orange hover:bg-rh-orange-dark text-white p-4 rounded-full shadow-lg transition-all hover:scale-110" aria-label="Quick contact">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+        </button>
+    </div>
+    
+    <script>
+        // Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', function() {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-nav-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+        
+        // Search functionality
+        const searchToggle = document.getElementById('search-toggle');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.classList.remove('hidden');
+                setTimeout(() => searchInput.focus(), 100);
+            });
+
+            searchClose.addEventListener('click', function() {
+                searchOverlay.classList.add('hidden');
+            });
+
+            // Close search when clicking outside
+            searchOverlay.addEventListener('click', function(event) {
+                if (event.target === searchOverlay) {
+                    searchOverlay.classList.add('hidden');
+                }
+            });
+
+            // Close search with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && !searchOverlay.classList.contains('hidden')) {
+                    searchOverlay.classList.add('hidden');
+                }
+            });
+
+            // Simple search functionality
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        // For now, redirect to products page with a simple search
+                        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+                    }
+                }
+            });
+        }
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sector cards for animation
+        document.querySelectorAll('.sector-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
