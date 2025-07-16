@@ -4,6 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use - Rosehill Group</title>
+    <meta name="description" content="Terms and conditions for using the Rosehill Group website. Legal information about website usage and intellectual property rights.">
+    <meta name="keywords" content="terms of use, terms and conditions, website terms, legal information, intellectual property">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rosehill.group/terms-of-use">
+    <meta property="og:title" content="Terms of Use - Rosehill Group">
+    <meta property="og:description" content="Terms and conditions for using the Rosehill Group website. Legal information about website usage and intellectual property rights.">
+    <meta property="og:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Rosehill Group">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rosehill.group/terms-of-use">
+    <meta property="twitter:title" content="Terms of Use - Rosehill Group">
+    <meta property="twitter:description" content="Terms and conditions for using the Rosehill Group website. Legal information about website usage and intellectual property rights.">
+    <meta property="twitter:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
+    <meta property="twitter:site" content="@rosehillpolymrs">
+    <meta property="twitter:creator" content="@rosehillpolymrs">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://rosehill.group/terms-of-use">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rosehill Group">
+    <meta name="company" content="Rosehill Polymers Ltd">
+    <meta name="geo.region" content="GB-WYK">
+    <meta name="geo.placename" content="Sowerby Bridge">
+    <meta name="geo.position" content="53.7050;-1.9289">
+    <meta name="ICBM" content="53.7050, -1.9289">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9ELN2Z0N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default consent state
+        gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            functionality_storage: 'denied',
+            personalization_storage: 'denied',
+            security_storage: 'granted',
+            wait_for_update: 2000,
+        });
+        
+        gtag('js', new Date());
+        gtag('config', 'G-FR9ELN2Z0N', {
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=Strict;Secure',
+        });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -640,6 +702,7 @@
                         <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="terms-of-use.html" class="text-rh-orange hover:text-white transition-colors">Terms of Use</a>
                         <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
+                        <a href="#" id="cookie-settings-link" class="hover:text-white transition-colors">Cookie Settings</a>
                         <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
                     </div>
                 </div>
@@ -741,5 +804,7 @@
             }
         });
     </script>
+    <!-- Cookie Consent -->
+    <script src="cookie-consent.js"></script>
 </body>
 </html>
