@@ -67,6 +67,8 @@
         });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="rtl.css">
+    <script src="i18n.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -248,6 +250,91 @@
             background: var(--rh-orange-dark);
             color: white;
         }
+        
+        /* Mobile Language Switcher Styles */
+        .mobile-language-switcher {
+            border-bottom: 1px solid var(--grey-200);
+            padding: 0;
+        }
+        
+        .mobile-language-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            background: none;
+            border: none;
+            color: var(--grey-900);
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-language-btn:hover {
+            color: var(--rh-orange);
+        }
+        
+        .mobile-language-btn .mobile-language-icon {
+            margin-right: 8px;
+        }
+        
+        .mobile-language-btn .mobile-current-language {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 8px;
+        }
+        
+        .mobile-language-btn .mobile-language-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-language-btn[aria-expanded="true"] .mobile-language-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-language-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--grey-50);
+            margin-left: 28px;
+            border-radius: 6px;
+        }
+        
+        .mobile-language-dropdown.show {
+            max-height: 200px;
+            padding: 8px 0;
+            margin-bottom: 8px;
+        }
+        
+        .mobile-language-option {
+            display: block;
+            padding: 10px 16px;
+            color: var(--grey-700);
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            border-bottom: none !important;
+        }
+        
+        .mobile-language-option:hover {
+            background-color: var(--grey-100);
+            color: var(--rh-orange);
+        }
+        
+        .mobile-language-option.active {
+            background-color: var(--grey-100) !important;
+            color: var(--rh-orange) !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Ensure mobile menu language switcher only shows on mobile */
+        @media (min-width: 1024px) {
+            .mobile-language-switcher {
+                display: none;
+            }
+        }
 
         @media (max-width: 1023px) {
             .mobile-menu-toggle {
@@ -258,6 +345,78 @@
         /* Mega menu icon styling */
         .menu-icon {
             filter: brightness(0) invert(100%);
+        }
+
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: relative !important;
+            display: inline-block !important;
+        }
+        
+        .language-switcher-dropdown {
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            background: white !important;
+            border: 1px solid #d1d5db !important;
+            border-radius: 8px !important;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+            z-index: 1000 !important;
+            min-width: 160px !important;
+            margin-top: 4px !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(-10px) !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .language-switcher-dropdown.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+        
+        .language-option {
+            display: block !important;
+            width: 100% !important;
+            padding: 0.75rem 1rem !important;
+            text-align: left !important;
+            background: none !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 0.875rem !important;
+            transition: background-color 0.2s ease !important;
+        }
+        
+        .language-option:hover {
+            background-color: #f3f4f6 !important;
+        }
+        
+        .language-switcher-btn {
+            display: flex !important;
+            align-items: center !important;
+            padding: 8px 12px !important;
+            border: 1px solid #d1d5db !important;
+            border-radius: 6px !important;
+            background: #f8f9fa !important;
+            color: #374151 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .language-switcher-btn:hover {
+            background-color: #e2e8f0 !important;
+            border-color: #9ca3af !important;
+            color: #FF6B35 !important;
+        }
+        
+        .language-switcher-icon {
+            margin-left: 0.25rem !important;
+            transition: transform 0.2s ease !important;
+        }
+        
+        .language-switcher-btn[aria-expanded="true"] .language-switcher-icon {
+            transform: rotate(180deg) !important;
         }
     </style>
 </head>
@@ -279,11 +438,11 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Home</a>
-                    <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">About</a>
+                    <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.home">Home</a>
+                    <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.about">About</a>
                     <div class="relative group">
                         <a href="solutions.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
-                            Solutions
+                            <span data-i18n="navigation.solutions">Solutions</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
@@ -292,9 +451,9 @@
                         <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-lg font-semibold text-rh-blue">Solutions by Sector</h3>
+                                    <h3 class="text-lg font-semibold text-rh-blue" data-i18n="navigation.solutionsBySector">Solutions by Sector</h3>
                                     <a href="solutions.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
-                                        View all
+                                        <span data-i18n="navigation.viewAll">View all</span>
                                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                         </svg>
@@ -305,43 +464,43 @@
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Road Safety</h4>
-                                        <p class="text-xs text-grey-600">Traffic management systems</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.roadSafety">Road Safety</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.trafficManagement">Traffic management systems</p>
                                     </a>
                                     <a href="https://rail.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Rail Infrastructure</h4>
-                                        <p class="text-xs text-grey-600">Railway systems & safety</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.railInfrastructure">Rail Infrastructure</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.railwaySystems">Railway systems & safety</p>
                                     </a>
                                     <a href="https://security.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Defence & Security</h4>
-                                        <p class="text-xs text-grey-600">HVM & Ballistic protection</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.defenceSecurity">Defence & Security</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.hvmBallistic">HVM & Ballistic protection</p>
                                     </a>
                                     <a href="https://energy.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Energy & Subsea</h4>
-                                        <p class="text-xs text-grey-600">Marine & offshore solutions</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.energySubsea">Energy & Subsea</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.marineOffshore">Marine & offshore solutions</p>
                                     </a>
                                     <a href="https://tpv.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Sports & Recreation</h4>
-                                        <p class="text-xs text-grey-600">Rubber surfacing solutions</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.sportsRecreation">Sports & Recreation</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.rubberSurfacing">Rubber surfacing solutions</p>
                                     </a>
                                     <a href="https://drainage.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
                                         <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
                                             <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-5 h-5 menu-icon">
                                         </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Drainage Solutions</h4>
-                                        <p class="text-xs text-grey-600">Water management systems</p>
+                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors" data-i18n="navigation.drainageSolutions">Drainage Solutions</h4>
+                                        <p class="text-xs text-grey-600" data-i18n="navigation.waterManagement">Water management systems</p>
                                     </a>
                                 </div>
                             </div>
@@ -349,7 +508,7 @@
                     </div>
                     <div class="relative group">
                         <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
-                            Products
+                            <span data-i18n="navigation.products">Products</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
@@ -357,81 +516,81 @@
                         <!-- Products Dropdown -->
                         <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
-                                <h3 class="text-lg font-semibold text-rh-blue mb-4">Complete Product Range</h3>
+                                <h3 class="text-lg font-semibold text-rh-blue mb-4" data-i18n="navigation.completeProductRange">Complete Product Range</h3>
                                 <div class="grid grid-cols-3 gap-6">
                                     <!-- Road Safety Column -->
                                     <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Road Safety Solutions</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide" data-i18n="navigation.roadSafetySolutions">Road Safety Solutions</h4>
                                         <div class="space-y-2">
-                                            <a href="https://highways.rosehill.group/ncld-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cycle Lane Defenders</a>
-                                            <a href="https://highways.rosehill.group/ncld-lite-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">NCLD Lite</a>
-                                            <a href="https://highways.rosehill.group/lane-separator-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Lane Separators</a>
-                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Traffic Islands</a>
-                                            <a href="https://highways.rosehill.group/pedestrian-refuges-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pedestrian Refuges</a>
-                                            <a href="https://highways.rosehill.group/speed-cushions-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Cushions</a>
-                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Chicanes</a>
-                                            <a href="https://highways.rosehill.group/raised-tables-zebra-crossings-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Raised Tables & Zebra Crossings</a>
-                                            <a href="https://highways.rosehill.group/speed-calmers-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Calmers</a>
+                                            <a href="https://highways.rosehill.group/ncld-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.cycleLaneDefenders">Cycle Lane Defenders</a>
+                                            <a href="https://highways.rosehill.group/ncld-lite-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.ncldLite">NCLD Lite</a>
+                                            <a href="https://highways.rosehill.group/lane-separator-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.laneSeparators">Lane Separators</a>
+                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.trafficIslands">Traffic Islands</a>
+                                            <a href="https://highways.rosehill.group/pedestrian-refuges-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.pedestrianRefuges">Pedestrian Refuges</a>
+                                            <a href="https://highways.rosehill.group/speed-cushions-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.speedCushions">Speed Cushions</a>
+                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.chicanes">Chicanes</a>
+                                            <a href="https://highways.rosehill.group/raised-tables-zebra-crossings-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.raisedTablesZebraCrossings">Raised Tables & Zebra Crossings</a>
+                                            <a href="https://highways.rosehill.group/speed-calmers-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.speedCalmers">Speed Calmers</a>
                                         </div>
                                         
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Infrastructure</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6" data-i18n="navigation.railInfrastructureProducts">Rail Infrastructure</h4>
                                         <div class="space-y-2">
-                                            <a href="https://rail.rosehill.group/connect" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Connect System</a>
-                                            <a href="https://rail.rosehill.group/baseplate" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Baseplated System</a>
-                                            <a href="https://rail.rosehill.group/link" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Link System</a>
-                                            <a href="https://rail.rosehill.group/interlocking" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Interlocking System</a>
+                                            <a href="https://rail.rosehill.group/connect" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.connectSystem">Connect System</a>
+                                            <a href="https://rail.rosehill.group/baseplate" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.baseplatedSystem">Baseplated System</a>
+                                            <a href="https://rail.rosehill.group/link" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.linkSystem">Link System</a>
+                                            <a href="https://rail.rosehill.group/interlocking" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.interlockingSystem">Interlocking System</a>
                                         </div>
                                     </div>
                                     
                                     <!-- Defence & Energy Column -->
                                     <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Defence & Security</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide" data-i18n="navigation.defenceSecurityProducts">Defence & Security</h4>
                                         <div class="space-y-2">
-                                            <a href="https://security.rosehill.group/rapid-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Rapid Defender</a>
-                                            <a href="https://security.rosehill.group/impakt-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Impakt Defender</a>
-                                            <a href="https://security.rosehill.group/ballistic-blocks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Blocks</a>
-                                            <a href="https://security.rosehill.group/ballistic-tiles" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Tiles</a>
+                                            <a href="https://security.rosehill.group/rapid-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.rapidDefender">Rapid Defender</a>
+                                            <a href="https://security.rosehill.group/impakt-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.impaktDefender">Impakt Defender</a>
+                                            <a href="https://security.rosehill.group/ballistic-blocks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.ballisticBlocks">Ballistic Blocks</a>
+                                            <a href="https://security.rosehill.group/ballistic-tiles" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.ballisticTiles">Ballistic Tiles</a>
                                         </div>
                                         
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Energy & Subsea</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6" data-i18n="navigation.energySubseaProducts">Energy & Subsea</h4>
                                         <div class="space-y-2">
-                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Castable Polyurethanes</a>
-                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cable Protection</a>
+                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.castablePolyurethanes">Castable Polyurethanes</a>
+                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.cableProtection">Cable Protection</a>
                                         </div>
                                         
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Safety & Access</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6" data-i18n="navigation.railSafetyAccess">Rail Safety & Access</h4>
                                         <div class="space-y-2">
-                                            <a href="https://rail.rosehill.group/titan" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Titan Heavy Duty Crossing</a>
-                                            <a href="https://rail.rosehill.group/antitrespass" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Anti-Trespass Panels</a>
-                                            <a href="https://rail.rosehill.group/walkway" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Walkway Panels</a>
-                                            <a href="https://rail.rosehill.group/edgebeams" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Edge Beams</a>
+                                            <a href="https://rail.rosehill.group/titan" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.titanHeavyDutyCrossing">Titan Heavy Duty Crossing</a>
+                                            <a href="https://rail.rosehill.group/antitrespass" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.antiTrespassPanels">Anti-Trespass Panels</a>
+                                            <a href="https://rail.rosehill.group/walkway" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.walkwayPanels">Walkway Panels</a>
+                                            <a href="https://rail.rosehill.group/edgebeams" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.edgeBeams">Edge Beams</a>
                                         </div>
                                     </div>
                                     
                                     <!-- Sports & Drainage Column -->
                                     <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Sports & Recreation</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide" data-i18n="navigation.sportsRecreationProducts">Sports & Recreation</h4>
                                         <div class="space-y-2">
-                                            <a href="https://tpv.rosehill.group/applications#playground-surfaces" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Playground Surfaces</a>
-                                            <a href="https://tpv.rosehill.group/applications#multi-use-games-areas" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Multi-use Games Areas</a>
-                                            <a href="https://tpv.rosehill.group/applications#running-tracks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Running Tracks</a>
-                                            <a href="https://tpv.rosehill.group/applications#sports-pitches" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Sports Pitches</a>
-                                            <a href="https://tpv.rosehill.group/applications#footpaths" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Footpaths</a>
-                                            <a href="https://tpv.rosehill.group/applications#splash-parks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Splash Parks</a>
-                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pool Surrounds</a>
-                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Turf Infill</a>
-                                            <a href="https://tpv.rosehill.group/products" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Flexilon Binders</a>
+                                            <a href="https://tpv.rosehill.group/applications#playground-surfaces" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.playgroundSurfaces">Playground Surfaces</a>
+                                            <a href="https://tpv.rosehill.group/applications#multi-use-games-areas" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.multiUseGamesAreas">Multi-use Games Areas</a>
+                                            <a href="https://tpv.rosehill.group/applications#running-tracks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.runningTracks">Running Tracks</a>
+                                            <a href="https://tpv.rosehill.group/applications#sports-pitches" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.sportsPitches">Sports Pitches</a>
+                                            <a href="https://tpv.rosehill.group/applications#footpaths" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.footpaths">Footpaths</a>
+                                            <a href="https://tpv.rosehill.group/applications#splash-parks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.splashParks">Splash Parks</a>
+                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.poolSurrounds">Pool Surrounds</a>
+                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.turfInfill">Turf Infill</a>
+                                            <a href="https://tpv.rosehill.group/products" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.flexilonBinders">Flexilon Binders</a>
                                         </div>
                                         
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Drainage Solutions</h4>
+                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6" data-i18n="navigation.drainageSolutionsProducts">Drainage Solutions</h4>
                                         <div class="space-y-2">
-                                            <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Trough & Stacker System</a>
-                                            <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Drainage Mats</a>
+                                            <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.troughStackerSystem">Trough & Stacker System</a>
+                                            <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors" data-i18n="navigation.drainageMats">Drainage Mats</a>
                                         </div>
                                         
                                         <div class="mt-6 pt-4 border-t border-grey-200">
                                             <a href="products.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
-                                                Browse Product Catalog
+                                                <span data-i18n="navigation.browseProductCatalog">Browse Product Catalog</span>
                                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                                 </svg>
@@ -442,8 +601,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="projects.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Projects</a>
-                    <a href="contact.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors">Contact</a>
+                    <a href="projects.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.projects">Projects</a>
+                    <a href="contact.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors" data-i18n="navigation.contact">Contact</a>
                 </div>
                 
                 <!-- Search and CTA -->
@@ -453,7 +612,24 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </button>
-                    <a href="contact.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">Get Quote</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-switcher-btn" aria-expanded="false">
+                            <span class="current-language">🇬🇧 English</span>
+                            <svg class="language-switcher-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="language-switcher-dropdown" role="listbox">
+                            <button class="language-option" role="option" data-language="en">🇬🇧 English</button>
+                            <button class="language-option" role="option" data-language="fr">🇫🇷 Français</button>
+                            <button class="language-option" role="option" data-language="es">🇪🇸 Español</button>
+                            <button class="language-option" role="option" data-language="ar">🇸🇦 العربية</button>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors" data-i18n="navigation.getQuote">Get Quote</a>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -466,13 +642,36 @@
             
             <!-- Mobile Navigation Menu -->
             <div class="mobile-nav-menu" id="mobile-menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="products.html">Products</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html" class="active">Contact</a>
-                <a href="contact.html" class="contact-btn">Get Quote</a>
+                <a href="index.html" data-i18n="navigation.home">Home</a>
+                <a href="about.html" data-i18n="navigation.about">About</a>
+                <a href="solutions.html" data-i18n="navigation.solutions">Solutions</a>
+                <a href="products.html" data-i18n="navigation.products">Products</a>
+                <a href="projects.html" data-i18n="navigation.projects">Projects</a>
+                <a href="contact.html" class="active" data-i18n="navigation.contact">Contact</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="mobile-language-switcher">
+                    <button class="mobile-language-btn" aria-expanded="false" aria-label="Select language">
+                        <svg class="mobile-language-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="m8 12 2 2 2-2"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="mobile-current-language">🇬🇧 English</span>
+                        <svg class="mobile-language-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="mobile-language-dropdown">
+                        <a href="#" class="mobile-language-option" data-language="en">🇬🇧 English</a>
+                        <a href="#" class="mobile-language-option" data-language="fr">🇫🇷 Français</a>
+                        <a href="#" class="mobile-language-option" data-language="es">🇪🇸 Español</a>
+                        <a href="#" class="mobile-language-option" data-language="ar">🇸🇦 العربية</a>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="contact-btn" data-i18n="navigation.getQuote">Get Quote</a>
             </div>
         </div>
     </header>
@@ -517,20 +716,20 @@
         <div class="container mx-auto px-4">
             <!-- Breadcrumb -->
             <nav class="breadcrumb text-sm mb-6">
-                <a href="index.html">Home</a> / <span class="text-rh-orange">Contact Us</span>
+                <a href="index.html" data-i18n="navigation.home">Home</a> / <span class="text-rh-orange" data-i18n="navigation.contact">Contact Us</span>
             </nav>
             
             <div class="max-w-4xl">
-                <h1 class="text-4xl lg:text-6xl font-light text-white mb-6">
+                <h1 class="text-4xl lg:text-6xl font-light text-white mb-6" data-i18n="contact.title">
                     Get Expert Infrastructure Solutions Advice
                 </h1>
-                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-i18n="contact.subtitle">
                     Our technical specialists are here to help with product selection, specifications, and project requirements. Get in touch with our team or connect directly with sector experts.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">24hr Technical Support</span>
-                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">Expert Consultation</span>
-                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium">Project Guidance</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="contact.support24hr">24hr Technical Support</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="contact.expertConsultation">Expert Consultation</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="contact.projectGuidance">Project Guidance</span>
                 </div>
             </div>
         </div>
@@ -543,57 +742,57 @@
                 
                 <!-- Contact Form -->
                 <div class="contact-card">
-                    <h2 class="text-2xl font-semibold text-rh-blue mb-6">Send us your enquiry</h2>
+                    <h2 class="text-2xl font-semibold text-rh-blue mb-6" data-i18n="contact.form.title">Send us your enquiry</h2>
                     <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-semibold text-grey-900 mb-2">Your name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="John Smith">
+                                <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.namePlaceholder">
                             </div>
                             <div>
-                                <label for="company" class="block text-sm font-semibold text-grey-900 mb-2">Company</label>
-                                <input type="text" id="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="ABC Construction Ltd">
+                                <label for="company" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.company">Company</label>
+                                <input type="text" id="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.companyPlaceholder">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="email" class="block text-sm font-semibold text-grey-900 mb-2">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="john@example.com">
+                                <label for="email" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.emailPlaceholder">
                             </div>
                             <div>
-                                <label for="phone" class="block text-sm font-semibold text-grey-900 mb-2">Phone</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="+44 1234 567 890">
+                                <label for="phone" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.phone">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.phonePlaceholder">
                             </div>
                         </div>
                         
                         <div>
-                            <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2">Project sector</label>
+                            <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.sector">Project sector</label>
                             <select id="sector" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all">
-                                <option value="">Select sector</option>
-                                <option value="highways">Road Safety / Highways</option>
-                                <option value="rail">Rail Infrastructure</option>
-                                <option value="defence">Defence & Security</option>
-                                <option value="energy">Energy & Subsea</option>
-                                <option value="sports">Sports & Recreation</option>
-                                <option value="drainage">Drainage Solutions</option>
-                                <option value="general">General Enquiry</option>
+                                <option value="" data-i18n="contact.form.sectors.select">Select sector</option>
+                                <option value="highways" data-i18n="contact.form.sectors.highways">Road Safety / Highways</option>
+                                <option value="rail" data-i18n="contact.form.sectors.rail">Rail Infrastructure</option>
+                                <option value="defence" data-i18n="contact.form.sectors.defence">Defence & Security</option>
+                                <option value="energy" data-i18n="contact.form.sectors.energy">Energy & Subsea</option>
+                                <option value="sports" data-i18n="contact.form.sectors.sports">Sports & Recreation</option>
+                                <option value="drainage" data-i18n="contact.form.sectors.drainage">Drainage Solutions</option>
+                                <option value="general" data-i18n="contact.form.sectors.general">General Enquiry</option>
                             </select>
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-sm font-semibold text-grey-900 mb-2">Project details</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="Tell us about your project requirements, specifications, or technical questions..."></textarea>
+                            <label for="message" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.message">Project details</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
                         </div>
                         
                         <div class="flex items-start">
                             <input type="checkbox" id="consent" class="mt-1 mr-3 h-4 w-4 text-rh-orange border-grey-300 rounded focus:ring-rh-orange">
                             <label for="consent" class="text-sm text-grey-600">
-                                I agree to Rosehill Group processing my data in accordance with the <a href="privacy-policy.html" class="text-rh-orange hover:underline">Privacy Policy</a>
+                                <span data-i18n="contact.form.consent">I agree to Rosehill Group processing my data in accordance with the</span> <a href="privacy-policy.html" class="text-rh-orange hover:underline" data-i18n="contact.form.privacyPolicy">Privacy Policy</a>
                             </label>
                         </div>
                         
-                        <button type="submit" class="w-full bg-rh-orange hover:bg-rh-orange-dark text-white py-4 rounded-lg font-semibold text-lg transition-colors">
+                        <button type="submit" class="w-full bg-rh-orange hover:bg-rh-orange-dark text-white py-4 rounded-lg font-semibold text-lg transition-colors" data-i18n="contact.form.submit">
                             Submit enquiry
                         </button>
                     </form>
@@ -601,7 +800,7 @@
 
                 <!-- Contact Information -->
                 <div class="contact-card">
-                    <h2 class="text-2xl font-semibold text-rh-blue mb-6">Head Office</h2>
+                    <h2 class="text-2xl font-semibold text-rh-blue mb-6" data-i18n="contact.headOffice">Head Office</h2>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
@@ -610,7 +809,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
                             <div>
-                                <h3 class="font-semibold text-grey-900 mb-1">Address</h3>
+                                <h3 class="font-semibold text-grey-900 mb-1" data-i18n="contact.address">Address</h3>
                                 <p class="text-grey-600">
                                     Rosehill Group<br>
                                     Beech Road<br>
@@ -626,7 +825,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
                             <div>
-                                <h3 class="font-semibold text-grey-900 mb-1">Phone</h3>
+                                <h3 class="font-semibold text-grey-900 mb-1" data-i18n="contact.phone">Phone</h3>
                                 <p class="text-grey-600">
                                     <a href="tel:+441422839610" class="hover:text-rh-orange transition-colors">+44 (0)1422 839 610</a>
                                 </p>
@@ -638,7 +837,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                             <div>
-                                <h3 class="font-semibold text-grey-900 mb-1">Email</h3>
+                                <h3 class="font-semibold text-grey-900 mb-1" data-i18n="contact.email">Email</h3>
                                 <p class="text-grey-600">
                                     <a href="mailto:info@rosehill.group" class="hover:text-rh-orange transition-colors">info@rosehill.group</a>
                                 </p>
@@ -650,11 +849,11 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <h3 class="font-semibold text-grey-900 mb-1">Office Hours</h3>
+                                <h3 class="font-semibold text-grey-900 mb-1" data-i18n="contact.officeHours">Office Hours</h3>
                                 <p class="text-grey-600">
-                                    Monday - Friday: 8:00 AM - 5:00 PM<br>
-                                    Saturday - Sunday: Closed<br>
-                                    <span class="text-rh-orange font-medium">24hr technical support available</span>
+                                    <span data-i18n="contact.weekdays">Monday - Friday: 8:00 AM - 5:00 PM</span><br>
+                                    <span data-i18n="contact.weekends">Saturday - Sunday: Closed</span><br>
+                                    <span class="text-rh-orange font-medium" data-i18n="contact.technicalSupport">24hr technical support available</span>
                                 </p>
                             </div>
                         </div>
@@ -662,7 +861,7 @@
 
                     <!-- Social Links -->
                     <div class="mt-8 pt-6 border-t border-grey-200">
-                        <h3 class="font-semibold text-grey-900 mb-4">Follow us</h3>
+                        <h3 class="font-semibold text-grey-900 mb-4" data-i18n="footer.followUs">Follow us</h3>
                         <div class="flex space-x-4">
                             <a href="https://www.linkedin.com/company/rosehillgroup" class="w-10 h-10 bg-grey-100 rounded-lg flex items-center justify-center text-grey-600 hover:bg-rh-orange hover:text-white transition-colors" aria-label="LinkedIn">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -690,10 +889,10 @@
     <section class="py-20 bg-grey-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6">
+                <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6" data-i18n="contact.speakToSpecialists">
                     Speak to our sector specialists
                 </h2>
-                <p class="text-xl text-grey-600 max-w-3xl mx-auto">
+                <p class="text-xl text-grey-600 max-w-3xl mx-auto" data-i18n="contact.speakToSpecialistsSubtitle">
                     Get direct access to our technical experts who understand the specific challenges and requirements of your industry sector.
                 </p>
             </div>
@@ -705,12 +904,12 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Road Safety Solutions</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">Traffic management, cycle lanes, speed management</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.roadSafety">Road Safety Solutions</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.trafficManagement">Traffic management, cycle lanes, speed management</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Clare Riley</p>
-                            <p class="text-sm text-grey-600">Business Development Manager</p>
+                            <p class="text-sm text-grey-600" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="tel:+441422839456" class="flex items-center justify-center text-grey-600 hover:text-rh-orange transition-colors text-sm">
@@ -719,7 +918,7 @@
                                 </svg>
                                 +44 (0)1422 839 456
                             </a>
-                            <a href="mailto:clare.riley@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:clare.riley@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailClare">
                                 Email Clare
                             </a>
                         </div>
@@ -731,12 +930,12 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Rail Infrastructure</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">Railway crossings, platform safety, anti-trespass</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.railInfrastructure">Rail Infrastructure</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.railwaySystems">Railway crossings, platform safety, anti-trespass</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Daniel Snell</p>
-                            <p class="text-sm text-grey-600">Business Development Manager</p>
+                            <p class="text-sm text-grey-600" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="tel:+441422839610" class="flex items-center justify-center text-grey-600 hover:text-rh-orange transition-colors text-sm">
@@ -745,7 +944,7 @@
                                 </svg>
                                 +44 (0)1422 839 610
                             </a>
-                            <a href="mailto:daniel.snell@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:daniel.snell@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailDaniel">
                                 Email Daniel
                             </a>
                         </div>
@@ -757,12 +956,12 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Defence & Security</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">HVM barriers, ballistic protection, perimeter security</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.defenceSecurity">Defence & Security</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.hvmBallistic">HVM barriers, ballistic protection, perimeter security</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Dan Rainbird</p>
-                            <p class="text-sm text-grey-600">Business Development Manager</p>
+                            <p class="text-sm text-grey-600" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="tel:+441422839610" class="flex items-center justify-center text-grey-600 hover:text-rh-orange transition-colors text-sm">
@@ -771,7 +970,7 @@
                                 </svg>
                                 +44 (0)1422 839 610
                             </a>
-                            <a href="mailto:dan.rainbird@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:dan.rainbird@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailDan">
                                 Email Dan
                             </a>
                         </div>
@@ -783,8 +982,8 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Energy & Subsea</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">Offshore solutions, cable protection, polyurethanes</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.energySubsea">Energy & Subsea</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.marineOffshore">Offshore solutions, cable protection, polyurethanes</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Nadeem Riyazuddin</p>
@@ -797,7 +996,7 @@
                                 </svg>
                                 +44 (0)1422 839 610
                             </a>
-                            <a href="mailto:nadeem.riyazuddin@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:nadeem.riyazuddin@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailNadeem">
                                 Email Nadeem
                             </a>
                         </div>
@@ -809,12 +1008,12 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Sports & Recreation</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">Sports surfaces, playgrounds, running tracks</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.sportsRecreation">Sports & Recreation</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.rubberSurfacing">Sports surfaces, playgrounds, running tracks</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Josh Jones</p>
-                            <p class="text-sm text-grey-600">Business Development Manager</p>
+                            <p class="text-sm text-grey-600" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
                         </div>
                         <div class="flex flex-col space-y-2">
                             <a href="tel:+441422839456" class="flex items-center justify-center text-grey-600 hover:text-rh-orange transition-colors text-sm">
@@ -823,7 +1022,7 @@
                                 </svg>
                                 +44 (0)1422 839 456
                             </a>
-                            <a href="mailto:joshua.jones@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:joshua.jones@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailJosh">
                                 Email Josh
                             </a>
                         </div>
@@ -835,8 +1034,8 @@
                     <div class="w-16 h-16 bg-rh-orange rounded-xl flex items-center justify-center mx-auto mb-4">
                         <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-8 h-8 menu-icon">
                     </div>
-                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center">Drainage Solutions</h3>
-                    <p class="text-grey-600 text-sm mb-4 text-center">Water management, sustainable drainage systems</p>
+                    <h3 class="text-lg font-semibold text-rh-blue mb-2 text-center" data-i18n="navigation.drainageSolutions">Drainage Solutions</h3>
+                    <p class="text-grey-600 text-sm mb-4 text-center" data-i18n="navigation.waterManagement">Water management, sustainable drainage systems</p>
                     <div class="space-y-3">
                         <div class="text-center">
                             <p class="font-semibold text-grey-900">Dalton Marshall</p>
@@ -849,7 +1048,7 @@
                                 </svg>
                                 +44 (0)1422 839 456
                             </a>
-                            <a href="mailto:dalton.marshall@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <a href="mailto:dalton.marshall@rosehill-group.com" class="inline-flex items-center justify-center bg-rh-orange hover:bg-rh-orange-dark text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors" data-i18n="contact.emailDalton">
                                 Email Dalton
                             </a>
                         </div>
@@ -862,10 +1061,10 @@
     <!-- CTA Section -->
     <section class="bg-rh-orange py-20 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl lg:text-4xl font-light mb-6">
+            <h2 class="text-3xl lg:text-4xl font-light mb-6" data-i18n="contact.urgentSupport.title">
                 Need urgent technical support?
             </h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-xl mb-8 max-w-2xl mx-auto leading-relaxed" data-i18n="contact.urgentSupport.description">
                 Our 24-hour technical support service ensures you get the expert help you need, when you need it.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -873,10 +1072,10 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
-                    Call +44 (0)1422 839 610
+                    <span data-i18n="contact.urgentSupport.callButton">Call +44 (0)1422 839 610</span>
                 </a>
                 <a href="mailto:urgent@rosehill.group" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all inline-flex items-center justify-center" style="color: white; border-color: white; background-color: transparent; transform: translateY(0px);" onmouseover="this.style.backgroundColor='white'; this.style.color='#FF6B35'; this.style.transform='translateY(-4px)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; this.style.transform='translateY(0px)';">
-                    Emergency Email Support
+                    <span data-i18n="contact.urgentSupport.emailButton">Emergency Email Support</span>
                 </a>
             </div>
         </div>
@@ -895,38 +1094,38 @@
         <img src="rosehill_madeinuk.png" alt="Made in UK" class="h-32 mb-4">
     </picture>
                     </div>
-                    <p class="text-blue-100 text-sm leading-relaxed max-w-xs">
+                    <p class="text-blue-100 text-sm leading-relaxed max-w-xs" data-i18n="footer.madeInUK">
                         All Rosehill products are manufactured at our state-of-the-art facilities in Yorkshire using unique polyurethane chemistry, tailor-made for the toughest environments.
                     </p>
                 </div>
                 
                 <!-- About -->
                 <div>
-                    <h4 class="font-semibold text-lg mb-4">About</h4>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer.about">About</h4>
                     <ul class="space-y-2 text-blue-100">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Rosehill</a></li>
-                        <li><a href="projects.html" class="hover:text-white transition-colors">Our Projects</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
-                        <li><a href="products.html" class="hover:text-white transition-colors">All Products</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="footer.links.aboutRosehill">About Rosehill</a></li>
+                        <li><a href="projects.html" class="hover:text-white transition-colors" data-i18n="footer.links.ourProjects">Our Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors" data-i18n="footer.links.contactUs">Contact Us</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors" data-i18n="footer.links.allProducts">All Products</a></li>
                     </ul>
                 </div>
                 
                 <!-- Our Solutions -->
                 <div>
-                    <h4 class="font-semibold text-lg mb-4">Our Solutions</h4>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer.ourSolutions">Our Solutions</h4>
                     <ul class="space-y-2 text-blue-100">
-                        <li><a href="https://highways.rosehill.group/" class="hover:text-white transition-colors">Road Safety</a></li>
-                        <li><a href="https://rail.rosehill.group/" class="hover:text-white transition-colors">Rail Infrastructure</a></li>
-                        <li><a href="https://security.rosehill.group/" class="hover:text-white transition-colors">Defence & Security</a></li>
-                        <li><a href="https://energy.rosehill.group/" class="hover:text-white transition-colors">Energy & Subsea</a></li>
-                        <li><a href="https://tpv.rosehill.group/" class="hover:text-white transition-colors">Sports & Recreation</a></li>
-                        <li><a href="https://drainage.rosehill.group/" class="hover:text-white transition-colors">Drainage Solutions</a></li>
+                        <li><a href="https://highways.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.roadSafety">Road Safety</a></li>
+                        <li><a href="https://rail.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.railInfrastructure">Rail Infrastructure</a></li>
+                        <li><a href="https://security.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.defenceSecurity">Defence & Security</a></li>
+                        <li><a href="https://energy.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.energySubsea">Energy & Subsea</a></li>
+                        <li><a href="https://tpv.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.sportsRecreation">Sports & Recreation</a></li>
+                        <li><a href="https://drainage.rosehill.group/" class="hover:text-white transition-colors" data-i18n="navigation.drainageSolutions">Drainage Solutions</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contact -->
                 <div>
-                    <h4 class="font-semibold text-lg mb-4">Get in touch</h4>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer.getInTouch">Get in touch</h4>
                     <div class="space-y-3 text-blue-100">
                         <p class="flex items-start">
                             <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -977,18 +1176,18 @@
             <div class="border-t border-blue-800 pt-8">
                 <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center text-sm text-blue-100 space-y-4 lg:space-y-0">
                     <div class="flex flex-col space-y-2">
-                        <p>&copy; 2025 Rosehill Group. All rights reserved.</p>
+                        <p data-i18n="footer.copyright">&copy; 2025 Rosehill Group. All rights reserved.</p>
                         <div class="text-xs text-blue-200 space-y-1">
-                            <p>Rosehill Polymers Ltd | Company No: 02283308 | VAT No: GB516206181</p>
-                            <p>Registered Address: Rose Hill Mill, Beech Road, Sowerby Bridge, West Yorkshire, HX6 2JT, United Kingdom</p>
+                            <p data-i18n="footer.companyInfo.line1">Rosehill Polymers Ltd | Company No: 02283308 | VAT No: GB516206181</p>
+                            <p data-i18n="footer.companyInfo.line2">Registered Address: Rose Hill Mill, Beech Road, Sowerby Bridge, West Yorkshire, HX6 2JT, United Kingdom</p>
                         </div>
                     </div>
                     <div class="flex flex-wrap space-x-6 mt-4 lg:mt-0">
-                        <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
-                        <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
-                        <a href="#" id="cookie-settings-link" class="hover:text-white transition-colors">Cookie Settings</a>
-                        <a href="sitemap.html" class="hover:text-white transition-colors">Sitemap</a>
+                        <a href="privacy-policy.html" class="hover:text-white transition-colors" data-i18n="footer.links.privacyPolicy">Privacy Policy</a>
+                        <a href="terms-of-use.html" class="hover:text-white transition-colors" data-i18n="footer.links.termsOfUse">Terms of Use</a>
+                        <a href="cookie-policy.html" class="hover:text-white transition-colors" data-i18n="footer.links.cookiePolicy">Cookie Policy</a>
+                        <a href="#" id="cookie-settings-link" class="hover:text-white transition-colors" data-i18n="footer.links.cookieSettings">Cookie Settings</a>
+                        <a href="sitemap.html" class="hover:text-white transition-colors" data-i18n="footer.links.sitemap">Sitemap</a>
                     </div>
                 </div>
             </div>
@@ -1107,6 +1306,163 @@
             observer.observe(card);
         });
     </script>
+    
+    <!-- Initialize i18n -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const i18n = new RosehillI18n();
+            window.i18n = i18n;
+            
+            // Set up language switcher
+            const langSwitcherBtn = document.querySelector('.language-switcher-btn');
+            const langSwitcherDropdown = document.querySelector('.language-switcher-dropdown');
+            const langOptions = document.querySelectorAll('.language-option');
+            const currentLangSpan = document.querySelector('.current-language');
+            
+            if (langSwitcherBtn && langSwitcherDropdown) {
+                // Toggle dropdown
+                langSwitcherBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    const isExpanded = langSwitcherBtn.getAttribute('aria-expanded') === 'true';
+                    langSwitcherBtn.setAttribute('aria-expanded', !isExpanded);
+                    langSwitcherDropdown.classList.toggle('show');
+                    
+                    // Force inline styles as fallback
+                    if (langSwitcherDropdown.classList.contains('show')) {
+                        langSwitcherDropdown.style.cssText = 'opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; display: block !important; position: absolute !important; top: 100% !important; right: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #d1d5db !important; border-radius: 8px !important; box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; min-width: 160px !important; margin-top: 4px !important;';
+                    } else {
+                        langSwitcherDropdown.style.cssText = 'opacity: 0 !important; visibility: hidden !important; transform: translateY(-10px) !important; position: absolute !important; top: 100% !important; right: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #d1d5db !important; border-radius: 8px !important; box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; min-width: 160px !important; margin-top: 4px !important;';
+                    }
+                });
+                
+                // Handle language selection
+                langOptions.forEach(option => {
+                    option.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        const lang = this.getAttribute('data-language');
+                        i18n.setLanguage(lang);
+                        
+                        // Update current language display
+                        currentLangSpan.textContent = this.textContent;
+                        
+                        // Close dropdown
+                        langSwitcherBtn.setAttribute('aria-expanded', 'false');
+                        langSwitcherDropdown.classList.remove('show');
+                        langSwitcherDropdown.style.opacity = '0';
+                        langSwitcherDropdown.style.visibility = 'hidden';
+                    });
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function() {
+                    langSwitcherBtn.setAttribute('aria-expanded', 'false');
+                    langSwitcherDropdown.classList.remove('show');
+                    langSwitcherDropdown.style.opacity = '0';
+                    langSwitcherDropdown.style.visibility = 'hidden';
+                });
+            }
+            
+            // Mobile Language Switcher functionality - Set up after i18n is ready
+            const mobileLangBtn = document.querySelector('.mobile-language-btn');
+            const mobileLangDropdown = document.querySelector('.mobile-language-dropdown');
+            const mobileLangOptions = document.querySelectorAll('.mobile-language-option');
+            const mobileCurrentLang = document.querySelector('.mobile-current-language');
+            
+            if (mobileLangBtn && mobileLangDropdown) {
+                // Toggle mobile language dropdown
+                mobileLangBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    
+                    const isExpanded = mobileLangBtn.getAttribute('aria-expanded') === 'true';
+                    mobileLangBtn.setAttribute('aria-expanded', !isExpanded);
+                    mobileLangDropdown.classList.toggle('show');
+                });
+                
+                // Handle mobile language selection
+                mobileLangOptions.forEach(option => {
+                    option.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        const lang = this.getAttribute('data-language');
+                        i18n.setLanguage(lang);
+                        
+                        // Update mobile current language display
+                        if (mobileCurrentLang) {
+                            mobileCurrentLang.textContent = this.textContent;
+                        }
+                        
+                        // Update active state for mobile options
+                        mobileLangOptions.forEach(option => {
+                            option.classList.remove('active');
+                            if (option.getAttribute('data-language') === lang) {
+                                option.classList.add('active');
+                            }
+                        });
+                        
+                        // Close mobile dropdown
+                        mobileLangDropdown.classList.remove('show');
+                        mobileLangBtn.setAttribute('aria-expanded', 'false');
+                        
+                        // Close mobile menu after language selection
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        const mobileToggle = document.getElementById('mobile-toggle');
+                        if (mobileMenu && mobileToggle) {
+                            mobileMenu.classList.remove('active');
+                            mobileToggle.classList.remove('active');
+                        }
+                    });
+                });
+                
+                // Close mobile language dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileLangBtn.contains(event.target) && !mobileLangDropdown.contains(event.target)) {
+                        mobileLangDropdown.classList.remove('show');
+                        mobileLangBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Update mobile language display on initialization
+                if (mobileCurrentLang && i18n.currentLanguage) {
+                    const languageMap = {
+                        'en': '🇬🇧 English',
+                        'fr': '🇫🇷 Français',
+                        'es': '🇪🇸 Español',
+                        'ar': '🇸🇦 العربية'
+                    };
+                    mobileCurrentLang.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
+                    
+                    // Update active state for mobile options
+                    mobileLangOptions.forEach(option => {
+                        option.classList.remove('active');
+                        if (option.getAttribute('data-language') === i18n.currentLanguage) {
+                            option.classList.add('active');
+                        }
+                    });
+                }
+            }
+            
+            // Initialize i18n and update language display on load
+            await i18n.init();
+            
+            // Update current language display after initialization
+            if (currentLangSpan && i18n.currentLanguage) {
+                const languageMap = {
+                    'en': '🇬🇧 English',
+                    'fr': '🇫🇷 Français',
+                    'es': '🇪🇸 Español',
+                    'ar': '🇸🇦 العربية'
+                };
+                currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
+            }
+        });
+    </script>
+    
     <!-- Cookie Consent -->
     <script src="cookie-consent.js"></script>
 </body>

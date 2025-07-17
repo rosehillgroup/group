@@ -1,0 +1,806 @@
+{
+  "meta": {
+    "lang": "fr",
+    "dir": "ltr",
+    "name": "French",
+    "nativeName": "Français",
+    "flag": "🇫🇷"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "solutions": "Solutions",
+    "products": "Produits",
+    "projects": "Projets",
+    "contact": "Contact",
+    "getQuote": "Obtenir un devis",
+    "search": "Recherche",
+    "menu": "Menu",
+    "solutionsBySector": "Solutions par Secteur",
+    "viewAll": "Voir tout",
+    "roadSafety": "Sécurité Routière",
+    "trafficManagement": "Systèmes de gestion du trafic",
+    "railInfrastructure": "Infrastructure Ferroviaire",
+    "railwaySystems": "Systèmes ferroviaires et sécurité",
+    "defenceSecurity": "Défense et Sécurité",
+    "hvmBallistic": "Protection HVM et balistique",
+    "energySubsea": "Énergie et Sous-Marine",
+    "marineOffshore": "Solutions marines et offshore",
+    "sportsRecreation": "Sports et Loisirs",
+    "rubberSurfacing": "Solutions de revêtement en caoutchouc",
+    "drainageSolutions": "Solutions de Drainage",
+    "waterManagement": "Systèmes de gestion de l'eau",
+    "completeProductRange": "Gamme Complète de Produits",
+    "projects": "Projets",
+    "contact": "Contact",
+    "getQuote": "Obtenir un Devis",
+    "roadSafetySolutions": "Solutions de Sécurité Routière",
+    "cycleLaneDefenders": "Défenseurs de Pistes Cyclables",
+    "ncldLite": "NCLD Lite",
+    "laneSeparators": "Séparateurs de Voies",
+    "trafficIslands": "Îlots de Circulation",
+    "railInfrastructureProducts": "Infrastructure Ferroviaire",
+    "connectSystem": "Système Connect",
+    "defenceSecurityProducts": "Défense et Sécurité",
+    "rapidDefender": "Rapid Defender",
+    "energySubseaProducts": "Énergie et Sous-Marine",
+    "railSafetyAccess": "Sécurité et Accès Ferroviaires",
+    "sportsRecreationProducts": "Sports et Loisirs",
+    "drainageSolutionsProducts": "Solutions de Drainage",
+    "troughStackerSystem": "Système Trough & Stacker",
+    "browseProductCatalog": "Parcourir le Catalogue de Produits",
+    "pedestrianRefuges": "Refuges pour Piétons",
+    "speedCushions": "Coussins de Vitesse",
+    "chicanes": "Chicanes",
+    "raisedTablesZebraCrossings": "Tables Surélevées et Passages Piétons",
+    "speedCalmers": "Ralentisseurs de Vitesse",
+    "baseplatedSystem": "Système à Plaque de Base",
+    "linkSystem": "Système Link",
+    "interlockingSystem": "Système d'Emboîtement",
+    "impaktDefender": "Impakt Defender",
+    "ballisticBlocks": "Blocs Balistiques",
+    "ballisticTiles": "Tuiles Balistiques",
+    "castablePolyurethanes": "Polyuréthanes Coulables",
+    "cableProtection": "Protection de Câbles",
+    "titanHeavyDutyCrossing": "Passage Lourd Titan",
+    "antiTrespassPanels": "Panneaux Anti-Intrusion",
+    "walkwayPanels": "Panneaux de Passerelle",
+    "edgeBeams": "Poutres de Bordure",
+    "playgroundSurfaces": "Surfaces de Jeu",
+    "multiUseGamesAreas": "Aires de Jeux Multi-Usages",
+    "runningTracks": "Pistes de Course",
+    "sportsPitches": "Terrains de Sport",
+    "footpaths": "Sentiers Piétonniers",
+    "splashParks": "Parcs Aquatiques",
+    "poolSurrounds": "Contours de Piscine",
+    "turfInfill": "Remplissage de Gazon",
+    "flexilonBinders": "Liants Flexilon",
+    "drainageMats": "Tapis de Drainage"
+  },
+  "hero": {
+    "title": "Ingénierie d'infrastructure plus sûre pour des communautés durables",
+    "subtitle": "Faisant confiance aux autorités routières, aux opérateurs ferroviaires et aux entrepreneurs du monde entier pour offrir des performances durables et des coûts de cycle de vie réduits.",
+    "cta": "Parcourir les Produits",
+    "ctaSecondary": "Commencer Votre Projet",
+    "badges": {
+      "ukManufactured": "Fabriqué au Royaume-Uni",
+      "sustainable": "Durable",
+      "since1988": "Depuis 1988"
+    }
+  },
+  "sectors": {
+    "title": "Solutions d'Infrastructure par Secteur",
+    "subtitle": "Solutions complètes conçues pour la sécurité, la durabilité et les performances dans divers secteurs d'infrastructure.",
+    "roadSafety": {
+      "title": "Sécurité Routière",
+      "description": "Systèmes de gestion du trafic qui protègent les cyclistes, les piétons et les conducteurs. Des défenseurs de pistes cyclables aux solutions de gestion de vitesse.",
+      "cta": "Voir les produits"
+    },
+    "railInfrastructure": {
+      "title": "Infrastructure Ferroviaire",
+      "description": "Solutions de passages à niveau, systèmes de sécurité des quais et panneaux anti-intrusion conçus pour l'environnement ferroviaire exigeant.",
+      "cta": "Voir les produits"
+    },
+    "defenceSecurity": {
+      "title": "Défense et Sécurité",
+      "description": "Systèmes modulaires de protection balistique et d'atténuation des véhicules hostiles. Développés pour des environnements à haut risque où la vitesse, la flexibilité et la fiabilité sont essentielles.",
+      "cta": "Voir les produits"
+    },
+    "energySubsea": {
+      "title": "Énergie et Sous-Marine",
+      "description": "Solutions marines et offshore spécialisées conçues pour des environnements extrêmes, soutenant les projets d'énergie renouvelable et l'infrastructure sous-marine mondiale.",
+      "cta": "Voir les produits"
+    },
+    "sportsRecreation": {
+      "title": "Sports et Loisirs",
+      "description": "Solutions innovantes de surfaces sportives et d'aires de jeux qui privilégient la sécurité, les performances et la durabilité environnementale.",
+      "cta": "Voir les produits"
+    },
+    "drainageSolutions": {
+      "title": "Solutions de Drainage",
+      "description": "Systèmes de drainage durables et solutions de gestion de l'eau conçus pour gérer les événements météorologiques extrêmes et les défis d'inondation urbaine.",
+      "cta": "Voir les produits"
+    }
+  },
+  "caseStudies": {
+    "title": "Histoires de Succès de Projets Récents",
+    "subtitle": "Solutions d'infrastructure du monde réel offrant des résultats mesurables dans divers secteurs et environnements difficiles.",
+    "readMore": "En savoir plus",
+    "viewAll": "Voir tous les projets",
+    "case1": {
+      "title": "Projet de Sécurité Cycliste Northern Blvd",
+      "description": "Voie cyclable protégée utilisant des défenseurs de voie cyclable étroits et des séparateurs de voie. Élimination à 100% des incursions de véhicules dans les pistes cyclables.",
+      "client": "Client: Département des Transports de NYC"
+    },
+    "case2": {
+      "title": "Amélioration de la Sécurité du Réseau Ferroviaire Metrolinx",
+      "description": "7 656 panneaux anti-intrusion installés sur le réseau ferroviaire du Canada pour réduire l'accès non autorisé et améliorer la sécurité des navetteurs et des résidents.",
+      "client": "Client: Metrolinx"
+    },
+    "case3": {
+      "title": "Zone d'Aventure Butlins SKYPARK",
+      "description": "Terrain de jeu exaltant avec tours d'escalade, tunnels complexes, toboggans et la plus longue balançoire interactive du Royaume-Uni avec éclairage LED vibrant.",
+      "client": "Client: Butlins Resorts"
+    }
+  },
+  "contact": {
+    "title": "Obtenez des Conseils d'Experts en Solutions d'Infrastructure",
+    "subtitle": "Nos spécialistes techniques sont là pour vous aider avec la sélection de produits, les spécifications et les exigences de projet. Contactez notre équipe ou connectez-vous directement avec les experts sectoriels.",
+    "support24hr": "Support Technique 24h",
+    "expertConsultation": "Consultation d'Expert",
+    "projectGuidance": "Guidance de Projet",
+    "cta": "Nous Contacter",
+    "ctaSecondary": "Voir Tous les Produits",
+    "headOffice": "Siège Social",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "officeHours": "Heures d'Ouverture",
+    "weekdays": "Lundi - Vendredi : 8h00 - 17h00",
+    "weekends": "Samedi - Dimanche : Fermé",
+    "technicalSupport": "Support technique 24h/24 disponible",
+    "speakToSpecialists": "Parlez à nos spécialistes sectoriels",
+    "speakToSpecialistsSubtitle": "Obtenez un accès direct à nos experts techniques qui comprennent les défis spécifiques et les exigences de votre secteur d'activité.",
+    "form": {
+      "title": "Envoyez-nous votre demande",
+      "name": "Votre nom",
+      "company": "Entreprise",
+      "email": "Email",
+      "phone": "Téléphone",
+      "sector": "Secteur du projet",
+      "message": "Détails du projet",
+      "consent": "J'accepte que Rosehill Group traite mes données conformément à la",
+      "privacyPolicy": "Politique de Confidentialité",
+      "submit": "Envoyer la demande",
+      "namePlaceholder": "Jean Dupont",
+      "companyPlaceholder": "ABC Construction Ltd",
+      "emailPlaceholder": "jean@example.com",
+      "phonePlaceholder": "+33 1 23 45 67 89",
+      "messagePlaceholder": "Parlez-nous de vos exigences de projet, spécifications ou questions techniques...",
+      "sectors": {
+        "select": "Sélectionner le secteur",
+        "highways": "Sécurité Routière / Autoroutes",
+        "rail": "Infrastructure Ferroviaire",
+        "defence": "Défense et Sécurité",
+        "energy": "Énergie et Sous-Marine",
+        "sports": "Sports et Loisirs",
+        "drainage": "Solutions de Drainage",
+        "general": "Demande Générale"
+      }
+    },
+    "businessDevelopmentManager": "Responsable du Développement Commercial",
+    "emailClare": "Envoyer un email à Clare",
+    "emailDaniel": "Envoyer un email à Daniel",
+    "emailDan": "Envoyer un email à Dan",
+    "emailNadeem": "Envoyer un email à Nadeem",
+    "emailJosh": "Envoyer un email à Josh",
+    "emailDalton": "Envoyer un email à Dalton",
+    "urgentSupport": {
+      "title": "Besoin d'un support technique urgent?",
+      "description": "Notre service de support technique 24h/24 vous garantit l'aide d'experts dont vous avez besoin, quand vous en avez besoin.",
+      "callButton": "Appeler +44 (0)1422 839 610",
+      "emailButton": "Support Email d'Urgence"
+    }
+  },
+  "popularProducts": {
+    "title": "Produits Populaires",
+    "subtitle": "Les plus spécifiés par les professionnels de l'infrastructure",
+    "viewAll": "Voir tous les produits",
+    "cycleLaneDefenders": "Défenseurs de Pistes Cyclables",
+    "cycleLaneDefendersDesc": "Unités de ségrégation montées en surface robustes offrant une séparation sécurisée entre les véhicules et les cyclistes.",
+    "viewSpecs": "Voir les spécifications →",
+    "connectSystem": "Système Connect",
+    "connectSystemDesc": "Système de passage à niveau ferroviaire fabriqué à partir de pneus de voiture recyclés pour une sécurité renforcée de l'infrastructure ferroviaire.",
+    "rapidDefender": "Rapid Defender",
+    "rapidDefenderDesc": "Système d'atténuation des véhicules hostiles fabriqué à partir de pneus de voiture recyclés pour les applications de défense.",
+    "troughStacker": "Système Trough & Stacker",
+    "troughStackerDesc": "Système de drainage fabriqué à partir de caoutchouc recyclé pour une gestion efficace de l'eau."
+  },
+  "evidenceStrip": {
+    "yearsOfInnovation": "Années d'Innovation",
+    "productsInstalled": "Produits Installés",
+    "certifiedQuality": "Qualité Certifiée",
+    "countriesWorldwide": "Pays dans le Monde"
+  },
+  "footer": {
+    "madeInUK": "Tous les produits Rosehill sont fabriqués dans nos installations de pointe dans le Yorkshire en utilisant une chimie polyuréthane unique, conçue sur mesure pour les environnements les plus difficiles.",
+    "about": "À propos",
+    "ourSolutions": "Nos Solutions",
+    "getInTouch": "Nous contacter",
+    "followUs": "Suivez-nous",
+    "links": {
+      "aboutRosehill": "À propos de Rosehill",
+      "ourProjects": "Nos Projets",
+      "contactUs": "Nous Contacter",
+      "allProducts": "Tous les Produits",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfUse": "Conditions d'Utilisation",
+      "cookiePolicy": "Politique des Cookies",
+      "cookieSettings": "Paramètres des Cookies",
+      "sitemap": "Plan du Site"
+    },
+    "copyright": "© 2025 Rosehill Group. Tous droits réservés.",
+    "companyInfo": {
+      "line1": "Rosehill Polymers Ltd | N° de société : 02283308 | N° TVA : GB516206181",
+      "line2": "Adresse enregistrée : Rose Hill Mill, Beech Road, Sowerby Bridge, West Yorkshire, HX6 2JT, Royaume-Uni"
+    }
+  },
+  "search": {
+    "title": "Rechercher Rosehill",
+    "placeholder": "Rechercher des produits, solutions ou informations...",
+    "quickLinks": "Liens Rapides",
+    "close": "Fermer"
+  },
+  "cookies": {
+    "title": "Nous utilisons des cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation, fournir du contenu personnalisé et analyser notre trafic. En cliquant sur \"Accepter Tout\", vous consentez à notre utilisation des cookies.",
+    "acceptAll": "Accepter Tout",
+    "rejectAll": "Refuser Tout",
+    "managePreferences": "Gérer les Préférences",
+    "preferences": {
+      "title": "Préférences des Cookies",
+      "description": "Nous utilisons différents types de cookies pour optimiser votre expérience sur notre site web. Vous pouvez choisir quelles catégories vous souhaitez autoriser.",
+      "essential": {
+        "title": "Cookies Essentiels",
+        "description": "Ces cookies sont nécessaires au fonctionnement du site web et ne peuvent pas être désactivés. Ils ne sont généralement définis qu'en réponse à des actions que vous effectuez."
+      },
+      "analytics": {
+        "title": "Cookies d'Analyse",
+        "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et rapportant des informations de manière anonyme."
+      },
+      "marketing": {
+        "title": "Cookies Marketing",
+        "description": "Ces cookies peuvent être définis via notre site par nos partenaires publicitaires. Ils peuvent être utilisés par ces entreprises pour créer un profil de vos intérêts."
+      },
+      "functional": {
+        "title": "Cookies Fonctionnels",
+        "description": "Ces cookies permettent au site web de fournir des fonctionnalités améliorées et une personnalisation. Ils peuvent être définis par nous ou par des fournisseurs tiers."
+      },
+      "savePreferences": "Enregistrer les Préférences",
+      "acceptAllPreferences": "Accepter Tout"
+    }
+  },
+  "solutions": {
+    "hero": {
+      "title": "Solutions par Secteur",
+      "subtitle": "Découvrez notre gamme complète de solutions d'ingénierie dans six secteurs clés. Chaque division combine des décennies d'expertise avec des approches innovantes pour fournir des solutions d'infrastructure durable aux défis modernes.",
+      "experience": "30+ Années d'Expérience",
+      "productsInstalled": "500k+ Produits Installés",
+      "isoCertified": "Certifié ISO 9001"
+    },
+    "keyProducts": "Produits Clés :",
+    "getQuote": "Obtenir un Devis",
+    "roadSafety": {
+      "title": "Solutions de Sécurité Routière",
+      "division": "Division Autoroutes",
+      "description": "Systèmes montés en surface qui améliorent la sécurité routière pour tous les utilisateurs. Conçus pour une installation rapide et des performances à long terme, ils soutiennent des réseaux de transport plus sûrs et plus efficaces.",
+      "visitSite": "Visiter le Site Autoroutes"
+    },
+    "railInfrastructure": {
+      "title": "Infrastructure Ferroviaire",
+      "division": "Division Ferroviaire",
+      "description": "Composants robustes et peu d'entretien qui améliorent la sécurité sur le réseau ferroviaire, y compris les passages à niveau et les panneaux anti-intrusion conçus pour une longue durée de service.",
+      "visitSite": "Visiter le Site Ferroviaire"
+    },
+    "defenceSecurity": {
+      "title": "Défense et Sécurité",
+      "division": "Division Sécurité",
+      "description": "Systèmes modulaires de protection balistique et d'atténuation des véhicules hostiles. Développés pour des environnements à haut risque où la vitesse, la flexibilité et la fiabilité sont essentielles.",
+      "visitSite": "Visiter le Site Sécurité"
+    },
+    "energySubsea": {
+      "title": "Énergie et Sous-marine",
+      "division": "Division Énergie",
+      "description": "Solutions marines et offshore spécialisées conçues pour des environnements extrêmes, soutenant les projets d'énergie renouvelable et l'infrastructure sous-marine mondiale.",
+      "visitSite": "Visiter le Site Énergie",
+      "staticBendStiffeners": "Raidisseurs de Courbure Statiques",
+      "thermalInsulation": "Isolation Thermique",
+      "generalMouldings": "Moulages Généraux",
+      "flexilon3060": "Flexilon 3060",
+      "flexilon3173": "Flexilon 3173",
+      "flexilon3604": "Flexilon 3604"
+    },
+    "sportsRecreation": {
+      "title": "Sports et Loisirs",
+      "division": "Division TPV",
+      "description": "Revêtements durables et absorbant les chocs pour les aires de jeu publiques et les installations sportives, offrant une sécurité durable et une stabilité des couleurs résistant à une utilisation intensive et aux intempéries.",
+      "visitSite": "Visiter le Site Sports",
+      "tpvRubberGranules": "Granules de Caoutchouc TPV"
+    },
+    "drainageSolutions": {
+      "title": "Solutions de Drainage",
+      "division": "Division Drainage",
+      "description": "Systèmes de gestion de l'eau durables qui combinent des performances de drainage efficaces avec les principes de l'économie circulaire pour les projets d'infrastructure modernes.",
+      "visitSite": "Visiter le Site Drainage"
+    },
+    "whyChoose": {
+      "title": "Pourquoi Choisir Rosehill Group ?",
+      "description": "Avec plus de trois décennies d'excellence en ingénierie, nous offrons des solutions innovantes dans plusieurs secteurs avec un engagement envers la durabilité et la performance.",
+      "multiSector": {
+        "title": "Expertise Multi-Secteurs",
+        "description": "Solutions complètes dans six secteurs d'infrastructure clés"
+      },
+      "sustainableInnovation": {
+        "title": "Innovation Durable",
+        "description": "Principes de l'économie circulaire intégrés dans tout développement de produits"
+      },
+      "qualityCertified": {
+        "title": "Qualité Certifiée",
+        "description": "Certifié ISO 9001 avec des processus de test et validation rigoureux"
+      },
+      "provenPerformance": {
+        "title": "Performance Prouvée",
+        "description": "500 000+ produits installés dans le monde avec 30+ années d'expérience"
+      }
+    },
+    "cta": {
+      "title": "Prêt à Commencer Votre Projet ?",
+      "description": "Connectez-vous avec nos experts techniques pour discuter de vos exigences spécifiques. Nous vous aiderons à trouver la bonne solution pour vos défis d'infrastructure.",
+      "getConsultation": "Obtenir une Consultation d'Expert",
+      "viewCaseStudies": "Voir les Études de Cas"
+    }
+  },
+  "about": {
+    "breadcrumb": "À propos de Rosehill",
+    "hero": {
+      "title": "Façonner un avenir durable par l'innovation",
+      "subtitle": "Depuis plus de trois décennies, Rosehill a ouvert la voie en créant des produits d'infrastructure innovants qui rendent notre monde plus sûr, plus durable et plus efficace."
+    },
+    "ourStory": {
+      "title": "Excellence d'ingénierie depuis 1988",
+      "paragraph1": "Les défis d'infrastructure du monde moderne nécessitent des solutions qui offrent à la fois performance et responsabilité environnementale. Opérant depuis notre siège britannique à Sowerby Bridge, nous nous sommes établis comme un leader mondial des solutions d'infrastructure d'ingénierie.",
+      "paragraph2": "Des systèmes de sécurité routière et des produits ferroviaires au drainage modulaire et aux surfaces récréatives, nos produits sont approuvés dans le monde entier. En fabriquant nos propres liants polyuréthane et en contrôlant l'ensemble du processus de production, nous garantissons une qualité exceptionnelle sur toute notre gamme de produits."
+    },
+    "circularEconomy": {
+      "title": "Engagé dans l'économie circulaire",
+      "description": "Notre engagement envers l'économie circulaire guide tout ce que nous faisons. Grâce à des processus de fabrication innovants, nous transformons les matériaux recyclés en produits d'infrastructure haute performance qui répondent aux normes industrielles rigoureuses.",
+      "recycledMaterials": {
+        "title": "Matériaux recyclés",
+        "description": "Transformer les déchets en solutions d'infrastructure haute performance"
+      },
+      "rigorousStandards": {
+        "title": "Normes rigoureuses",
+        "description": "Respecter et dépasser les exigences de certification industrielle"
+      },
+      "globalImpact": {
+        "title": "Impact mondial",
+        "description": "Créer des solutions d'infrastructure durable dans le monde entier"
+      }
+    },
+    "divisions": {
+      "title": "Nos divisions spécialisées",
+      "description": "Chaque division livre des solutions sur mesure qui répondent aux demandes uniques de son marché respectif, exemplifiant l'excellence d'ingénierie britannique.",
+      "roadSafety": {
+        "title": "Solutions de sécurité routière",
+        "description": "Systèmes montés en surface qui améliorent la sécurité routière pour tous les utilisateurs. Conçus pour une installation rapide et des performances à long terme, ils soutiennent des réseaux de transport plus sûrs et plus efficaces."
+      },
+      "railInfrastructure": {
+        "title": "Infrastructure ferroviaire",
+        "description": "Composants robustes et peu d'entretien qui améliorent la sécurité sur le réseau ferroviaire, y compris les passages à niveau et les panneaux anti-intrusion conçus pour une longue durée de service."
+      },
+      "defenceSecurity": {
+        "title": "Défense et sécurité",
+        "description": "Systèmes modulaires de protection balistique et d'atténuation des véhicules hostiles. Développés pour des environnements à haut risque où la vitesse, la flexibilité et la fiabilité sont essentielles."
+      },
+      "energySubsea": {
+        "title": "Énergie et sous-marine",
+        "description": "Solutions marines et offshore spécialisées conçues pour des environnements extrêmes, soutenant les projets d'énergie renouvelable et l'infrastructure sous-marine mondiale."
+      },
+      "sportsRecreation": {
+        "title": "Sports et loisirs",
+        "description": "Revêtement durable et absorbant les impacts pour les aires de jeux publiques et les installations sportives, offrant une sécurité durable et une stabilité de couleur qui résiste à une utilisation intensive et aux intempéries."
+      },
+      "drainageSolutions": {
+        "title": "Solutions de drainage",
+        "description": "Systèmes de gestion de l'eau durables qui combinent performance de drainage efficace avec les principes de l'économie circulaire pour les projets d'infrastructure modernes."
+      }
+    },
+    "whyChoose": {
+      "title": "Pourquoi choisir Rosehill ?",
+      "description": "De la création de routes et de réseaux ferroviaires plus sûrs à la protection du personnel militaire et l'amélioration des terrains de jeux, Rosehill s'engage à fournir des solutions innovantes qui combinent qualité, durabilité et fiabilité.",
+      "experience": {
+        "title": "Années d'expérience",
+        "description": "Trois décennies d'innovation polymère et d'expertise en infrastructure"
+      },
+      "globalReach": {
+        "title": "Portée mondiale",
+        "description": "Approuvé dans le monde entier par les professionnels de l'infrastructure et les entrepreneurs"
+      },
+      "qualityAssured": {
+        "title": "Qualité assurée",
+        "description": "Le contrôle de fabrication garantit une qualité exceptionnelle sur toute notre gamme"
+      }
+    },
+    "futureFocus": {
+      "title": "Façonner l'infrastructure de demain",
+      "description": "Alors que nous continuons à étendre notre présence mondiale, nous restons concentrés sur le développement de solutions de nouvelle génération qui répondent aux défis d'infrastructure de demain. Partenaire avec Rosehill, et aidez à façonner l'avenir de l'infrastructure durable.",
+      "partnerButton": "Partenaire avec nous",
+      "exploreButton": "Explorer les solutions"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "viewAll": "Voir Tout",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer",
+    "exploreSolutions": "Explorer les Solutions"
+  },
+  "products": {
+    "hero": {
+      "title": "Gamme Complète de Produits",
+      "subtitle": "Découvrez notre portefeuille complet de produits d'infrastructure dans six secteurs clés. De la conception à l'installation, nous fournissons des solutions d'ingénierie qui répondent aux exigences de votre projet.",
+      "productsCount": "30+ Produits",
+      "sectorsCount": "6 Secteurs",
+      "documentation": "Documentation Technique"
+    },
+    "search": {
+      "placeholder": "Rechercher des produits..."
+    },
+    "filters": {
+      "all": "Tous les Produits",
+      "roadSafety": "Sécurité Routière",
+      "rail": "Ferroviaire",
+      "defence": "Défense",
+      "energy": "Énergie",
+      "surfacing": "Revêtement",
+      "drainage": "Drainage"
+    },
+    "learnMore": "En Savoir Plus",
+    "cycleLaneDefenders": {
+      "description": "Système de ségrégation de pistes cyclables en caoutchouc recyclé pour une sécurité routière améliorée et une protection des cyclistes."
+    },
+    "ncldLite": {
+      "description": "Système léger de défenseur de pistes cyclables offrant une protection rentable pour les pistes cyclables."
+    },
+    "laneSeparators": {
+      "description": "Systèmes de séparation de voies flexibles qui fournissent une démarcation routière claire et un meilleur flux de circulation."
+    },
+    "trafficIslands": {
+      "description": "Systèmes d'îlots de circulation modulaires pour la sécurité des piétons et la gestion du trafic."
+    },
+    "pedestrianRefuges": {
+      "description": "Points de traversée sûrs qui protègent les piétons et améliorent la sécurité routière."
+    },
+    "speedCushions": {
+      "description": "Ralentissement efficace du trafic avec des coûts d'installation réduits et une perturbation minimale de la route."
+    },
+    "chicanes": {
+      "description": "Systèmes de chicanes de ralentissement pour les zones résidentielles et urbaines."
+    },
+    "raisedTablesZebraCrossings": {
+      "description": "Solutions de traversée surélevées qui privilégient la sécurité et l'accessibilité des piétons."
+    },
+    "speedCalmers": {
+      "description": "Solutions complètes de gestion de vitesse pour des environnements routiers plus sûrs."
+    },
+    "connectSystem": {
+      "description": "Système de traversée ferroviaire modulaire conçu pour un trafic lourd et des croisements à angle aigu."
+    },
+    "baseplatedSystem": {
+      "description": "Panneaux de traversée en caoutchouc polyvalents pour un déploiement rapide conçu."
+    },
+    "linkSystem": {
+      "description": "Système de traversée ferroviaire de liaison flexible pour des configurations de voies complexes."
+    },
+    "interlockingSystem": {
+      "description": "Système modulaire haute résistance qui peut être installé indépendamment de l'espacement des traverses."
+    },
+    "titanHeavyDutyCrossing": {
+      "description": "Système de traversée ultra-robuste pour les environnements industriels lourds."
+    },
+    "antiTrespassPanels": {
+      "description": "Système de sécurité conçu pour empêcher l'accès non autorisé aux infrastructures ferroviaires."
+    },
+    "walkwayPanels": {
+      "description": "Système de passerelle surélevée sûre pour la maintenance et l'accès ferroviaires."
+    },
+    "edgeBeams": {
+      "description": "Protection de bord durable pour les quais ferroviaires et les infrastructures."
+    },
+    "rapidDefender": {
+      "description": "Système de barrière de sécurité véhiculaire à déploiement rapide pour les environnements à haut risque."
+    },
+    "impaktDefender": {
+      "description": "Système modulaire d'atténuation des véhicules hostiles pour une sécurité périmétrique renforcée."
+    },
+    "ballisticBlocks": {
+      "description": "Blocs de protection balistique pour les applications défensives et les installations sécurisées."
+    },
+    "ballisticTiles": {
+      "description": "Tuiles balistiques légères pour des systèmes de protection flexibles."
+    },
+    "castablePolyurethanes": {
+      "description": "Systèmes polyuréthane haute performance pour les applications marines et offshore."
+    },
+    "cableProtection": {
+      "description": "Solutions de protection de câbles durables pour les infrastructures sous-marines et énergétiques."
+    },
+    "playgroundSurfaces": {
+      "description": "Surfaces sûres et absorbant les impacts pour les aires de jeux et récréatives."
+    },
+    "multiUseGamesAreas": {
+      "description": "Systèmes de surface multi-sport pour les installations communautaires et récréatives."
+    },
+    "runningTracks": {
+      "description": "Surfaces de piste de course professionnelles pour l'athlétisme et l'usage récréatif."
+    },
+    "sportsPitches": {
+      "description": "Systèmes de gazon artificiel durables pour les terrains et terrains de sport."
+    },
+    "footpaths": {
+      "description": "Surfaces de chemin antidérapantes pour les zones piétonnes et les allées."
+    },
+    "splashParks": {
+      "description": "Surfaces de terrain de jeu résistantes à l'eau pour les parcs aquatiques et les zones aquatiques."
+    },
+    "poolSurrounds": {
+      "description": "Solutions de surface antidérapantes pour les zones de piscine et les installations aquatiques."
+    },
+    "turfInfill": {
+      "description": "Matériaux de remplissage écologiques pour le gazon artificiel et les surfaces sportives."
+    },
+    "flexilonBinders": {
+      "description": "Systèmes de liant haute performance pour les surfaces sportives et récréatives."
+    },
+    "troughStackerSystem": {
+      "description": "Système de drainage modulaire pour une gestion efficace de l'eau et le contrôle des inondations."
+    },
+    "drainageMats": {
+      "description": "Tapis de drainage perméables pour des solutions de gestion durable de l'eau."
+    },
+    "cta": {
+      "title": "Besoin d'un Support Technique ?",
+      "description": "Notre équipe technique fournit un soutien complet depuis la sélection de produits jusqu'aux conseils d'installation et à la maintenance continue.",
+      "requestInfo": "Demander des Informations Techniques",
+      "speakExpert": "Parler à un Expert"
+    },
+    "noResults": {
+      "title": "Aucun produit trouvé",
+      "description": "Essayez d'ajuster vos termes de recherche ou de sélectionner une catégorie différente."
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "Histoires de Succès de Projets Réels",
+      "subtitle": "Performance prouvée dans les projets d'infrastructure autoroutière, ferroviaire, sportive et de drainage à travers le monde."
+    },
+    "nav": {
+      "surfacing": "Revêtement",
+      "highways": "Autoroutes",
+      "rail": "Ferroviaire",
+      "drainage": "Drainage"
+    },
+    "sections": {
+      "sports": {
+        "title": "Sports et Loisirs",
+        "subtitle": "Surfaces récréatives haute performance combinant sécurité, durabilité et responsabilité environnementale."
+      },
+      "highways": {
+        "title": "Autoroutes et Transport",
+        "subtitle": "Solutions avancées de gestion du trafic offrant des améliorations de sécurité mesurables et une efficacité opérationnelle."
+      },
+      "rail": {
+        "title": "Rail et Infrastructure",
+        "subtitle": "Systèmes de sécurité ferroviaire critiques et protection d'infrastructure offrant des performances sans incident."
+      },
+      "drainage": {
+        "title": "Solutions de Drainage",
+        "subtitle": "Systèmes innovants de gestion de l'eau soutenant l'infrastructure durable et la protection environnementale."
+      }
+    },
+    "tags": {
+      "sports": "SPORTS",
+      "playground": "AIRE DE JEUX",
+      "highways": "AUTOROUTES",
+      "rail": "FERROVIAIRE",
+      "drainage": "DRAINAGE"
+    },
+    "common": {
+      "readMore": "Lire l'étude de cas complète →",
+      "showLess": "Afficher moins ↑"
+    },
+    "butlins": {
+      "title": "Butlins Skegness SKYPARK",
+      "description": "SKYPARK est un projet à couper le souffle sur la côte est pittoresque de l'Angleterre, offrant une aire de jeux exaltante accessible à tous les enfants avec des tours d'escalade imposantes, des tunnels complexes, des toboggans et la plus longue balançoire interactive du Royaume-Uni.",
+      "client": "Client: Butlins Resorts",
+      "stats": {
+        "surfaceArea": "Surface",
+        "colourZones": "Zones de Couleur",
+        "annualVisitors": "Visiteurs Annuels"
+      },
+      "challenge": {
+        "title": "Défi de Conception Créative",
+        "description1": "Butlins nécessitait une surface de jeu vibrante et engageante capable de résister à une utilisation intensive par des milliers d'enfants pendant les périodes de vacances de pointe. Notre système de granules TPV a été personnalisé avec 12 zones de couleur distinctes, créant des zones thématiques dans toute l'aire de jeux d'aventure.",
+        "description2": "L'installation a incorporé des zones de hauteur de chute critiques autour des équipements d'escalade, avec des profondeurs variables de revêtement de sécurité pour répondre aux normes EN 1177. Une attention particulière a été portée aux exigences de drainage et d'accessibilité pour les utilisateurs de fauteuils roulants."
+      },
+      "performance": {
+        "title": "Performance et Sécurité",
+        "description": "La surface a performé exceptionnellement à travers deux saisons complètes, maintenant ses couleurs vibrantes et ses propriétés de sécurité malgré une utilisation constante. Les tests de sécurité indépendants confirment la conformité continue avec toutes les normes de sécurité des aires de jeux."
+      },
+      "quote": {
+        "text": "SKYPARK à Butlins Skegness est une aire de jeux exaltante accessible à tous les enfants, avec des tours d'escalade imposantes, des tunnels complexes, des toboggans et la plus longue balançoire interactive du Royaume-Uni. L'aire de jeux se transforme avec des LED vibrantes au coucher du soleil, garantissant que le plaisir continue bien dans la nuit.",
+        "attribution": "— Projet livré par Abacus Playgrounds utilisant les mélanges Rosehill TPV®"
+      }
+    },
+    "moko": {
+      "title": "Aire de Jeux d'Aventure MOKO Park",
+      "description": "Grande installation d'aire de jeux d'aventure au centre commercial MOKO de Hong Kong, avec des cadres d'escalade et des plateformes d'équilibre renforcés TPV® avec des éléments de design culturel inspirés des marchés aux fleurs et aux oiseaux à proximité.",
+      "client": "Client: Centre Commercial MOKO",
+      "stats": {
+        "sqFeetArea": "Superficie en Pieds Carrés",
+        "reinforced": "Renforcé",
+        "design": "Design"
+      }
+    },
+    "nyc": {
+      "title": "Projet de Sécurité Cycliste Northern Blvd",
+      "description": "Installation de voie cyclable protégée utilisant des défenseurs de voie cyclable étroits et des séparateurs de voie pour créer un voyage sûr et séparé pour les cyclistes dans le Queens.",
+      "client": "Client: Département des Transports de New York",
+      "stats": {
+        "productTypes": "Types de Produits",
+        "incursionReduction": "Réduction d'Incursion",
+        "highVisibility": "Haute Visibilité"
+      },
+      "background": {
+        "title": "Contexte du Projet",
+        "description1": "Les véhicules dépassaient régulièrement les limites de vitesse sur le Northern Blvd très fréquenté dans le Queens, les cyclistes se sentant en insécurité lors de l'utilisation des routes en raison d'incidents courants. NYC s'était engagé à créer une communauté intégrée et mobile où les cyclistes se sentent en sécurité.",
+        "description2": "La solution impliquait de séparer la voie cyclable en utilisant des défenseurs de voie cyclable étroits montés en surface et en créant des sections de séparation continue en utilisant des séparateurs de voie substantiels. Les deux produits sont à hauteur de bordure et incorporent des bollards haute visibilité pour une sécurité renforcée."
+      },
+      "results": {
+        "title": "Résultats et Impact",
+        "description": "L'installation a créé des voies cyclables protégées permettant des déplacements sûrs et séparés. Les incursions de véhicules dans la voie cyclable ont été éliminées, les cyclistes déclarant se sentir plus en sécurité et plus confiants. La voie cyclable peut maintenant également accueillir des scooters électriques de location."
+      },
+      "quote": {
+        "text": "L'installation a créé des voies cyclables protégées permettant des déplacements sûrs et séparés, avec des défenseurs de voie cyclable étroits et des séparateurs de voie empêchant les véhicules d'entrer dans la voie cyclable. Les cyclistes peuvent maintenant voyager en toute sécurité autour de Queens et Rockaway Parkway au sud de Flatlands Ave, avec les incursions de véhicules dans la voie cyclable éliminées.",
+        "attribution": "— Projet livré par le Département des Transports de NYC"
+      }
+    },
+    "saudi": {
+      "title": "Gestion de Vitesse de l'Aéroport King Abdulaziz",
+      "description": "Installation personnalisée de calmeurs de vitesse à l'aéroport international de Jeddah pour réduire les vitesses des véhicules aux points d'accès avec une perturbation opérationnelle minimale.",
+      "client": "Client: Compagnie des Aéroports de Jeddah",
+      "stats": {
+        "quickInstallation": "Installation",
+        "customRoadFit": "Adaptation Routière",
+        "modularDesign": "Design"
+      },
+      "requirements": {
+        "title": "Exigences du Projet",
+        "description1": "Les vitesses élevées des véhicules posaient des risques de sécurité significatifs aux points d'accès de l'aéroport. Les solutions traditionnelles de ralentissement en béton n'étaient pas faisables en raison des temps d'installation prolongés et des perturbations. Une solution était nécessaire qui pourrait être mise en œuvre rapidement et facilement supprimée si nécessaire.",
+        "description2": "Les calmeurs de vitesse ont été choisis pour leur efficacité prouvée et leur adéquation aux zones à fort trafic comme les aéroports. Le design modulaire a permis une installation rapide, réduisant significativement les temps d'arrêt et l'impact opérationnel de l'aéroport."
+      },
+      "results": {
+        "title": "Résultats et Avantages",
+        "description": "Réduction immédiate des vitesses des véhicules améliorant significativement la sécurité routière autour de l'aéroport. Perturbation minimale pendant l'installation, avec les calmeurs de vitesse mis en œuvre efficacement sans affecter les opérations aéroportuaires. Le produit recyclé et recyclable a contribué aux objectifs de durabilité de l'aéroport."
+      },
+      "quote": {
+        "text": "Les calmeurs de vitesse ont été adaptés sur mesure aux largeurs de route spécifiques de l'aéroport, assurant une intégration transparente avec l'infrastructure existante. Le design modulaire préfabriqué a permis une installation rapide avec une perturbation minimale des opérations aéroportuaires, tout en fournissant une réduction immédiate des vitesses des véhicules et une sécurité routière améliorée.",
+        "attribution": "— Projet livré par Mensi Est pour la Compagnie des Aéroports de Jeddah"
+      }
+    },
+    "guildford": {
+      "title": "Passerelles du Dépôt Network Rail de Guildford",
+      "description": "Installation sûre de passerelles piétonnes au dépôt de maintenance Network Rail utilisant 25 panneaux de passerelle, démontrant une efficacité supérieure par rapport aux méthodes traditionnelles.",
+      "client": "Client: Network Rail",
+      "stats": {
+        "panelsInstalled": "Panneaux Installés",
+        "daysInstall": "Jours d'Installation",
+        "labourersReqd": "Ouvriers Requis"
+      },
+      "efficiency": {
+        "title": "Comparaison d'Efficacité d'Installation",
+        "description1": "Le projet a comparé les panneaux de passerelle Rosehill avec les méthodes traditionnelles de cadrage GRP et en bois. L'installation des panneaux Rosehill n'a pris qu'une demi-journée avec seulement deux ouvriers, tandis que les panneaux GRP ont pris trois jours avec cinq ouvriers.",
+        "description2": "Les visites de suivi ont trouvé les panneaux de passerelle maintenant parfaitement leur intégrité, tandis que le cadrage en bois pour les panneaux GRP montrait déjà des signes de détérioration. La construction en caoutchouc recyclé a fourni une alternative durable et à faible maintenance."
+      },
+      "performance": {
+        "title": "Performance à Long Terme",
+        "description": "L'installation a présenté les panneaux de passerelle Rosehill comme une solution innovante au sein du réseau Network Rail, démontrant des exigences de main-d'œuvre significativement réduites et une durabilité supérieure par rapport aux méthodes conventionnelles."
+      },
+      "quote": {
+        "text": "\"L'efficacité et la facilité d'installation des panneaux Rosehill étaient remarquables. Nous avons vu d'excellentes performances tandis que les alternatives traditionnelles en bois se détériorent déjà.\"",
+        "attribution": "— Adrian Larvin, Network Rail"
+      }
+    },
+    "metrolinx": {
+      "title": "Amélioration de la Sécurité du Réseau Ferroviaire Metrolinx",
+      "description": "Déploiement à grande échelle de panneaux anti-intrusion sur le réseau ferroviaire du Canada pour réduire l'accès non autorisé et améliorer la sécurité des navetteurs et des résidents.",
+      "client": "Client: Metrolinx",
+      "stats": {
+        "panelsInstalled": "Panneaux Installés",
+        "panelTypes": "Types de Panneaux",
+        "recycledRubber": "Caoutchouc Recyclé"
+      },
+      "climate": {
+        "title": "Ingénierie du Climat Hivernal",
+        "description1": "Les conditions hivernales extrêmes de Toronto ont exigé des formulations polymères spécialisées capables de maintenir l'intégrité structurelle à -40°C. Nos panneaux anti-intrusion ont été conçus avec des composés résistants au froid améliorés et des systèmes de montage flexibles pour s'adapter à l'expansion thermique.",
+        "description2": "L'installation a été achevée pendant les mois d'hiver rigoureux de Toronto, nécessitant des procédures d'installation spécialisées par temps froid et de l'équipement. L'équipe de projet a travaillé étroitement avec les opérations TTC pour minimiser les perturbations de service sur trois lignes de transport majeures."
+      },
+      "effectiveness": {
+        "title": "Efficacité de la Sécurité",
+        "description": "Le système anti-intrusion a atteint une réduction de 95% des incidents d'accès non autorisé aux voies dans les six premiers mois. L'effet dissuasif visuel, combiné aux barrières physiques, a significativement amélioré la sécurité opérationnelle et la fiabilité du service."
+      },
+      "quote": {
+        "text": "Un total de 7 656 panneaux anti-intrusion ont été installés dans les zones à haut risque et les points d'accès clés où les incidents d'intrusion étaient les plus fréquents. Le design unique à goujons coniques a créé une surface de marche inconfortable, dissuadant efficacement les individus non autorisés de traverser tout en s'intégrant parfaitement à l'infrastructure existante.",
+        "attribution": "— Projet livré par LB Foster pour Metrolinx"
+      }
+    },
+    "pembroke": {
+      "title": "Système de Drainage Ferroviaire de Pembroke",
+      "description": "Installation MDS avec chemin de drainage courbé et contraintes de substratum rocheux, atteignant le débit de décharge cible pour la gestion de l'eau de l'infrastructure ferroviaire.",
+      "client": "Client: Colas Rail UK",
+      "stats": {
+        "dischargeRate": "Débit de Décharge",
+        "gradient": "Gradient",
+        "cutAngles": "Angles de Coupe"
+      },
+      "challenges": {
+        "title": "Défis d'Installation",
+        "description1": "Un substratum rocheux étendu a sévèrement limité la profondeur de drainage et les options d'installation. L'infrastructure de télécommunications existante nécessitait une navigation prudente, tandis que le chemin de drainage courbé devait diriger l'eau vers l'entrée du tunnel dans des contraintes de temps serrées.",
+        "description2": "Le MDS a été installé avec un gradient de 1 sur 20 sur un lit de gravier de pois de 75mm, avec des unités étagées pour surmonter les rencontres de substratum rocheux supplémentaires. Les unités ont été coupées à des angles de 90 degrés pour maintenir le drainage, avec des tuiles MDS de 50mm protégeant l'auge de base de l'accumulation de sédiments."
+      },
+      "results": {
+        "title": "Résultats Réussis",
+        "description": "Le système a atteint le débit de décharge cible de 42 litres par seconde, s'est adapté avec succès aux contraintes du site sans compromettre les performances, et a achevé l'installation dans les restrictions de temps, démontrant la polyvalence du système dans des environnements ferroviaires difficiles."
+      },
+      "quote": {
+        "text": "\"Le MDS Rosehill a prouvé comment le système peut surmonter les défis que nous rencontrons régulièrement sur site. La capacité de couper et d'étager les unités sans impacter les performances était extrêmement utile sous une installation à temps restreint.\"",
+        "attribution": "— Bill Smalley, Gestionnaire de Construction"
+      }
+    },
+    "moreton": {
+      "title": "Essai de Performance MDS de Moreton",
+      "description": "Tests hydrauliques complets du système de drainage modulaire au centre d'essais National Highways, simulant des conditions météorologiques extrêmes incluant des événements de tempête de 1 sur 1000 ans.",
+      "client": "Client: Agence de l'Environnement",
+      "stats": {
+        "systemLength": "Longueur du Système",
+        "floodTestVolume": "Volume de Test d'Inondation",
+        "recycledMaterial": "Matériau Recyclé"
+      },
+      "research": {
+        "title": "Recherche et Développement",
+        "description1": "L'essai de Moreton représentait une collaboration unique entre Rosehill, l'Agence de l'Environnement et les universités de premier plan pour développer une technologie de drainage durable de nouvelle génération. L'installation incorporait des systèmes de surveillance avancés pour suivre les performances dans des conditions réelles.",
+        "description2": "Le site d'essai présentait plusieurs configurations de drainage, permettant une comparaison directe des caractéristiques de performance. Les systèmes de surveillance automatisés ont enregistré les débits, les paramètres de qualité de l'eau et les exigences de maintenance du système sur 18 mois d'opération."
+      },
+      "results": {
+        "title": "Résultats Révolutionnaires",
+        "description": "L'essai a démontré une amélioration de 85% des métriques de qualité de l'eau par rapport au drainage conventionnel, avec des réductions significatives des solides en suspension, des hydrocarbures et des métaux lourds. Ces résultats ont informé de nouvelles normes industrielles et meilleures pratiques."
+      },
+      "quote": {
+        "text": "L'installation d'essai comprenait un drain filtrant modulaire de bord de route de 60 mètres le long d'une chaussée à quatre voies de 16 mètres de large. Le système a démontré une gestion efficace des flux d'eau contrôlés et extrêmes, sans surcharge ni inondation observée pendant les tests, incluant un événement de tempête simulé de 1 sur 1000 ans avec 11 000 litres de décharge d'eau.",
+        "attribution": "— Essai mené par Rosehill Polymers avec Civil Water Management Ltd et National Highways"
+      }
+    },
+    "cta": {
+      "title": "Prêt à discuter de votre prochain projet?",
+      "description": "Nos spécialistes de projets sont disponibles pour discuter de vos exigences et fournir des conseils techniques pour vos défis d'infrastructure.",
+      "startProject": "Commencer Votre Projet",
+      "browseSolutions": "Parcourir Toutes les Solutions"
+    }
+  }
+}

@@ -1,0 +1,529 @@
+/**
+ * RTL (Right-to-Left) CSS for Arabic Language Support
+ * Rosehill Group - 2025
+ */
+
+/* Import Arabic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+/* RTL Base Styles */
+html.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+html.rtl body {
+    font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.7; /* Increased line height for Arabic */
+}
+
+/* Typography adjustments for Arabic */
+html.rtl h1, 
+html.rtl h2, 
+html.rtl h3, 
+html.rtl h4, 
+html.rtl h5, 
+html.rtl h6 {
+    font-family: 'Noto Sans Arabic', 'Overpass', sans-serif;
+    line-height: 1.4; /* Better line height for Arabic headings */
+}
+
+html.rtl p {
+    line-height: 1.7;
+    text-align: right;
+}
+
+/* Navigation RTL */
+html.rtl nav {
+    direction: rtl;
+}
+
+html.rtl .flex.items-center.space-x-8 {
+    flex-direction: row-reverse;
+}
+
+html.rtl .flex.items-center.space-x-8 > * {
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+html.rtl .flex.items-center.space-x-8 > *:first-child {
+    margin-right: 0;
+}
+
+/* Dropdown menus RTL */
+html.rtl .absolute.top-full.left-0 {
+    left: auto;
+    right: 0;
+}
+
+html.rtl .absolute.top-full.right-0 {
+    right: auto;
+    left: 0;
+}
+
+/* Logo alignment */
+html.rtl .flex.items-center:first-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Button and CTA RTL */
+html.rtl .flex.items-center svg {
+    margin-left: 0;
+    margin-right: 0.25rem;
+}
+
+html.rtl .inline-flex.items-center svg {
+    margin-left: 0;
+    margin-right: 0.25rem;
+}
+
+/* Arrow directions for RTL */
+html.rtl svg[transform*="rotate"] {
+    transform: scaleX(-1);
+}
+
+html.rtl .w-4.h-4.ml-1 {
+    margin-left: 0;
+    margin-right: 0.25rem;
+    transform: scaleX(-1);
+}
+
+/* Grid and layout RTL */
+html.rtl .grid {
+    direction: rtl;
+}
+
+html.rtl .text-left {
+    text-align: right;
+}
+
+html.rtl .text-right {
+    text-align: left;
+}
+
+html.rtl .text-center {
+    text-align: center;
+}
+
+/* Spacing utilities RTL */
+html.rtl .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+html.rtl .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+html.rtl .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+html.rtl .ml-4 { margin-left: 0; margin-right: 1rem; }
+html.rtl .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+html.rtl .ml-8 { margin-left: 0; margin-right: 2rem; }
+
+html.rtl .mr-1 { margin-right: 0; margin-left: 0.25rem; }
+html.rtl .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+html.rtl .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+html.rtl .mr-4 { margin-right: 0; margin-left: 1rem; }
+html.rtl .mr-6 { margin-right: 0; margin-left: 1.5rem; }
+html.rtl .mr-8 { margin-right: 0; margin-left: 2rem; }
+
+html.rtl .pl-1 { padding-left: 0; padding-right: 0.25rem; }
+html.rtl .pl-2 { padding-left: 0; padding-right: 0.5rem; }
+html.rtl .pl-3 { padding-left: 0; padding-right: 0.75rem; }
+html.rtl .pl-4 { padding-left: 0; padding-right: 1rem; }
+html.rtl .pl-6 { padding-left: 0; padding-right: 1.5rem; }
+html.rtl .pl-8 { padding-left: 0; padding-right: 2rem; }
+
+html.rtl .pr-1 { padding-right: 0; padding-left: 0.25rem; }
+html.rtl .pr-2 { padding-right: 0; padding-left: 0.5rem; }
+html.rtl .pr-3 { padding-right: 0; padding-left: 0.75rem; }
+html.rtl .pr-4 { padding-right: 0; padding-left: 1rem; }
+html.rtl .pr-6 { padding-right: 0; padding-left: 1.5rem; }
+html.rtl .pr-8 { padding-right: 0; padding-left: 2rem; }
+
+/* Flexbox RTL */
+html.rtl .flex-row {
+    flex-direction: row-reverse;
+}
+
+html.rtl .space-x-1 > * + * { margin-left: 0; margin-right: 0.25rem; }
+html.rtl .space-x-2 > * + * { margin-left: 0; margin-right: 0.5rem; }
+html.rtl .space-x-3 > * + * { margin-left: 0; margin-right: 0.75rem; }
+html.rtl .space-x-4 > * + * { margin-left: 0; margin-right: 1rem; }
+html.rtl .space-x-6 > * + * { margin-left: 0; margin-right: 1.5rem; }
+html.rtl .space-x-8 > * + * { margin-left: 0; margin-right: 2rem; }
+
+/* Forms RTL */
+html.rtl input,
+html.rtl textarea,
+html.rtl select {
+    text-align: right;
+    direction: rtl;
+}
+
+html.rtl input[type="email"],
+html.rtl input[type="tel"],
+html.rtl input[type="url"] {
+    direction: ltr;
+    text-align: left;
+}
+
+html.rtl .form-input {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Contact form specific RTL */
+html.rtl .contact-card form {
+    direction: rtl;
+}
+
+html.rtl .contact-card label {
+    text-align: right;
+}
+
+html.rtl .contact-card .flex.items-start {
+    flex-direction: row-reverse;
+}
+
+html.rtl .contact-card .flex.items-start input[type="checkbox"] {
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+/* Footer RTL */
+html.rtl footer {
+    direction: rtl;
+}
+
+html.rtl .footer-links {
+    text-align: right;
+}
+
+html.rtl .footer-social {
+    flex-direction: row-reverse;
+}
+
+html.rtl .footer-social .flex.space-x-4 {
+    flex-direction: row-reverse;
+}
+
+html.rtl .footer-social .flex.space-x-4 > * + * {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+/* Social media icons RTL */
+html.rtl .social-links {
+    flex-direction: row-reverse;
+}
+
+/* Breadcrumb RTL */
+html.rtl .breadcrumb {
+    direction: rtl;
+}
+
+html.rtl .breadcrumb a::after {
+    content: "\\";
+    margin: 0 0.5rem;
+}
+
+/* Card layouts RTL */
+html.rtl .card {
+    text-align: right;
+}
+
+html.rtl .card .flex.items-center {
+    flex-direction: row-reverse;
+}
+
+html.rtl .card .flex.items-center svg {
+    margin-left: 0;
+    margin-right: 0.75rem;
+}
+
+/* Language switcher RTL */
+html.rtl .language-switcher {
+    direction: rtl;
+}
+
+html.rtl .language-switcher-btn {
+    flex-direction: row-reverse;
+}
+
+html.rtl .language-switcher-btn .current-language {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+html.rtl .language-switcher-dropdown {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+html.rtl .language-option {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+/* Mobile menu RTL */
+html.rtl .mobile-nav-menu {
+    direction: rtl;
+    text-align: right;
+}
+
+html.rtl .mobile-menu-toggle {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Search RTL */
+html.rtl .search-overlay {
+    direction: rtl;
+}
+
+html.rtl .search-input {
+    text-align: right;
+    padding-right: 3rem;
+    padding-left: 1rem;
+}
+
+html.rtl .search-input:focus {
+    text-align: right;
+}
+
+html.rtl .search-overlay .absolute.right-3 {
+    right: auto;
+    left: 0.75rem;
+}
+
+/* Cookie consent RTL */
+html.rtl .cookie-consent-banner {
+    direction: rtl;
+}
+
+html.rtl .cookie-consent-content {
+    flex-direction: row-reverse;
+}
+
+html.rtl .cookie-consent-text {
+    text-align: right;
+}
+
+html.rtl .cookie-consent-actions {
+    flex-direction: row-reverse;
+}
+
+html.rtl .cookie-preferences-content {
+    direction: rtl;
+}
+
+html.rtl .cookie-preferences-header {
+    flex-direction: row-reverse;
+}
+
+html.rtl .cookie-preferences-body {
+    text-align: right;
+}
+
+html.rtl .cookie-category-header {
+    flex-direction: row-reverse;
+}
+
+html.rtl .cookie-toggle {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+/* Specific component RTL adjustments */
+html.rtl .hero-section {
+    text-align: right;
+}
+
+html.rtl .hero-section .flex.flex-wrap {
+    flex-direction: row-reverse;
+}
+
+html.rtl .sector-card {
+    text-align: right;
+}
+
+html.rtl .sector-card .flex.items-center {
+    flex-direction: row-reverse;
+}
+
+html.rtl .case-study-card {
+    text-align: right;
+}
+
+html.rtl .case-study-card .flex.justify-between {
+    flex-direction: row-reverse;
+}
+
+/* Responsive RTL adjustments */
+@media (max-width: 768px) {
+    html.rtl .mobile-nav-menu {
+        text-align: right;
+    }
+    
+    html.rtl .flex.flex-col.space-y-4 {
+        direction: rtl;
+    }
+    
+    html.rtl .cookie-consent-content {
+        flex-direction: column;
+        text-align: right;
+    }
+    
+    html.rtl .cookie-consent-actions {
+        flex-direction: column;
+    }
+}
+
+/* Animation adjustments for RTL */
+html.rtl .hover\\:translate-x-1:hover {
+    transform: translateX(-0.25rem);
+}
+
+html.rtl .hover\\:translate-x-2:hover {
+    transform: translateX(-0.5rem);
+}
+
+html.rtl .transition-transform {
+    transition: transform 0.2s ease;
+}
+
+/* Number and date formatting for Arabic */
+html.rtl .arabic-numerals {
+    font-feature-settings: 'lnum' 1;
+}
+
+html.rtl .western-numerals {
+    font-feature-settings: 'lnum' 0;
+    direction: ltr;
+    display: inline-block;
+}
+
+/* Text selection RTL */
+html.rtl ::selection {
+    background-color: rgba(255, 107, 53, 0.2);
+    color: inherit;
+}
+
+/* Print styles for RTL */
+@media print {
+    html.rtl {
+        direction: rtl;
+    }
+    
+    html.rtl body {
+        font-family: 'Noto Sans Arabic', serif;
+    }
+}
+
+/* Language switcher styles */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-switcher-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.375rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-switcher-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.language-switcher-icon {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.language-switcher-btn[aria-expanded="true"] .language-switcher-icon {
+    transform: rotate(180deg);
+}
+
+.language-switcher-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin-top: 0.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.language-switcher-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.language-option:hover {
+    background-color: #f3f4f6;
+}
+
+.language-option:first-child {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.language-option:last-child {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+/* Mobile language switcher */
+@media (max-width: 1024px) {
+    .language-switcher {
+        display: none;
+    }
+    
+    .mobile-language-switcher {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .mobile-language-switcher select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.375rem;
+        background: white;
+        font-size: 0.875rem;
+    }
+}

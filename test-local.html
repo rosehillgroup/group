@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local i18n Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .test-section { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .language-switcher { margin: 20px 0; }
+        .language-btn { margin: 5px; padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .language-btn:hover { background: #0056b3; }
+        .language-btn.active { background: #28a745; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .debug { background: #e2e3e5; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>🌍 Local i18n Test</h1>
+    
+    <div class="status" id="status">Testing...</div>
+    
+    <div class="language-switcher">
+        <button class="language-btn active" onclick="testLanguage('en')">🇬🇧 English</button>
+        <button class="language-btn" onclick="testLanguage('fr')">🇫🇷 French</button>
+        <button class="language-btn" onclick="testLanguage('es')">🇪🇸 Spanish</button>
+        <button class="language-btn" onclick="testLanguage('ar')">🇸🇦 Arabic</button>
+    </div>
+    
+    <div class="test-section">
+        <h2 id="hero-title" data-i18n="hero.title">Engineering safer infrastructure for sustainable communities</h2>
+        <p id="hero-subtitle" data-i18n="hero.subtitle">Trusted by highways authorities, rail operators and contractors around the world to deliver lasting performance and lower whole-life costs.</p>
+        <button id="hero-cta" data-i18n="hero.cta">Browse Products</button>
+    </div>
+    
+    <div class="test-section">
+        <h3 id="nav-about" data-i18n="navigation.about">About</h3>
+        <p id="sector-desc" data-i18n="sectors.roadSafety.description">Traffic management systems that protect cyclists, pedestrians, and drivers. From cycle lane defenders to speed management solutions.</p>
+    </div>
+    
+    <div class="debug" id="debug-info">
+        Current Language: en<br>
+        Direction: ltr<br>
+        Status: Loading...
+    </div>
+    
+    <script>
+        let currentLang = 'en';
+        
+        async function testLanguage(lang) {
+            try {
+                updateStatus('Loading ' + lang + '...', 'info');
+                
+                // Test fetch directly
+                const response = await fetch(`languages/${lang}.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const translations = await response.json();
+                updateStatus('✅ Successfully loaded ' + lang, 'success');
+                
+                // Update content
+                updateContent(translations, lang);
+                
+                // Update active button
+                document.querySelectorAll('.language-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+                
+                currentLang = lang;
+                
+            } catch (error) {
+                updateStatus('❌ Failed to load ' + lang + ': ' + error.message, 'error');
+                console.error('Language loading error:', error);
+            }
+        }
+        
+        function updateContent(translations, lang) {
+            // Update text content
+            document.getElementById('hero-title').textContent = translations.hero.title;
+            document.getElementById('hero-subtitle').textContent = translations.hero.subtitle;
+            document.getElementById('hero-cta').textContent = translations.hero.cta;
+            document.getElementById('nav-about').textContent = translations.navigation.about;
+            document.getElementById('sector-desc').textContent = translations.sectors.roadSafety.description;
+            
+            // Update direction for RTL
+            const isRTL = lang === 'ar';
+            document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            
+            // Update debug info
+            document.getElementById('debug-info').innerHTML = `
+                Current Language: ${lang}<br>
+                Direction: ${isRTL ? 'rtl' : 'ltr'}<br>
+                Status: Content updated successfully<br>
+                Native Name: ${translations.meta.nativeName}
+            `;
+        }
+        
+        function updateStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + type;
+        }
+        
+        // Test initial load
+        testLanguage('en');
+    </script>
+</body>
+</html>

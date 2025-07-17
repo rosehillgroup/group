@@ -67,6 +67,7 @@
         });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="rtl.css">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -215,6 +216,105 @@
         @media (max-width: 1023px) {
             .mobile-menu-toggle {
                 display: flex;
+            }
+        }
+        
+        /* Mobile Language Switcher Styles */
+        .mobile-language-switcher {
+            border-bottom: 1px solid var(--grey-200);
+            padding: 0;
+        }
+        
+        .mobile-language-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            background: none;
+            border: none;
+            color: var(--grey-600);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-language-btn:hover {
+            color: var(--rh-orange);
+        }
+        
+        .mobile-language-btn:focus {
+            outline: 2px solid var(--rh-orange);
+            outline-offset: 2px;
+        }
+        
+        .mobile-language-icon {
+            flex-shrink: 0;
+            margin-right: 12px;
+        }
+        
+        .mobile-current-language {
+            flex: 1;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .mobile-language-arrow {
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        
+        .mobile-language-btn[aria-expanded="true"] .mobile-language-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-language-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--grey-50);
+            margin-left: 28px;
+            border-radius: 6px;
+        }
+        
+        .mobile-language-dropdown.show {
+            max-height: 200px;
+            padding: 8px 0;
+            margin-bottom: 8px;
+        }
+        
+        .mobile-language-option {
+            display: block;
+            padding: 10px 16px;
+            color: var(--grey-700);
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            border-bottom: none !important;
+        }
+        
+        .mobile-language-option:hover {
+            background-color: var(--grey-100);
+            color: var(--rh-orange);
+        }
+        
+        .mobile-language-option:focus {
+            outline: 2px solid var(--rh-orange);
+            outline-offset: -2px;
+            background-color: var(--grey-100);
+        }
+        
+        .mobile-language-option.active {
+            background-color: var(--grey-100) !important;
+            color: var(--rh-orange) !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Ensure mobile menu language switcher only shows on mobile */
+        @media (min-width: 1024px) {
+            .mobile-language-switcher {
+                display: none;
             }
         }
         
@@ -432,13 +532,36 @@
             
             <!-- Mobile Navigation Menu -->
             <div class="mobile-nav-menu" id="mobile-menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="products.html">Products</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" class="contact-btn">Get Quote</a>
+                <a href="index.html" data-i18n="navigation.home">Home</a>
+                <a href="about.html" data-i18n="navigation.about">About</a>
+                <a href="solutions.html" data-i18n="navigation.solutions">Solutions</a>
+                <a href="products.html" data-i18n="navigation.products">Products</a>
+                <a href="projects.html" data-i18n="navigation.projects">Projects</a>
+                <a href="contact.html" data-i18n="navigation.contact">Contact</a>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="mobile-language-switcher">
+                    <button class="mobile-language-btn" aria-expanded="false" aria-label="Select language">
+                        <svg class="mobile-language-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="m8 12 2 2 2-2"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="mobile-current-language">🇬🇧 English</span>
+                        <svg class="mobile-language-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"/>
+                        </svg>
+                    </button>
+                    <div class="mobile-language-dropdown">
+                        <a href="#" class="mobile-language-option" data-language="en">🇬🇧 English</a>
+                        <a href="#" class="mobile-language-option" data-language="fr">🇫🇷 Français</a>
+                        <a href="#" class="mobile-language-option" data-language="es">🇪🇸 Español</a>
+                        <a href="#" class="mobile-language-option" data-language="ar">🇸🇦 العربية</a>
+                    </div>
+                </div>
+                
+                <a href="contact.html" class="contact-btn" data-i18n="navigation.getQuote">Get Quote</a>
             </div>
         </div>
     </header>
@@ -800,6 +923,117 @@
                     }
                 });
             }
+        });
+    </script>
+    <!-- i18n Implementation -->
+    <script src="i18n.js"></script>
+    <script>
+        // Initialize i18n when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize i18n
+            i18n.init({
+                fallbackLng: 'en',
+                debug: false,
+                resources: {
+                    en: { translation: {} },
+                    fr: { translation: {} },
+                    es: { translation: {} },
+                    ar: { translation: {} }
+                }
+            }).then(function() {
+                // Set active navigation item
+                const currentLangSpan = document.querySelector('.mobile-current-language');
+                if (currentLangSpan) {
+                    const languageMap = {
+                        'en': '🇬🇧 English',
+                        'fr': '🇫🇷 Français',
+                        'es': '🇪🇸 Español',
+                        'ar': '🇸🇦 العربية'
+                    };
+                    currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
+                }
+                
+                // Mobile Language Switcher functionality - Set up after i18n is ready
+                const mobileLangBtn = document.querySelector('.mobile-language-btn');
+                const mobileLangDropdown = document.querySelector('.mobile-language-dropdown');
+                const mobileLangOptions = document.querySelectorAll('.mobile-language-option');
+                const mobileCurrentLang = document.querySelector('.mobile-current-language');
+                
+                if (mobileLangBtn && mobileLangDropdown) {
+                    // Toggle mobile language dropdown
+                    mobileLangBtn.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        const isExpanded = mobileLangBtn.getAttribute('aria-expanded') === 'true';
+                        mobileLangBtn.setAttribute('aria-expanded', !isExpanded);
+                        mobileLangDropdown.classList.toggle('show');
+                    });
+                    
+                    // Handle mobile language selection
+                    mobileLangOptions.forEach(option => {
+                        option.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            
+                            const lang = this.getAttribute('data-language');
+                            i18n.setLanguage(lang);
+                            
+                            // Update mobile current language display
+                            if (mobileCurrentLang) {
+                                mobileCurrentLang.textContent = this.textContent;
+                            }
+                            
+                            // Update active state for mobile options
+                            mobileLangOptions.forEach(option => {
+                                option.classList.remove('active');
+                                if (option.getAttribute('data-language') === lang) {
+                                    option.classList.add('active');
+                                }
+                            });
+                            
+                            // Close mobile dropdown
+                            mobileLangDropdown.classList.remove('show');
+                            mobileLangBtn.setAttribute('aria-expanded', 'false');
+                            
+                            // Close mobile menu after language selection
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            const mobileToggle = document.getElementById('mobile-toggle');
+                            if (mobileMenu && mobileToggle) {
+                                mobileMenu.classList.remove('active');
+                                mobileToggle.classList.remove('active');
+                            }
+                        });
+                    });
+                    
+                    // Close mobile language dropdown when clicking outside
+                    document.addEventListener('click', function(event) {
+                        if (!mobileLangBtn.contains(event.target) && !mobileLangDropdown.contains(event.target)) {
+                            mobileLangDropdown.classList.remove('show');
+                            mobileLangBtn.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    // Update mobile language display on initialization
+                    if (mobileCurrentLang && i18n.currentLanguage) {
+                        const languageMap = {
+                            'en': '🇬🇧 English',
+                            'fr': '🇫🇷 Français',
+                            'es': '🇪🇸 Español',
+                            'ar': '🇸🇦 العربية'
+                        };
+                        mobileCurrentLang.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
+                        
+                        // Update active state for mobile options
+                        mobileLangOptions.forEach(option => {
+                            option.classList.remove('active');
+                            if (option.getAttribute('data-language') === i18n.currentLanguage) {
+                                option.classList.add('active');
+                            }
+                        });
+                    }
+                }
+            });
         });
     </script>
     <!-- Cookie Consent -->
