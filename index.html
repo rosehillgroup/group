@@ -1474,7 +1474,6 @@
                     event.preventDefault();
                     event.stopPropagation();
                     
-                    
                     const isExpanded = langSwitcherBtn.getAttribute('aria-expanded') === 'true';
                     langSwitcherBtn.setAttribute('aria-expanded', !isExpanded);
                     langSwitcherDropdown.classList.toggle('show');
@@ -1485,7 +1484,6 @@
                     } else {
                         langSwitcherDropdown.style.cssText = 'opacity: 0 !important; visibility: hidden !important; transform: translateY(-10px) !important; position: absolute !important; top: 100% !important; left: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #e2e8f0 !important; padding: 10px !important; min-width: 180px !important;';
                     }
-                    
                 });
                 
                 // Handle language selection
@@ -1603,7 +1601,18 @@
             }
             
             // Initialize the system
-            i18n.init().catch(error => {
+            i18n.init().then(() => {
+                // Update current language display after initialization
+                if (currentLangSpan && i18n.currentLanguage) {
+                    const languageMap = {
+                        'en': '🇬🇧 English',
+                        'fr': '🇫🇷 Français',
+                        'es': '🇪🇸 Español',
+                        'ar': '🇸🇦 العربية'
+                    };
+                    currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
+                }
+            }).catch(error => {
                 console.error('Error initializing i18n system:', error);
             });
         });
