@@ -1474,15 +1474,18 @@
                     event.preventDefault();
                     event.stopPropagation();
                     
-                    const isExpanded = langSwitcherBtn.getAttribute('aria-expanded') === 'true';
-                    langSwitcherBtn.setAttribute('aria-expanded', !isExpanded);
-                    langSwitcherDropdown.classList.toggle('show');
+                    const isCurrentlyVisible = langSwitcherDropdown.classList.contains('show');
                     
-                    // Force inline styles as fallback
-                    if (langSwitcherDropdown.classList.contains('show')) {
-                        langSwitcherDropdown.style.cssText = 'opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; display: block !important; position: absolute !important; top: 100% !important; left: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #e2e8f0 !important; padding: 10px !important; min-width: 180px !important;';
-                    } else {
+                    if (isCurrentlyVisible) {
+                        // Close dropdown
+                        langSwitcherBtn.setAttribute('aria-expanded', 'false');
+                        langSwitcherDropdown.classList.remove('show');
                         langSwitcherDropdown.style.cssText = 'opacity: 0 !important; visibility: hidden !important; transform: translateY(-10px) !important; position: absolute !important; top: 100% !important; left: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #e2e8f0 !important; padding: 10px !important; min-width: 180px !important;';
+                    } else {
+                        // Open dropdown
+                        langSwitcherBtn.setAttribute('aria-expanded', 'true');
+                        langSwitcherDropdown.classList.add('show');
+                        langSwitcherDropdown.style.cssText = 'opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; display: block !important; position: absolute !important; top: 100% !important; left: 0 !important; z-index: 999999 !important; background: white !important; border: 1px solid #e2e8f0 !important; padding: 10px !important; min-width: 180px !important;';
                     }
                 });
                 
