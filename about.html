@@ -1173,11 +1173,14 @@
                 });
                 
                 // Close dropdown when clicking outside
-                document.addEventListener('click', function() {
-                    langSwitcherBtn.setAttribute('aria-expanded', 'false');
-                    langSwitcherDropdown.classList.remove('show');
-                    langSwitcherDropdown.style.opacity = '0';
-                    langSwitcherDropdown.style.visibility = 'hidden';
+                document.addEventListener('click', function(event) {
+                    if (!langSwitcherBtn.contains(event.target) && !langSwitcherDropdown.contains(event.target)) {
+                        langSwitcherBtn.setAttribute('aria-expanded', 'false');
+                        langSwitcherDropdown.classList.remove('show');
+                        langSwitcherDropdown.style.opacity = '0';
+                        langSwitcherDropdown.style.visibility = 'hidden';
+                        langSwitcherDropdown.style.transform = 'translateY(-10px)';
+                    }
                 });
             }
             
