@@ -78,8 +78,8 @@
     "drainageMats": "Drainage Mats"
   },
   "hero": {
-    "title": "Engineering safer infrastructure for sustainable communities",
-    "subtitle": "Trusted by highways authorities, rail operators and contractors around the world to deliver lasting performance and lower whole-life costs.",
+    "title": "Advanced materials and infrastructure solutions for complex challenges",
+    "subtitle": "Your industry partner and problem solver. Bring us your challenges - we engineer innovative materials and solutions that deliver lasting performance and lower whole-life costs.",
     "cta": "Browse Products",
     "ctaSecondary": "Start Your Project",
     "badges": {
@@ -120,6 +120,49 @@
       "title": "Drainage Solutions",
       "description": "Sustainable drainage systems and water management solutions designed to handle extreme weather events and urban flooding challenges.",
       "cta": "View products"
+    }
+  },
+  "infrastructure": {
+    "title": "Infrastructure Solutions",
+    "subtitle": "Engineered solutions for critical infrastructure sectors - highways, rail, security, and drainage systems.",
+    "roadSafety": {
+      "title": "Road Safety",
+      "description": "Traffic management systems that protect cyclists, pedestrians, and drivers. From cycle lane defenders to speed management solutions.",
+      "cta": "View products"
+    },
+    "railInfrastructure": {
+      "title": "Rail Infrastructure", 
+      "description": "Railway crossing solutions, platform safety systems, and anti-trespass panels designed for the demanding rail environment.",
+      "cta": "View products"
+    },
+    "defenceSecurity": {
+      "title": "Defence & Security",
+      "description": "Modular ballistic protection and hostile vehicle mitigation systems. Developed for high-risk environments where speed, flexibility, and reliability are essential.",
+      "cta": "View products"
+    },
+    "drainageSolutions": {
+      "title": "Drainage Solutions",
+      "description": "Sustainable drainage systems and water management solutions designed to handle extreme weather events and urban flooding challenges.",
+      "cta": "View products"
+    }
+  },
+  "materials": {
+    "title": "Materials & Manufacturing",
+    "subtitle": "Your industry partner for custom materials solutions. Bring us your challenges - we engineer innovative materials that solve complex problems.",
+    "energySubsea": {
+      "title": "Energy & Subsea",
+      "description": "Advanced polyurethane materials and castable solutions for extreme marine environments. Custom formulations for offshore energy projects and subsea applications.",
+      "cta": "View solutions"
+    },
+    "sportsRecreation": {
+      "title": "Sports & Recreation Materials",
+      "description": "Rosehill TPV® rubber compounds and binders for high-performance sports surfaces. Custom material formulations for playgrounds, tracks, and recreational facilities.",
+      "cta": "View materials"
+    },
+    "chemicals": {
+      "title": "Chemicals",
+      "description": "Custom chemical solutions and specialty compounds. Working with industry partners to develop innovative materials for unique applications.",
+      "cta": "Coming soon"
     }
   },
   "caseStudies": {

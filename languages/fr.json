@@ -78,8 +78,8 @@
     "drainageMats": "Tapis de Drainage"
   },
   "hero": {
-    "title": "Ingénierie d'infrastructure plus sûre pour des communautés durables",
-    "subtitle": "Faisant confiance aux autorités routières, aux opérateurs ferroviaires et aux entrepreneurs du monde entier pour offrir des performances durables et des coûts de cycle de vie réduits.",
+    "title": "Matériaux avancés et solutions d'infrastructure pour défis complexes",
+    "subtitle": "Votre partenaire industriel et solutionneur de problèmes. Apportez-nous vos défis - nous concevons des matériaux et des solutions innovants qui offrent des performances durables et des coûts de cycle de vie réduits.",
     "cta": "Parcourir les Produits",
     "ctaSecondary": "Commencer Votre Projet",
     "badges": {
@@ -120,6 +120,49 @@
       "title": "Solutions de Drainage",
       "description": "Systèmes de drainage durables et solutions de gestion de l'eau conçus pour gérer les événements météorologiques extrêmes et les défis d'inondation urbaine.",
       "cta": "Voir les produits"
+    }
+  },
+  "infrastructure": {
+    "title": "Solutions d'Infrastructure",
+    "subtitle": "Solutions conçues pour les secteurs d'infrastructure critiques - autoroutes, ferroviaire, sécurité et systèmes de drainage.",
+    "roadSafety": {
+      "title": "Sécurité Routière",
+      "description": "Systèmes de gestion du trafic qui protègent les cyclistes, les piétons et les conducteurs. Des défenseurs de pistes cyclables aux solutions de gestion de vitesse.",
+      "cta": "Voir les produits"
+    },
+    "railInfrastructure": {
+      "title": "Infrastructure Ferroviaire",
+      "description": "Solutions de passages à niveau, systèmes de sécurité des quais et panneaux anti-intrusion conçus pour l'environnement ferroviaire exigeant.",
+      "cta": "Voir les produits"
+    },
+    "defenceSecurity": {
+      "title": "Défense et Sécurité",
+      "description": "Systèmes modulaires de protection balistique et d'atténuation des véhicules hostiles. Développés pour des environnements à haut risque où la vitesse, la flexibilité et la fiabilité sont essentielles.",
+      "cta": "Voir les produits"
+    },
+    "drainageSolutions": {
+      "title": "Solutions de Drainage",
+      "description": "Systèmes de drainage durables et solutions de gestion de l'eau conçus pour gérer les événements météorologiques extrêmes et les défis d'inondation urbaine.",
+      "cta": "Voir les produits"
+    }
+  },
+  "materials": {
+    "title": "Matériaux et Fabrication",
+    "subtitle": "Votre partenaire industriel pour des solutions de matériaux personnalisées. Apportez-nous vos défis - nous concevons des matériaux innovants qui résolvent des problèmes complexes.",
+    "energySubsea": {
+      "title": "Énergie et Sous-Marine",
+      "description": "Matériaux polyuréthanes avancés et solutions coulables pour environnements marins extrêmes. Formulations personnalisées pour projets énergétiques offshore et applications sous-marines.",
+      "cta": "Voir les solutions"
+    },
+    "sportsRecreation": {
+      "title": "Matériaux Sports et Loisirs",
+      "description": "Composés de caoutchouc Rosehill TPV® et liants pour surfaces sportives haute performance. Formulations de matériaux personnalisées pour terrains de jeux, pistes et installations récréatives.",
+      "cta": "Voir les matériaux"
+    },
+    "chemicals": {
+      "title": "Produits Chimiques",
+      "description": "Solutions chimiques personnalisées et composés spécialisés. Travaillant avec des partenaires industriels pour développer des matériaux innovants pour des applications uniques.",
+      "cta": "Bientôt disponible"
     }
   },
   "caseStudies": {

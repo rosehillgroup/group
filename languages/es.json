@@ -78,8 +78,8 @@
     "drainageMats": "Alfombras de Drenaje"
   },
   "hero": {
-    "title": "Ingeniería de infraestructura más segura para comunidades sostenibles",
-    "subtitle": "Confiado por autoridades de carreteras, operadores ferroviarios y contratistas de todo el mundo para entregar rendimiento duradero y menores costos de ciclo de vida.",
+    "title": "Materiales avanzados y soluciones de infraestructura para desafíos complejos",
+    "subtitle": "Su socio industrial y solucionador de problemas. Tráiganos sus desafíos: diseñamos materiales y soluciones innovadoras que brindan rendimiento duradero y menores costos de ciclo de vida.",
     "cta": "Explorar Productos",
     "ctaSecondary": "Comience Su Proyecto",
     "badges": {
@@ -120,6 +120,49 @@
       "title": "Soluciones de Drenaje",
       "description": "Sistemas de drenaje sostenibles y soluciones de gestión del agua diseñadas para manejar eventos climáticos extremos y desafíos de inundación urbana.",
       "cta": "Ver productos"
+    }
+  },
+  "infrastructure": {
+    "title": "Soluciones de Infraestructura",
+    "subtitle": "Soluciones diseñadas para sectores de infraestructura críticos: carreteras, ferroviario, seguridad y sistemas de drenaje.",
+    "roadSafety": {
+      "title": "Seguridad Vial",
+      "description": "Sistemas de gestión de tráfico que protegen a ciclistas, peatones y conductores. Desde defensores de carriles bici hasta soluciones de gestión de velocidad.",
+      "cta": "Ver productos"
+    },
+    "railInfrastructure": {
+      "title": "Infraestructura Ferroviaria",
+      "description": "Soluciones de cruces ferroviarios, sistemas de seguridad de plataformas y paneles anti-intrusión diseñados para el exigente entorno ferroviario.",
+      "cta": "Ver productos"
+    },
+    "defenceSecurity": {
+      "title": "Defensa y Seguridad",
+      "description": "Sistemas modulares de protección balística y mitigación de vehículos hostiles. Desarrollados para entornos de alto riesgo donde la velocidad, flexibilidad y confiabilidad son esenciales.",
+      "cta": "Ver productos"
+    },
+    "drainageSolutions": {
+      "title": "Soluciones de Drenaje",
+      "description": "Sistemas de drenaje sostenibles y soluciones de gestión del agua diseñadas para manejar eventos climáticos extremos y desafíos de inundación urbana.",
+      "cta": "Ver productos"
+    }
+  },
+  "materials": {
+    "title": "Materiales y Fabricación",
+    "subtitle": "Su socio industrial para soluciones de materiales personalizadas. Tráiganos sus desafíos: diseñamos materiales innovadores que resuelven problemas complejos.",
+    "energySubsea": {
+      "title": "Energía y Submarina",
+      "description": "Materiales de poliuretano avanzados y soluciones colables para entornos marinos extremos. Formulaciones personalizadas para proyectos energéticos marítimos y aplicaciones submarinas.",
+      "cta": "Ver soluciones"
+    },
+    "sportsRecreation": {
+      "title": "Materiales Deportes y Recreación",
+      "description": "Compuestos de caucho Rosehill TPV® y aglutinantes para superficies deportivas de alto rendimiento. Formulaciones de materiales personalizadas para parques infantiles, pistas e instalaciones recreativas.",
+      "cta": "Ver materiales"
+    },
+    "chemicals": {
+      "title": "Químicos",
+      "description": "Soluciones químicas personalizadas y compuestos especializados. Trabajando con socios industriales para desarrollar materiales innovadores para aplicaciones únicas.",
+      "cta": "Próximamente"
     }
   },
   "popularProducts": {
