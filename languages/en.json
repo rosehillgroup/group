@@ -509,14 +509,22 @@
     "viewAll": "View All",
     "learnMore": "Learn More",
     "getStarted": "Get Started",
-    "exploreSolutions": "Explore Solutions"
-  },
-  "products": {
+    "exploreSolutions": "Explore Solutions",
     "infrastructure": {
-      "title": "Infrastructure Products"
+      "title": "Infrastructure Solutions"
     },
     "materials": {
       "title": "Materials & Manufacturing"
+    }
+  },
+  "products": {
+    "infrastructure": {
+      "title": "Infrastructure Products",
+      "description": "Engineering solutions for transport networks, security, and water management infrastructure."
+    },
+    "materials": {
+      "title": "Materials & Manufacturing",
+      "description": "Advanced material solutions engineered for demanding applications across multiple industrial sectors."
     },
     "hero": {
       "title": "Complete Product Range",

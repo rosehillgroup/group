@@ -509,14 +509,22 @@
     "viewAll": "Voir Tout",
     "learnMore": "En Savoir Plus",
     "getStarted": "Commencer",
-    "exploreSolutions": "Explorer les Solutions"
-  },
-  "products": {
+    "exploreSolutions": "Explorer les Solutions",
     "infrastructure": {
-      "title": "Produits d'Infrastructure"
+      "title": "Solutions d'Infrastructure"
     },
     "materials": {
       "title": "Matériaux et Fabrication"
+    }
+  },
+  "products": {
+    "infrastructure": {
+      "title": "Produits d'Infrastructure",
+      "description": "Solutions d'ingénierie pour les réseaux de transport, la sécurité et l'infrastructure de gestion de l'eau."
+    },
+    "materials": {
+      "title": "Matériaux et Fabrication",
+      "description": "Solutions de matériaux avancés conçues pour des applications exigeantes dans plusieurs secteurs industriels."
     },
     "hero": {
       "title": "Gamme Complète de Produits",
