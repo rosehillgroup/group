@@ -161,8 +161,8 @@
     },
     "chemicals": {
       "title": "Chemicals",
-      "description": "Custom chemical solutions and specialty compounds. Working with industry partners to develop innovative materials for unique applications.",
-      "cta": "Coming soon"
+      "description": "Bespoke polymer formulations and custom chemistry solutions developed in collaboration with clients for construction and industrial applications.",
+      "cta": "View capabilities"
     }
   },
   "caseStudies": {
@@ -270,6 +270,13 @@
       "description": "Our 24-hour technical support service ensures you get the expert help you need, when you need it.",
       "callButton": "Call +44 (0)1422 839 610",
       "emailButton": "Emergency Email Support"
+    },
+    "chemicals": {
+      "title": "Chemicals",
+      "description": "Specialty chemicals, advanced compounds, industrial solutions",
+      "team": "Technical Team",
+      "division": "Chemicals Division",
+      "contactTeam": "Contact Team"
     }
   },
   "footer": {
@@ -654,6 +661,18 @@
       "description": "Our technical team provides comprehensive support from product selection through to installation guidance and ongoing maintenance.",
       "requestInfo": "Request Technical Information",
       "speakExpert": "Speak to an Expert"
+    },
+    "specialityCompounds": {
+      "title": "Speciality Compounds", 
+      "description": "Advanced chemical compounds engineered for demanding industrial applications and extreme environments."
+    },
+    "industrialChemicalSolutions": {
+      "title": "Industrial Chemical Solutions",
+      "description": "Customised chemical solutions designed for specific industrial processes and manufacturing requirements."
+    },
+    "advancedPolymerSystems": {
+      "title": "Advanced Polymer Systems",
+      "description": "Next-generation polymer technologies for specialised applications requiring superior performance characteristics."
     },
     "noResults": {
       "title": "No products found",

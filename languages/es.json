@@ -161,8 +161,8 @@
     },
     "chemicals": {
       "title": "Químicos",
-      "description": "Soluciones químicas personalizadas y compuestos especializados. Trabajando con socios industriales para desarrollar materiales innovadores para aplicaciones únicas.",
-      "cta": "Próximamente"
+      "description": "Formulaciones de polímeros personalizadas y soluciones químicas desarrolladas en colaboración con clientes para aplicaciones industriales y de construcción.",
+      "cta": "Ver capacidades"
     }
   },
   "popularProducts": {
@@ -270,6 +270,13 @@
       "description": "Nuestro servicio de soporte técnico 24 horas garantiza que obtenga la ayuda experta que necesita, cuando la necesita.",
       "callButton": "Llamar +44 (0)1422 839 610",
       "emailButton": "Soporte de Email de Emergencia"
+    },
+    "chemicals": {
+      "title": "Químicos",
+      "description": "Productos químicos especializados, compuestos avanzados, soluciones industriales",
+      "team": "Equipo Técnico",
+      "division": "División Química",
+      "contactTeam": "Contactar Equipo"
     }
   },
   "footer": {
@@ -654,6 +661,18 @@
       "description": "Nuestro equipo técnico proporciona soporte integral desde la selección de productos hasta orientación de instalación y mantenimiento continuo.",
       "requestInfo": "Solicitar Información Técnica",
       "speakExpert": "Hablar con un Experto"
+    },
+    "specialityCompounds": {
+      "title": "Compuestos Especializados",
+      "description": "Compuestos químicos avanzados diseñados para aplicaciones industriales exigentes y entornos extremos."
+    },
+    "industrialChemicalSolutions": {
+      "title": "Soluciones Químicas Industriales",
+      "description": "Soluciones químicas personalizadas diseñadas para procesos industriales específicos y requisitos de fabricación."
+    },
+    "advancedPolymerSystems": {
+      "title": "Sistemas de Polímeros Avanzados",
+      "description": "Tecnologías de polímeros de nueva generación para aplicaciones especializadas que requieren características de rendimiento superiores."
     },
     "noResults": {
       "title": "No se encontraron productos",

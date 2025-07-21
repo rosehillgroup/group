@@ -161,8 +161,8 @@
     },
     "chemicals": {
       "title": "Produits Chimiques",
-      "description": "Solutions chimiques personnalisées et composés spécialisés. Travaillant avec des partenaires industriels pour développer des matériaux innovants pour des applications uniques.",
-      "cta": "Bientôt disponible"
+      "description": "Formulations de polymères sur mesure et solutions chimiques personnalisées développées en collaboration avec des clients pour des applications industrielles et de construction.",
+      "cta": "Voir les capacités"
     }
   },
   "caseStudies": {
@@ -250,6 +250,13 @@
       "description": "Notre service de support technique 24h/24 vous garantit l'aide d'experts dont vous avez besoin, quand vous en avez besoin.",
       "callButton": "Appeler +44 (0)1422 839 610",
       "emailButton": "Support Email d'Urgence"
+    },
+    "chemicals": {
+      "title": "Produits Chimiques",
+      "description": "Produits chimiques spécialisés, composés avancés, solutions industrielles",
+      "team": "Équipe Technique",
+      "division": "Division Chimique",
+      "contactTeam": "Contacter l'Équipe"
     }
   },
   "popularProducts": {
@@ -654,6 +661,18 @@
       "description": "Notre équipe technique fournit un soutien complet depuis la sélection de produits jusqu'aux conseils d'installation et à la maintenance continue.",
       "requestInfo": "Demander des Informations Techniques",
       "speakExpert": "Parler à un Expert"
+    },
+    "specialityCompounds": {
+      "title": "Composés Spécialisés",
+      "description": "Composés chimiques avancés conçus pour des applications industrielles exigeantes et des environnements extrêmes."
+    },
+    "industrialChemicalSolutions": {
+      "title": "Solutions Chimiques Industrielles",
+      "description": "Solutions chimiques personnalisées conçues pour des processus industriels spécifiques et des exigences de fabrication."
+    },
+    "advancedPolymerSystems": {
+      "title": "Systèmes de Polymères Avancés",
+      "description": "Technologies de polymères de nouvelle génération pour des applications spécialisées nécessitant des caractéristiques de performance supérieures."
     },
     "noResults": {
       "title": "Aucun produit trouvé",
