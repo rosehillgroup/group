@@ -297,6 +297,18 @@
                 display: none;
             }
         }
+        
+        /* Mega Menu Toggle System */
+        .mega-menus-disabled .mega-menu-dropdown {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        
+        /* Optional: Remove dropdown arrows when disabled */
+        .mega-menus-disabled .mega-menu-trigger svg {
+            display: none;
+        }
 
         @media (max-width: 1023px) {
             .mobile-menu-toggle {
@@ -389,9 +401,10 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-rh-blue text-white px-4 py-2 rounded">Skip to main content</a>
     
     <!-- Header Navigation -->
+    <!-- MEGA MENU CONTROL: To enable mega menus, remove 'mega-menus-disabled' class from nav element below -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-20">
+            <nav class="mega-menus-disabled flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html">
@@ -408,14 +421,14 @@
                     <a href="index.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors" data-i18n="navigation.home">Home</a>
                     <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.about">About</a>
                     <div class="relative group">
-                        <a href="solutions.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                        <a href="solutions.html" class="mega-menu-trigger text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.solutions">Solutions</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Solutions Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- SOLUTIONS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h3 class="text-lg font-semibold text-rh-blue" data-i18n="navigation.solutionsBySector">Solutions by Sector</h3>
@@ -474,14 +487,14 @@
                         </div>
                     </div>
                     <div class="relative group">
-                        <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                        <a href="products.html" class="mega-menu-trigger text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.products">Products</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Products Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- PRODUCTS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <h3 class="text-lg font-semibold text-rh-blue mb-4" data-i18n="navigation.completeProductRange">Complete Product Range</h3>
                                 <div class="grid grid-cols-3 gap-6">
@@ -682,7 +695,7 @@
             <div class="container mx-auto px-4 py-20 lg:py-32 relative z-10">
                 <div class="max-w-4xl">
                     <h1 class="text-4xl lg:text-6xl font-light mb-6" data-i18n="hero.title">Advanced materials and infrastructure solutions for complex challenges</h1>
-                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 font-light" data-i18n="hero.subtitle">Your industry partner and problem solver. Bring us your challenges - we engineer innovative materials and solutions that deliver lasting performance and lower whole-life costs.</p>
+                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 font-light" data-i18n="hero.subtitle">30+ years engineering advanced materials that protect, connect and perform in the world's toughest environments.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="products.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center" data-i18n="hero.cta">
                             Browse Products
@@ -839,7 +852,7 @@
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4" data-i18n="materials.title">Materials & Manufacturing</h2>
-                    <p class="text-xl text-grey-600 max-w-3xl mx-auto" data-i18n="materials.subtitle">Your industry partner for custom materials solutions. Bring us your challenges - we engineer innovative materials that solve complex problems.</p>
+                    <p class="text-xl text-grey-600 max-w-3xl mx-auto" data-i18n="materials.subtitle">Your industry partner for advanced materials solutions. Bring us your challenges - we engineer innovative materials that solve complex problems.</p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -883,7 +896,7 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="materials.sportsRecreation.title">Sports & Recreation Materials</h3>
-                            <p class="text-grey-600 mb-4" data-i18n="materials.sportsRecreation.description">Rosehill TPV® rubber compounds and binders for high-performance sports surfaces. Custom material formulations for playgrounds, tracks, and recreational facilities.</p>
+                            <p class="text-grey-600 mb-4" data-i18n="materials.sportsRecreation.description">Rosehill TPV® rubber compounds and binders for high-performance sports surfaces. Engineered solutions for playgrounds, tracks, and recreational facilities.</p>
                             <div class="flex items-center text-rh-orange font-semibold">
                                 <span data-i18n="materials.sportsRecreation.cta">View materials</span>
                                 <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -908,7 +921,7 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="materials.chemicals.title">Chemicals</h3>
-                            <p class="text-grey-600 mb-4" data-i18n="materials.chemicals.description">Custom chemical solutions and specialty compounds. Working with industry partners to develop innovative materials for unique applications.</p>
+                            <p class="text-grey-600 mb-4" data-i18n="materials.chemicals.description">Specialty chemical solutions and advanced compounds. Working with industry partners to develop innovative materials for unique applications.</p>
                             <div class="flex items-center text-rh-orange font-semibold">
                                 <span data-i18n="materials.chemicals.cta">Coming soon</span>
                                 <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

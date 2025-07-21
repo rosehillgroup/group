@@ -79,7 +79,7 @@
   },
   "hero": {
     "title": "Advanced materials and infrastructure solutions for complex challenges",
-    "subtitle": "Your industry partner and problem solver. Bring us your challenges - we engineer innovative materials and solutions that deliver lasting performance and lower whole-life costs.",
+    "subtitle": "30+ years engineering advanced materials that protect, connect and perform in the world's toughest environments.",
     "cta": "Browse Products",
     "ctaSecondary": "Start Your Project",
     "badges": {
@@ -207,8 +207,8 @@
     "countriesWorldwide": "Countries Worldwide"
   },
   "contact": {
-    "title": "Get Expert Infrastructure Solutions Advice",
-    "subtitle": "Our technical specialists are here to help with product selection, specifications, and project requirements. Get in touch with our team or connect directly with sector experts.",
+    "title": "Get Expert Materials & Infrastructure Advice",
+    "subtitle": "Our technical specialists are here to help with product selection, specifications, and project requirements. Get in touch with our team or connect directly with our division experts.",
     "support24hr": "24hr Technical Support",
     "expertConsultation": "Expert Consultation", 
     "projectGuidance": "Project Guidance",
@@ -222,7 +222,7 @@
     "weekdays": "Monday - Friday: 8:00 AM - 5:00 PM",
     "weekends": "Saturday - Sunday: Closed",
     "technicalSupport": "24hr technical support available",
-    "speakToSpecialists": "Speak to our sector specialists",
+    "speakToSpecialists": "Speak to our division specialists",
     "speakToSpecialistsSubtitle": "Get direct access to our technical experts who understand the specific challenges and requirements of your industry sector.",
     "form": {
       "title": "Send us your enquiry",
@@ -248,6 +248,7 @@
         "energy": "Energy & Subsea",
         "sports": "Sports & Recreation",
         "drainage": "Drainage Solutions",
+        "chemicals": "Chemicals",
         "general": "General Enquiry"
       }
     },
@@ -326,7 +327,7 @@
   "solutions": {
     "hero": {
       "title": "Solutions by Sector",
-      "subtitle": "Discover our comprehensive range of engineering solutions across six key sectors. Each division combines decades of expertise with innovative approaches to deliver sustainable infrastructure solutions for modern challenges.",
+      "subtitle": "Discover our comprehensive range of engineering solutions across seven specialist divisions. Each combines decades of expertise with innovative approaches to deliver advanced materials and infrastructure solutions for modern challenges.",
       "experience": "30+ Years Experience",
       "productsInstalled": "500k+ Products Installed",
       "isoCertified": "ISO 9001 Certified"
@@ -376,12 +377,18 @@
       "description": "Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects.",
       "visitSite": "Visit Drainage Site"
     },
+    "chemicals": {
+      "title": "Chemicals",
+      "division": "Chemicals Division",
+      "description": "Custom chemical solutions and specialty compounds. Working with industry partners to develop innovative materials for unique applications.",
+      "visitSite": "Contact Us"
+    },
     "whyChoose": {
       "title": "Why Choose Rosehill Group?",
       "description": "With over three decades of engineering excellence, we deliver innovative solutions across multiple sectors with a commitment to sustainability and performance.",
       "multiSector": {
         "title": "Multi-Sector Expertise",
-        "description": "Comprehensive solutions across six key infrastructure sectors"
+        "description": "Comprehensive solutions across seven specialist divisions"
       },
       "sustainableInnovation": {
         "title": "Sustainable Innovation",
@@ -406,13 +413,13 @@
   "about": {
     "breadcrumb": "About Rosehill",
     "hero": {
-      "title": "Shaping a Sustainable Future Through Innovation",
-      "subtitle": "For over three decades, Rosehill has led the way in creating innovative infrastructure products that make our world safer, more sustainable, and more efficient."
+      "title": "Advanced Materials & Infrastructure Solutions",
+      "subtitle": "For over three decades, Rosehill has led the way in engineering advanced materials that protect, connect and perform in the world's toughest environments."
     },
     "ourStory": {
       "title": "Engineering Excellence Since 1988",
-      "paragraph1": "The infrastructure challenges of the modern world require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in engineered infrastructure solutions.",
-      "paragraph2": "From road safety systems and railway products to modular drainage and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our entire product range."
+      "paragraph1": "The modern world's infrastructure and materials challenges require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in advanced materials and engineered infrastructure solutions.",
+      "paragraph2": "From specialty chemicals and polymer systems to road safety and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our materials and infrastructure product range."
     },
     "circularEconomy": {
       "title": "Committed to the Circular Economy",
@@ -432,7 +439,7 @@
     },
     "divisions": {
       "title": "Our Specialist Divisions",
-      "description": "Each division delivers tailored solutions that meet the unique demands of its respective market, exemplifying British engineering excellence.",
+      "description": "Our infrastructure and materials divisions deliver tailored solutions that meet the unique demands of each market, exemplifying British engineering excellence.",
       "roadSafety": {
         "title": "Road Safety Solutions",
         "description": "Surface-mounted systems that enhance road safety for all users. Designed for quick installation and long-term performance, they support safer, more efficient transport networks."
@@ -453,6 +460,10 @@
         "title": "Sports & Recreation",
         "description": "Durable, impact-absorbing surfacing for public play areas and sports facilities, delivering long-lasting safety and colour stability that stands up to heavy use and harsh weather."
       },
+      "chemicals": {
+        "title": "Chemicals",
+        "description": "Specialty chemical solutions and advanced compounds engineered for demanding applications across multiple industrial sectors."
+      },
       "drainageSolutions": {
         "title": "Drainage Solutions",
         "description": "Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects."
@@ -460,10 +471,10 @@
     },
     "whyChoose": {
       "title": "Why Choose Rosehill?",
-      "description": "From creating safer roads and rail networks to protecting military personnel and enhancing playgrounds, Rosehill is committed to delivering innovative solutions that combine quality, sustainability, and reliability.",
+      "description": "From engineering advanced materials and specialty chemicals to creating safer infrastructure systems, Rosehill is committed to delivering innovative solutions that combine quality, sustainability, and reliability.",
       "experience": {
         "title": "Years of Experience",
-        "description": "Three decades of polymer innovation and infrastructure expertise"
+        "description": "Three decades of advanced materials engineering and infrastructure expertise"
       },
       "globalReach": {
         "title": "Global Reach",
@@ -471,7 +482,7 @@
       },
       "qualityAssured": {
         "title": "Quality Assured",
-        "description": "Manufacturing control ensures exceptional quality across our entire range"
+        "description": "Manufacturing control ensures exceptional quality across our materials and infrastructure range"
       }
     },
     "futureFocus": {
@@ -497,9 +508,9 @@
   "products": {
     "hero": {
       "title": "Complete Product Range",
-      "subtitle": "Discover our comprehensive portfolio of infrastructure products across six key sectors. From concept to installation, we deliver engineered solutions that meet your project requirements.",
+      "subtitle": "Discover our comprehensive portfolio of advanced materials and infrastructure products across seven specialist divisions. From concept to installation, we deliver engineered solutions that meet your project requirements.",
       "productsCount": "30+ Products",
-      "sectorsCount": "6 Sectors",
+      "divisionsCount": "7 Divisions",
       "documentation": "Technical Documentation"
     },
     "search": {
@@ -512,7 +523,8 @@
       "defence": "Defence",
       "energy": "Energy",
       "surfacing": "Surfacing",
-      "drainage": "Drainage"
+      "drainage": "Drainage",
+      "chemicals": "Chemicals"
     },
     "learnMore": "Learn More",
     "cycleLaneDefenders": {

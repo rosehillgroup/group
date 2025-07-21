@@ -79,7 +79,7 @@
   },
   "hero": {
     "title": "Matériaux avancés et solutions d'infrastructure pour défis complexes",
-    "subtitle": "Votre partenaire industriel et solutionneur de problèmes. Apportez-nous vos défis - nous concevons des matériaux et des solutions innovants qui offrent des performances durables et des coûts de cycle de vie réduits.",
+    "subtitle": "30+ ans d'ingénierie de matériaux avancés qui protègent, connectent et performent dans les environnements les plus difficiles au monde.",
     "cta": "Parcourir les Produits",
     "ctaSecondary": "Commencer Votre Projet",
     "badges": {
@@ -187,8 +187,8 @@
     }
   },
   "contact": {
-    "title": "Obtenez des Conseils d'Experts en Solutions d'Infrastructure",
-    "subtitle": "Nos spécialistes techniques sont là pour vous aider avec la sélection de produits, les spécifications et les exigences de projet. Contactez notre équipe ou connectez-vous directement avec les experts sectoriels.",
+    "title": "Obtenez des Conseils d'Experts en Matériaux et Infrastructure",
+    "subtitle": "Nos spécialistes techniques sont là pour vous aider avec la sélection de produits, les spécifications et les exigences de projet. Contactez notre équipe ou connectez-vous directement avec nos experts de division.",
     "support24hr": "Support Technique 24h",
     "expertConsultation": "Consultation d'Expert",
     "projectGuidance": "Guidance de Projet",
@@ -202,7 +202,7 @@
     "weekdays": "Lundi - Vendredi : 8h00 - 17h00",
     "weekends": "Samedi - Dimanche : Fermé",
     "technicalSupport": "Support technique 24h/24 disponible",
-    "speakToSpecialists": "Parlez à nos spécialistes sectoriels",
+    "speakToSpecialists": "Parlez à nos spécialistes de division",
     "speakToSpecialistsSubtitle": "Obtenez un accès direct à nos experts techniques qui comprennent les défis spécifiques et les exigences de votre secteur d'activité.",
     "form": {
       "title": "Envoyez-nous votre demande",
@@ -228,6 +228,7 @@
         "energy": "Énergie et Sous-Marine",
         "sports": "Sports et Loisirs",
         "drainage": "Solutions de Drainage",
+        "chemicals": "Produits Chimiques",
         "general": "Demande Générale"
       }
     },
@@ -326,7 +327,7 @@
   "solutions": {
     "hero": {
       "title": "Solutions par Secteur",
-      "subtitle": "Découvrez notre gamme complète de solutions d'ingénierie dans six secteurs clés. Chaque division combine des décennies d'expertise avec des approches innovantes pour fournir des solutions d'infrastructure durable aux défis modernes.",
+      "subtitle": "Découvrez notre gamme complète de solutions d'ingénierie dans sept divisions spécialisées. Chaque division combine des décennies d'expertise avec des approches innovantes pour fournir des solutions de matériaux avancés et d'infrastructure aux défis modernes.",
       "experience": "30+ Années d'Expérience",
       "productsInstalled": "500k+ Produits Installés",
       "isoCertified": "Certifié ISO 9001"
@@ -376,12 +377,18 @@
       "description": "Systèmes de gestion de l'eau durables qui combinent des performances de drainage efficaces avec les principes de l'économie circulaire pour les projets d'infrastructure modernes.",
       "visitSite": "Visiter le Site Drainage"
     },
+    "chemicals": {
+      "title": "Produits Chimiques",
+      "division": "Division Produits Chimiques",
+      "description": "Solutions chimiques personnalisées et composés spécialisés. Travaillant avec des partenaires industriels pour développer des matériaux innovants pour des applications uniques.",
+      "visitSite": "Nous Contacter"
+    },
     "whyChoose": {
       "title": "Pourquoi Choisir Rosehill Group ?",
       "description": "Avec plus de trois décennies d'excellence en ingénierie, nous offrons des solutions innovantes dans plusieurs secteurs avec un engagement envers la durabilité et la performance.",
       "multiSector": {
         "title": "Expertise Multi-Secteurs",
-        "description": "Solutions complètes dans six secteurs d'infrastructure clés"
+        "description": "Solutions complètes dans sept divisions spécialisées"
       },
       "sustainableInnovation": {
         "title": "Innovation Durable",
@@ -406,13 +413,13 @@
   "about": {
     "breadcrumb": "À propos de Rosehill",
     "hero": {
-      "title": "Façonner un avenir durable par l'innovation",
-      "subtitle": "Depuis plus de trois décennies, Rosehill a ouvert la voie en créant des produits d'infrastructure innovants qui rendent notre monde plus sûr, plus durable et plus efficace."
+      "title": "Solutions de Matériaux Avancés et d'Infrastructure",
+      "subtitle": "Depuis plus de trois décennies, Rosehill a ouvert la voie en ingéniant des matériaux avancés qui protègent, connectent et performent dans les environnements les plus difficiles au monde."
     },
     "ourStory": {
       "title": "Excellence d'ingénierie depuis 1988",
-      "paragraph1": "Les défis d'infrastructure du monde moderne nécessitent des solutions qui offrent à la fois performance et responsabilité environnementale. Opérant depuis notre siège britannique à Sowerby Bridge, nous nous sommes établis comme un leader mondial des solutions d'infrastructure d'ingénierie.",
-      "paragraph2": "Des systèmes de sécurité routière et des produits ferroviaires au drainage modulaire et aux surfaces récréatives, nos produits sont approuvés dans le monde entier. En fabriquant nos propres liants polyuréthane et en contrôlant l'ensemble du processus de production, nous garantissons une qualité exceptionnelle sur toute notre gamme de produits."
+      "paragraph1": "Les défis modernes d'infrastructure et de matériaux nécessitent des solutions qui offrent à la fois performance et responsabilité environnementale. Opérant depuis notre siège britannique à Sowerby Bridge, nous nous sommes établis comme un leader mondial des solutions de matériaux avancés et d'infrastructure d'ingénierie.",
+      "paragraph2": "Des solutions chimiques spécialisées et des systèmes polymères à la sécurité routière et aux surfaces récréatives, nos produits sont approuvés dans le monde entier. En fabriquant nos propres liants polyuréthane et en contrôlant l'ensemble du processus de production, nous garantissons une qualité exceptionnelle sur toute notre gamme de matériaux et d'infrastructure."
     },
     "circularEconomy": {
       "title": "Engagé dans l'économie circulaire",
@@ -432,7 +439,7 @@
     },
     "divisions": {
       "title": "Nos divisions spécialisées",
-      "description": "Chaque division livre des solutions sur mesure qui répondent aux demandes uniques de son marché respectif, exemplifiant l'excellence d'ingénierie britannique.",
+      "description": "Nos divisions d'infrastructure et de matériaux livrent des solutions sur mesure qui répondent aux demandes uniques de chaque marché, exemplifiant l'excellence d'ingénierie britannique.",
       "roadSafety": {
         "title": "Solutions de sécurité routière",
         "description": "Systèmes montés en surface qui améliorent la sécurité routière pour tous les utilisateurs. Conçus pour une installation rapide et des performances à long terme, ils soutiennent des réseaux de transport plus sûrs et plus efficaces."
@@ -453,6 +460,10 @@
         "title": "Sports et loisirs",
         "description": "Revêtement durable et absorbant les impacts pour les aires de jeux publiques et les installations sportives, offrant une sécurité durable et une stabilité de couleur qui résiste à une utilisation intensive et aux intempéries."
       },
+      "chemicals": {
+        "title": "Produits Chimiques",
+        "description": "Solutions chimiques spécialisées et composés avancés conçus pour des applications exigeantes dans de multiples secteurs industriels."
+      },
       "drainageSolutions": {
         "title": "Solutions de drainage",
         "description": "Systèmes de gestion de l'eau durables qui combinent performance de drainage efficace avec les principes de l'économie circulaire pour les projets d'infrastructure modernes."
@@ -460,10 +471,10 @@
     },
     "whyChoose": {
       "title": "Pourquoi choisir Rosehill ?",
-      "description": "De la création de routes et de réseaux ferroviaires plus sûrs à la protection du personnel militaire et l'amélioration des terrains de jeux, Rosehill s'engage à fournir des solutions innovantes qui combinent qualité, durabilité et fiabilité.",
+      "description": "De l'ingénierie de matériaux avancés et de produits chimiques spécialisés à la création de systèmes d'infrastructure plus sûrs, Rosehill s'engage à fournir des solutions innovantes qui combinent qualité, durabilité et fiabilité.",
       "experience": {
         "title": "Années d'expérience",
-        "description": "Trois décennies d'innovation polymère et d'expertise en infrastructure"
+        "description": "Trois décennies d'ingénierie de matériaux avancés et d'expertise en infrastructure"
       },
       "globalReach": {
         "title": "Portée mondiale",
@@ -471,7 +482,7 @@
       },
       "qualityAssured": {
         "title": "Qualité assurée",
-        "description": "Le contrôle de fabrication garantit une qualité exceptionnelle sur toute notre gamme"
+        "description": "Le contrôle de fabrication garantit une qualité exceptionnelle sur toute notre gamme de matériaux et d'infrastructure"
       }
     },
     "futureFocus": {
@@ -497,9 +508,9 @@
   "products": {
     "hero": {
       "title": "Gamme Complète de Produits",
-      "subtitle": "Découvrez notre portefeuille complet de produits d'infrastructure dans six secteurs clés. De la conception à l'installation, nous fournissons des solutions d'ingénierie qui répondent aux exigences de votre projet.",
+      "subtitle": "Découvrez notre portefeuille complet de matériaux avancés et produits d'infrastructure à travers sept divisions spécialisées. De la conception à l'installation, nous fournissons des solutions d'ingénierie qui répondent aux exigences de votre projet.",
       "productsCount": "30+ Produits",
-      "sectorsCount": "6 Secteurs",
+      "divisionsCount": "7 Divisions",
       "documentation": "Documentation Technique"
     },
     "search": {
@@ -512,7 +523,8 @@
       "defence": "Défense",
       "energy": "Énergie",
       "surfacing": "Revêtement",
-      "drainage": "Drainage"
+      "drainage": "Drainage",
+      "chemicals": "Produits Chimiques"
     },
     "learnMore": "En Savoir Plus",
     "cycleLaneDefenders": {

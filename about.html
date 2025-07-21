@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Rosehill Group - Shaping a Sustainable Future Through Innovation</title>
-    <meta name="description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of sustainable infrastructure solutions. From road safety to rail systems, security barriers to sports surfaces - engineering excellence.">
-    <meta name="keywords" content="Rosehill Group history, infrastructure manufacturing, sustainable engineering, UK polyurethane specialist, road safety manufacturer">
+    <title>About Rosehill Group - Engineering Excellence Since 1988</title>
+    <meta name="description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of advanced materials and sustainable infrastructure solutions. From polymer chemistry to infrastructure systems - engineering excellence.">
+    <meta name="keywords" content="Rosehill Group history, advanced materials manufacturing, infrastructure solutions, UK polyurethane specialist, polymer chemistry, sustainable engineering">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rosehill.group/about">
-    <meta property="og:title" content="About Rosehill Group - Shaping a Sustainable Future Through Innovation">
-    <meta property="og:description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of sustainable infrastructure solutions. From road safety to rail systems, security barriers to sports surfaces - engineering excellence.">
+    <meta property="og:title" content="About Rosehill Group - Engineering Excellence Since 1988">
+    <meta property="og:description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of advanced materials and sustainable infrastructure solutions. From polymer chemistry to infrastructure systems - engineering excellence.">
     <meta property="og:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,8 +28,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://rosehill.group/about">
-    <meta property="twitter:title" content="About Rosehill Group - Shaping a Sustainable Future Through Innovation">
-    <meta property="twitter:description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of sustainable infrastructure solutions. From road safety to rail systems, security barriers to sports surfaces - engineering excellence.">
+    <meta property="twitter:title" content="About Rosehill Group - Engineering Excellence Since 1988">
+    <meta property="twitter:description" content="Founded in 1988, Rosehill Group is a leading UK manufacturer of advanced materials and sustainable infrastructure solutions. From polymer chemistry to infrastructure systems - engineering excellence.">
     <meta property="twitter:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="twitter:site" content="@rosehillpolymrs">
     <meta property="twitter:creator" content="@rosehillpolymrs">
@@ -315,6 +315,17 @@
         .menu-icon {
             filter: brightness(0) invert(100%);
         }
+        
+        /* Mega menu disable functionality */
+        .mega-menus-disabled .mega-menu-dropdown {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .mega-menus-disabled .mega-menu-trigger svg {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -324,7 +335,8 @@
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-20">
+            <!-- MEGA MENU CONTROL: To enable mega menus, remove 'mega-menus-disabled' class from nav element below -->
+            <nav class="mega-menus-disabled flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html">
@@ -341,14 +353,14 @@
                     <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.home">Home</a>
                     <a href="about.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors" data-i18n="navigation.about">About</a>
                     <div class="relative group">
-                        <a href="solutions.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                        <a href="solutions.html" class="mega-menu-trigger text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.solutions">Solutions</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Solutions Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- SOLUTIONS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h3 class="text-lg font-semibold text-rh-blue" data-i18n="navigation.solutionsBySector">Solutions by Sector</h3>
@@ -407,14 +419,14 @@
                         </div>
                     </div>
                     <div class="relative group">
-                        <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                        <a href="products.html" class="mega-menu-trigger text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.products">Products</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Products Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- PRODUCTS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <h3 class="text-lg font-semibold text-rh-blue mb-4" data-i18n="navigation.completeProductRange">Complete Product Range</h3>
                                 <div class="grid grid-cols-3 gap-6">
@@ -621,8 +633,8 @@
                 </nav>
                 
                 <div class="max-w-4xl">
-                    <h1 class="text-4xl lg:text-6xl font-light mb-6" data-i18n="about.hero.title">Shaping a Sustainable Future Through Innovation</h1>
-                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 font-light" data-i18n="about.hero.subtitle">For over three decades, Rosehill has led the way in creating innovative infrastructure products that make our world safer, more sustainable, and more efficient.</p>
+                    <h1 class="text-4xl lg:text-6xl font-light mb-6" data-i18n="about.hero.title">Engineering Excellence<br class="hidden lg:block"> Since 1988</h1>
+                    <p class="text-xl lg:text-2xl mb-8 text-blue-100 font-light" data-i18n="about.hero.subtitle">For over three decades, Rosehill has led the way in engineering advanced materials that protect, connect and perform in the world's toughest environments.</p>
                 </div>
             </div>
         </section>
@@ -634,8 +646,8 @@
                     <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                         <div>
                             <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6" data-i18n="about.ourStory.title">Engineering Excellence Since 1988</h2>
-                            <p class="text-lg text-grey-600 mb-6" data-i18n="about.ourStory.paragraph1">The infrastructure challenges of the modern world require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in engineered infrastructure solutions.</p>
-                            <p class="text-lg text-grey-600" data-i18n="about.ourStory.paragraph2">From road safety systems and railway products to modular drainage and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our entire product range.</p>
+                            <p class="text-lg text-grey-600 mb-6" data-i18n="about.ourStory.paragraph1">The modern world's infrastructure and materials challenges require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in advanced materials and engineered infrastructure solutions.</p>
+                            <p class="text-lg text-grey-600" data-i18n="about.ourStory.paragraph2">From specialty chemicals and polymer systems to road safety and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our materials and infrastructure product range.</p>
                         </div>
                         <div class="h-80 rounded-lg overflow-hidden">
                             <picture>
@@ -688,14 +700,17 @@
         </section>
 
         <!-- Our Divisions Section -->
-        <section class="py-20">
+        <section class="py-20 bg-grey-100">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4" data-i18n="about.divisions.title">Our Specialist Divisions</h2>
-                    <p class="text-xl text-grey-600 max-w-3xl mx-auto" data-i18n="about.divisions.description">Each division delivers tailored solutions that meet the unique demands of its respective market, exemplifying British engineering excellence.</p>
+                    <p class="text-xl text-grey-600 max-w-3xl mx-auto" data-i18n="about.divisions.description">Our infrastructure and materials divisions deliver tailored solutions that meet the unique demands of each market, exemplifying British engineering excellence.</p>
                 </div>
                 
-                <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Infrastructure Solutions -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold text-rh-blue mb-8 text-center">Infrastructure Solutions</h3>
+                    <div class="grid lg:grid-cols-2 gap-8">
                     <!-- Road Safety Solutions -->
                     <div class="bg-white rounded-xl p-8 shadow-lg hover-lift">
                         <div class="flex items-start mb-4">
@@ -735,19 +750,25 @@
                         </div>
                     </div>
 
-                    <!-- Energy & Subsea -->
+                    <!-- Drainage Solutions -->
                     <div class="bg-white rounded-xl p-8 shadow-lg hover-lift">
                         <div class="flex items-start mb-4">
                             <div class="w-12 h-12 bg-rh-orange rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-10 h-10 division-icon">
+                                <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-10 h-10 division-icon">
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.divisions.energySubsea.title">Energy & Subsea</h3>
-                                <p class="text-grey-600" data-i18n="about.divisions.energySubsea.description">Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.</p>
+                                <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.divisions.drainageSolutions.title">Drainage Solutions</h3>
+                                <p class="text-grey-600" data-i18n="about.divisions.drainageSolutions.description">Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects.</p>
                             </div>
                         </div>
                     </div>
-
+                    </div>
+                </div>
+                
+                <!-- Materials & Manufacturing -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-rh-blue mb-8 text-center">Materials & Manufacturing</h3>
+                    <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
                     <!-- Sports & Recreation -->
                     <div class="bg-white rounded-xl p-8 shadow-lg hover-lift">
                         <div class="flex items-start mb-4">
@@ -761,28 +782,42 @@
                         </div>
                     </div>
 
-                    <!-- Drainage Solutions -->
+                    <!-- Energy & Subsea -->
                     <div class="bg-white rounded-xl p-8 shadow-lg hover-lift">
                         <div class="flex items-start mb-4">
                             <div class="w-12 h-12 bg-rh-orange rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-10 h-10 division-icon">
+                                <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-10 h-10 division-icon">
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.divisions.drainageSolutions.title">Drainage Solutions</h3>
-                                <p class="text-grey-600" data-i18n="about.divisions.drainageSolutions.description">Sustainable water management systems that combine effective drainage performance with circular economy principles for modern infrastructure projects.</p>
+                                <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.divisions.energySubsea.title">Energy & Subsea</h3>
+                                <p class="text-grey-600" data-i18n="about.divisions.energySubsea.description">Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.</p>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Chemicals Division -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg hover-lift">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 bg-rh-orange rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <img src="icons/Glyph/Reaction, Chemistry, Experiment, Chemical, Process.svg" alt="Chemicals" class="w-10 h-10 division-icon">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.divisions.chemicals.title">Chemicals</h3>
+                                <p class="text-grey-600" data-i18n="about.divisions.chemicals.description">Specialty chemical solutions and advanced compounds engineered for demanding applications across multiple industrial sectors.</p>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Choose Rosehill Section -->
-        <section class="py-20 bg-grey-100">
+        <section class="py-20">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6" data-i18n="about.whyChoose.title">Why Choose Rosehill?</h2>
-                    <p class="text-xl text-grey-600 mb-12" data-i18n="about.whyChoose.description">From creating safer roads and rail networks to protecting military personnel and enhancing playgrounds, Rosehill is committed to delivering innovative solutions that combine quality, sustainability, and reliability.</p>
+                    <p class="text-xl text-grey-600 mb-12" data-i18n="about.whyChoose.description">From engineering advanced materials and specialty chemicals to creating safer infrastructure systems, Rosehill is committed to delivering innovative solutions that combine quality, sustainability, and reliability.</p>
                     
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="text-center">
@@ -790,7 +825,7 @@
                                 <span class="text-2xl font-bold text-white">30+</span>
                             </div>
                             <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.whyChoose.experience.title">Years of Experience</h3>
-                            <p class="text-grey-600" data-i18n="about.whyChoose.experience.description">Three decades of polymer innovation and infrastructure expertise</p>
+                            <p class="text-grey-600" data-i18n="about.whyChoose.experience.description">Three decades of advanced materials engineering and infrastructure expertise</p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 bg-rh-blue rounded-full flex items-center justify-center mx-auto mb-4">
@@ -806,7 +841,7 @@
                                 </svg>
                             </div>
                             <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="about.whyChoose.qualityAssured.title">Quality Assured</h3>
-                            <p class="text-grey-600" data-i18n="about.whyChoose.qualityAssured.description">Manufacturing control ensures exceptional quality across our entire range</p>
+                            <p class="text-grey-600" data-i18n="about.whyChoose.qualityAssured.description">Manufacturing control ensures exceptional quality across our materials and infrastructure range</p>
                         </div>
                     </div>
                 </div>
@@ -814,7 +849,7 @@
         </section>
 
         <!-- Future Focus Section -->
-        <section class="py-20">
+        <section class="py-20 bg-grey-100">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6" data-i18n="about.futureFocus.title">Shaping Tomorrow's Infrastructure</h2>

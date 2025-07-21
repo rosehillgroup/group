@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure Products - Rosehill Group Solutions</title>
-    <meta name="description" content="Discover Rosehill Group's comprehensive range of infrastructure products. From road safety barriers to rail systems, security solutions to sports surfaces.">
-    <meta name="keywords" content="infrastructure products, road safety barriers, rail systems, security solutions, sports surfaces, polyurethane products">
+    <title>Complete Product Portfolio - Rosehill Group</title>
+    <meta name="description" content="Discover Rosehill Group's comprehensive range of advanced materials and infrastructure products. From road safety barriers to specialty chemicals, rail systems to sports surfaces.">
+    <meta name="keywords" content="advanced materials, infrastructure products, road safety barriers, rail systems, security solutions, sports surfaces, specialty chemicals, polyurethane products">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rosehill.group/products">
-    <meta property="og:title" content="Infrastructure Products - Rosehill Group Solutions">
-    <meta property="og:description" content="Discover Rosehill Group's comprehensive range of infrastructure products. From road safety barriers to rail systems, security solutions to sports surfaces.">
+    <meta property="og:title" content="Complete Product Portfolio - Rosehill Group">
+    <meta property="og:description" content="Discover Rosehill Group's comprehensive range of advanced materials and infrastructure products. From road safety barriers to specialty chemicals, rail systems to sports surfaces.">
     <meta property="og:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,8 +28,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://rosehill.group/products">
-    <meta property="twitter:title" content="Infrastructure Products - Rosehill Group Solutions">
-    <meta property="twitter:description" content="Discover Rosehill Group's comprehensive range of infrastructure products. From road safety barriers to rail systems, security solutions to sports surfaces.">
+    <meta property="twitter:title" content="Complete Product Portfolio - Rosehill Group">
+    <meta property="twitter:description" content="Discover Rosehill Group's comprehensive range of advanced materials and infrastructure products. From road safety barriers to specialty chemicals, rail systems to sports surfaces.">
     <meta property="twitter:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="twitter:site" content="@rosehillpolymrs">
     <meta property="twitter:creator" content="@rosehillpolymrs">
@@ -382,9 +382,20 @@
         .menu-icon {
             filter: brightness(0) invert(100%);
         }
+        
+        /* Mega menu disable functionality */
+        .mega-menus-disabled .group:hover > div.absolute {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .mega-menus-disabled .group > a > svg {
+            display: none !important;
+        }
     </style>
 </head>
-<body>
+<body class="mega-menus-disabled">
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
@@ -685,14 +696,14 @@
             
             <div class="max-w-4xl">
                 <h1 class="text-4xl lg:text-6xl font-light text-white mb-6">
-                    <span data-i18n="products.hero.title">Complete Product Range</span>
+                    <span data-i18n="products.hero.title">Complete Product Portfolio</span>
                 </h1>
                 <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                    <span data-i18n="products.hero.subtitle">Discover our comprehensive portfolio of infrastructure products across six key sectors. From concept to installation, we deliver engineered solutions that meet your project requirements.</span>
+                    <span data-i18n="products.hero.subtitle">Discover our comprehensive portfolio of advanced materials and infrastructure products across seven specialist divisions. From concept to installation, we deliver engineered solutions that meet your project requirements.</span>
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="products.hero.productsCount">30+ Products</span>
-                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="products.hero.sectorsCount">6 Sectors</span>
+                    <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="products.hero.divisionsCount">7 Divisions</span>
                     <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="products.hero.documentation">Technical Documentation</span>
                 </div>
             </div>
@@ -725,6 +736,7 @@
                     <button class="filter-tab" data-filter="energy" data-i18n="products.filters.energy">Energy</button>
                     <button class="filter-tab" data-filter="sports" data-i18n="products.filters.surfacing">Surfacing</button>
                     <button class="filter-tab" data-filter="drainage" data-i18n="products.filters.drainage">Drainage</button>
+                    <button class="filter-tab" data-filter="chemicals" data-i18n="products.filters.chemicals">Chemicals</button>
                 </div>
             </div>
         </div>
@@ -734,7 +746,11 @@
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-7xl mx-auto">
-                <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Infrastructure Products -->
+                <div id="infrastructure-section" class="mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4 text-center">Infrastructure Products</h2>
+                    <p class="text-xl text-grey-600 max-w-3xl mx-auto text-center mb-12">Engineering solutions for transport networks, security, and water management infrastructure.</p>
+                    <div id="infrastructure-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     
                     <!-- Road Safety Products -->
                     <div class="product-card hover-lift" data-category="road-safety" data-name="cycle lane defenders">
@@ -1075,6 +1091,47 @@
                         </a>
                     </div>
 
+                    <!-- Drainage Products -->
+                    <div class="product-card hover-lift" data-category="drainage" data-name="trough stacker system">
+                        <picture>
+        <source srcset="trough-stacker.avif" type="image/avif">
+        <source srcset="trough-stacker.webp" type="image/webp">
+        <img src="trough-stacker.jpg" alt="Trough & Stacker System" class="w-full h-48 object-cover mb-4 rounded-lg">
+    </picture>
+                        <h3 class="text-lg font-semibold text-rh-blue mb-2" data-i18n="navigation.troughStackerSystem">Trough & Stacker System</h3>
+                        <p class="text-grey-600 text-sm mb-4" data-i18n="products.troughStackerSystem.description">Modular drainage system manufactured from recycled rubber for effective water management.</p>
+                        <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
+                            <span data-i18n="products.learnMore">Learn More</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="product-card hover-lift" data-category="drainage" data-name="drainage mats">
+                        <picture>
+        <source srcset="drainage-mats.avif" type="image/avif">
+        <source srcset="drainage-mats.webp" type="image/webp">
+        <img src="drainage-mats.jpg" alt="Drainage Mats" class="w-full h-48 object-cover mb-4 rounded-lg">
+    </picture>
+                        <h3 class="text-lg font-semibold text-rh-blue mb-2" data-i18n="navigation.drainageMats">Drainage Mats</h3>
+                        <p class="text-grey-600 text-sm mb-4" data-i18n="products.drainageMats.description">Flexible drainage mat systems for landscaping and construction applications.</p>
+                        <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
+                            <span data-i18n="products.learnMore">Learn More</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- Materials & Manufacturing -->
+                <div id="materials-section">
+                    <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4 text-center">Materials & Manufacturing</h2>
+                    <p class="text-xl text-grey-600 max-w-3xl mx-auto text-center mb-12">Advanced material solutions engineered for demanding applications across multiple industrial sectors.</p>
+                    <div id="materials-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
                     <!-- Energy & Subsea Products -->
                     <div class="product-card hover-lift" data-category="energy" data-name="castable polyurethanes">
                         <picture>
@@ -1253,16 +1310,16 @@
                         </a>
                     </div>
 
-                    <!-- Drainage Products -->
-                    <div class="product-card hover-lift" data-category="drainage" data-name="trough stacker system">
+                    <!-- Chemicals Products -->
+                    <div class="product-card hover-lift" data-category="chemicals" data-name="specialty compounds">
                         <picture>
-        <source srcset="trough-stacker.avif" type="image/avif">
-        <source srcset="trough-stacker.webp" type="image/webp">
-        <img src="trough-stacker.jpg" alt="Trough & Stacker System" class="w-full h-48 object-cover mb-4 rounded-lg">
+        <source srcset="liquid-applied-solutions.avif" type="image/avif">
+        <source srcset="liquid-applied-solutions.webp" type="image/webp">
+        <img src="liquid-applied-solutions.jpg" alt="Specialty Compounds" class="w-full h-48 object-cover mb-4 rounded-lg">
     </picture>
-                        <h3 class="text-lg font-semibold text-rh-blue mb-2" data-i18n="navigation.troughStackerSystem">Trough & Stacker System</h3>
-                        <p class="text-grey-600 text-sm mb-4" data-i18n="products.troughStackerSystem.description">Modular drainage system manufactured from recycled rubber for effective water management.</p>
-                        <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
+                        <h3 class="text-lg font-semibold text-rh-blue mb-2">Specialty Compounds</h3>
+                        <p class="text-grey-600 text-sm mb-4">Advanced chemical compounds engineered for demanding industrial applications and extreme environments.</p>
+                        <a href="contact.html" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
                             <span data-i18n="products.learnMore">Learn More</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -1270,15 +1327,15 @@
                         </a>
                     </div>
 
-                    <div class="product-card hover-lift" data-category="drainage" data-name="drainage mats">
+                    <div class="product-card hover-lift" data-category="chemicals" data-name="industrial solutions">
                         <picture>
-        <source srcset="drainage-mats.avif" type="image/avif">
-        <source srcset="drainage-mats.webp" type="image/webp">
-        <img src="drainage-mats.jpg" alt="Drainage Mats" class="w-full h-48 object-cover mb-4 rounded-lg">
+        <source srcset="liquid-applied-solutions.avif" type="image/avif">
+        <source srcset="liquid-applied-solutions.webp" type="image/webp">
+        <img src="liquid-applied-solutions.jpg" alt="Industrial Solutions" class="w-full h-48 object-cover mb-4 rounded-lg">
     </picture>
-                        <h3 class="text-lg font-semibold text-rh-blue mb-2" data-i18n="navigation.drainageMats">Drainage Mats</h3>
-                        <p class="text-grey-600 text-sm mb-4" data-i18n="products.drainageMats.description">Flexible drainage mat systems for landscaping and construction applications.</p>
-                        <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
+                        <h3 class="text-lg font-semibold text-rh-blue mb-2">Industrial Chemical Solutions</h3>
+                        <p class="text-grey-600 text-sm mb-4">Customized chemical solutions designed for specific industrial processes and manufacturing requirements.</p>
+                        <a href="contact.html" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
                             <span data-i18n="products.learnMore">Learn More</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -1286,6 +1343,22 @@
                         </a>
                     </div>
 
+                    <div class="product-card hover-lift" data-category="chemicals" data-name="advanced polymers">
+                        <picture>
+        <source srcset="liquid-applied-solutions.avif" type="image/avif">
+        <source srcset="liquid-applied-solutions.webp" type="image/webp">
+        <img src="liquid-applied-solutions.jpg" alt="Advanced Polymers" class="w-full h-48 object-cover mb-4 rounded-lg">
+    </picture>
+                        <h3 class="text-lg font-semibold text-rh-blue mb-2">Advanced Polymer Systems</h3>
+                        <p class="text-grey-600 text-sm mb-4">Next-generation polymer technologies for specialized applications requiring superior performance characteristics.</p>
+                        <a href="contact.html" class="inline-flex items-center text-rh-orange font-semibold hover:text-rh-orange-dark transition-colors">
+                            <span data-i18n="products.learnMore">Learn More</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                    </div>
                 </div>
                 
                 <!-- No Results Message -->
@@ -1473,6 +1546,12 @@
         function filterProducts() {
             const searchTerm = searchInput.value.toLowerCase();
             let visibleCount = 0;
+            let infrastructureVisible = 0;
+            let materialsVisible = 0;
+
+            // Define which categories belong to each section
+            const infrastructureCategories = ['road-safety', 'rail', 'defence', 'drainage'];
+            const materialsCategories = ['energy', 'sports', 'chemicals'];
 
             productCards.forEach(card => {
                 const category = card.dataset.category;
@@ -1485,10 +1564,37 @@
                 if (matchesFilter && matchesSearch) {
                     card.style.display = '';
                     visibleCount++;
+                    
+                    // Count visible products by section
+                    if (infrastructureCategories.includes(category)) {
+                        infrastructureVisible++;
+                    } else if (materialsCategories.includes(category)) {
+                        materialsVisible++;
+                    }
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // Show/hide section headers based on visible products
+            const infrastructureSection = document.getElementById('infrastructure-section');
+            const materialsSection = document.getElementById('materials-section');
+            
+            if (infrastructureSection) {
+                if (infrastructureVisible > 0) {
+                    infrastructureSection.style.display = '';
+                } else {
+                    infrastructureSection.style.display = 'none';
+                }
+            }
+            
+            if (materialsSection) {
+                if (materialsVisible > 0) {
+                    materialsSection.style.display = '';
+                } else {
+                    materialsSection.style.display = 'none';
+                }
+            }
 
             // Show/hide no results message
             if (visibleCount === 0) {

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure Solutions - Rosehill Group Expertise</title>
-    <meta name="description" content="Comprehensive infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy and sports applications.">
-    <meta name="keywords" content="infrastructure solutions, highway engineering, rail solutions, security systems, drainage solutions, energy infrastructure">
+    <title>Advanced Materials & Infrastructure Solutions - Rosehill Group</title>
+    <meta name="description" content="Comprehensive materials and infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy, sports and chemical applications.">
+    <meta name="keywords" content="advanced materials, infrastructure solutions, highway engineering, rail solutions, security systems, drainage solutions, energy infrastructure, chemical solutions">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rosehill.group/solutions">
-    <meta property="og:title" content="Infrastructure Solutions - Rosehill Group Expertise">
-    <meta property="og:description" content="Comprehensive infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy and sports applications.">
+    <meta property="og:title" content="Advanced Materials & Infrastructure Solutions - Rosehill Group">
+    <meta property="og:description" content="Comprehensive materials and infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy, sports and chemical applications.">
     <meta property="og:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,8 +28,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://rosehill.group/solutions">
-    <meta property="twitter:title" content="Infrastructure Solutions - Rosehill Group Expertise">
-    <meta property="twitter:description" content="Comprehensive infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy and sports applications.">
+    <meta property="twitter:title" content="Advanced Materials & Infrastructure Solutions - Rosehill Group">
+    <meta property="twitter:description" content="Comprehensive materials and infrastructure solutions from Rosehill Group. Expert engineering for highways, rail, security, drainage, energy, sports and chemical applications.">
     <meta property="twitter:image" content="https://rosehill.group/rosehill_group_social_sharing.jpg">
     <meta property="twitter:site" content="@rosehillpolymrs">
     <meta property="twitter:creator" content="@rosehillpolymrs">
@@ -282,6 +282,17 @@
         
         .icon-container:hover img {
             transform: scale(1.1);
+        }
+        
+        /* Mega menu disable functionality */
+        .mega-menus-disabled .mega-menu-dropdown {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .mega-menus-disabled .mega-menu-trigger svg {
+            display: none;
         }
         
         /* Specific icon color overrides */
@@ -563,7 +574,8 @@
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-20">
+            <!-- MEGA MENU CONTROL: To enable mega menus, remove 'mega-menus-disabled' class from nav element below -->
+            <nav class="mega-menus-disabled flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html">
@@ -580,14 +592,14 @@
                     <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.home">Home</a>
                     <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.about">About</a>
                     <div class="relative group">
-                        <a href="solutions.html" class="text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors flex items-center">
+                        <a href="solutions.html" class="mega-menu-trigger text-rh-orange hover:text-rh-orange-dark font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.solutions">Solutions</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Solutions Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- SOLUTIONS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                     <h3 class="text-lg font-semibold text-rh-blue" data-i18n="navigation.solutionsBySector">Solutions by Sector</h3>
@@ -646,14 +658,14 @@
                         </div>
                     </div>
                     <div class="relative group">
-                        <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
+                        <a href="products.html" class="mega-menu-trigger text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
                             <span data-i18n="navigation.products">Products</span>
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </a>
-                        <!-- Products Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <!-- PRODUCTS MEGA MENU - To enable: remove 'mega-menus-disabled' class from navigation -->
+                        <div class="mega-menu-dropdown absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="p-6">
                                 <h3 class="text-lg font-semibold text-rh-blue mb-4" data-i18n="navigation.completeProductRange">Complete Product Range</h3>
                                 <div class="grid grid-cols-3 gap-6">
@@ -864,7 +876,7 @@
                     Solutions by Sector
                 </h1>
                 <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-i18n="solutions.hero.subtitle">
-                    Discover our comprehensive range of engineering solutions across six key sectors. Each division combines decades of expertise with innovative approaches to deliver sustainable infrastructure solutions for modern challenges.
+                    Discover our comprehensive range of engineering solutions across seven specialist divisions. Each combines decades of expertise with innovative approaches to deliver advanced materials and infrastructure solutions for modern challenges.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <span class="bg-rh-orange text-white px-4 py-2 rounded-full text-sm font-medium" data-i18n="solutions.hero.experience">30+ Years Experience</span>
@@ -878,7 +890,11 @@
     <!-- Solutions Grid -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Infrastructure Solutions -->
+            <div class="mb-16">
+                <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4 text-center">Infrastructure Solutions</h2>
+                <p class="text-xl text-grey-600 max-w-3xl mx-auto text-center mb-12">Engineering excellence for safer, more efficient transport networks and secure environments.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
                 <!-- Road Safety Solutions -->
                 <div class="sector-card hover-lift">
@@ -1017,101 +1033,6 @@
                     </div>
                 </div>
 
-                <!-- Energy & Subsea -->
-                <div class="sector-card hover-lift">
-                    <div class="sector-image-container">
-                        <picture>
-        <source srcset="energy.avif" type="image/avif">
-        <source srcset="energy.webp" type="image/webp">
-        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover">
-    </picture>
-                        <div class="sector-icon-overlay">
-                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12">
-                        </div>
-                    </div>
-                    <div class="sector-card-content">
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="solutions.energySubsea.title">Energy & Subsea</h3>
-                            <span class="text-rh-orange font-medium" data-i18n="solutions.energySubsea.division">Energy Division</span>
-                        </div>
-                    
-                    <p class="text-grey-600 mb-6 leading-relaxed" data-i18n="solutions.energySubsea.description">
-                        Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.
-                    </p>
-                    
-                    <div class="space-y-4 mb-6">
-                        <h4 class="font-semibold text-grey-900" data-i18n="solutions.keyProducts">Key Products:</h4>
-                        <div class="flex flex-wrap">
-                            <span class="product-tag" data-i18n="navigation.castablePolyurethanes">Castable Polyurethanes</span>
-                            <span class="product-tag" data-i18n="navigation.cableProtection">Cable Protection</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.staticBendStiffeners">Static Bend Stiffeners</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.thermalInsulation">Thermal Insulation</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.generalMouldings">General Mouldings</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.flexilon3060">Flexilon 3060</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.flexilon3173">Flexilon 3173</span>
-                            <span class="product-tag" data-i18n="solutions.energySubsea.flexilon3604">Flexilon 3604</span>
-                        </div>
-                    </div>
-                    
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://energy.rosehill.group/" target="_blank" class="btn-primary" data-i18n="solutions.energySubsea.visitSite">
-                                Visit Energy Site
-                            </a>
-                            <a href="contact.html" class="btn-secondary" data-i18n="solutions.getQuote">
-                                Get Quote
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sports & Recreation -->
-                <div class="sector-card hover-lift">
-                    <div class="sector-image-container">
-                        <picture>
-        <source srcset="recreation.avif" type="image/avif">
-        <source srcset="recreation.webp" type="image/webp">
-        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover">
-    </picture>
-                        <div class="sector-icon-overlay">
-                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12">
-                        </div>
-                    </div>
-                    <div class="sector-card-content">
-                        <div class="mb-6">
-                            <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="solutions.sportsRecreation.title">Sports & Recreation</h3>
-                            <span class="text-rh-orange font-medium" data-i18n="solutions.sportsRecreation.division">TPV Division</span>
-                        </div>
-                    
-                    <p class="text-grey-600 mb-6 leading-relaxed" data-i18n="solutions.sportsRecreation.description">
-                        Durable, impact-absorbing surfacing for public play areas and sports facilities, delivering long-lasting safety and colour stability that stands up to heavy use and harsh weather.
-                    </p>
-                    
-                    <div class="space-y-4 mb-6">
-                        <h4 class="font-semibold text-grey-900" data-i18n="solutions.keyProducts">Key Products:</h4>
-                        <div class="flex flex-wrap">
-                            <span class="product-tag" data-i18n="solutions.sportsRecreation.tpvRubberGranules">TPV Rubber Granules</span>
-                            <span class="product-tag" data-i18n="navigation.playgroundSurfaces">Playground Surfaces</span>
-                            <span class="product-tag" data-i18n="navigation.multiUseGamesAreas">Multi-use Games Areas</span>
-                            <span class="product-tag" data-i18n="navigation.runningTracks">Running Tracks</span>
-                            <span class="product-tag" data-i18n="navigation.sportsPitches">Sports Pitches</span>
-                            <span class="product-tag" data-i18n="navigation.footpaths">Footpaths</span>
-                            <span class="product-tag" data-i18n="navigation.splashParks">Splash Parks</span>
-                            <span class="product-tag" data-i18n="navigation.poolSurrounds">Pool Surrounds</span>
-                            <span class="product-tag" data-i18n="navigation.turfInfill">Turf Infill</span>
-                            <span class="product-tag" data-i18n="navigation.flexilonBinders">Flexilon Binders</span>
-                        </div>
-                    </div>
-                    
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://tpv.rosehill.group/" target="_blank" class="btn-primary" data-i18n="solutions.sportsRecreation.visitSite">
-                                Visit Sports Site
-                            </a>
-                            <a href="contact.html" class="btn-secondary" data-i18n="solutions.getQuote">
-                                Get Quote
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Drainage Solutions -->
                 <div class="sector-card hover-lift">
@@ -1152,6 +1073,137 @@
                             </a>
                         </div>
                     </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Materials & Manufacturing -->
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-4 text-center">Materials & Manufacturing</h2>
+                <p class="text-xl text-grey-600 max-w-3xl mx-auto text-center mb-12">Advanced material solutions engineered for demanding applications across multiple industrial sectors.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                
+                <!-- Sports & Recreation -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <picture>
+        <source srcset="recreation.avif" type="image/avif">
+        <source srcset="recreation.webp" type="image/webp">
+        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover">
+    </picture>
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="solutions.sportsRecreation.title">Sports & Recreation</h3>
+                            <span class="text-rh-orange font-medium" data-i18n="solutions.sportsRecreation.division">TPV Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed" data-i18n="solutions.sportsRecreation.description">
+                        Durable, impact-absorbing surfacing for public play areas and sports facilities, delivering long-lasting safety and colour stability that stands up to heavy use and harsh weather.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="product-tag" data-i18n="navigation.flexilonBinders">Flexilon Binders</span>
+                            <span class="product-tag" data-i18n="navigation.playgroundSurfaces">Playground Surfaces</span>
+                            <span class="product-tag" data-i18n="navigation.runningTracks">Running Tracks</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://tpv.rosehill.group/" target="_blank" class="btn-primary" data-i18n="solutions.sportsRecreation.visitSite">
+                                Visit TPV Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary" data-i18n="solutions.getQuote">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Energy & Subsea -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <picture>
+        <source srcset="energy.avif" type="image/avif">
+        <source srcset="energy.webp" type="image/webp">
+        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover">
+    </picture>
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="solutions.energySubsea.title">Energy & Subsea</h3>
+                            <span class="text-rh-orange font-medium" data-i18n="solutions.energySubsea.division">Energy Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed" data-i18n="solutions.energySubsea.description">
+                        Specialised marine and offshore solutions engineered for extreme environments, supporting renewable energy projects and subsea infrastructure worldwide.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="product-tag" data-i18n="navigation.castablePolyurethanes">Castable Polyurethanes</span>
+                            <span class="product-tag" data-i18n="navigation.cableProtection">Cable Protection</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://energy.rosehill.group/" target="_blank" class="btn-primary" data-i18n="solutions.energySubsea.visitSite">
+                                Visit Energy Site
+                            </a>
+                            <a href="contact.html" class="btn-secondary" data-i18n="solutions.getQuote">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemicals Division -->
+                <div class="sector-card hover-lift">
+                    <div class="sector-image-container">
+                        <picture>
+        <source srcset="liquid-applied-solutions.avif" type="image/avif">
+        <source srcset="liquid-applied-solutions.webp" type="image/webp">
+        <img src="liquid-applied-solutions.jpg" alt="Chemicals" class="w-full h-full object-cover">
+    </picture>
+                        <div class="sector-icon-overlay">
+                            <img src="icons/Glyph/Reaction, Chemistry, Experiment, Chemical, Process.svg" alt="Chemicals" class="w-12 h-12">
+                        </div>
+                    </div>
+                    <div class="sector-card-content">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold text-rh-blue mb-2" data-i18n="solutions.chemicals.title">Chemicals</h3>
+                            <span class="text-rh-orange font-medium" data-i18n="solutions.chemicals.division">Chemicals Division</span>
+                        </div>
+                    
+                    <p class="text-grey-600 mb-6 leading-relaxed" data-i18n="solutions.chemicals.description">
+                        Specialty chemical solutions and advanced compounds engineered for demanding applications across multiple industrial sectors.
+                    </p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="product-tag">Advanced Compounds</span>
+                            <span class="product-tag">Specialty Chemicals</span>
+                            <span class="product-tag">Industrial Solutions</span>
+                        </div>
+                    </div>
+                    
+                        <div class="flex flex-wrap gap-4">
+                            <a href="contact.html" class="btn-primary" data-i18n="solutions.chemicals.contactUs">
+                                Contact Us
+                            </a>
+                            <a href="contact.html" class="btn-secondary" data-i18n="solutions.getQuote">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
