@@ -207,6 +207,12 @@
     "countriesWorldwide": "Countries Worldwide"
   },
   "contact": {
+    "infrastructure": {
+      "title": "Infrastructure Specialists"
+    },
+    "materials": {
+      "title": "Materials & Manufacturing Specialists"
+    },
     "title": "Get Expert Materials & Infrastructure Advice",
     "subtitle": "Our technical specialists are here to help with product selection, specifications, and project requirements. Get in touch with our team or connect directly with our division experts.",
     "support24hr": "24hr Technical Support",
@@ -506,6 +512,12 @@
     "exploreSolutions": "Explore Solutions"
   },
   "products": {
+    "infrastructure": {
+      "title": "Infrastructure Products"
+    },
+    "materials": {
+      "title": "Materials & Manufacturing"
+    },
     "hero": {
       "title": "Complete Product Range",
       "subtitle": "Discover our comprehensive portfolio of advanced materials and infrastructure products across seven specialist divisions. From concept to installation, we deliver engineered solutions that meet your project requirements.",

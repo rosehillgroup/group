@@ -207,6 +207,12 @@
     }
   },
   "contact": {
+    "infrastructure": {
+      "title": "Especialistas en Infraestructura"
+    },
+    "materials": {
+      "title": "Especialistas en Materiales y Fabricación"
+    },
     "title": "Obtenga Consejos de Expertos en Materiales e Infraestructura",
     "subtitle": "Nuestros especialistas técnicos están aquí para ayudar con la selección de productos, especificaciones y requisitos de proyecto. Póngase en contacto con nuestro equipo o conéctese directamente con nuestros expertos de división.",
     "support24hr": "Soporte Técnico 24h",
@@ -506,6 +512,12 @@
     "exploreSolutions": "Explorar Soluciones"
   },
   "products": {
+    "infrastructure": {
+      "title": "Productos de Infraestructura"
+    },
+    "materials": {
+      "title": "Materiales y Fabricación"
+    },
     "hero": {
       "title": "Gama Completa de Productos",
       "subtitle": "Descubra nuestro portafolio integral de materiales avanzados y productos de infraestructura a través de siete divisiones especialistas. Desde el concepto hasta la instalación, entregamos soluciones de ingeniería que cumplen con los requisitos de su proyecto.",
