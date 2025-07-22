@@ -153,6 +153,7 @@
         }
         
         /* Reset any conflicting styles - ONLY for main sector images */
+        .sector-card .sector-image-container > picture,
         .sector-card .sector-image-container > img:first-child {
             width: 100% !important;
             height: 240px !important;
@@ -168,6 +169,14 @@
             visibility: visible !important;
         }
         
+        .sector-card .sector-image-container > picture > img {
+            width: 100% !important;
+            height: 240px !important;
+            object-fit: cover !important;
+            display: block !important;
+            transition: none !important;
+        }
+        
         /* Override any orange backgrounds */
         .sector-card .sector-image-container {
             background: #f8f9fa !important;
@@ -178,6 +187,7 @@
             background: white !important;
         }
         
+        .sector-card:hover .sector-image-container picture,
         .sector-card:hover .sector-image-container img {
             transform: scale(1.05);
         }
