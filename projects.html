@@ -44,26 +44,35 @@
     <meta name="geo.position" content="53.7050;-1.9289">
     <meta name="ICBM" content="53.7050, -1.9289">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9ELN2Z0N"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PBMTS4D6');</script>
+    <!-- End Google Tag Manager -->
+    
     <script>
+        // Initialize dataLayer and set default consent state for GDPR
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
         
-        // Default consent state
-        gtag('consent', 'default', {
-            analytics_storage: 'denied',
-            ad_storage: 'denied',
-            functionality_storage: 'denied',
-            personalization_storage: 'denied',
-            security_storage: 'granted',
-            wait_for_update: 2000,
+        // Default consent state - same as before but for GTM
+        window.dataLayer.push({
+            'event': 'default_consent',
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted',
+            'wait_for_update': 2000
         });
         
-        gtag('js', new Date());
-        gtag('config', 'G-FR9ELN2Z0N', {
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=Strict;Secure',
+        // Track projects page view
+        window.dataLayer.push({
+            'event': 'page_view',
+            'page_type': 'projects_showcase',
+            'page_location': window.location.href,
+            'page_title': document.title
         });
     </script>
     <meta name="description" content="Explore our project portfolio showcasing infrastructure solutions across highways, rail, defence, and drainage sectors with proven performance and value engineering.">
@@ -400,6 +409,10 @@
     </style>
 </head>
 <body class="mega-menus-disabled">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBMTS4D6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-rh-blue text-white px-4 py-2 rounded">Skip to main content</a>
     

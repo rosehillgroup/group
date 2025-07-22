@@ -434,6 +434,10 @@
     </style>
 </head>
 <body class="mega-menus-disabled">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBMTS4D6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
@@ -1588,6 +1592,102 @@
                 currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
             }
         });
+    </script>
+    
+    <!-- Enhanced tracking for Group contact page -->
+    <script>
+        // Track specialist contact clicks for better lead qualification
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('a');
+            if (!target) return;
+            
+            const href = target.getAttribute('href');
+            if (!href) return;
+            
+            // Track phone clicks with specialist identification
+            if (href.startsWith('tel:')) {
+                const specialistCard = target.closest('.specialist-card');
+                let specialistName = 'general';
+                
+                if (specialistCard) {
+                    const nameElement = specialistCard.querySelector('.font-semibold');
+                    specialistName = nameElement ? nameElement.textContent.trim().toLowerCase().replace(' ', '_') : 'unknown';
+                }
+                
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'click',
+                    'click_type': 'specialist_phone',
+                    'specialist_name': specialistName,
+                    'phone_number': href.replace('tel:', ''),
+                    'click_text': target.textContent.trim(),
+                    'page_location': window.location.href
+                });
+            }
+            
+            // Track email clicks with specialist identification  
+            if (href.startsWith('mailto:')) {
+                const specialistCard = target.closest('.specialist-card');
+                let specialistName = 'general';
+                let businessArea = 'general';
+                
+                if (specialistCard) {
+                    const nameElement = specialistCard.querySelector('.font-semibold');
+                    specialistName = nameElement ? nameElement.textContent.trim().toLowerCase().replace(' ', '_') : 'unknown';
+                    
+                    // Identify business area from email or context
+                    if (href.includes('clare.riley')) businessArea = 'highways';
+                    else if (href.includes('daniel.snell')) businessArea = 'rail';
+                    else if (href.includes('dan.rainbird')) businessArea = 'defence_security';
+                    else if (href.includes('nadeem.riyazuddin')) businessArea = 'energy_subsea';
+                    else if (href.includes('joshua.jones')) businessArea = 'sports_recreation';
+                    else if (href.includes('dalton.marshall')) businessArea = 'drainage';
+                    else if (href.includes('urgent@')) businessArea = 'urgent_support';
+                }
+                
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'click',
+                    'click_type': 'specialist_email',
+                    'specialist_name': specialistName,
+                    'business_area': businessArea,
+                    'email_address': href.replace('mailto:', ''),
+                    'click_text': target.textContent.trim(),
+                    'page_location': window.location.href
+                });
+            }
+            
+            // Track external links to other Rosehill properties
+            if (href.includes('chemicals.rosehill.group')) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    'event': 'click',
+                    'click_type': 'external_division_link',
+                    'division': 'chemicals',
+                    'click_url': href,
+                    'page_location': window.location.href
+                });
+            }
+        });
+        
+        // Track urgent support section engagement
+        const urgentSupportSection = document.querySelector('section.bg-rh-orange');
+        if (urgentSupportSection) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            'event': 'section_view',
+                            'section_type': 'urgent_support_cta',
+                            'page_location': window.location.href
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(urgentSupportSection);
+        }
     </script>
     
     <!-- Cookie Consent -->
