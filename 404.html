@@ -14,26 +14,26 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9ELN2Z0N"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PBMTS4D6');</script>
+    <!-- End Google Tag Manager -->
+    
     <script>
+        // Initialize dataLayer and set default consent state for GDPR
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
         
-        // Default consent state
-        gtag('consent', 'default', {
+        // Set default consent state
+        window.dataLayer.push({
+            event: 'consent_default',
             analytics_storage: 'denied',
             ad_storage: 'denied',
             functionality_storage: 'denied',
             personalization_storage: 'denied',
-            security_storage: 'granted',
-            wait_for_update: 2000,
-        });
-        
-        gtag('js', new Date());
-        gtag('config', 'G-FR9ELN2Z0N', {
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=Strict;Secure',
+            security_storage: 'granted'
         });
     </script>
     
@@ -101,6 +101,11 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBMTS4D6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div class="error-gradient flex items-center justify-center">
         <div class="container mx-auto px-4 py-12 text-center text-white">
             <div class="max-w-2xl mx-auto">
