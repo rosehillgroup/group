@@ -431,6 +431,11 @@
         .mega-menus-disabled .group > a > svg {
             display: none !important;
         }
+
+        /* Hidden field for bot protection */
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body class="mega-menus-disabled">
@@ -760,7 +765,11 @@
                 <!-- Contact Form -->
                 <div class="contact-card">
                     <h2 class="text-2xl font-semibold text-rh-blue mb-6" data-i18n="contact.form.title">Send us your enquiry</h2>
-                    <form class="space-y-6">
+                    <form class="space-y-6" name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name</label>
