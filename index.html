@@ -112,7 +112,11 @@
         .text-grey-600 { color: var(--grey-600); }
         .bg-grey-100 { background-color: var(--grey-100); }
         .bg-grey-200 { background-color: var(--grey-200); }
+        .bg-grey-400 { background-color: #9CA3AF; }
         .border-grey-300 { border-color: var(--grey-300); }
+        .border-red-500 { border-color: #EF4444; }
+        .text-red-500 { color: #EF4444; }
+        .text-green-600 { color: #059669; }
         
         .hero-gradient {
             background: linear-gradient(135deg, rgba(26, 54, 93, 0.8) 0%, rgba(45, 74, 113, 0.8) 100%), url('rosehill_group_hero.webp');
@@ -1227,32 +1231,35 @@
                     <!-- Contact Form -->
                     <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
                         <h3 class="text-2xl font-semibold text-rh-blue mb-6 text-center" data-i18n="contact.form.title">Send us your project details</h3>
-                        <form class="space-y-6">
+                        <form id="contact-form" class="space-y-6" novalidate>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name</label>
-                                    <input type="text" id="name" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="John Smith">
+                                    <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="John Smith">
+                                    <div class="error-message text-red-500 text-xs mt-1 hidden" id="name-error">Please enter your name</div>
                                 </div>
                                 <div>
                                     <label for="company" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.company">Company</label>
-                                    <input type="text" id="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="ABC Construction Ltd">
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="ABC Construction Ltd">
                                 </div>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="email" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.email">Email</label>
-                                    <input type="email" id="email" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="john@example.com">
+                                    <label for="email" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.email">Email <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="john@example.com">
+                                    <div class="error-message text-red-500 text-xs mt-1 hidden" id="email-error">Please enter a valid email address</div>
                                 </div>
                                 <div>
                                     <label for="phone" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.phone">Phone</label>
-                                    <input type="tel" id="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="01234 567 890">
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="01234 567 890">
+                                    <div class="error-message text-red-500 text-xs mt-1 hidden" id="phone-error">Please enter a valid phone number</div>
                                 </div>
                             </div>
                             
                             <div>
-                                <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.sector">Project sector</label>
-                                <select id="sector" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all">
+                                <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.sector">Project sector <span class="text-red-500">*</span></label>
+                                <select id="sector" name="sector" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all">
                                     <option value="">Select sector</option>
                                     <option value="highways">Road Safety / Highways</option>
                                     <option value="rail">Rail Infrastructure</option>
@@ -1261,23 +1268,35 @@
                                     <option value="sports">Sports & Recreation</option>
                                     <option value="drainage">Drainage Solutions</option>
                                 </select>
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="sector-error">Please select a project sector</div>
                             </div>
                             
                             <div>
-                                <label for="message" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.message">Project details</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="Tell us about your project requirements..."></textarea>
+                                <label for="message" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.message">Project details <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" required rows="4" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" placeholder="Tell us about your project requirements..." minlength="10"></textarea>
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="message-error">Please provide project details (minimum 10 characters)</div>
                             </div>
                             
                             <div class="flex items-start">
-                                <input type="checkbox" id="consent" class="mt-1 mr-3 h-4 w-4 text-rh-orange border-grey-300 rounded focus:ring-rh-orange">
+                                <input type="checkbox" id="consent" name="consent" required class="mt-1 mr-3 h-4 w-4 text-rh-orange border-grey-300 rounded focus:ring-rh-orange">
                                 <label for="consent" class="text-sm text-grey-600">
-                                    <span data-i18n="contact.form.consent">I agree to Rosehill Group processing my data in accordance with the</span> <a href="privacy-policy.html" class="text-rh-orange hover:underline" data-i18n="contact.form.privacyPolicy">Privacy Policy</a>
+                                    <span data-i18n="contact.form.consent">I agree to Rosehill Group processing my data in accordance with the</span> <a href="privacy-policy.html" class="text-rh-orange hover:underline" data-i18n="contact.form.privacyPolicy">Privacy Policy</a> <span class="text-red-500">*</span>
                                 </label>
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="consent-error">Please agree to the Privacy Policy to continue</div>
                             </div>
                             
-                            <button type="submit" class="w-full bg-rh-orange hover:bg-rh-orange-dark text-white py-4 rounded-lg font-semibold text-lg transition-colors">
+                            <button type="submit" id="submit-btn" class="w-full bg-grey-400 text-white py-4 rounded-lg font-semibold text-lg transition-colors cursor-not-allowed" disabled>
                                 <span data-i18n="contact.form.submit">Submit enquiry</span>
                             </button>
+                            
+                            <div id="form-status" class="hidden text-center">
+                                <div id="success-message" class="text-green-600 font-medium hidden">
+                                    <span data-i18n="contact.form.success">Thank you! Your enquiry has been submitted successfully. We'll be in touch within 24 hours.</span>
+                                </div>
+                                <div id="error-message" class="text-red-500 font-medium hidden">
+                                    <span data-i18n="contact.form.error">There was an error submitting your form. Please try again.</span>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -1421,13 +1440,214 @@
                 });
             });
             
-            // Form submission handler
-            const form = document.querySelector('form');
+            // Enhanced form validation and submission handler
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formStatus = document.getElementById('form-status');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
             if (form) {
+                // Form field validation patterns
+                const validationRules = {
+                    name: {
+                        required: true,
+                        minLength: 2,
+                        pattern: /^[a-zA-Z\s\-']+$/,
+                        message: 'Please enter a valid name (letters, spaces, hyphens, apostrophes only)'
+                    },
+                    email: {
+                        required: true,
+                        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: 'Please enter a valid email address'
+                    },
+                    phone: {
+                        required: false,
+                        pattern: /^[\+]?[0-9\s\-\(\)]{10,}$/,
+                        message: 'Please enter a valid phone number (minimum 10 digits)'
+                    },
+                    sector: {
+                        required: true,
+                        message: 'Please select a project sector'
+                    },
+                    message: {
+                        required: true,
+                        minLength: 10,
+                        message: 'Please provide project details (minimum 10 characters)'
+                    },
+                    consent: {
+                        required: true,
+                        message: 'Please agree to the Privacy Policy to continue'
+                    }
+                };
+                
+                // Validate individual field
+                function validateField(fieldName, value, showError = true) {
+                    const rules = validationRules[fieldName];
+                    const errorElement = document.getElementById(`${fieldName}-error`);
+                    const fieldElement = document.getElementById(fieldName);
+                    
+                    if (!rules) return true;
+                    
+                    let isValid = true;
+                    let errorMsg = rules.message;
+                    
+                    // Required validation
+                    if (rules.required && (!value || value.trim() === '')) {
+                        isValid = false;
+                        errorMsg = `${fieldName === 'consent' ? 'Please agree to the Privacy Policy to continue' : `Please enter ${fieldName === 'sector' ? 'a project sector' : fieldName === 'message' ? 'project details' : 'your ' + fieldName}`}`;
+                    }
+                    // Pattern validation
+                    else if (value && rules.pattern && !rules.pattern.test(value)) {
+                        isValid = false;
+                    }
+                    // Length validation
+                    else if (value && rules.minLength && value.trim().length < rules.minLength) {
+                        isValid = false;
+                    }
+                    
+                    // Update UI
+                    if (showError && errorElement) {
+                        if (isValid) {
+                            errorElement.classList.add('hidden');
+                            fieldElement.classList.remove('border-red-500');
+                            fieldElement.classList.add('border-grey-300');
+                        } else {
+                            errorElement.textContent = errorMsg;
+                            errorElement.classList.remove('hidden');
+                            fieldElement.classList.add('border-red-500');
+                            fieldElement.classList.remove('border-grey-300');
+                        }
+                    }
+                    
+                    return isValid;
+                }
+                
+                // Check if form is valid
+                function isFormValid() {
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const sector = document.getElementById('sector').value;
+                    const message = document.getElementById('message').value;
+                    const consent = document.getElementById('consent').checked;
+                    
+                    return validateField('name', name, false) &&
+                           validateField('email', email, false) &&
+                           validateField('phone', phone, false) &&
+                           validateField('sector', sector, false) &&
+                           validateField('message', message, false) &&
+                           validateField('consent', consent, false);
+                }
+                
+                // Update submit button state
+                function updateSubmitButton() {
+                    const isValid = isFormValid();
+                    
+                    if (isValid) {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-grey-400', 'cursor-not-allowed');
+                        submitBtn.classList.add('bg-rh-orange', 'hover:bg-rh-orange-dark');
+                    } else {
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('bg-grey-400', 'cursor-not-allowed');
+                        submitBtn.classList.remove('bg-rh-orange', 'hover:bg-rh-orange-dark');
+                    }
+                }
+                
+                // Add real-time validation to all form fields
+                ['name', 'email', 'phone', 'sector', 'message'].forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    if (field) {
+                        field.addEventListener('blur', function() {
+                            validateField(fieldName, this.value);
+                            updateSubmitButton();
+                        });
+                        
+                        field.addEventListener('input', function() {
+                            // Hide error on input if field becomes valid
+                            if (validateField(fieldName, this.value, false)) {
+                                const errorElement = document.getElementById(`${fieldName}-error`);
+                                if (errorElement) errorElement.classList.add('hidden');
+                                this.classList.remove('border-red-500');
+                                this.classList.add('border-grey-300');
+                            }
+                            updateSubmitButton();
+                        });
+                    }
+                });
+                
+                // Handle consent checkbox
+                const consentField = document.getElementById('consent');
+                if (consentField) {
+                    consentField.addEventListener('change', function() {
+                        validateField('consent', this.checked);
+                        updateSubmitButton();
+                    });
+                }
+                
+                // Form submission
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    alert('Thank you for your enquiry. We will be in touch within 24 hours.');
+                    
+                    // Validate all fields
+                    const fields = ['name', 'email', 'phone', 'sector', 'message', 'consent'];
+                    let allValid = true;
+                    
+                    fields.forEach(fieldName => {
+                        const field = document.getElementById(fieldName);
+                        const value = fieldName === 'consent' ? field.checked : field.value;
+                        if (!validateField(fieldName, value)) {
+                            allValid = false;
+                        }
+                    });
+                    
+                    if (allValid) {
+                        // Show success message
+                        formStatus.classList.remove('hidden');
+                        successMessage.classList.remove('hidden');
+                        errorMessage.classList.add('hidden');
+                        
+                        // Reset form after short delay
+                        setTimeout(() => {
+                            form.reset();
+                            formStatus.classList.add('hidden');
+                            successMessage.classList.add('hidden');
+                            updateSubmitButton();
+                            
+                            // Clear any remaining error states
+                            fields.forEach(fieldName => {
+                                const errorElement = document.getElementById(`${fieldName}-error`);
+                                const fieldElement = document.getElementById(fieldName);
+                                if (errorElement) errorElement.classList.add('hidden');
+                                if (fieldElement) {
+                                    fieldElement.classList.remove('border-red-500');
+                                    fieldElement.classList.add('border-grey-300');
+                                }
+                            });
+                        }, 3000);
+                    } else {
+                        // Show error message
+                        formStatus.classList.remove('hidden');
+                        errorMessage.classList.remove('hidden');
+                        successMessage.classList.add('hidden');
+                        
+                        // Hide error message after delay
+                        setTimeout(() => {
+                            formStatus.classList.add('hidden');
+                            errorMessage.classList.add('hidden');
+                        }, 5000);
+                        
+                        // Focus first invalid field
+                        const firstInvalidField = form.querySelector('.border-red-500');
+                        if (firstInvalidField) {
+                            firstInvalidField.focus();
+                        }
+                    }
                 });
+                
+                // Initial button state update
+                updateSubmitButton();
             }
             
             // Mobile menu toggle functionality
@@ -1469,33 +1689,97 @@
                     setTimeout(() => searchInput.focus(), 100);
                 });
 
-                searchClose.addEventListener('click', function() {
-                    searchOverlay.classList.add('hidden');
-                });
-
-                // Close search when clicking outside
-                searchOverlay.addEventListener('click', function(event) {
-                    if (event.target === searchOverlay) {
-                        searchOverlay.classList.add('hidden');
-                    }
-                });
-
-                // Close search with Escape key
+                // Close search with Escape key (keep this one)
                 document.addEventListener('keydown', function(event) {
                     if (event.key === 'Escape' && !searchOverlay.classList.contains('hidden')) {
                         searchOverlay.classList.add('hidden');
+                        searchInput.value = ''; // Clear for next use
                     }
                 });
 
-                // Simple search functionality
+
+                // Enhanced search functionality with smart routing
+                function performSearch(query) {
+                    if (!query || query.trim() === '') return;
+                    
+                    const searchTerm = query.trim().toLowerCase();
+                    
+                    // Define search categories and keywords
+                    const searchCategories = {
+                        products: ['product', 'binder', 'granule', 'material', 'polymer', 'tpv', 'flexilon', 'compound'],
+                        solutions: ['solution', 'sector', 'application', 'industry', 'highway', 'rail', 'defence', 'security', 'energy', 'subsea', 'sport', 'recreation', 'drainage'],
+                        projects: ['project', 'case study', 'installation', 'example', 'butlins', 'moko', 'walkway', 'track', 'surface'],
+                        about: ['about', 'company', 'team', 'history', 'manufacturing', 'facility', 'quality'],
+                        contact: ['contact', 'quote', 'enquiry', 'phone', 'email', 'address', 'get in touch']
+                    };
+                    
+                    // Determine best page based on search terms
+                    let bestMatch = 'products'; // default
+                    let maxMatches = 0;
+                    
+                    Object.keys(searchCategories).forEach(category => {
+                        const matches = searchCategories[category].filter(keyword => 
+                            searchTerm.includes(keyword) || keyword.includes(searchTerm)
+                        ).length;
+                        
+                        if (matches > maxMatches) {
+                            maxMatches = matches;
+                            bestMatch = category;
+                        }
+                    });
+                    
+                    // Route to appropriate page
+                    let targetUrl = '';
+                    switch (bestMatch) {
+                        case 'solutions':
+                            targetUrl = `solutions.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'projects':
+                            targetUrl = `projects.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'about':
+                            targetUrl = `about.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'contact':
+                            targetUrl = `contact.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        default:
+                            targetUrl = `products.html?search=${encodeURIComponent(query)}`;
+                    }
+                    
+                    // Close search overlay and navigate
+                    searchOverlay.classList.add('hidden');
+                    searchInput.value = ''; // Clear search input for next use
+                    window.location.href = targetUrl;
+                }
+                
+                // Handle search input events
                 searchInput.addEventListener('keydown', function(event) {
                     if (event.key === 'Enter') {
                         event.preventDefault();
-                        const query = searchInput.value.trim();
-                        if (query) {
-                            // For now, redirect to products page with a simple search
-                            window.location.href = `products.html?search=${encodeURIComponent(query)}`;
-                        }
+                        performSearch(this.value);
+                    }
+                });
+                
+                // Handle search button click
+                const searchButton = searchOverlay.querySelector('button');
+                if (searchButton) {
+                    searchButton.addEventListener('click', function() {
+                        performSearch(searchInput.value);
+                    });
+                }
+                
+                // Reset search input when overlay closes
+                searchClose.addEventListener('click', function() {
+                    searchOverlay.classList.add('hidden');
+                    searchInput.value = ''; // Clear for next use
+                });
+                
+                // Also clear when clicking outside
+                searchOverlay.addEventListener('click', function(event) {
+                    if (event.target === searchOverlay) {
+                        searchOverlay.classList.add('hidden');
+                        searchInput.value = ''; // Clear for next use
                     }
                 });
             }

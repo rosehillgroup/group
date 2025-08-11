@@ -905,35 +905,97 @@
                     setTimeout(() => searchInput.focus(), 100);
                 });
 
+                // Close search with Escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && !searchOverlay.classList.contains('hidden')) {
+                        searchOverlay.classList.add('hidden');
+                        searchInput.value = ''; // Clear for next use
+                    }
+                });
+
                 searchClose.addEventListener('click', function() {
                     searchOverlay.classList.add('hidden');
+                    searchInput.value = ''; // Clear for next use
                 });
 
                 // Close search when clicking outside
                 searchOverlay.addEventListener('click', function(event) {
                     if (event.target === searchOverlay) {
                         searchOverlay.classList.add('hidden');
+                        searchInput.value = ''; // Clear for next use
                     }
                 });
 
-                // Close search with Escape key
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape' && !searchOverlay.classList.contains('hidden')) {
-                        searchOverlay.classList.add('hidden');
+                // Enhanced search functionality with smart routing
+                function performSearch(query) {
+                    if (!query || query.trim() === '') return;
+                    
+                    const searchTerm = query.trim().toLowerCase();
+                    
+                    // Define search categories and keywords
+                    const searchCategories = {
+                        products: ['product', 'binder', 'granule', 'material', 'polymer', 'tpv', 'flexilon', 'compound'],
+                        solutions: ['solution', 'sector', 'application', 'industry', 'highway', 'rail', 'defence', 'security', 'energy', 'subsea', 'sport', 'recreation', 'drainage'],
+                        projects: ['project', 'case study', 'installation', 'example', 'butlins', 'moko', 'walkway', 'track', 'surface'],
+                        about: ['about', 'company', 'team', 'history', 'manufacturing', 'facility', 'quality'],
+                        contact: ['contact', 'quote', 'enquiry', 'phone', 'email', 'address', 'get in touch']
+                    };
+                    
+                    // Determine best page based on search terms
+                    let bestMatch = 'products'; // default
+                    let maxMatches = 0;
+                    
+                    Object.keys(searchCategories).forEach(category => {
+                        const matches = searchCategories[category].filter(keyword => 
+                            searchTerm.includes(keyword) || keyword.includes(searchTerm)
+                        ).length;
+                        
+                        if (matches > maxMatches) {
+                            maxMatches = matches;
+                            bestMatch = category;
+                        }
+                    });
+                    
+                    // Route to appropriate page
+                    let targetUrl = '';
+                    switch (bestMatch) {
+                        case 'solutions':
+                            targetUrl = `solutions.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'projects':
+                            targetUrl = `projects.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'about':
+                            targetUrl = `about.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        case 'contact':
+                            targetUrl = `contact.html?search=${encodeURIComponent(query)}`;
+                            break;
+                        default:
+                            targetUrl = `products.html?search=${encodeURIComponent(query)}`;
                     }
-                });
+                    
+                    // Close search overlay and navigate
+                    searchOverlay.classList.add('hidden');
+                    searchInput.value = ''; // Clear search input for next use
+                    window.location.href = targetUrl;
+                }
 
-                // Simple search functionality
+                // Handle search input events
                 searchInput.addEventListener('keydown', function(event) {
                     if (event.key === 'Enter') {
                         event.preventDefault();
-                        const query = searchInput.value.trim();
-                        if (query) {
-                            // For now, redirect to products page with a simple search
-                            window.location.href = `products.html?search=${encodeURIComponent(query)}`;
-                        }
+                        performSearch(this.value);
                     }
                 });
+
+                // Handle search button click
+                const searchButton = searchOverlay.querySelector('button');
+                if (searchButton) {
+                    searchButton.addEventListener('click', function() {
+                        performSearch(searchInput.value);
+                    });
+                }
             }
         });
     </script>

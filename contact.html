@@ -104,6 +104,10 @@
         .bg-grey-100 { background-color: var(--grey-100); }
         .bg-grey-200 { background-color: var(--grey-200); }
         .border-grey-300 { border-color: var(--grey-300); }
+        .border-red-500 { border-color: #EF4444; }
+        .bg-grey-400 { background-color: #9CA3AF; }
+        .text-red-500 { color: #EF4444; }
+        .text-green-600 { color: #059669; }
         
         .hero-gradient {
             background: linear-gradient(135deg, rgba(26, 54, 93, 0.8) 0%, rgba(45, 74, 113, 0.8) 100%), url('rosehill_group_hero.webp');
@@ -765,7 +769,7 @@
                 <!-- Contact Form -->
                 <div class="contact-card">
                     <h2 class="text-2xl font-semibold text-rh-blue mb-6" data-i18n="contact.form.title">Send us your enquiry</h2>
-                    <form class="space-y-6" name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+                    <form id="contact-form" class="space-y-6" name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
                         <input type="hidden" name="form-name" value="contact">
                         <input type="hidden" name="subject" value="New Group Inquiry - Rosehill Group Contact Form">
                         <p class="hidden">
@@ -773,29 +777,32 @@
                         </p>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.namePlaceholder" required>
+                                <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name <span class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="John Smith">
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="name-error">Please enter your name</div>
                             </div>
                             <div>
                                 <label for="company" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.company">Company</label>
-                                <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.companyPlaceholder">
+                                <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.companyPlaceholder" placeholder="ABC Construction Ltd">
                             </div>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label for="email" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.email">Email</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.emailPlaceholder" required>
+                                <label for="email" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.email">Email <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.emailPlaceholder" placeholder="john@example.com">
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="email-error">Please enter a valid email address</div>
                             </div>
                             <div>
                                 <label for="phone" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.phonePlaceholder">
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.phonePlaceholder" placeholder="01234 567 890">
+                                <div class="error-message text-red-500 text-xs mt-1 hidden" id="phone-error">Please enter a valid phone number</div>
                             </div>
                         </div>
                         
                         <div>
-                            <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.sector">Project sector</label>
-                            <select id="sector" name="sector" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all">
+                            <label for="sector" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.sector">Project sector <span class="text-red-500">*</span></label>
+                            <select id="sector" name="sector" required class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all">
                                 <option value="" data-i18n="contact.form.sectors.select">Select sector</option>
                                 <option value="highways" data-i18n="contact.form.sectors.highways">Road Safety / Highways</option>
                                 <option value="rail" data-i18n="contact.form.sectors.rail">Rail Infrastructure</option>
@@ -806,23 +813,35 @@
                                 <option value="drainage" data-i18n="contact.form.sectors.drainage">Drainage Solutions</option>
                                 <option value="general" data-i18n="contact.form.sectors.general">General Enquiry</option>
                             </select>
+                            <div class="error-message text-red-500 text-xs mt-1 hidden" id="sector-error">Please select a project sector</div>
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.message">Project details</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.messagePlaceholder" required></textarea>
+                            <label for="message" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.message">Project details <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 border border-grey-300 rounded-lg focus:ring-2 focus:ring-rh-orange focus:border-transparent transition-all" data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Tell us about your project requirements..." minlength="10"></textarea>
+                            <div class="error-message text-red-500 text-xs mt-1 hidden" id="message-error">Please provide project details (minimum 10 characters)</div>
                         </div>
                         
                         <div class="flex items-start">
-                            <input type="checkbox" id="consent" name="consent" class="mt-1 mr-3 h-4 w-4 text-rh-orange border-grey-300 rounded focus:ring-rh-orange" required>
+                            <input type="checkbox" id="consent" name="consent" required class="mt-1 mr-3 h-4 w-4 text-rh-orange border-grey-300 rounded focus:ring-rh-orange">
                             <label for="consent" class="text-sm text-grey-600">
-                                <span data-i18n="contact.form.consent">I agree to Rosehill Group processing my data in accordance with the</span> <a href="privacy-policy.html" class="text-rh-orange hover:underline" data-i18n="contact.form.privacyPolicy">Privacy Policy</a>
+                                <span data-i18n="contact.form.consent">I agree to Rosehill Group processing my data in accordance with the</span> <a href="privacy-policy.html" class="text-rh-orange hover:underline" data-i18n="contact.form.privacyPolicy">Privacy Policy</a> <span class="text-red-500">*</span>
                             </label>
+                            <div class="error-message text-red-500 text-xs mt-1 hidden" id="consent-error">Please agree to the Privacy Policy to continue</div>
                         </div>
                         
-                        <button type="submit" class="w-full bg-rh-orange hover:bg-rh-orange-dark text-white py-4 rounded-lg font-semibold text-lg transition-colors" data-i18n="contact.form.submit">
+                        <button type="submit" id="submit-btn" class="w-full bg-grey-400 text-white py-4 rounded-lg font-semibold text-lg transition-colors cursor-not-allowed" disabled data-i18n="contact.form.submit">
                             Submit enquiry
                         </button>
+                        
+                        <div id="form-status" class="hidden text-center">
+                            <div id="success-message" class="text-green-600 font-medium hidden">
+                                <span data-i18n="contact.form.success">Thank you! Your enquiry has been submitted successfully. We'll be in touch within 24 hours.</span>
+                            </div>
+                            <div id="error-message" class="text-red-500 font-medium hidden">
+                                <span data-i18n="contact.form.error">There was an error submitting your form. Please try again.</span>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
@@ -1698,6 +1717,198 @@
             
             observer.observe(urgentSupportSection);
         }
+    </script>
+    
+    <!-- Contact Form Validation -->
+    <script>
+        // Enhanced contact form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formStatus = document.getElementById('form-status');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            if (form) {
+                // Form field validation patterns
+                const validationRules = {
+                    name: {
+                        required: true,
+                        minLength: 2,
+                        pattern: /^[a-zA-Z\s\-']+$/,
+                        message: 'Please enter a valid name (letters, spaces, hyphens, apostrophes only)'
+                    },
+                    email: {
+                        required: true,
+                        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: 'Please enter a valid email address'
+                    },
+                    phone: {
+                        required: false,
+                        pattern: /^[\+]?[0-9\s\-\(\)]{10,}$/,
+                        message: 'Please enter a valid phone number (minimum 10 digits)'
+                    },
+                    sector: {
+                        required: true,
+                        message: 'Please select a project sector'
+                    },
+                    message: {
+                        required: true,
+                        minLength: 10,
+                        message: 'Please provide project details (minimum 10 characters)'
+                    },
+                    consent: {
+                        required: true,
+                        message: 'Please agree to the Privacy Policy to continue'
+                    }
+                };
+                
+                // Validate individual field
+                function validateField(fieldName, value, showError = true) {
+                    const rules = validationRules[fieldName];
+                    const errorElement = document.getElementById(`${fieldName}-error`);
+                    const fieldElement = document.getElementById(fieldName);
+                    
+                    if (!rules) return true;
+                    
+                    let isValid = true;
+                    let errorMsg = rules.message;
+                    
+                    // Required validation
+                    if (rules.required && (!value || value.trim() === '')) {
+                        isValid = false;
+                        errorMsg = `${fieldName === 'consent' ? 'Please agree to the Privacy Policy to continue' : `Please enter ${fieldName === 'sector' ? 'a project sector' : fieldName === 'message' ? 'project details' : 'your ' + fieldName}`}`;
+                    }
+                    // Pattern validation
+                    else if (value && rules.pattern && !rules.pattern.test(value)) {
+                        isValid = false;
+                    }
+                    // Length validation
+                    else if (value && rules.minLength && value.trim().length < rules.minLength) {
+                        isValid = false;
+                    }
+                    
+                    // Update UI
+                    if (showError && errorElement) {
+                        if (isValid) {
+                            errorElement.classList.add('hidden');
+                            fieldElement.classList.remove('border-red-500');
+                            fieldElement.classList.add('border-grey-300');
+                        } else {
+                            errorElement.textContent = errorMsg;
+                            errorElement.classList.remove('hidden');
+                            fieldElement.classList.add('border-red-500');
+                            fieldElement.classList.remove('border-grey-300');
+                        }
+                    }
+                    
+                    return isValid;
+                }
+                
+                // Check if form is valid
+                function isFormValid() {
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const sector = document.getElementById('sector').value;
+                    const message = document.getElementById('message').value;
+                    const consent = document.getElementById('consent').checked;
+                    
+                    return validateField('name', name, false) &&
+                           validateField('email', email, false) &&
+                           validateField('phone', phone, false) &&
+                           validateField('sector', sector, false) &&
+                           validateField('message', message, false) &&
+                           validateField('consent', consent, false);
+                }
+                
+                // Update submit button state
+                function updateSubmitButton() {
+                    const isValid = isFormValid();
+                    
+                    if (isValid) {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-grey-400', 'cursor-not-allowed');
+                        submitBtn.classList.add('bg-rh-orange', 'hover:bg-rh-orange-dark');
+                    } else {
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('bg-grey-400', 'cursor-not-allowed');
+                        submitBtn.classList.remove('bg-rh-orange', 'hover:bg-rh-orange-dark');
+                    }
+                }
+                
+                // Add real-time validation to all form fields
+                ['name', 'email', 'phone', 'sector', 'message'].forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    if (field) {
+                        field.addEventListener('blur', function() {
+                            validateField(fieldName, this.value);
+                            updateSubmitButton();
+                        });
+                        
+                        field.addEventListener('input', function() {
+                            // Hide error on input if field becomes valid
+                            if (validateField(fieldName, this.value, false)) {
+                                const errorElement = document.getElementById(`${fieldName}-error`);
+                                if (errorElement) errorElement.classList.add('hidden');
+                                this.classList.remove('border-red-500');
+                                this.classList.add('border-grey-300');
+                            }
+                            updateSubmitButton();
+                        });
+                    }
+                });
+                
+                // Handle consent checkbox
+                const consentField = document.getElementById('consent');
+                if (consentField) {
+                    consentField.addEventListener('change', function() {
+                        validateField('consent', this.checked);
+                        updateSubmitButton();
+                    });
+                }
+                
+                // Form submission - preserve Netlify functionality
+                form.addEventListener('submit', function(e) {
+                    // Validate all fields before submission
+                    const fields = ['name', 'email', 'phone', 'sector', 'message', 'consent'];
+                    let allValid = true;
+                    
+                    fields.forEach(fieldName => {
+                        const field = document.getElementById(fieldName);
+                        const value = fieldName === 'consent' ? field.checked : field.value;
+                        if (!validateField(fieldName, value)) {
+                            allValid = false;
+                        }
+                    });
+                    
+                    if (!allValid) {
+                        e.preventDefault(); // Prevent submission if validation fails
+                        
+                        // Show error message
+                        formStatus.classList.remove('hidden');
+                        errorMessage.classList.remove('hidden');
+                        successMessage.classList.add('hidden');
+                        
+                        // Hide error message after delay
+                        setTimeout(() => {
+                            formStatus.classList.add('hidden');
+                            errorMessage.classList.add('hidden');
+                        }, 5000);
+                        
+                        // Focus first invalid field
+                        const firstInvalidField = form.querySelector('.border-red-500');
+                        if (firstInvalidField) {
+                            firstInvalidField.focus();
+                        }
+                    }
+                    // If valid, let Netlify handle the submission normally
+                });
+                
+                // Initial button state update
+                updateSubmitButton();
+            }
+        });
     </script>
     
     <!-- Cookie Consent -->
