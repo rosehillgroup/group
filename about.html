@@ -655,19 +655,86 @@
         <!-- Our Story Section -->
         <section class="py-20">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto">
-                    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                        <div>
-                            <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-6" data-i18n="about.ourStory.title">Engineering Excellence Since 1988</h2>
-                            <p class="text-lg text-grey-600 mb-6" data-i18n="about.ourStory.paragraph1">The modern world's infrastructure and materials challenges require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in advanced materials and engineered infrastructure solutions.</p>
-                            <p class="text-lg text-grey-600" data-i18n="about.ourStory.paragraph2">From specialty chemicals and polymer systems to road safety and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our materials and infrastructure product range.</p>
-                        </div>
-                        <div class="h-80 rounded-lg overflow-hidden">
+                <!-- Text Content -->
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-light text-rh-blue mb-8" data-i18n="about.ourStory.title">Engineering Excellence Since 1988</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <p class="text-lg text-grey-600" data-i18n="about.ourStory.paragraph1">The modern world's infrastructure and materials challenges require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in advanced materials and engineered infrastructure solutions.</p>
+                        <p class="text-lg text-grey-600" data-i18n="about.ourStory.paragraph2">From specialty chemicals and polymer systems to road safety and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our materials and infrastructure product range.</p>
+                    </div>
+                </div>
+                
+                <!-- Manufacturing Facilities -->
+                <div class="max-w-7xl mx-auto">
+                    <h3 class="text-2xl lg:text-3xl font-light text-rh-blue mb-8 text-center" data-i18n="about.manufacturingFacilities.title">Our Manufacturing Facilities</h3>
+                    <!-- First row - 3 facilities -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                        <!-- Rose Hill Mills -->
+                        <div class="rounded-lg overflow-hidden shadow-lg">
                             <picture>
-        <source srcset="Rosehill_Polymers_BeechRd.avif" type="image/avif">
-        <source srcset="Rosehill_Polymers_BeechRd.webp" type="image/webp">
-        <img src="Rosehill_Polymers_BeechRd.jpg" alt="Rosehill Polymers facility at Beech Road" class="w-full h-full object-cover rounded-lg">
-    </picture>
+                                <source srcset="rose_hill_mills.avif" type="image/avif">
+                                <source srcset="rose_hill_mills.webp" type="image/webp">
+                                <img src="rose_hill_mills.jpg" alt="Rose Hill Mills" class="w-full h-48 lg:h-56 object-cover">
+                            </picture>
+                            <div class="p-5 bg-white">
+                                <h4 class="text-lg font-semibold text-rh-blue mb-2">Rose Hill Mills</h4>
+                                <p class="text-sm text-grey-600" data-i18n="about.manufacturingFacilities.roseHillMills.description">Speciality chemicals and offshore solutions</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Watson Mill -->
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <picture>
+                                <source srcset="watson_mill.avif" type="image/avif">
+                                <source srcset="watson_mill.webp" type="image/webp">
+                                <img src="watson_mill.jpg" alt="Watson Mill" class="w-full h-48 lg:h-56 object-cover">
+                            </picture>
+                            <div class="p-5 bg-white">
+                                <h4 class="text-lg font-semibold text-rh-blue mb-2">Watson Mill</h4>
+                                <p class="text-sm text-grey-600" data-i18n="about.manufacturingFacilities.watsonMill.description">Drainage, defence and security systems</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Hopkinson Mill -->
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <picture>
+                                <source srcset="hopkinson_mill.avif" type="image/avif">
+                                <source srcset="hopkinson_mill.webp" type="image/webp">
+                                <img src="hopkinson_mill.jpg" alt="Hopkinson Mill" class="w-full h-48 lg:h-56 object-cover">
+                            </picture>
+                            <div class="p-5 bg-white">
+                                <h4 class="text-lg font-semibold text-rh-blue mb-2">Hopkinson Mill</h4>
+                                <p class="text-sm text-grey-600" data-i18n="about.manufacturingFacilities.hopkinsonMill.description">Rail infrastructure and trackside solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second row - 2 facilities centered -->
+                    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <!-- Spring Bank Mills -->
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <picture>
+                                <source srcset="spring_bank_mills.avif" type="image/avif">
+                                <source srcset="spring_bank_mills.webp" type="image/webp">
+                                <img src="spring_bank_mills.jpg" alt="Spring Bank Mills" class="w-full h-48 lg:h-56 object-cover">
+                            </picture>
+                            <div class="p-5 bg-white">
+                                <h4 class="text-lg font-semibold text-rh-blue mb-2">Spring Bank Mills</h4>
+                                <p class="text-sm text-grey-600" data-i18n="about.manufacturingFacilities.springBankMills.description">TPV for sports and playground surfaces</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Ryburn Mills -->
+                        <div class="rounded-lg overflow-hidden shadow-lg">
+                            <picture>
+                                <source srcset="ryburn_mills_close.avif" type="image/avif">
+                                <source srcset="ryburn_mills_close.webp" type="image/webp">
+                                <img src="ryburn_mills_close.jpg" alt="Ryburn Mills" class="w-full h-48 lg:h-56 object-cover">
+                            </picture>
+                            <div class="p-5 bg-white">
+                                <h4 class="text-lg font-semibold text-rh-blue mb-2">Ryburn Mills</h4>
+                                <p class="text-sm text-grey-600" data-i18n="about.manufacturingFacilities.ryburnMills.description">Highway infrastructure and road safety products</p>
+                            </div>
                         </div>
                     </div>
                 </div>

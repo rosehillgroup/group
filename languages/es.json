@@ -434,6 +434,24 @@
       "paragraph1": "Los desafíos de infraestructura del mundo moderno requieren soluciones que ofrezcan tanto rendimiento como responsabilidad ambiental. Operando desde nuestra sede del Reino Unido en Sowerby Bridge, nos hemos establecido como un líder mundial en soluciones de infraestructura de ingeniería.",
       "paragraph2": "Desde sistemas de seguridad vial y productos ferroviarios hasta drenaje modular y superficies recreativas, nuestros productos son confiados en todo el mundo. Al fabricar nuestros propios aglutinantes de poliuretano y controlar todo el proceso de producción, garantizamos una calidad excepcional en toda nuestra gama de productos."
     },
+    "manufacturingFacilities": {
+      "title": "Nuestras instalaciones de fabricación",
+      "roseHillMills": {
+        "description": "Productos químicos especializados y soluciones offshore"
+      },
+      "watsonMill": {
+        "description": "Sistemas de drenaje, defensa y seguridad"
+      },
+      "hopkinsonMill": {
+        "description": "Infraestructura ferroviaria y soluciones de vía"
+      },
+      "springBankMills": {
+        "description": "TPV para superficies deportivas y de juegos"
+      },
+      "ryburnMills": {
+        "description": "Infraestructura vial y productos de seguridad vial"
+      }
+    },
     "circularEconomy": {
       "title": "Comprometidos con la economía circular",
       "description": "Nuestro compromiso con la economía circular impulsa todo lo que hacemos. A través de procesos de fabricación innovadores, transformamos materiales reciclados en productos de infraestructura de alto rendimiento que cumplen con estándares industriales rigurosos.",

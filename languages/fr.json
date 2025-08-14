@@ -434,6 +434,24 @@
       "paragraph1": "Les défis modernes d'infrastructure et de matériaux nécessitent des solutions qui offrent à la fois performance et responsabilité environnementale. Opérant depuis notre siège britannique à Sowerby Bridge, nous nous sommes établis comme un leader mondial des solutions de matériaux avancés et d'infrastructure d'ingénierie.",
       "paragraph2": "Des solutions chimiques spécialisées et des systèmes polymères à la sécurité routière et aux surfaces récréatives, nos produits sont approuvés dans le monde entier. En fabriquant nos propres liants polyuréthane et en contrôlant l'ensemble du processus de production, nous garantissons une qualité exceptionnelle sur toute notre gamme de matériaux et d'infrastructure."
     },
+    "manufacturingFacilities": {
+      "title": "Nos installations de fabrication",
+      "roseHillMills": {
+        "description": "Solutions chimiques spécialisées et offshore"
+      },
+      "watsonMill": {
+        "description": "Systèmes de drainage, défense et sécurité"
+      },
+      "hopkinsonMill": {
+        "description": "Infrastructure ferroviaire et solutions de voie"
+      },
+      "springBankMills": {
+        "description": "TPV pour surfaces sportives et de jeux"
+      },
+      "ryburnMills": {
+        "description": "Infrastructure routière et produits de sécurité routière"
+      }
+    },
     "circularEconomy": {
       "title": "Engagé dans l'économie circulaire",
       "description": "Notre engagement envers l'économie circulaire guide tout ce que nous faisons. Grâce à des processus de fabrication innovants, nous transformons les matériaux recyclés en produits d'infrastructure haute performance qui répondent aux normes industrielles rigoureuses.",

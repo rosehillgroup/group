@@ -434,6 +434,24 @@
       "paragraph1": "The modern world's infrastructure and materials challenges require solutions that deliver both performance and environmental responsibility. Operating from our UK headquarters in Sowerby Bridge, we've established ourselves as a global leader in advanced materials and engineered infrastructure solutions.",
       "paragraph2": "From specialty chemicals and polymer systems to road safety and recreational surfaces, our products are trusted worldwide. By manufacturing our own polyurethane binders and controlling the entire production process, we ensure exceptional quality across our materials and infrastructure product range."
     },
+    "manufacturingFacilities": {
+      "title": "Our Manufacturing Facilities",
+      "roseHillMills": {
+        "description": "Speciality chemicals and offshore solutions"
+      },
+      "watsonMill": {
+        "description": "Drainage, defence and security systems"
+      },
+      "hopkinsonMill": {
+        "description": "Rail infrastructure and trackside solutions"
+      },
+      "springBankMills": {
+        "description": "TPV for sports and playground surfaces"
+      },
+      "ryburnMills": {
+        "description": "Highway infrastructure and road safety products"
+      }
+    },
     "circularEconomy": {
       "title": "Committed to the Circular Economy",
       "description": "Our commitment to the circular economy drives everything we do. Through innovative manufacturing processes, we transform recycled materials into high-performance infrastructure products that meet rigorous industry standards.",
