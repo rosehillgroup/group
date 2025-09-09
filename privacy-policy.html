@@ -66,7 +66,7 @@
             security_storage: 'granted'
         });
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="rtl.css">
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -336,7 +336,7 @@
     <!-- Header Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-20">
+            <nav class="mega-menus-disabled flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html">
@@ -350,181 +350,37 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Home</a>
-                    <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">About</a>
-                    <div class="relative group">
-                        <a href="solutions.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
-                            Solutions
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </a>
-                        <!-- Solutions Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="p-6">
-                                <div class="flex justify-between items-center mb-4">
-                                    <h3 class="text-lg font-semibold text-rh-blue">Solutions by Sector</h3>
-                                    <a href="solutions.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
-                                        View all
-                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <a href="https://highways.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Road Safety</h4>
-                                        <p class="text-xs text-grey-600">Traffic management systems</p>
-                                    </a>
-                                    <a href="https://rail.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Rail Infrastructure</h4>
-                                        <p class="text-xs text-grey-600">Railway systems & safety</p>
-                                    </a>
-                                    <a href="https://security.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Defence & Security</h4>
-                                        <p class="text-xs text-grey-600">HVM & Ballistic protection</p>
-                                    </a>
-                                    <a href="https://energy.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Energy & Subsea</h4>
-                                        <p class="text-xs text-grey-600">Marine & offshore solutions</p>
-                                    </a>
-                                    <a href="https://tpv.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Sports & Recreation</h4>
-                                        <p class="text-xs text-grey-600">Rubber surfacing solutions</p>
-                                    </a>
-                                    <a href="https://drainage.rosehill.group/" class="group/item p-4 rounded-lg border border-grey-200 hover:border-rh-orange hover:bg-grey-50 transition-all">
-                                        <div class="w-8 h-8 bg-rh-orange rounded-lg mb-3 flex items-center justify-center">
-                                            <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-5 h-5 menu-icon">
-                                        </div>
-                                        <h4 class="font-semibold text-rh-blue mb-1 group-hover/item:text-rh-orange transition-colors">Drainage Solutions</h4>
-                                        <p class="text-xs text-grey-600">Water management systems</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors flex items-center">
-                            Products
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </a>
-                        <!-- Products Dropdown -->
-                        <div class="absolute top-full left-0 mt-2 w-[800px] bg-white rounded-lg shadow-lg border border-grey-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="p-6">
-                                <h3 class="text-lg font-semibold text-rh-blue mb-4">Complete Product Range</h3>
-                                <div class="grid grid-cols-3 gap-6">
-                                    <!-- Road Safety Column -->
-                                    <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Road Safety Solutions</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://highways.rosehill.group/ncld-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cycle Lane Defenders</a>
-                                            <a href="https://highways.rosehill.group/ncld-lite-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">NCLD Lite</a>
-                                            <a href="https://highways.rosehill.group/lane-separator-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Lane Separators</a>
-                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Traffic Islands</a>
-                                            <a href="https://highways.rosehill.group/pedestrian-refuges-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pedestrian Refuges</a>
-                                            <a href="https://highways.rosehill.group/speed-cushions-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Cushions</a>
-                                            <a href="https://highways.rosehill.group/traffic-islands-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Chicanes</a>
-                                            <a href="https://highways.rosehill.group/raised-tables-zebra-crossings-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Raised Tables & Zebra Crossings</a>
-                                            <a href="https://highways.rosehill.group/speed-calmers-product" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Speed Calmers</a>
-                                        </div>
-                                        
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Infrastructure</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://rail.rosehill.group/connect" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Connect System</a>
-                                            <a href="https://rail.rosehill.group/baseplate" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Baseplated System</a>
-                                            <a href="https://rail.rosehill.group/link" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Link System</a>
-                                            <a href="https://rail.rosehill.group/interlocking" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Interlocking System</a>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Defence & Energy Column -->
-                                    <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Defence & Security</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://security.rosehill.group/rapid-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Rapid Defender</a>
-                                            <a href="https://security.rosehill.group/impakt-defender" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Impakt Defender</a>
-                                            <a href="https://security.rosehill.group/ballistic-blocks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Blocks</a>
-                                            <a href="https://security.rosehill.group/ballistic-tiles" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Ballistic Tiles</a>
-                                        </div>
-                                        
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Energy & Subsea</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Castable Polyurethanes</a>
-                                            <a href="https://energy.rosehill.group/solutions" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Cable Protection</a>
-                                        </div>
-                                        
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Rail Safety & Access</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://rail.rosehill.group/titan" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Titan Heavy Duty Crossing</a>
-                                            <a href="https://rail.rosehill.group/antitrespass" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Anti-Trespass Panels</a>
-                                            <a href="https://rail.rosehill.group/walkway" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Walkway Panels</a>
-                                            <a href="https://rail.rosehill.group/edgebeams" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Edge Beams</a>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Sports & Drainage Column -->
-                                    <div>
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide">Sports & Recreation</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://tpv.rosehill.group/applications#playground-surfaces" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Playground Surfaces</a>
-                                            <a href="https://tpv.rosehill.group/applications#multi-use-games-areas" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Multi-use Games Areas</a>
-                                            <a href="https://tpv.rosehill.group/applications#running-tracks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Running Tracks</a>
-                                            <a href="https://tpv.rosehill.group/applications#sports-pitches" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Sports Pitches</a>
-                                            <a href="https://tpv.rosehill.group/applications#footpaths" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Footpaths</a>
-                                            <a href="https://tpv.rosehill.group/applications#splash-parks" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Splash Parks</a>
-                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Pool Surrounds</a>
-                                            <a href="https://tpv.rosehill.group/applications" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Turf Infill</a>
-                                            <a href="https://tpv.rosehill.group/products" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Flexilon Binders</a>
-                                        </div>
-                                        
-                                        <h4 class="font-semibold text-rh-orange mb-3 text-sm uppercase tracking-wide mt-6">Drainage Solutions</h4>
-                                        <div class="space-y-2">
-                                            <a href="https://drainage.rosehill.group/solutions#trough-stacker" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Trough & Stacker System</a>
-                                            <a href="https://drainage.rosehill.group/solutions#drainage-mats" class="block text-sm text-grey-700 hover:text-rh-orange transition-colors">Drainage Mats</a>
-                                        </div>
-                                        
-                                        <div class="mt-6 pt-4 border-t border-grey-200">
-                                            <a href="products.html" class="inline-flex items-center text-rh-orange font-semibold text-sm hover:text-rh-orange-dark transition-colors">
-                                                <span data-i18n="navigation.browseProductCatalog">Browse Product Catalog</span>
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="projects.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Projects</a>
-                    <a href="contact.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors">Contact</a>
+                    <a href="index.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.home">Home</a>
+                    <a href="about.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.about">About</a>
+                    <a href="solutions.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.solutions">Solutions</a>
+                    <a href="products.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.products">Products</a>
+                    <a href="projects.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.projects">Projects</a>
+                    <a href="contact.html" class="text-grey-900 hover:text-rh-orange font-semibold transition-colors" data-i18n="navigation.contact">Contact</a>
                 </div>
                 
-                <!-- Search and CTA -->
+                <!-- Search, Language and CTA -->
                 <div class="hidden lg:flex items-center space-x-4">
                     <button id="search-toggle" class="p-2 hover:bg-grey-100 rounded-lg transition-colors" aria-label="Search">
                         <svg class="w-5 h-5 text-grey-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </button>
-                    <a href="contact.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors">Get Quote</a>
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="language-switcher-btn" aria-expanded="false" aria-haspopup="listbox" role="button" tabindex="0">
+                            <span class="current-language">🇬🇧 English</span>
+                            <svg class="language-switcher-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="language-switcher-dropdown" role="listbox">
+                            <button class="language-option" role="option" data-language="en">🇬🇧 English</button>
+                            <button class="language-option" role="option" data-language="fr">🇫🇷 Français</button>
+                            <button class="language-option" role="option" data-language="es">🇪🇸 Español</button>
+                            <button class="language-option" role="option" data-language="ar">🇸🇦 العربية</button>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="bg-rh-orange hover:bg-rh-orange-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors" data-i18n="navigation.getQuote">Get Quote</a>
                 </div>
                 
                 <!-- Mobile menu button -->

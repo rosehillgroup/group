@@ -143,11 +143,6 @@ class RosehillI18n {
         }
         const translations = await response.json();
         
-        // Debug logging for all translations
-        console.log(`Loaded translations for ${language}:`, translations);
-        if (translations.contact) {
-            console.log(`Contact translations for ${language}:`, translations.contact);
-        }
         
         return translations;
     }
@@ -192,12 +187,6 @@ class RosehillI18n {
             const translation = this.get(key);
             
             // Debug logging for contact translations
-            if (key && key.startsWith('contact.')) {
-                console.log(`Processing contact element with key: ${key}`);
-                console.log(`Translation found:`, translation);
-                console.log(`Current element text:`, element.textContent);
-                console.log(`Element:`, element);
-            }
             
             if (translation && element.textContent !== translation) {
                 updates.push({ element, translation });
@@ -242,11 +231,6 @@ class RosehillI18n {
             });
         }
         
-        // Performance logging in development
-        if (typeof console !== 'undefined' && console.debug) {
-            const batchEnd = performance.now();
-            console.debug(`i18n DOM updates: ${updates.length + attrUpdates.length} elements in ${(batchEnd - batchStart).toFixed(2)}ms`);
-        }
     }
     
     updateMetaTags() {
@@ -346,28 +330,15 @@ class RosehillI18n {
         const keys = key.split('.');
         let value = this.translations;
         
-        // Debug logging for Spanish product descriptions
-        if (this.currentLanguage === 'es' && key.includes('products.') && key.includes('.description')) {
-            console.log(`Getting Spanish translation for key: ${key}`);
-            console.log(`Current translations object:`, this.translations);
-        }
         
         for (const k of keys) {
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
-                // Debug logging for Spanish failures
-                if (this.currentLanguage === 'es' && key.includes('products.') && key.includes('.description')) {
-                    console.log(`Failed to find key part: ${k} in`, value);
-                }
                 return null;
             }
         }
         
-        // Debug logging for Spanish results
-        if (this.currentLanguage === 'es' && key.includes('products.') && key.includes('.description')) {
-            console.log(`Spanish translation result for ${key}:`, value);
-        }
         
         return value;
     }

@@ -1,0 +1,26 @@
+{
+  "name": "group_deploy",
+  "version": "1.0.0",
+  "description": "This is the official website for Rosehill Group, showcasing our comprehensive range of infrastructure solutions across multiple sectors.",
+  "main": "cookie-consent.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./tailwind.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosehillgroup/group.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosehillgroup/group/issues"
+  },
+  "homepage": "https://github.com/rosehillgroup/group#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  }
+}
