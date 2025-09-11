@@ -436,6 +436,185 @@
         }
 
     </style>
+    
+    <!-- Structured Data - Contact Page with LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Rosehill Group",
+        "description": "Get in touch with Rosehill Group for infrastructure solutions, expert advice on road safety, rail systems, security barriers and sports surfaces",
+        "url": "https://rosehill.group/contact",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "@id": "https://rosehill.group/#localbusiness",
+            "name": "Rosehill Group",
+            "alternateName": "Rosehill Polymers Ltd",
+            "legalName": "Rosehill Polymers Limited",
+            "url": "https://rosehill.group/",
+            "logo": "https://rosehill.group/Rosehill_Group_2025.png",
+            "image": "https://rosehill.group/rosehill_group_social_sharing.jpg",
+            "description": "Leading UK manufacturer of advanced materials and sustainable infrastructure solutions since 1988",
+            "foundingDate": "1988",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sowerby Bridge Industrial Estate",
+                "addressLocality": "Sowerby Bridge",
+                "addressRegion": "West Yorkshire",
+                "postalCode": "HX6 1PE",
+                "addressCountry": "GB"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.7050,
+                "longitude": -1.9289
+            },
+            "telephone": "+44-1422-831-122",
+            "email": "enquiries@rosehill.group",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-general",
+                    "contactType": "customer service",
+                    "telephone": "+44-1422-831-122",
+                    "email": "enquiries@rosehill.group",
+                    "areaServed": ["GB", "EU"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                },
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-technical",
+                    "contactType": "technical support",
+                    "telephone": "+44-1422-831-122",
+                    "email": "technical@rosehill.group",
+                    "areaServed": ["GB", "EU", "US"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                },
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-sales",
+                    "contactType": "sales",
+                    "telephone": "+44-1422-831-122",
+                    "email": "sales@rosehill.group",
+                    "areaServed": ["GB", "EU", "US", "AU"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                }
+            ],
+            "sameAs": [
+                "https://twitter.com/rosehillpolymrs",
+                "https://www.linkedin.com/company/rosehill-polymers"
+            ],
+            "priceRange": "£££",
+            "currenciesAccepted": ["GBP", "EUR", "USD"],
+            "paymentAccepted": ["Bank Transfer", "Credit Card", "Invoice"],
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:30",
+                "closes": "17:00"
+            },
+            "category": [
+                "Chemical Manufacturing",
+                "Polymer Engineering",
+                "Infrastructure Materials",
+                "Road Safety Equipment",
+                "Sports Surface Materials"
+            ],
+            "areaServed": [
+                {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                },
+                {
+                    "@type": "Place",
+                    "name": "Europe"
+                },
+                {
+                    "@type": "Place",
+                    "name": "North America"
+                },
+                {
+                    "@type": "Place",
+                    "name": "Australia"
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Infrastructure Solutions Catalog",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "name": "Road Safety Consultation",
+                        "description": "Expert consultation on road safety systems, cycle lane defenders, and traffic management solutions",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Road Safety Consultation",
+                            "serviceType": "Technical Consulting"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Rail Infrastructure Solutions",
+                        "description": "Advanced materials and systems for railway infrastructure projects",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Rail Infrastructure Solutions",
+                            "serviceType": "Engineering Solutions"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Sports Surface Systems",
+                        "description": "TPV granules, Flexilon® binders, and complete sports surface solutions",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sports Surface Systems",
+                            "serviceType": "Materials Supply"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Security & Defence Solutions",
+                        "description": "Specialized materials for security barriers and defence applications",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Security & Defence Solutions",
+                            "serviceType": "Specialized Manufacturing"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Custom Engineering",
+                        "description": "Bespoke polymer solutions and engineering for specific requirements",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Custom Engineering",
+                            "serviceType": "Custom Manufacturing"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+    </script>
 </head>
 <body class="mega-menus-disabled">
     <!-- Google Tag Manager (noscript) -->
