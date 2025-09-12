@@ -1,12 +1,30 @@
 User-agent: *
 Allow: /
 
-# Disallow crawling of admin or temp directories
+# Block sensitive and development directories
 Disallow: /admin/
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /config/
 Disallow: /tmp/
+Disallow: /src/
 Disallow: /.well-known/
+Disallow: /languages/
 
-# Allow crawling of images and assets
+# Block backup and temporary files
+Disallow: /*.bak$
+Disallow: /*.backup$
+Disallow: /*.old$
+Disallow: /*.log$
+Disallow: /*.tmp$
+
+# Explicitly allow multilingual routes for international SEO
+Allow: /fr/
+Allow: /es/
+Allow: /ar/
+
+# Allow important assets and directories
+Allow: /icons/
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
@@ -21,5 +39,5 @@ Allow: /*.pdf$
 # Sitemap location
 Sitemap: https://rosehill.group/sitemap.xml
 
-# Crawl delay (optional - be respectful)
+# Respectful crawl delay
 Crawl-delay: 1
