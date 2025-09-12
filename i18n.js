@@ -106,7 +106,7 @@ class RosehillI18n {
             this.translationCache.set(this.currentLanguage, this.translations);
             this.loadedLanguages.add(this.currentLanguage);
         } catch (error) {
-            console.error('Error loading translations:', error);
+            // Silently handle translation loading errors
             
             // Fallback to English if current language fails
             if (this.currentLanguage !== this.defaultLanguage) {
@@ -186,7 +186,6 @@ class RosehillI18n {
             const key = element.getAttribute('data-i18n');
             const translation = this.get(key);
             
-            // Debug logging for contact translations
             
             if (translation && element.textContent !== translation) {
                 updates.push({ element, translation });
@@ -218,7 +217,7 @@ class RosehillI18n {
                     }
                 });
             } catch (error) {
-                console.error('Error parsing data-i18n-attr:', error);
+                // Silently handle parsing errors
             }
         });
         
@@ -349,7 +348,7 @@ class RosehillI18n {
     
     async changeLanguage(newLanguage) {
         if (!this.supportedLanguages.includes(newLanguage)) {
-            console.error(`Language ${newLanguage} is not supported`);
+            // Language not supported, silently return
             return;
         }
         
@@ -401,7 +400,7 @@ class RosehillI18n {
                     this.loadedLanguages.add(lang);
                     return { lang, success: true };
                 } catch (error) {
-                    console.warn(`Failed to preload language ${lang}:`, error);
+                    // Silently handle preload failures
                     return { lang, success: false, error };
                 }
             });
