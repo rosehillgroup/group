@@ -1912,48 +1912,93 @@
     <!-- Cookie Consent -->
     <script src="cookie-consent.js"></script>
     
-    <!-- Clean Journey Tracking & Form Action Script -->
+    <!-- Robust Journey Tracking Script -->
     <script>
         (function () {
             const MAX_STEPS = 10;
 
             // Maintain a lightweight session trail
             const now = Date.now();
-            const sess = JSON.parse(sessionStorage.getItem("rh_sess") || "{}");
+            const key = "rh_sess";
+            const sess = JSON.parse(sessionStorage.getItem(key) || "{}");
             if (!sess.started_at) sess.started_at = now;
             sess.steps = sess.steps || [];
-            if (!sess.steps.length || sess.steps[sess.steps.length-1].path !== location.pathname) {
+            if (!sess.steps.length || sess.steps[sess.steps.length - 1].path !== location.pathname) {
                 sess.steps.push({ path: location.pathname, ts: now });
                 sess.steps = sess.steps.slice(-MAX_STEPS);
             }
-            sessionStorage.setItem("rh_sess", JSON.stringify(sess));
+            sessionStorage.setItem(key, JSON.stringify(sess));
 
-            const secs = ms => Math.max(0, Math.round(ms/1000));
-            const fmtDur = s => s < 60 ? `${s}s` : `${Math.floor(s/60)}m ${s%60 ? (s%60+'s') : ''}`.trim();
+            // Helpers
+            const secs = ms => Math.max(0, Math.round(ms / 1000));
+            const fmtDur = s => s < 60 ? `${s}s` : `${Math.floor(s/60)}m${s%60 ? " " + (s%60) + "s" : ""}`;
+            const currentLang = () => (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
 
-            const form = document.querySelector('form[data-netlify="true"]');
-            if (!form) return;
-
-            form.addEventListener("submit", () => {
-                // Generate human-readable journey summary
-                const s = JSON.parse(sessionStorage.getItem("rh_sess") || "{}");
+            // Build the summary string
+            function buildSummary() {
+                const s = JSON.parse(sessionStorage.getItem(key) || "{}");
                 const total = fmtDur(secs(Date.now() - (s.started_at || Date.now())));
-                const lang = (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
                 const paths = (s.steps || []).map(x => x.path).join(" → ");
                 const entry = (s.steps && s.steps[0]) ? s.steps[0].path : "/";
-
-                const lines = [
+                return [
                     `Entry: ${entry}`,
                     `Trail: ${paths || "/"}`,
                     `Time on site: ${total}`,
-                    `Language: ${lang}`
-                ];
-                const field = form.querySelector('textarea[name="journey_summary"]');
-                if (field) field.value = lines.join("\n");
+                    `Language: ${currentLang()}`
+                ].join("\n");
+            }
 
-                // Set language-aware form action
-                form.action = `/thank-you.html?lang=${lang}`;
-            }, { once: true });
+            // Find our Netlify form(s)
+            function findForms() {
+                // Prefer a specific id if you have one
+                let forms = Array.from(document.querySelectorAll('form[data-netlify="true"]'));
+                if (!forms.length) forms = Array.from(document.querySelectorAll('form[name="contact"]'));
+                return forms;
+            }
+
+            function wireForm(form) {
+                if (form.__journeyWired) return; // idempotent
+                form.__journeyWired = true;
+
+                // Ensure the hidden textarea exists
+                let field = form.querySelector('textarea[name="journey_summary"]');
+                if (!field) {
+                    field = document.createElement('textarea');
+                    field.name = 'journey_summary';
+                    field.hidden = true;
+                    form.appendChild(field);
+                }
+
+                // Keep it warm in case submit fires very fast
+                const update = () => { field.value = buildSummary(); };
+                update();
+                const iv = setInterval(update, 500); // stop on submit below
+
+                // Make sure action carries lang
+                form.addEventListener('submit', function onSubmit(ev) {
+                    update(); // final write just-in-time
+                    clearInterval(iv);
+                    // If you want language-aware thank-you
+                    const url = new URL(form.action || location.pathname, location.origin);
+                    const params = new URLSearchParams(url.search);
+                    if (!params.get('lang')) params.set('lang', currentLang());
+                    url.search = params.toString();
+                    form.action = url.pathname + (url.search ? '?' + params.toString() : '');
+                }, { capture: true, once: true });
+            }
+
+            // Wire immediately, and also if the form is injected later
+            function init() {
+                findForms().forEach(wireForm);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+            // For SPA/dynamic content
+            const mo = new MutationObserver(() => init());
+            mo.observe(document.documentElement, { childList: true, subtree: true });
         })();
     </script>
     
