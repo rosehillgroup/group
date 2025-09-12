@@ -172,6 +172,9 @@ class RosehillI18n {
         
         // Update forms
         this.updateForms();
+        
+        // Update navigation links
+        this.updateNavigationLinks();
     }
     
     updateTranslatableElements() {
@@ -321,6 +324,55 @@ class RosehillI18n {
                 if (translation) {
                     element.setAttribute('placeholder', translation);
                 }
+            }
+        });
+    }
+    
+    updateNavigationLinks() {
+        // Find navigation links in header/nav elements
+        const navSelectors = [
+            'nav a[href]',
+            'header a[href]',
+            '.navbar a[href]',
+            '.navigation a[href]',
+            '.nav a[href]'
+        ];
+        
+        const links = document.querySelectorAll(navSelectors.join(', '));
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Skip external links, anchors, and already processed links
+            if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+                return;
+            }
+            
+            // Skip links that already have a language prefix
+            if (href.match(/^\/[a-z]{2}\//)) {
+                return;
+            }
+            
+            // Update the href to include language prefix
+            let newHref = href;
+            
+            // For non-English languages, add the language prefix
+            if (this.currentLanguage !== this.defaultLanguage || this.urlConfig.defaultLanguageInUrl) {
+                // Ensure href starts with /
+                if (!href.startsWith('/')) {
+                    newHref = '/' + href;
+                }
+                
+                // Add language prefix
+                newHref = `/${this.currentLanguage}${newHref}`;
+            } else {
+                // For English, remove any existing language prefix
+                newHref = href.replace(/^\/[a-z]{2}\//, '/');
+            }
+            
+            // Update the href if it changed
+            if (newHref !== href) {
+                link.setAttribute('href', newHref);
             }
         });
     }
