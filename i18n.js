@@ -173,8 +173,8 @@ class RosehillI18n {
         // Update forms
         this.updateForms();
         
-        // Update navigation links
-        this.updateNavigationLinks();
+        // Update all internal links
+        this.updateAllInternalLinks();
     }
     
     updateTranslatableElements() {
@@ -328,28 +328,23 @@ class RosehillI18n {
         });
     }
     
-    updateNavigationLinks() {
-        // Find navigation links in header/nav elements
-        const navSelectors = [
-            'nav a[href]',
-            'header a[href]',
-            '.navbar a[href]',
-            '.navigation a[href]',
-            '.nav a[href]'
-        ];
-        
-        const links = document.querySelectorAll(navSelectors.join(', '));
+    updateAllInternalLinks() {
+        // Get ALL links on the page for comprehensive language-aware routing
+        const links = document.querySelectorAll('a[href]');
         
         links.forEach(link => {
             const href = link.getAttribute('href');
             
-            // Skip external links, anchors, and already processed links
-            if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-                return;
-            }
-            
-            // Skip links that already have a language prefix
-            if (href.match(/^\/[a-z]{2}\//)) {
+            // Enhanced filtering logic - skip external, anchors, assets, and already processed links
+            if (!href || 
+                href.startsWith('http') ||        // External URLs
+                href.startsWith('//') ||          // Protocol-relative URLs  
+                href.startsWith('#') ||           // Anchor links
+                href.startsWith('mailto:') ||     // Email links
+                href.startsWith('tel:') ||        // Phone links
+                href.match(/^\/[a-z]{2}\//) ||    // Already has language prefix
+                href.match(/\.(css|js|pdf|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|eot|mp4|mp3|avi|mov|zip|rar|doc|docx|xls|xlsx|ppt|pptx)$/i) // Asset files
+            ) {
                 return;
             }
             
