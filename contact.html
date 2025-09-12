@@ -1889,16 +1889,16 @@
                     let errorMsg = rules.message;
                     
                     // Required validation
-                    if (rules.required && (!value || value.trim() === '')) {
+                    if (rules.required && (!value || (typeof value === 'string' && value.trim() === '') || (typeof value === 'boolean' && !value))) {
                         isValid = false;
                         errorMsg = `${fieldName === 'consent' ? 'Please agree to the Privacy Policy to continue' : `Please enter ${fieldName === 'sector' ? 'a project sector' : fieldName === 'message' ? 'project details' : 'your ' + fieldName}`}`;
                     }
-                    // Pattern validation
-                    else if (value && rules.pattern && !rules.pattern.test(value)) {
+                    // Pattern validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.pattern && !rules.pattern.test(value)) {
                         isValid = false;
                     }
-                    // Length validation
-                    else if (value && rules.minLength && value.trim().length < rules.minLength) {
+                    // Length validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.minLength && value.trim().length < rules.minLength) {
                         isValid = false;
                     }
                     
