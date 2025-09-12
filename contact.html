@@ -950,22 +950,8 @@
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
                         
-                        <!-- Analytics and Journey Tracking Fields -->
-                        <input type="hidden" name="lang">
-                        <input type="hidden" name="referrer">
-                        <input type="hidden" name="landing_page">
-                        <input type="hidden" name="path_history">
-                        <input type="hidden" name="time_on_site_ms">
-                        <input type="hidden" name="utm_source">
-                        <input type="hidden" name="utm_medium">
-                        <input type="hidden" name="utm_campaign">
-                        <input type="hidden" name="utm_term">
-                        <input type="hidden" name="utm_content">
-                        <input type="hidden" name="gclid">
-                        <input type="hidden" name="fbclid">
-                        <input type="hidden" name="ga_client_id">
-                        <input type="hidden" name="page_url">
-                        <input type="hidden" name="page_title">
+                        <!-- Journey Summary Field -->
+                        <textarea name="journey_summary" hidden></textarea>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name <span class="text-red-500">*</span></label>
@@ -1850,45 +1836,48 @@
         }
     </script>
     
-    <!-- Journey Tracking Script -->
+    <!-- Clean Journey Tracking & Form Action Script -->
     <script>
         (function () {
-            const set = (n, v) => { const el = document.querySelector(`[name="${n}"]`); if (el) el.value = v || ""; };
-            const params = new URLSearchParams(location.search);
-            const getCid = () => { const m = document.cookie.match(/(?:^|; )_ga=GA1\.\d\.(\d+\.\d+)/); return m ? m[1] : ""; };
+            const MAX_STEPS = 10;
 
-            // Language (from your switcher / i18n)
-            const currentLang = (window.i18n?.currentLanguage || sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
-            set("lang", currentLang);
-
-            // UTM and ad click IDs
-            ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","fbclid"].forEach(k => set(k, params.get(k)));
-
-            // Journey
-            set("referrer", document.referrer);
-            if (!sessionStorage.getItem("landing_page")) sessionStorage.setItem("landing_page", location.href);
-            set("landing_page", sessionStorage.getItem("landing_page"));
-            const hist = JSON.parse(sessionStorage.getItem("path_history") || "[]"); hist.push(location.pathname);
-            sessionStorage.setItem("path_history", JSON.stringify(hist.slice(-20)));
-            set("path_history", sessionStorage.getItem("path_history"));
-
-            // Time on site
-            const start = Number(sessionStorage.getItem("start_ts") || Date.now());
-            sessionStorage.setItem("start_ts", start);
-            setInterval(() => set("time_on_site_ms", Date.now() - start), 1000);
-
-            // Analytics IDs + context
-            set("ga_client_id", getCid());
-            set("page_url", location.href);
-            set("page_title", document.title);
-
-            // Arabic RTL toggle for UX (pairs nicely with your rtl.css)
-            if (currentLang === "ar") {
-                document.documentElement.lang = "ar";
-                document.documentElement.dir = "rtl";
-            } else {
-                document.documentElement.dir = "ltr";
+            // Maintain a lightweight session trail
+            const now = Date.now();
+            const sess = JSON.parse(sessionStorage.getItem("rh_sess") || "{}");
+            if (!sess.started_at) sess.started_at = now;
+            sess.steps = sess.steps || [];
+            if (!sess.steps.length || sess.steps[sess.steps.length-1].path !== location.pathname) {
+                sess.steps.push({ path: location.pathname, ts: now });
+                sess.steps = sess.steps.slice(-MAX_STEPS);
             }
+            sessionStorage.setItem("rh_sess", JSON.stringify(sess));
+
+            const secs = ms => Math.max(0, Math.round(ms/1000));
+            const fmtDur = s => s < 60 ? `${s}s` : `${Math.floor(s/60)}m ${s%60 ? (s%60+'s') : ''}`.trim();
+
+            const form = document.querySelector('form[data-netlify="true"]');
+            if (!form) return;
+
+            form.addEventListener("submit", () => {
+                // Generate human-readable journey summary
+                const s = JSON.parse(sessionStorage.getItem("rh_sess") || "{}");
+                const total = fmtDur(secs(Date.now() - (s.started_at || Date.now())));
+                const lang = (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
+                const paths = (s.steps || []).map(x => x.path).join(" → ");
+                const entry = (s.steps && s.steps[0]) ? s.steps[0].path : "/";
+
+                const lines = [
+                    `Entry: ${entry}`,
+                    `Trail: ${paths || "/"}`,
+                    `Time on site: ${total}`,
+                    `Language: ${lang}`
+                ];
+                const field = form.querySelector('textarea[name="journey_summary"]');
+                if (field) field.value = lines.join("\n");
+
+                // Set language-aware form action
+                form.action = `/thank-you.html?lang=${lang}`;
+            }, { once: true });
         })();
     </script>
     

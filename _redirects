@@ -9,10 +9,10 @@
 /es/*           /index.html            200
 /ar/*           /index.html            200
 
-# Language-specific thank-you page redirects
-/fr/thank-you.html   /thank-you.html   301
-/es/thank-you.html   /thank-you.html   301  
-/ar/thank-you.html   /thank-you.html   301
+# Language-specific thank-you page redirects with language parameter
+/fr/thank-you.html   /thank-you.html?lang=fr   301
+/es/thank-you.html   /thank-you.html?lang=es   301  
+/ar/thank-you.html   /thank-you.html?lang=ar   301
 
 # Redirect all traffic to HTTPS
 http://rosehillgroup.com/* https://rosehillgroup.com/:splat 301!
