@@ -1,3 +1,14 @@
+# Language URL handling - assets first, then SPA shell
+# Map language-prefixed asset requests to the root
+/fr/*           /:splat                200
+/es/*           /:splat                200  
+/ar/*           /:splat                200
+
+# Serve the SPA shell for language routes  
+/fr/*           /index.html            200
+/es/*           /index.html            200
+/ar/*           /index.html            200
+
 # Redirect all traffic to HTTPS
 http://rosehillgroup.com/* https://rosehillgroup.com/:splat 301!
 http://www.rosehillgroup.com/* https://www.rosehillgroup.com/:splat 301!
