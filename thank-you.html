@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Rosehill Group</title>
+    <title data-i18n="ty.title">Thank You - Rosehill Group</title>
     <link rel="canonical" href="https://rosehill.group/thank-you.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PBMTS4D6');</script>
     <!-- End Google Tag Manager -->
+    
     <style>
         * {
             margin: 0;
@@ -38,6 +39,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
         .thank-you-container {
@@ -48,106 +50,157 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            color: #4ade80;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            font-family: 'Overpass', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        p {
-            font-size: 1.2rem;
+        .message {
+            font-size: 1.25rem;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        .contact-info {
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #ff6b35;
-        }
-
-        .contact-info p {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .btn-home {
-            background: #ff6b35;
-            color: white;
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 15px 30px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #FF6B35, #FF8C42);
+            color: white;
             text-decoration: none;
+            border-radius: 12px;
             font-weight: 600;
             font-size: 1.1rem;
-            display: inline-block;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
-        .btn-home:hover {
-            background: #e55a2b;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(135deg, #FF8C42, #FF6B35);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* RTL Support */
+        body[dir="rtl"] .cta-button {
+            flex-direction: row-reverse;
         }
 
         @media (max-width: 768px) {
             .thank-you-container {
-                margin: 20px;
                 padding: 40px 30px;
+                margin: 20px;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            p {
+            .message {
                 font-size: 1.1rem;
-            }
-
-            .btn-home {
-                font-size: 1rem;
-                padding: 12px 25px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/gtm.ns.html?id=GTM-PBMTS4D6"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBMTS4D6"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="thank-you-container">
-        <div class="success-icon">✓</div>
-        <h1>Thank You!</h1>
-        <p>Your enquiry has been successfully submitted to the Rosehill Group. Our team will review your message and connect you with the right division specialist within 24 hours.</p>
-        
-        <div class="contact-info">
-            <h3>Need immediate assistance?</h3>
-            <p><strong>Phone:</strong> +44 (0) 1422 839 456</p>
-            <p><strong>Email:</strong> info@rosehill.group</p>
-        </div>
-        
-        <a href="index.html" class="btn-home">Return to Homepage</a>
-    </div>
+    <main class="thank-you-container">
+        <h1 data-i18n="ty.heading">Thank You!</h1>
+        <p class="message" data-i18n="ty.body">
+            We've received your message and a member of our team will be in touch shortly. 
+            Thank you for your interest in Rosehill Group.
+        </p>
+        <a href="/" class="cta-button" data-i18n="ty.cta">
+            <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0L3.586 10l4.707-4.707a1 1 0 111.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Back to Homepage
+        </a>
+    </main>
+
+    <script>
+        (function () {
+            // Self-contained multilingual dictionary
+            const dict = {
+                en: { 
+                    "ty.title": "Thank You - Rosehill Group", 
+                    "ty.heading": "Thank You!", 
+                    "ty.body": "We've received your message and a member of our team will be in touch shortly. Thank you for your interest in Rosehill Group.", 
+                    "ty.cta": "Back to Homepage" 
+                },
+                fr: { 
+                    "ty.title": "Merci - Rosehill Group", 
+                    "ty.heading": "Merci !", 
+                    "ty.body": "Nous avons bien reçu votre message et notre équipe vous contactera sous peu. Merci de votre intérêt pour Rosehill Group.", 
+                    "ty.cta": "Retour à l'accueil" 
+                },
+                es: { 
+                    "ty.title": "Gracias - Rosehill Group", 
+                    "ty.heading": "¡Gracias!", 
+                    "ty.body": "Hemos recibido su mensaje y nuestro equipo se pondrá en contacto en breve. Gracias por su interés en Rosehill Group.", 
+                    "ty.cta": "Volver al inicio" 
+                },
+                ar: { 
+                    "ty.title": "شكرًا لك - مجموعة روزهيل", 
+                    "ty.heading": "شكرًا لك!", 
+                    "ty.body": "لقد استلمنا رسالتك وسيتواصل معك أحد أعضاء فريقنا قريبًا. شكرًا لك على اهتمامك بمجموعة روزهيل.", 
+                    "ty.cta": "العودة إلى الصفحة الرئيسية" 
+                }
+            };
+
+            // Detect language: ?lang=xx → session → html lang → default en
+            const qp = new URLSearchParams(location.search);
+            const urlLang = (qp.get("lang") || "").slice(0,2);
+            const sessLang = (sessionStorage.getItem("lang") || "").slice(0,2);
+            const lang = (urlLang || sessLang || document.documentElement.lang || "en").toLowerCase();
+            
+            // Set document language and direction
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+            // Apply translations
+            const t = dict[lang] || dict.en;
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (t[key]) {
+                    if (el.tagName === "TITLE") {
+                        document.title = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+
+            // Clear the journey session for next enquiry
+            const keepJourney = qp.get('keepJourney');
+            if (!keepJourney) {
+                try { 
+                    sessionStorage.removeItem('rh_sess'); 
+                } catch (e) {
+                    // Silently handle storage errors
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

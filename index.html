@@ -34,6 +34,135 @@
     <meta property="twitter:site" content="@rosehillpolymrs">
     <meta property="twitter:creator" content="@rosehillpolymrs">
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rosehill Group",
+        "alternateName": "Rosehill Polymers Ltd",
+        "description": "Leading UK manufacturer of advanced materials and infrastructure solutions. Industry partner and problem solver bringing complex challenges to life through innovative engineering since 1988.",
+        "url": "https://rosehill.group",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://rosehill.group/Rosehill_Group_2025.png",
+            "width": 300,
+            "height": 100
+        },
+        "image": "https://rosehill.group/rosehill_group_social_sharing.jpg",
+        "foundingDate": "1988",
+        "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": "100-250"
+        },
+        "location": {
+            "@type": "Place",
+            "name": "Rosehill Group UK Headquarters",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sowerby Bridge",
+                "addressRegion": "West Yorkshire", 
+                "postalCode": "HX6",
+                "addressCountry": "GB"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "53.7050",
+                "longitude": "-1.9289"
+            }
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "url": "https://rosehill.group/contact"
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "technical support",
+                "url": "https://rosehill.group/contact"
+            }
+        ],
+        "sameAs": [
+            "https://twitter.com/rosehillpolymrs"
+        ],
+        "areaServed": ["GB", "EU", "Worldwide"],
+        "industryIdentifier": {
+            "@type": "DefinedTerm",
+            "name": "Advanced Materials Manufacturing",
+            "inDefinedTermSet": "Manufacturing Industry"
+        },
+        "knowsAbout": [
+            "Advanced Materials Manufacturing",
+            "Infrastructure Solutions",
+            "Road Safety Systems",
+            "Rail Infrastructure",
+            "Security Barriers",
+            "Sports Surface Materials",
+            "Polyurethane Chemistry",
+            "Sustainable Manufacturing"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Infrastructure Solutions Portfolio",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "ProductGroup",
+                        "name": "Road Safety Systems",
+                        "description": "Comprehensive road safety barriers, speed control, and traffic management solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "ProductGroup", 
+                        "name": "Rail Infrastructure",
+                        "description": "Anti-trespass panels, walkway systems, and rail safety solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "ProductGroup",
+                        "name": "Security Solutions", 
+                        "description": "Ballistic protection, security barriers, and perimeter protection systems"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "ProductGroup",
+                        "name": "Sports & Recreation Surfaces",
+                        "description": "Premium rubber granules and polyurethane binders for sports surfaces"
+                    }
+                }
+            ]
+        },
+        "subsidiary": [
+            {
+                "@type": "Organization",
+                "name": "Rosehill Sports & Play",
+                "alternateName": "Rosehill TPV®",
+                "url": "https://tpv.rosehill.group",
+                "description": "Specialist division for sports and playground surface materials"
+            }
+        ],
+        "award": [
+            "35+ Years Manufacturing Excellence",
+            "Made in UK Quality Standards",
+            "ISO Certified Manufacturing",
+            "Sustainable Manufacturing Pioneer"
+        ],
+        "parentOrganization": null,
+        "memberOf": {
+            "@type": "Organization",
+            "name": "UK Manufacturing Association"
+        }
+    }
+    </script>
+    
     <!-- Additional SEO -->
     <link rel="canonical" href="https://rosehill.group/">
     <meta name="robots" content="index, follow">
@@ -1253,12 +1382,15 @@
                     <!-- Contact Form -->
                     <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
                         <h3 class="text-2xl font-semibold text-rh-blue mb-6 text-center" data-i18n="contact.form.title">Send us your project details</h3>
-                        <form id="homepage-form" name="homepage-inquiry" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" class="space-y-6" novalidate>
+                        <form id="homepage-form" name="homepage-inquiry" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" accept-charset="utf-8" action="/thank-you.html" class="space-y-6" novalidate>
                             <input type="hidden" name="form-name" value="homepage-inquiry">
                             <input type="hidden" name="subject" value="Homepage Project Inquiry - Rosehill Group">
                             <p class="sr-only">
                                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                             </p>
+                            
+                            <!-- Journey Summary Field -->
+                            <textarea name="journey_summary" hidden></textarea>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name <span class="text-red-500">*</span></label>
@@ -1520,16 +1652,16 @@
                     let errorMsg = rules.message;
                     
                     // Required validation
-                    if (rules.required && (!value || value.trim() === '')) {
+                    if (rules.required && (!value || (typeof value === 'string' && value.trim() === '') || (typeof value === 'boolean' && !value))) {
                         isValid = false;
                         errorMsg = `${fieldName === 'consent' ? 'Please agree to the Privacy Policy to continue' : `Please enter ${fieldName === 'sector' ? 'a project sector' : fieldName === 'message' ? 'project details' : 'your ' + fieldName}`}`;
                     }
-                    // Pattern validation
-                    else if (value && rules.pattern && !rules.pattern.test(value)) {
+                    // Pattern validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.pattern && !rules.pattern.test(value)) {
                         isValid = false;
                     }
-                    // Length validation
-                    else if (value && rules.minLength && value.trim().length < rules.minLength) {
+                    // Length validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.minLength && value.trim().length < rules.minLength) {
                         isValid = false;
                     }
                     
@@ -1780,6 +1912,96 @@
     <!-- Cookie Consent -->
     <script src="cookie-consent.js"></script>
     
+    <!-- Robust Journey Tracking Script -->
+    <script>
+        (function () {
+            const MAX_STEPS = 10;
+
+            // Maintain a lightweight session trail
+            const now = Date.now();
+            const key = "rh_sess";
+            const sess = JSON.parse(sessionStorage.getItem(key) || "{}");
+            if (!sess.started_at) sess.started_at = now;
+            sess.steps = sess.steps || [];
+            if (!sess.steps.length || sess.steps[sess.steps.length - 1].path !== location.pathname) {
+                sess.steps.push({ path: location.pathname, ts: now });
+                sess.steps = sess.steps.slice(-MAX_STEPS);
+            }
+            sessionStorage.setItem(key, JSON.stringify(sess));
+
+            // Helpers
+            const secs = ms => Math.max(0, Math.round(ms / 1000));
+            const fmtDur = s => s < 60 ? `${s}s` : `${Math.floor(s/60)}m${s%60 ? " " + (s%60) + "s" : ""}`;
+            const currentLang = () => (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
+
+            // Build the summary string
+            function buildSummary() {
+                const s = JSON.parse(sessionStorage.getItem(key) || "{}");
+                const total = fmtDur(secs(Date.now() - (s.started_at || Date.now())));
+                const paths = (s.steps || []).map(x => x.path).join(" → ");
+                const entry = (s.steps && s.steps[0]) ? s.steps[0].path : "/";
+                return [
+                    `Entry: ${entry}`,
+                    `Trail: ${paths || "/"}`,
+                    `Time on site: ${total}`,
+                    `Language: ${currentLang()}`
+                ].join("\n");
+            }
+
+            // Find our Netlify form(s)
+            function findForms() {
+                // Prefer a specific id if you have one
+                let forms = Array.from(document.querySelectorAll('form[data-netlify="true"]'));
+                if (!forms.length) forms = Array.from(document.querySelectorAll('form[name="contact"]'));
+                return forms;
+            }
+
+            function wireForm(form) {
+                if (form.__journeyWired) return; // idempotent
+                form.__journeyWired = true;
+
+                // Ensure the hidden textarea exists
+                let field = form.querySelector('textarea[name="journey_summary"]');
+                if (!field) {
+                    field = document.createElement('textarea');
+                    field.name = 'journey_summary';
+                    field.hidden = true;
+                    form.appendChild(field);
+                }
+
+                // Keep it warm in case submit fires very fast
+                const update = () => { field.value = buildSummary(); };
+                update();
+                const iv = setInterval(update, 500); // stop on submit below
+
+                // Make sure action carries lang
+                form.addEventListener('submit', function onSubmit(ev) {
+                    update(); // final write just-in-time
+                    clearInterval(iv);
+                    // If you want language-aware thank-you
+                    const url = new URL(form.action || location.pathname, location.origin);
+                    const params = new URLSearchParams(url.search);
+                    if (!params.get('lang')) params.set('lang', currentLang());
+                    url.search = params.toString();
+                    form.action = url.pathname + (url.search ? '?' + params.toString() : '');
+                }, { capture: true, once: true });
+            }
+
+            // Wire immediately, and also if the form is injected later
+            function init() {
+                findForms().forEach(wireForm);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+            // For SPA/dynamic content
+            const mo = new MutationObserver(() => init());
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+        })();
+    </script>
+    
     <!-- Internationalization -->
     <script src="i18n.js"></script>
     <script>
@@ -1957,7 +2179,7 @@
                     currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
                 }
             }).catch(error => {
-                console.error('Error initializing i18n system:', error);
+                // Silently handle i18n initialization errors
             });
         });
     </script>

@@ -1,74 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Homepage - English (Default) -->
     <url>
         <loc>https://rosehill.group/</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/" />
     </url>
     
-    <!-- Main Pages -->
+    <!-- Homepage - Multilingual Versions -->
+    <url>
+        <loc>https://rosehill.group/fr/</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/" />
+    </url>
+    
+    <url>
+        <loc>https://rosehill.group/es/</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/" />
+    </url>
+    
+    <url>
+        <loc>https://rosehill.group/ar/</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/" />
+    </url>
+    
+    <!-- About Page - All Languages -->
     <url>
         <loc>https://rosehill.group/about</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/about" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/about" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/about" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/about" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/fr/about</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/about" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/about" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/about" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/about" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/es/about</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/about" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/about" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/about" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/about" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/ar/about</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/about" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/about" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/about" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/about" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/about" />
     </url>
     
+    <!-- Products Page - All Languages -->
     <url>
         <loc>https://rosehill.group/products</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/products" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/products" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/products" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/products" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/products" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/fr/products</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/products" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/products" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/products" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/products" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/products" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/es/products</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/products" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/products" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/products" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/products" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/products" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/ar/products</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/products" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/products" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/products" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/products" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/products" />
     </url>
     
+    <!-- Projects Page - All Languages -->
     <url>
         <loc>https://rosehill.group/projects</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/projects" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/projects" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/projects" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/projects" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/fr/projects</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/projects" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/projects" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/projects" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/projects" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/es/projects</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/projects" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/projects" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/projects" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/projects" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/ar/projects</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/projects" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/projects" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/projects" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/projects" />
     </url>
     
+    <!-- Solutions Page - All Languages -->
     <url>
         <loc>https://rosehill.group/solutions</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/solutions" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/solutions" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/solutions" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/solutions" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/solutions" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/fr/solutions</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/solutions" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/solutions" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/solutions" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/solutions" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/solutions" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/es/solutions</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/solutions" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/solutions" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/solutions" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/solutions" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/solutions" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/ar/solutions</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/solutions" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/solutions" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/solutions" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/solutions" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/solutions" />
     </url>
     
+    <!-- Contact Page - All Languages -->
     <url>
         <loc>https://rosehill.group/contact</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/contact" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/contact" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/contact" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/contact" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/fr/contact</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/contact" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/contact" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/contact" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/contact" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/es/contact</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/contact" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/contact" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/contact" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/contact" />
+    </url>
+    <url>
+        <loc>https://rosehill.group/ar/contact</loc>
+        <lastmod>2025-09-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://rosehill.group/contact" />
+        <xhtml:link rel="alternate" hreflang="fr" href="https://rosehill.group/fr/contact" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://rosehill.group/es/contact" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://rosehill.group/ar/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://rosehill.group/contact" />
     </url>
     
-    <!-- Legal Pages -->
+    <!-- Legal Pages (English Only) -->
     <url>
         <loc>https://rosehill.group/privacy-policy</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
         <loc>https://rosehill.group/terms-of-use</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
         <loc>https://rosehill.group/cookie-policy</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
         <loc>https://rosehill.group/sitemap</loc>
-        <lastmod>2025-01-16</lastmod>
+        <lastmod>2025-09-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>

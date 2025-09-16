@@ -106,7 +106,7 @@ class RosehillI18n {
             this.translationCache.set(this.currentLanguage, this.translations);
             this.loadedLanguages.add(this.currentLanguage);
         } catch (error) {
-            console.error('Error loading translations:', error);
+            // Silently handle translation loading errors
             
             // Fallback to English if current language fails
             if (this.currentLanguage !== this.defaultLanguage) {
@@ -172,6 +172,9 @@ class RosehillI18n {
         
         // Update forms
         this.updateForms();
+        
+        // Update all internal links
+        this.updateAllInternalLinks();
     }
     
     updateTranslatableElements() {
@@ -186,7 +189,6 @@ class RosehillI18n {
             const key = element.getAttribute('data-i18n');
             const translation = this.get(key);
             
-            // Debug logging for contact translations
             
             if (translation && element.textContent !== translation) {
                 updates.push({ element, translation });
@@ -218,7 +220,7 @@ class RosehillI18n {
                     }
                 });
             } catch (error) {
-                console.error('Error parsing data-i18n-attr:', error);
+                // Silently handle parsing errors
             }
         });
         
@@ -326,6 +328,50 @@ class RosehillI18n {
         });
     }
     
+    updateAllInternalLinks() {
+        // Get ALL links on the page for comprehensive language-aware routing
+        const links = document.querySelectorAll('a[href]');
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // Enhanced filtering logic - skip external, anchors, assets, and already processed links
+            if (!href || 
+                href.startsWith('http') ||        // External URLs
+                href.startsWith('//') ||          // Protocol-relative URLs  
+                href.startsWith('#') ||           // Anchor links
+                href.startsWith('mailto:') ||     // Email links
+                href.startsWith('tel:') ||        // Phone links
+                href.match(/^\/[a-z]{2}\//) ||    // Already has language prefix
+                href.match(/\.(css|js|pdf|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|eot|mp4|mp3|avi|mov|zip|rar|doc|docx|xls|xlsx|ppt|pptx)$/i) // Asset files
+            ) {
+                return;
+            }
+            
+            // Update the href to include language prefix
+            let newHref = href;
+            
+            // For non-English languages, add the language prefix
+            if (this.currentLanguage !== this.defaultLanguage || this.urlConfig.defaultLanguageInUrl) {
+                // Ensure href starts with /
+                if (!href.startsWith('/')) {
+                    newHref = '/' + href;
+                }
+                
+                // Add language prefix
+                newHref = `/${this.currentLanguage}${newHref}`;
+            } else {
+                // For English, remove any existing language prefix
+                newHref = href.replace(/^\/[a-z]{2}\//, '/');
+            }
+            
+            // Update the href if it changed
+            if (newHref !== href) {
+                link.setAttribute('href', newHref);
+            }
+        });
+    }
+    
     get(key) {
         const keys = key.split('.');
         let value = this.translations;
@@ -349,7 +395,7 @@ class RosehillI18n {
     
     async changeLanguage(newLanguage) {
         if (!this.supportedLanguages.includes(newLanguage)) {
-            console.error(`Language ${newLanguage} is not supported`);
+            // Language not supported, silently return
             return;
         }
         
@@ -401,7 +447,7 @@ class RosehillI18n {
                     this.loadedLanguages.add(lang);
                     return { lang, success: true };
                 } catch (error) {
-                    console.warn(`Failed to preload language ${lang}:`, error);
+                    // Silently handle preload failures
                     return { lang, success: false, error };
                 }
             });

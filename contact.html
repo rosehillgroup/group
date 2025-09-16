@@ -436,6 +436,185 @@
         }
 
     </style>
+    
+    <!-- Structured Data - Contact Page with LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Rosehill Group",
+        "description": "Get in touch with Rosehill Group for infrastructure solutions, expert advice on road safety, rail systems, security barriers and sports surfaces",
+        "url": "https://rosehill.group/contact",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "@id": "https://rosehill.group/#localbusiness",
+            "name": "Rosehill Group",
+            "alternateName": "Rosehill Polymers Ltd",
+            "legalName": "Rosehill Polymers Limited",
+            "url": "https://rosehill.group/",
+            "logo": "https://rosehill.group/Rosehill_Group_2025.png",
+            "image": "https://rosehill.group/rosehill_group_social_sharing.jpg",
+            "description": "Leading UK manufacturer of advanced materials and sustainable infrastructure solutions since 1988",
+            "foundingDate": "1988",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sowerby Bridge Industrial Estate",
+                "addressLocality": "Sowerby Bridge",
+                "addressRegion": "West Yorkshire",
+                "postalCode": "HX6 1PE",
+                "addressCountry": "GB"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 53.7050,
+                "longitude": -1.9289
+            },
+            "telephone": "+44-1422-831-122",
+            "email": "enquiries@rosehill.group",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-general",
+                    "contactType": "customer service",
+                    "telephone": "+44-1422-831-122",
+                    "email": "enquiries@rosehill.group",
+                    "areaServed": ["GB", "EU"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                },
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-technical",
+                    "contactType": "technical support",
+                    "telephone": "+44-1422-831-122",
+                    "email": "technical@rosehill.group",
+                    "areaServed": ["GB", "EU", "US"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                },
+                {
+                    "@type": "ContactPoint",
+                    "@id": "https://rosehill.group/#contact-sales",
+                    "contactType": "sales",
+                    "telephone": "+44-1422-831-122",
+                    "email": "sales@rosehill.group",
+                    "areaServed": ["GB", "EU", "US", "AU"],
+                    "availableLanguage": "en",
+                    "hoursAvailable": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "08:30",
+                        "closes": "17:00"
+                    }
+                }
+            ],
+            "sameAs": [
+                "https://twitter.com/rosehillpolymrs",
+                "https://www.linkedin.com/company/rosehill-polymers"
+            ],
+            "priceRange": "£££",
+            "currenciesAccepted": ["GBP", "EUR", "USD"],
+            "paymentAccepted": ["Bank Transfer", "Credit Card", "Invoice"],
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:30",
+                "closes": "17:00"
+            },
+            "category": [
+                "Chemical Manufacturing",
+                "Polymer Engineering",
+                "Infrastructure Materials",
+                "Road Safety Equipment",
+                "Sports Surface Materials"
+            ],
+            "areaServed": [
+                {
+                    "@type": "Country",
+                    "name": "United Kingdom"
+                },
+                {
+                    "@type": "Place",
+                    "name": "Europe"
+                },
+                {
+                    "@type": "Place",
+                    "name": "North America"
+                },
+                {
+                    "@type": "Place",
+                    "name": "Australia"
+                }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Infrastructure Solutions Catalog",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "name": "Road Safety Consultation",
+                        "description": "Expert consultation on road safety systems, cycle lane defenders, and traffic management solutions",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Road Safety Consultation",
+                            "serviceType": "Technical Consulting"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Rail Infrastructure Solutions",
+                        "description": "Advanced materials and systems for railway infrastructure projects",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Rail Infrastructure Solutions",
+                            "serviceType": "Engineering Solutions"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Sports Surface Systems",
+                        "description": "TPV granules, Flexilon® binders, and complete sports surface solutions",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sports Surface Systems",
+                            "serviceType": "Materials Supply"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Security & Defence Solutions",
+                        "description": "Specialized materials for security barriers and defence applications",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Security & Defence Solutions",
+                            "serviceType": "Specialized Manufacturing"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Custom Engineering",
+                        "description": "Bespoke polymer solutions and engineering for specific requirements",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Custom Engineering",
+                            "serviceType": "Custom Manufacturing"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+    </script>
 </head>
 <body class="mega-menus-disabled">
     <!-- Google Tag Manager (noscript) -->
@@ -764,12 +943,15 @@
                 <!-- Contact Form -->
                 <div class="contact-card">
                     <h2 class="text-2xl font-semibold text-rh-blue mb-6" data-i18n="contact.form.title">Send us your enquiry</h2>
-                    <form id="contact-form" class="space-y-6" name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" novalidate>
+                    <form id="contact-form" class="space-y-6" name="contact" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" accept-charset="utf-8" action="/thank-you.html" novalidate>
                         <input type="hidden" name="form-name" value="contact">
                         <input type="hidden" name="subject" value="New Group Inquiry - Rosehill Group Contact Form">
                         <p class="sr-only">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
+                        
+                        <!-- Journey Summary Field -->
+                        <textarea name="journey_summary" hidden></textarea>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-grey-900 mb-2" data-i18n="contact.form.name">Your name <span class="text-red-500">*</span></label>
@@ -1654,6 +1836,96 @@
         }
     </script>
     
+    <!-- Robust Journey Tracking Script -->
+    <script>
+        (function () {
+            const MAX_STEPS = 10;
+
+            // Maintain a lightweight session trail
+            const now = Date.now();
+            const key = "rh_sess";
+            const sess = JSON.parse(sessionStorage.getItem(key) || "{}");
+            if (!sess.started_at) sess.started_at = now;
+            sess.steps = sess.steps || [];
+            if (!sess.steps.length || sess.steps[sess.steps.length - 1].path !== location.pathname) {
+                sess.steps.push({ path: location.pathname, ts: now });
+                sess.steps = sess.steps.slice(-MAX_STEPS);
+            }
+            sessionStorage.setItem(key, JSON.stringify(sess));
+
+            // Helpers
+            const secs = ms => Math.max(0, Math.round(ms / 1000));
+            const fmtDur = s => s < 60 ? `${s}s` : `${Math.floor(s/60)}m${s%60 ? " " + (s%60) + "s" : ""}`;
+            const currentLang = () => (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
+
+            // Build the summary string
+            function buildSummary() {
+                const s = JSON.parse(sessionStorage.getItem(key) || "{}");
+                const total = fmtDur(secs(Date.now() - (s.started_at || Date.now())));
+                const paths = (s.steps || []).map(x => x.path).join(" → ");
+                const entry = (s.steps && s.steps[0]) ? s.steps[0].path : "/";
+                return [
+                    `Entry: ${entry}`,
+                    `Trail: ${paths || "/"}`,
+                    `Time on site: ${total}`,
+                    `Language: ${currentLang()}`
+                ].join("\n");
+            }
+
+            // Find our Netlify form(s)
+            function findForms() {
+                // Prefer a specific id if you have one
+                let forms = Array.from(document.querySelectorAll('form[data-netlify="true"]'));
+                if (!forms.length) forms = Array.from(document.querySelectorAll('form[name="contact"]'));
+                return forms;
+            }
+
+            function wireForm(form) {
+                if (form.__journeyWired) return; // idempotent
+                form.__journeyWired = true;
+
+                // Ensure the hidden textarea exists
+                let field = form.querySelector('textarea[name="journey_summary"]');
+                if (!field) {
+                    field = document.createElement('textarea');
+                    field.name = 'journey_summary';
+                    field.hidden = true;
+                    form.appendChild(field);
+                }
+
+                // Keep it warm in case submit fires very fast
+                const update = () => { field.value = buildSummary(); };
+                update();
+                const iv = setInterval(update, 500); // stop on submit below
+
+                // Make sure action carries lang
+                form.addEventListener('submit', function onSubmit(ev) {
+                    update(); // final write just-in-time
+                    clearInterval(iv);
+                    // If you want language-aware thank-you
+                    const url = new URL(form.action || location.pathname, location.origin);
+                    const params = new URLSearchParams(url.search);
+                    if (!params.get('lang')) params.set('lang', currentLang());
+                    url.search = params.toString();
+                    form.action = url.pathname + (url.search ? '?' + params.toString() : '');
+                }, { capture: true, once: true });
+            }
+
+            // Wire immediately, and also if the form is injected later
+            function init() {
+                findForms().forEach(wireForm);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+            // For SPA/dynamic content
+            const mo = new MutationObserver(() => init());
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+        })();
+    </script>
+    
     <!-- Contact Form Validation -->
     <script>
         // Enhanced contact form validation
@@ -1710,16 +1982,16 @@
                     let errorMsg = rules.message;
                     
                     // Required validation
-                    if (rules.required && (!value || value.trim() === '')) {
+                    if (rules.required && (!value || (typeof value === 'string' && value.trim() === '') || (typeof value === 'boolean' && !value))) {
                         isValid = false;
                         errorMsg = `${fieldName === 'consent' ? 'Please agree to the Privacy Policy to continue' : `Please enter ${fieldName === 'sector' ? 'a project sector' : fieldName === 'message' ? 'project details' : 'your ' + fieldName}`}`;
                     }
-                    // Pattern validation
-                    else if (value && rules.pattern && !rules.pattern.test(value)) {
+                    // Pattern validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.pattern && !rules.pattern.test(value)) {
                         isValid = false;
                     }
-                    // Length validation
-                    else if (value && rules.minLength && value.trim().length < rules.minLength) {
+                    // Length validation (only for strings)
+                    else if (value && typeof value === 'string' && rules.minLength && value.trim().length < rules.minLength) {
                         isValid = false;
                     }
                     
