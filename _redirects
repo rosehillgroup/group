@@ -1,7 +1,16 @@
+# Netlify Redirects Configuration for Rosehill Group
+# Redirects from rosehillpolymers.com to www.rosehill.group
+
+# Force old domain to new subdomain
+https://rosehillpolymers.com/* https://www.rosehill.group/:splat 301!
+http://rosehillpolymers.com/* https://www.rosehill.group/:splat 301!
+https://www.rosehillpolymers.com/* https://www.rosehill.group/:splat 301!
+http://www.rosehillpolymers.com/* https://www.rosehill.group/:splat 301!
+
 # Language URL handling - assets first, then SPA shell
 # Map language-prefixed asset requests to the root
 /fr/*           /:splat                200
-/es/*           /:splat                200  
+/es/*           /:splat                200
 /ar/*           /:splat                200
 
 # Serve the SPA shell for language routes  
