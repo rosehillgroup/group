@@ -1,6 +1,10 @@
 [build]
   publish = "."
 
+[[edge_functions]]
+  path = "/*"
+  function = "geo-cookie"
+
 [[headers]]
   for = "/*"
   [headers.values]
