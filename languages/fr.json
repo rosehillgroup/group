@@ -762,11 +762,11 @@
     },
     "moko": {
       "title": "Aire de Jeux d'Aventure MOKO Park",
-      "description": "Grande installation d'aire de jeux d'aventure au centre commercial MOKO de Hong Kong, avec des cadres d'escalade et des plateformes d'équilibre renforcés TPV® avec des éléments de design culturel inspirés des marchés aux fleurs et aux oiseaux à proximité.",
+      "description": "Grande installation d'aire de jeux d'aventure au centre commercial MOKO de Hong Kong, avec des cadres d'escalade et des plateformes d'équilibre avec revêtement de sécurité Rosehill TPV® et des éléments de design culturel inspirés des marchés aux fleurs et aux oiseaux à proximité.",
       "client": "Client: Centre Commercial MOKO",
       "stats": {
         "sqFeetArea": "Superficie en Pieds Carrés",
-        "reinforced": "Renforcé",
+        "reinforced": "Revêtement de Sécurité",
         "design": "Design"
       }
     },
@@ -786,10 +786,10 @@
       },
       "results": {
         "title": "Résultats et Impact",
-        "description": "L'installation a créé des voies cyclables protégées permettant des déplacements sûrs et séparés. Les incursions de véhicules dans la voie cyclable ont été éliminées, les cyclistes déclarant se sentir plus en sécurité et plus confiants. La voie cyclable peut maintenant également accueillir des scooters électriques de location."
+        "description": "Les incursions de véhicules dans les voies cyclables ont été complètement éliminées depuis l'installation. La confiance des cyclistes a augmenté de manière mesurable, la voie protégée accueillant maintenant en sécurité les cyclistes traditionnels et les scooters électriques de location. Les incidents liés à la vitesse dans le corridor ont considérablement diminué."
       },
       "quote": {
-        "text": "L'installation a créé des voies cyclables protégées permettant des déplacements sûrs et séparés, avec des défenseurs de voie cyclable étroits et des séparateurs de voie empêchant les véhicules d'entrer dans la voie cyclable. Les cyclistes peuvent maintenant voyager en toute sécurité autour de Queens et Rockaway Parkway au sud de Flatlands Ave, avec les incursions de véhicules dans la voie cyclable éliminées.",
+        "text": "Ce projet démontre comment le placement stratégique de barrières physiques peut transformer des corridors à fort trafic. L'installation de Northern Boulevard est devenue un modèle pour des améliorations similaires d'infrastructure cycliste dans tout NYC, s'étendant du Queens à Rockaway Parkway au sud de Flatlands Ave.",
         "attribution": "— Projet livré par le Département des Transports de NYC"
       }
     },
@@ -864,7 +864,7 @@
     },
     "pembroke": {
       "title": "Système de Drainage Ferroviaire de Pembroke",
-      "description": "Installation MDS avec chemin de drainage courbé et contraintes de substratum rocheux, atteignant le débit de décharge cible pour la gestion de l'eau de l'infrastructure ferroviaire.",
+      "description": "Installation du Système de Drainage Rosehill avec chemin de drainage courbé et contraintes de substratum rocheux, atteignant le débit de décharge cible pour la gestion de l'eau de l'infrastructure ferroviaire.",
       "client": "Client: Colas Rail UK",
       "stats": {
         "dischargeRate": "Débit de Décharge",
@@ -874,20 +874,20 @@
       "challenges": {
         "title": "Défis d'Installation",
         "description1": "Un substratum rocheux étendu a sévèrement limité la profondeur de drainage et les options d'installation. L'infrastructure de télécommunications existante nécessitait une navigation prudente, tandis que le chemin de drainage courbé devait diriger l'eau vers l'entrée du tunnel dans des contraintes de temps serrées.",
-        "description2": "Le MDS a été installé avec un gradient de 1 sur 20 sur un lit de gravier de pois de 75mm, avec des unités étagées pour surmonter les rencontres de substratum rocheux supplémentaires. Les unités ont été coupées à des angles de 90 degrés pour maintenir le drainage, avec des tuiles MDS de 50mm protégeant l'auge de base de l'accumulation de sédiments."
+        "description2": "Le Système de Drainage Rosehill a été installé avec un gradient de 1 sur 20 sur un lit de gravier de pois de 75mm, avec des unités étagées pour surmonter les rencontres de substratum rocheux supplémentaires. Les unités ont été coupées à des angles de 90 degrés pour maintenir le drainage, avec des tuiles du Système de Drainage Rosehill de 50mm protégeant l'auge de base de l'accumulation de sédiments."
       },
       "results": {
         "title": "Résultats Réussis",
         "description": "Le système a atteint le débit de décharge cible de 42 litres par seconde, s'est adapté avec succès aux contraintes du site sans compromettre les performances, et a achevé l'installation dans les restrictions de temps, démontrant la polyvalence du système dans des environnements ferroviaires difficiles."
       },
       "quote": {
-        "text": "\"Le MDS Rosehill a prouvé comment le système peut surmonter les défis que nous rencontrons régulièrement sur site. La capacité de couper et d'étager les unités sans impacter les performances était extrêmement utile sous une installation à temps restreint.\"",
+        "text": "\"Le Système de Drainage Rosehill a prouvé comment le système peut surmonter les défis que nous rencontrons régulièrement sur site. La capacité de couper et d'étager les unités sans impacter les performances était extrêmement utile sous une installation à temps restreint.\"",
         "attribution": "— Bill Smalley, Gestionnaire de Construction"
       }
     },
     "moreton": {
-      "title": "Essai de Performance MDS de Moreton",
-      "description": "Tests hydrauliques complets du système de drainage modulaire au centre d'essais National Highways, simulant des conditions météorologiques extrêmes incluant des événements de tempête de 1 sur 1000 ans.",
+      "title": "Essai de Performance du Système de Drainage Rosehill de Moreton",
+      "description": "Tests hydrauliques complets du Système de Drainage Rosehill au centre d'essais National Highways, simulant des conditions météorologiques extrêmes incluant des événements de tempête de 1 sur 1000 ans.",
       "client": "Client: Agence de l'Environnement",
       "stats": {
         "systemLength": "Longueur du Système",

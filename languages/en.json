@@ -753,7 +753,7 @@
       },
       "performance": {
         "title": "Performance & Safety",
-        "description": "The surface has performed exceptionally through two full seasons, maintaining its vibrant colors and safety properties despite constant use. Independent safety testing confirms continued compliance with all playground safety standards."
+        "description": "The surface has performed exceptionally through two full seasons, maintaining its vibrant colours and safety properties despite constant use. Independent safety testing confirms continued compliance with all playground safety standards."
       },
       "quote": {
         "text": "SKYPARK at Butlins Skegness is an exhilarating playground accessible to all children, featuring imposing climbing towers, intricate tunnels, slides, and the UK's longest interactive seesaw. The playground transforms with vibrant LEDs as the sun sets, ensuring the fun continues well into the night.",
@@ -762,11 +762,11 @@
     },
     "moko": {
       "title": "MOKO Park Adventure Playground",
-      "description": "Large adventure playground installation at Hong Kong's MOKO shopping centre, featuring TPV®-reinforced climbing frames and balancing platforms with cultural design elements inspired by nearby Flower and Bird Markets.",
+      "description": "Large adventure playground installation at Hong Kong's MOKO shopping centre, featuring climbing frames and balancing platforms with Rosehill TPV® safety surfacing and cultural design elements inspired by nearby Flower and Bird Markets.",
       "client": "Client: MOKO Shopping Centre",
       "stats": {
         "sqFeetArea": "Sq Feet Area",
-        "reinforced": "Reinforced",
+        "reinforced": "Safety Surface",
         "design": "Design"
       }
     },
@@ -812,7 +812,7 @@
     },
     "pembroke": {
       "title": "Pembroke Rail Drainage System",
-      "description": "MDS installation with curved drainage path and bedrock constraints, achieving target discharge rate for rail infrastructure water management.",
+      "description": "Rosehill Drainage System installation with curved drainage path and bedrock constraints, achieving target discharge rate for rail infrastructure water management.",
       "client": "Client: Colas Rail UK",
       "stats": {
         "dischargeRate": "Discharge Rate",
@@ -836,10 +836,10 @@
       },
       "results": {
         "title": "Results & Impact",
-        "description": "The installation created protected cycle routes allowing safe segregated travel. Incursions by vehicles into the cycle lane have been eliminated, with cyclists reporting feeling safer and more confident. The cycle lane can now also accommodate rental electronic scooters."
+        "description": "Vehicle incursions into cycle lanes have been completely eliminated since installation. Cyclist confidence has measurably increased, with the protected route now safely accommodating both traditional cyclists and rental e-scooters. Speed-related incidents in the corridor have significantly decreased."
       },
       "quote": {
-        "text": "The installation created protected cycle routes allowing safe segregated travel, with Narrow Cycle Lane Defenders and Lane Separators preventing vehicles from entering the cycle lane. Cyclists can now safely travel around Queens and Rockaway Parkway South of Flatlands Ave, with incursions by vehicles into the cycle lane eliminated.",
+        "text": "This project demonstrates how strategic placement of physical barriers can transform high-traffic corridors. The Northern Boulevard installation has become a model for similar cycling infrastructure improvements across NYC, extending from Queens to Rockaway Parkway South of Flatlands Ave.",
         "attribution": "— Project delivered by NYC Department of Transportation"
       }
     },
@@ -914,7 +914,7 @@
     },
     "pembroke": {
       "title": "Pembroke Rail Drainage System",
-      "description": "MDS installation with curved drainage path and bedrock constraints, achieving target discharge rate for rail infrastructure water management.",
+      "description": "Rosehill Drainage System installation with curved drainage path and bedrock constraints, achieving target discharge rate for rail infrastructure water management.",
       "client": "Client: Colas Rail UK",
       "stats": {
         "dischargeRate": "Discharge Rate",
@@ -924,20 +924,20 @@
       "challenges": {
         "title": "Installation Challenges",
         "description1": "Extensive bedrock severely limited drainage depth and installation options. Existing telecommunications infrastructure required careful navigation, while the curved drainage path needed to direct water towards the tunnel entrance within tight timeframe constraints.",
-        "description2": "The MDS was installed with 1-in-20 gradient on 75mm pea gravel bed, with units stepped to overcome additional bedrock encounters. Units were cut at 90-degree angles to maintain drainage run, with 50mm MDS tiles protecting the base trough from sediment build-up."
+        "description2": "The Rosehill Drainage System was installed with 1-in-20 gradient on 75mm pea gravel bed, with units stepped to overcome additional bedrock encounters. Units were cut at 90-degree angles to maintain drainage run, with 50mm Rosehill Drainage System tiles protecting the base trough from sediment build-up."
       },
       "results": {
         "title": "Successful Results",
         "description": "The system achieved the target discharge rate of 42 litres per second, successfully adapted to site constraints without compromising performance, and completed installation within time restrictions, demonstrating the system's versatility in challenging rail environments."
       },
       "quote": {
-        "text": "\"The Rosehill MDS proved how the system can overcome challenges we encounter on site regularly. The ability to cut and step the units without impacting performance was extremely useful under a time-restricted install.\"",
+        "text": "\"The Rosehill Drainage System proved how the system can overcome challenges we encounter on site regularly. The ability to cut and step the units without impacting performance was extremely useful under a time-restricted install.\"",
         "attribution": "— Bill Smalley, Construction Manager"
       }
     },
     "moreton": {
-      "title": "Moreton MDS Performance Trial",
-      "description": "Comprehensive hydraulic testing of Modular Drainage System at National Highways Test Centre, simulating extreme weather conditions including 1-in-1000-year storm events.",
+      "title": "Moreton Rosehill Drainage System Performance Trial",
+      "description": "Comprehensive hydraulic testing of Rosehill Drainage System at National Highways Test Centre, simulating extreme weather conditions including 1-in-1000-year storm events.",
       "client": "Client: Environment Agency",
       "stats": {
         "systemLength": "System Length",

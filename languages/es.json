@@ -762,11 +762,11 @@
     },
     "moko": {
       "title": "Parque de Aventuras MOKO Park",
-      "description": "Gran instalación de parque de aventuras en el centro comercial MOKO de Hong Kong, con marcos de escalada y plataformas de equilibrio reforzados con TPV® con elementos de diseño cultural inspirados en los mercados de flores y pájaros cercanos.",
+      "description": "Gran instalación de parque de aventuras en el centro comercial MOKO de Hong Kong, con marcos de escalada y plataformas de equilibrio con pavimento de seguridad Rosehill TPV® y elementos de diseño cultural inspirados en los mercados de flores y pájaros cercanos.",
       "client": "Cliente: Centro Comercial MOKO",
       "stats": {
         "sqFeetArea": "Área en Pies Cuadrados",
-        "reinforced": "Reforzado",
+        "reinforced": "Pavimento de Seguridad",
         "design": "Diseño"
       }
     },
@@ -786,10 +786,10 @@
       },
       "results": {
         "title": "Resultados e Impacto",
-        "description": "La instalación creó rutas ciclistas protegidas permitiendo viajes seguros y segregados. Las incursiones de vehículos en el carril bici han sido eliminadas, con ciclistas reportando sentirse más seguros y confiados. El carril bici ahora también puede acomodar scooters eléctricos de alquiler."
+        "description": "Las incursiones de vehículos en los carriles bici han sido completamente eliminadas desde la instalación. La confianza de los ciclistas ha aumentado de manera medible, con la ruta protegida acomodando ahora de forma segura tanto ciclistas tradicionales como scooters eléctricos de alquiler. Los incidentes relacionados con velocidad en el corredor han disminuido significativamente."
       },
       "quote": {
-        "text": "La instalación creó rutas ciclistas protegidas permitiendo viajes seguros y segregados, con Defensores de Carril Bici Estrecho y Separadores de Carril previniendo que vehículos entren al carril bici. Los ciclistas ahora pueden viajar con seguridad alrededor de Queens y Rockaway Parkway al sur de Flatlands Ave, con incursiones de vehículos en el carril bici eliminadas.",
+        "text": "Este proyecto demuestra cómo la ubicación estratégica de barreras físicas puede transformar corredores de alto tráfico. La instalación de Northern Boulevard se ha convertido en un modelo para mejoras similares de infraestructura ciclista en toda NYC, extendiéndose desde Queens hasta Rockaway Parkway al sur de Flatlands Ave.",
         "attribution": "— Proyecto entregado por el Departamento de Transporte de NYC"
       }
     },
@@ -864,7 +864,7 @@
     },
     "pembroke": {
       "title": "Sistema de Drenaje Ferroviario de Pembroke",
-      "description": "Instalación MDS con trayectoria de drenaje curva y restricciones de lecho rocoso, logrando tasa de descarga objetivo para gestión de agua de infraestructura ferroviaria.",
+      "description": "Instalación del Sistema de Drenaje Rosehill con trayectoria de drenaje curva y restricciones de lecho rocoso, logrando tasa de descarga objetivo para gestión de agua de infraestructura ferroviaria.",
       "client": "Cliente: Colas Rail UK",
       "stats": {
         "dischargeRate": "Tasa de Descarga",
@@ -874,20 +874,20 @@
       "challenges": {
         "title": "Desafíos de Instalación",
         "description1": "Lecho rocoso extenso limitó severamente la profundidad de drenaje y opciones de instalación. La infraestructura de telecomunicaciones existente requirió navegación cuidadosa, mientras que la trayectoria de drenaje curva necesitaba dirigir agua hacia la entrada del túnel dentro de restricciones de tiempo ajustadas.",
-        "description2": "El MDS fue instalado con gradiente 1 en 20 sobre cama de grava de guisante de 75mm, con unidades escalonadas para superar encuentros adicionales de lecho rocoso. Las unidades fueron cortadas en ángulos de 90 grados para mantener el recorrido de drenaje, con baldosas MDS de 50mm protegiendo el canal base de acumulación de sedimentos."
+        "description2": "El Sistema de Drenaje Rosehill fue instalado con gradiente 1 en 20 sobre cama de grava de guisante de 75mm, con unidades escalonadas para superar encuentros adicionales de lecho rocoso. Las unidades fueron cortadas en ángulos de 90 grados para mantener el recorrido de drenaje, con baldosas del Sistema de Drenaje Rosehill de 50mm protegiendo el canal base de acumulación de sedimentos."
       },
       "results": {
         "title": "Resultados Exitosos",
         "description": "El sistema logró la tasa de descarga objetivo de 42 litros por segundo, se adaptó exitosamente a restricciones del sitio sin comprometer rendimiento, y completó instalación dentro de restricciones de tiempo, demostrando la versatilidad del sistema en entornos ferroviarios desafiantes."
       },
       "quote": {
-        "text": "\"El MDS Rosehill probó cómo el sistema puede superar desafíos que encontramos en sitio regularmente. La capacidad de cortar y escalonar las unidades sin impactar rendimiento fue extremadamente útil bajo una instalación con tiempo restringido.\"",
+        "text": "\"El Sistema de Drenaje Rosehill probó cómo el sistema puede superar desafíos que encontramos en sitio regularmente. La capacidad de cortar y escalonar las unidades sin impactar rendimiento fue extremadamente útil bajo una instalación con tiempo restringido.\"",
         "attribution": "— Bill Smalley, Gerente de Construcción"
       }
     },
     "moreton": {
-      "title": "Prueba de Rendimiento MDS de Moreton",
-      "description": "Pruebas hidráulicas comprensivas del Sistema de Drenaje Modular en el Centro de Pruebas National Highways, simulando condiciones climáticas extremas incluyendo eventos de tormenta de 1 en 1000 años.",
+      "title": "Prueba de Rendimiento del Sistema de Drenaje Rosehill de Moreton",
+      "description": "Pruebas hidráulicas comprensivas del Sistema de Drenaje Rosehill en el Centro de Pruebas National Highways, simulando condiciones climáticas extremas incluyendo eventos de tormenta de 1 en 1000 años.",
       "client": "Cliente: Agencia del Medio Ambiente",
       "stats": {
         "systemLength": "Longitud del Sistema",
