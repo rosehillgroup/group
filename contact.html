@@ -1840,12 +1840,12 @@
             if (href.startsWith('tel:')) {
                 const specialistCard = target.closest('.specialist-card');
                 let specialistName = 'general';
-                
+
                 if (specialistCard) {
                     const nameElement = specialistCard.querySelector('.font-semibold');
                     specialistName = nameElement ? nameElement.textContent.trim().toLowerCase().replace(' ', '_') : 'unknown';
                 }
-                
+
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
                     'event': 'click',
@@ -1855,18 +1855,27 @@
                     'click_text': target.textContent.trim(),
                     'page_location': window.location.href
                 });
+
+                // Also push standardized GTM event for conversion tracking
+                window.dataLayer.push({
+                    'event': 'phone_click',
+                    'event_category': 'contact',
+                    'event_label': target.classList.contains('gtm-phone-click') ? target.getAttribute('data-label') || 'phone' : 'phone',
+                    'phone_number': href.replace('tel:', ''),
+                    'page_location': window.location.href
+                });
             }
             
-            // Track email clicks with specialist identification  
+            // Track email clicks with specialist identification
             if (href.startsWith('mailto:')) {
                 const specialistCard = target.closest('.specialist-card');
                 let specialistName = 'general';
                 let businessArea = 'general';
-                
+
                 if (specialistCard) {
                     const nameElement = specialistCard.querySelector('.font-semibold');
                     specialistName = nameElement ? nameElement.textContent.trim().toLowerCase().replace(' ', '_') : 'unknown';
-                    
+
                     // Identify business area from email or context
                     if (href.includes('clare.riley')) businessArea = 'highways';
                     else if (href.includes('daniel.snell')) businessArea = 'rail';
@@ -1876,7 +1885,7 @@
                     else if (href.includes('dalton.marshall')) businessArea = 'drainage';
                     else if (href.includes('urgent@')) businessArea = 'urgent_support';
                 }
-                
+
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
                     'event': 'click',
@@ -1885,6 +1894,15 @@
                     'business_area': businessArea,
                     'email_address': href.replace('mailto:', ''),
                     'click_text': target.textContent.trim(),
+                    'page_location': window.location.href
+                });
+
+                // Also push standardized GTM event for conversion tracking
+                window.dataLayer.push({
+                    'event': 'email_click',
+                    'event_category': 'contact',
+                    'event_label': target.classList.contains('gtm-email-click') ? target.getAttribute('data-label') || 'email' : 'email',
+                    'email_address': href.replace('mailto:', ''),
                     'page_location': window.location.href
                 });
             }

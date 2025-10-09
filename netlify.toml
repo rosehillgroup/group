@@ -60,3 +60,9 @@
   for = "*.avif"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Custom 404 page
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
