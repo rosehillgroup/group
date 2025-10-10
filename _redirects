@@ -41,5 +41,30 @@ http://www.rosehillgroup.com/* https://www.rosehillgroup.com/:splat 301!
 /projects /projects.html 200
 /solutions /solutions.html 200
 
+# Security: Block WordPress scanner bots (return 410 Gone)
+/xmlrpc.php              /404.html  410
+/wp-login.php            /404.html  410
+/wp-admin/*              /404.html  410
+/wp                      /404.html  410
+/wordpress               /404.html  410
+
+# Security: Block attack vectors and sensitive file access attempts
+/.env                    /404.html  410
+/about.php               /404.html  410
+/file.php                /404.html  410
+/admin.php               /404.html  410
+/aa.php                  /404.html  410
+
+# Security: Block directory probing attempts
+/old                     /404.html  410
+/new                     /404.html  410
+/main                    /404.html  410
+
+# AutoDiscover: Email client autodiscovery (redirect to homepage)
+/AutoDiscover/autodiscover.xml    /    404
+
+# Legacy pages: Redirect to relevant current pages
+/email-disclaimer/       /privacy-policy    301
+
 # Custom 404 page
 /* /404.html 404
