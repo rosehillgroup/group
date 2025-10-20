@@ -264,7 +264,15 @@
     "emailDan": "Enviar email a Dan",
     "emailNadeem": "Enviar email a Nadeem",
     "emailJosh": "Enviar email a Josh",
+    "emailJack": "Enviar email a Jack",
     "emailDalton": "Enviar email a Dalton",
+    "specialties": {
+      "drainage": "Drenaje",
+      "rail": "Ferrocarril",
+      "security": "Seguridad",
+      "surfacing": "Pavimentación",
+      "highways": "Carreteras"
+    },
     "urgentSupport": {
       "title": "¿Necesita soporte técnico urgente?",
       "description": "Nuestro servicio de soporte técnico 24 horas garantiza que obtenga la ayuda experta que necesita, cuando la necesita.",

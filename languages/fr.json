@@ -244,7 +244,15 @@
     "emailDan": "Envoyer un email à Dan",
     "emailNadeem": "Envoyer un email à Nadeem",
     "emailJosh": "Envoyer un email à Josh",
+    "emailJack": "Envoyer un email à Jack",
     "emailDalton": "Envoyer un email à Dalton",
+    "specialties": {
+      "drainage": "Drainage",
+      "rail": "Rail",
+      "security": "Sécurité",
+      "surfacing": "Revêtement",
+      "highways": "Autoroutes"
+    },
     "urgentSupport": {
       "title": "Besoin d'un support technique urgent?",
       "description": "Notre service de support technique 24h/24 vous garantit l'aide d'experts dont vous avez besoin, quand vous en avez besoin.",

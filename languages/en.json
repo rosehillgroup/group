@@ -264,7 +264,15 @@
     "emailDan": "Email Dan",
     "emailNadeem": "Email Nadeem",
     "emailJosh": "Email Josh",
+    "emailJack": "Email Jack",
     "emailDalton": "Email Dalton",
+    "specialties": {
+      "drainage": "Drainage",
+      "rail": "Rail",
+      "security": "Security",
+      "surfacing": "Surfacing",
+      "highways": "Highways"
+    },
     "urgentSupport": {
       "title": "Need urgent technical support?",
       "description": "Our 24-hour technical support service ensures you get the expert help you need, when you need it.",
