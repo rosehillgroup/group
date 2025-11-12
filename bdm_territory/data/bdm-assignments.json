@@ -1,0 +1,110 @@
+{
+  "Rail": {
+    "Dan Rainbird": {
+      "regions": ["Europe (except Czechia)"],
+      "countries": [
+        "AT", "BE", "BG", "HR", "CY", "DK", "EE", "FI", "FR", "DE", "GR", "HU",
+        "IS", "IT", "LV", "LT", "LU", "MT", "NL", "NO", "PL", "PT", "RO", "SK",
+        "SI", "ES", "SE", "CH", "GB", "RS", "AL", "BA", "MK", "ME", "UA", "BY",
+        "MD", "LI", "MC", "AD", "SM", "VA"
+      ]
+    },
+    "Dan Snell": {
+      "regions": ["Rest of World", "Czechia", "Ireland"],
+      "countries": [
+        "CZ", "IE", "US", "CA", "MX", "BR", "AR", "CL", "CO", "PE", "VE", "EC",
+        "BO", "PY", "UY", "GY", "SR", "GF", "CN", "JP", "KR", "IN", "ID", "MY",
+        "TH", "VN", "PH", "SG", "BD", "PK", "LK", "MM", "KH", "LA", "NP", "BT",
+        "MV", "AU", "NZ", "PG", "FJ", "NC", "ZA", "EG", "NG", "KE", "ET", "GH",
+        "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG", "CM", "CI", "NE", "BF",
+        "ML", "MW", "ZM", "SN", "SO", "TD", "GN", "RW", "BJ", "TN", "BI", "SS",
+        "TG", "SL", "LY", "LR", "MR", "CF", "ER", "GM", "BW", "GA", "NA", "LS",
+        "GW", "GQ", "MU", "SZ", "DJ", "RE", "KM", "CV", "ST", "SC", "SA", "AE",
+        "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM", "KW", "QA", "BH", "PS",
+        "RU", "TR", "KZ", "UZ", "TM", "KG", "TJ", "AM", "AZ", "GE", "AF", "MN"
+      ]
+    }
+  },
+  "Highways": {
+    "Jack Ellis": {
+      "regions": ["United Kingdom"],
+      "countries": ["GB"]
+    },
+    "Dan Rainbird": {
+      "regions": ["All of Europe"],
+      "countries": [
+        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR",
+        "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "NO", "PL", "PT",
+        "RO", "SK", "SI", "ES", "SE", "CH", "RS", "AL", "BA", "MK", "ME", "UA",
+        "BY", "MD", "LI", "MC", "AD", "SM", "VA"
+      ]
+    },
+    "Dan Snell": {
+      "regions": ["USA", "Australia", "Middle East", "Asia"],
+      "countries": [
+        "US", "AU", "NZ", "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE",
+        "OM", "KW", "QA", "BH", "PS", "CN", "JP", "KR", "IN", "ID", "MY", "TH",
+        "VN", "PH", "SG", "BD", "PK", "LK", "MM", "KH", "LA", "NP", "BT", "MV",
+        "MN", "KZ", "UZ", "TM", "KG", "TJ", "AF"
+      ]
+    }
+  },
+  "Rosehill TPV": {
+    "Dan Fletcher": {
+      "regions": ["North America", "Canada", "Australia", "New Zealand"],
+      "countries": ["US", "CA", "MX", "AU", "NZ"]
+    },
+    "Dalton Marshall": {
+      "regions": ["South America", "Malaysia", "Japan", "Hong Kong"],
+      "countries": [
+        "BR", "AR", "CL", "CO", "PE", "VE", "EC", "BO", "PY", "UY", "GY", "SR",
+        "GF", "MY", "JP", "HK"
+      ]
+    },
+    "Clare Riley": {
+      "regions": ["Western Europe"],
+      "countries": [
+        "GB", "IE", "FR", "DE", "BE", "NL", "LU", "AT", "CH", "IT", "ES", "PT",
+        "DK", "NO", "SE", "FI", "IS", "LI", "MC", "AD", "SM", "VA"
+      ]
+    },
+    "Josh Jones": {
+      "regions": ["Eastern Europe", "Africa", "Middle East", "India"],
+      "countries": [
+        "PL", "CZ", "SK", "HU", "RO", "BG", "SI", "HR", "BA", "RS", "ME", "AL",
+        "MK", "GR", "CY", "EE", "LV", "LT", "BY", "UA", "MD", "MT", "ZA", "EG",
+        "NG", "KE", "ET", "GH", "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG",
+        "CM", "CI", "NE", "BF", "ML", "MW", "ZM", "SN", "SO", "TD", "GN", "RW",
+        "BJ", "TN", "BI", "SS", "TG", "SL", "LY", "LR", "MR", "CF", "ER", "GM",
+        "BW", "GA", "NA", "LS", "GW", "GQ", "MU", "SZ", "DJ", "RE", "KM", "CV",
+        "ST", "SC", "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM",
+        "KW", "QA", "BH", "PS", "TR", "IN", "PK", "BD", "LK", "NP", "BT", "MV",
+        "AF"
+      ]
+    }
+  },
+  "Security": {
+    "Dan Rainbird": {
+      "regions": ["Worldwide"],
+      "countries": ["*"]
+    }
+  },
+  "Energy": {
+    "Nadeem Riyazuddin": {
+      "regions": ["Worldwide"],
+      "countries": ["*"]
+    }
+  },
+  "Chemicals": {
+    "Dalton Marshall": {
+      "regions": ["Worldwide"],
+      "countries": ["*"]
+    }
+  },
+  "Drainage": {
+    "Tommy Celik": {
+      "regions": ["Worldwide"],
+      "countries": ["*"]
+    }
+  }
+}

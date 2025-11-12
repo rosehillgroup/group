@@ -41,6 +41,10 @@ http://www.rosehillgroup.com/* https://www.rosehillgroup.com/:splat 301!
 /projects /projects.html 200
 /solutions /solutions.html 200
 
+# BDM Territory Tool - Internal staff tool
+/bdm_territory           /bdm_territory/index.html    200
+/bdm_territory/*         /bdm_territory/:splat        200
+
 # Security: Block WordPress scanner bots (return 410 Gone)
 /xmlrpc.php              /404.html  410
 /wp-login.php            /404.html  410

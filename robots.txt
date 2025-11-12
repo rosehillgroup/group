@@ -10,6 +10,7 @@ Disallow: /tmp/
 Disallow: /src/
 Disallow: /.well-known/
 Disallow: /languages/
+Disallow: /bdm_territory/
 
 # Block backup and temporary files
 Disallow: /*.bak$

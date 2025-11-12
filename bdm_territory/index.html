@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDM Territory Tool - Rosehill Group</title>
+    <meta name="description" content="Internal tool for identifying Business Development Manager territories across Rosehill Group divisions">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- MapLibre GL JS -->
+    <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' rel='stylesheet' />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Rosehill Group</h1>
+                <span class="subtitle">BDM Territory Mapping</span>
+            </div>
+            <div class="header-info">
+                <span class="welcome-text">Internal Business Development Tool</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Filter Panel -->
+        <div class="filter-panel">
+            <div class="panel-section">
+                <h3 class="section-title">🔍 Find Your BDM</h3>
+                <p class="section-description">Select a division, country, or BDM to view territory assignments</p>
+            </div>
+
+            <!-- Filter Mode Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-mode="division">
+                    <span class="tab-icon">🏢</span>
+                    <span>By Division</span>
+                </button>
+                <button class="filter-tab" data-mode="country">
+                    <span class="tab-icon">🌍</span>
+                    <span>By Country</span>
+                </button>
+                <button class="filter-tab" data-mode="bdm">
+                    <span class="tab-icon">👤</span>
+                    <span>By BDM</span>
+                </button>
+            </div>
+
+            <!-- Division Filter -->
+            <div class="filter-section" id="divisionFilter">
+                <label class="filter-label">Select Division</label>
+                <select id="divisionSelect" class="filter-select">
+                    <option value="">-- Choose a division --</option>
+                    <option value="Rail">Rail</option>
+                    <option value="Highways">Highways</option>
+                    <option value="Rosehill TPV">Rosehill TPV</option>
+                    <option value="Security">Security</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Chemicals">Chemicals</option>
+                    <option value="Drainage">Drainage</option>
+                </select>
+            </div>
+
+            <!-- Country Filter -->
+            <div class="filter-section hidden" id="countryFilter">
+                <label class="filter-label">Select Country</label>
+                <input
+                    type="text"
+                    id="countrySearch"
+                    class="filter-select"
+                    placeholder="Type to search countries..."
+                    autocomplete="off"
+                >
+                <div class="country-dropdown hidden" id="countryDropdown"></div>
+            </div>
+
+            <!-- BDM Filter -->
+            <div class="filter-section hidden" id="bdmFilter">
+                <label class="filter-label">Select BDM</label>
+                <select id="bdmSelect" class="filter-select">
+                    <option value="">-- Choose a BDM --</option>
+                </select>
+            </div>
+
+            <!-- BDM Info Cards -->
+            <div id="bdmInfoContainer"></div>
+
+            <!-- Map Legend -->
+            <div class="legend-container hidden" id="legendContainer">
+                <h4 class="legend-title">Territory Assignments</h4>
+                <div id="legendContent"></div>
+            </div>
+
+            <!-- Reset Button -->
+            <button class="reset-btn hidden" id="resetBtn">
+                <span>↺</span> Reset Map
+            </button>
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-loading" id="mapLoading">
+                <div class="spinner"></div>
+                <p>Loading map...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

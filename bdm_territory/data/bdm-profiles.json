@@ -1,0 +1,83 @@
+{
+  "Dan Rainbird": {
+    "name": "Dan Rainbird",
+    "title": "Business Development Manager",
+    "email": "dan.rainbird@rosehill.group",
+    "phone": "+44 (0)7415 428 133",
+    "photo": "images/bdm/dan_rainbird.jpg",
+    "divisions": ["Rail", "Highways", "Security"],
+    "color": "#1a365d"
+  },
+  "Dan Snell": {
+    "name": "Dan Snell",
+    "title": "Business Development Manager",
+    "email": "dan.snell@rosehill.group",
+    "phone": "+44 (0)7583 082 596",
+    "photo": "images/bdm/dan_snell.jpg",
+    "divisions": ["Rail", "Highways"],
+    "color": "#007bff"
+  },
+  "Jack Ellis": {
+    "name": "Jack Ellis",
+    "title": "Business Development Manager - UK Highways",
+    "email": "jack.ellis@rosehill.group",
+    "phone": "+44 (0)7534 084 216",
+    "photo": "images/bdm/jack_ellis.jpg",
+    "divisions": ["Highways"],
+    "color": "#ff6b35"
+  },
+  "Dan Fletcher": {
+    "name": "Dan Fletcher",
+    "title": "Business Development Manager - TPV Americas & Oceania",
+    "email": "dan.fletcher@rosehill.group",
+    "phone": "+44 (0) 1535 664060",
+    "photo": "images/bdm/dan-fletcher.jpg",
+    "divisions": ["Rosehill TPV"],
+    "color": "#28a745"
+  },
+  "Dalton Marshall": {
+    "name": "Dalton Marshall",
+    "title": "Business Development Manager",
+    "email": "dalton.marshall@rosehill.group",
+    "phone": "+44 (0)7896 299 974",
+    "photo": "images/bdm/dalton-marshall.jpg",
+    "divisions": ["Rosehill TPV", "Chemicals"],
+    "color": "#6f42c1"
+  },
+  "Clare Riley": {
+    "name": "Clare Riley",
+    "title": "Business Development Manager - TPV Western Europe",
+    "email": "clare.riley@rosehill.group",
+    "phone": "+44 (0) 1535 664060",
+    "photo": "images/bdm/clare_riley.jpg",
+    "divisions": ["Rosehill TPV"],
+    "color": "#e83e8c"
+  },
+  "Josh Jones": {
+    "name": "Josh Jones",
+    "title": "Business Development Manager - TPV Eastern Europe, Africa, Middle East, India",
+    "email": "joshua.jones@rosehill.group",
+    "phone": "+44 (0)7818 063 506",
+    "photo": "images/bdm/josh_jones.jpg",
+    "divisions": ["Rosehill TPV"],
+    "color": "#fd7e14"
+  },
+  "Nadeem Riyazuddin": {
+    "name": "Nadeem Riyazuddin",
+    "title": "Business Development Manager - Energy",
+    "email": "nadeem.riyazuddin@rosehill.group",
+    "phone": "+44 (0)7824 830 924",
+    "photo": "images/bdm/nadeem-riyazuddin.jpg",
+    "divisions": ["Energy"],
+    "color": "#20c997"
+  },
+  "Tommy Celik": {
+    "name": "Tommy Celik",
+    "title": "Business Development Manager - Drainage",
+    "email": "thomas.celik@rosehill.group",
+    "phone": "+44 (0)7946 774 310",
+    "photo": "images/bdm/tommy-celik.jpg",
+    "divisions": ["Drainage"],
+    "color": "#17a2b8"
+  }
+}
