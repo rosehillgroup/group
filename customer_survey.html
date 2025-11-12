@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customer Satisfaction Survey | Rosehill Group</title>
+  <meta name="description" content="Customer Satisfaction Survey for Rosehill Group" />
+  <style>
+    :root{
+      --brand:#163b6d;
+      --brand-2:#0a2a52;
+      --accent:#1b75bb;
+      --bg:#f7f9fc;
+      --stroke:#e2e8f0;
+      --text:#0b1320;
+      --muted:#5b6b80;
+      --focus:#7aa7ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    header{
+      background:white;
+      border-bottom:1px solid var(--stroke);
+    }
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:1.25rem 1rem;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      color:var(--brand);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .brand img{width:34px;height:34px; border-radius:6px}
+    h1{
+      margin:1.25rem 0 0.75rem;
+      font-size:1.6rem;
+      color:var(--brand-2);
+    }
+    form{
+      background:white;
+      border:1px solid var(--stroke);
+      border-radius:12px;
+      padding:1.75rem;
+      box-shadow:0 1px 2px rgba(0,0,0,.03);
+    }
+    @media (min-width:600px){
+      form{padding:2.5rem}
+    }
+    fieldset{
+      border:1px solid var(--stroke);
+      padding:1.5rem;
+      margin:2rem 0;
+      background:#f9fafb;
+      border-radius:12px;
+    }
+    fieldset:nth-of-type(16){
+      background:#f0f7fd;
+      border-color:#c5ddf0;
+    }
+    legend{
+      font-weight:600;
+      margin-bottom:.5rem;
+      padding:0 .5rem;
+      color:var(--brand);
+    }
+    fieldset:nth-of-type(16) legend{
+      color:var(--accent);
+      font-size:1.05rem;
+    }
+    .hint{color:var(--muted); font-size:.9375rem}
+    .group{
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+      margin-top:.5rem;
+    }
+    .row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:.5rem .75rem;
+    }
+    label.choice{
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.625rem .875rem;
+      border-radius:8px;
+      cursor:pointer;
+      transition:all .15s ease;
+      border:1px solid transparent;
+    }
+    label.choice:hover{
+      background:#e8f2fa;
+      border-color:#d0e5f5;
+      transform:translateX(2px);
+    }
+    label.choice:has(input:checked){
+      background:#e8f2fa;
+      border-color:var(--accent);
+      font-weight:500;
+    }
+    input[type="radio"],
+    input[type="checkbox"]{
+      width:1rem;height:1rem;
+      accent-color:var(--accent);
+    }
+    .nps{
+      display:grid;
+      grid-template-columns:repeat(11,minmax(2.2rem,1fr));
+      gap:.375rem;
+      margin-top:.75rem;
+    }
+    .nps label{
+      border:2px solid var(--stroke);
+      border-radius:8px;
+      padding:.45rem 0;
+      text-align:center;
+      cursor:pointer;
+      user-select:none;
+      background:#fff;
+      transition:all .2s ease;
+      font-variant-numeric:tabular-nums;
+      font-weight:500;
+    }
+    .nps label:hover{
+      border-color:var(--accent);
+      background:#e8f2fa;
+      box-shadow:0 0 0 3px rgba(27,117,187,.15);
+      transform:translateY(-1px);
+    }
+    .nps input{display:none}
+    .nps label:has(input:checked){
+      background:var(--accent);
+      color:#fff;
+      border-color:var(--accent);
+      font-weight:600;
+      box-shadow:0 2px 8px rgba(27,117,187,.35);
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    @media (min-width:800px){
+      .two-col{grid-template-columns:1fr 1fr}
+    }
+    textarea, input[type="text"], input[type="email"], input[type="tel"]{
+      width:100%;
+      border:1px solid var(--stroke);
+      border-radius:10px;
+      padding:.75rem .875rem;
+      font:inherit;
+      background:#fff;
+      transition:all .15s ease;
+    }
+    textarea:hover, input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover{
+      border-color:#b8cde0;
+    }
+    textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(27,117,187,.1);
+    }
+    textarea{min-height:120px; resize:vertical}
+    fieldset textarea[id$="_comment"]{
+      min-height:80px;
+      font-size:.9375rem;
+    }
+    fieldset textarea[name^="q14_"],
+    fieldset textarea[name^="q15_"]{
+      min-height:120px;
+    }
+    .comment-section{
+      margin-top:1rem;
+    }
+    .comment-label{
+      display:block;
+      margin-bottom:.5rem;
+      font-size:.9375rem;
+      color:var(--muted);
+    }
+    .actions{
+      margin-top:1.25rem;
+      display:flex;
+      justify-content:flex-start;
+      gap:.75rem;
+      flex-wrap:wrap;
+    }
+    button{
+      background:var(--brand);
+      color:#fff;
+      border:0;
+      padding:.75rem 1.5rem;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      transition:all .2s ease;
+      box-shadow:0 1px 3px rgba(11,19,32,.15);
+    }
+    button:hover{
+      background:var(--brand-2);
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(11,19,32,.25);
+    }
+    button:active{
+      transform:translateY(0);
+    }
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+    }
+    .divider{height:1px;background:var(--stroke); margin:1rem 0}
+    .req{color:var(--muted); font-size:.9rem}
+    .hidden{display:none}
+    footer{
+      color:var(--muted);
+      font-size:.9rem;
+      text-align:center;
+      padding:2rem 1rem 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand" aria-label="Rosehill Group">
+        <img src="apple-touch-icon.png" alt="Rosehill Group logo" width="34" height="34" />
+        <span>Rosehill Group</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Customer Satisfaction Survey</h1>
+    <p class="hint">Thank you for taking a few minutes to share your feedback. Items marked optional can be left blank.</p>
+
+    <!-- Netlify form -->
+    <form name="Customer Satisfaction Survey" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <!-- Required for Netlify -->
+      <input type="hidden" name="form-name" value="Customer Satisfaction Survey" />
+      <p class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      </p>
+
+      <!-- 1 -->
+      <fieldset>
+        <legend>1. Overall, how satisfied are you with Rosehill Polymers?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Very satisfied" required /> <span>Very satisfied</span></label>
+          <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Satisfied" /> <span>Satisfied</span></label>
+          <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Neither satisfied nor dissatisfied" /> <span>Neither satisfied nor dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Dissatisfied" /> <span>Dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q1_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q1_comment" name="q1_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 2 -->
+      <fieldset>
+        <legend>2. How satisfied are you with our product range?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q2_product_range" value="Very satisfied" required /> <span>Very satisfied</span></label>
+          <label class="choice"><input type="radio" name="q2_product_range" value="Satisfied" /> <span>Satisfied</span></label>
+          <label class="choice"><input type="radio" name="q2_product_range" value="Neither satisfied nor dissatisfied" /> <span>Neither satisfied nor dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q2_product_range" value="Dissatisfied" /> <span>Dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q2_product_range" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q2_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q2_comment" name="q2_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 3 -->
+      <fieldset>
+        <legend>3. How well do our products meet your requirements?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q3_meet_requirements" value="Exceeded expectations" required /> <span>Exceeded expectations</span></label>
+          <label class="choice"><input type="radio" name="q3_meet_requirements" value="Met expectations" /> <span>Met expectations</span></label>
+          <label class="choice"><input type="radio" name="q3_meet_requirements" value="Below expectations" /> <span>Below expectations</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q3_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q3_comment" name="q3_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 4 -->
+      <fieldset>
+        <legend>4. How would you rate the quality of the technical assistance provided by our team?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q4_tech_assistance" value="Very high quality" required /> <span>Very high quality</span></label>
+          <label class="choice"><input type="radio" name="q4_tech_assistance" value="High quality" /> <span>High quality</span></label>
+          <label class="choice"><input type="radio" name="q4_tech_assistance" value="Neither high nor low quality" /> <span>Neither high nor low quality</span></label>
+          <label class="choice"><input type="radio" name="q4_tech_assistance" value="Low quality" /> <span>Low quality</span></label>
+          <label class="choice"><input type="radio" name="q4_tech_assistance" value="Very low quality" /> <span>Very low quality</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q4_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q4_comment" name="q4_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 5 -->
+      <fieldset>
+        <legend>5. How satisfied are you with our sales assistance?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q5_sales_assistance" value="Very satisfied" required /> <span>Very satisfied</span></label>
+          <label class="choice"><input type="radio" name="q5_sales_assistance" value="Satisfied" /> <span>Satisfied</span></label>
+          <label class="choice"><input type="radio" name="q5_sales_assistance" value="Neither satisfied nor dissatisfied" /> <span>Neither satisfied nor dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q5_sales_assistance" value="Dissatisfied" /> <span>Dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q5_sales_assistance" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q5_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q5_comment" name="q5_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 6 -->
+      <fieldset>
+        <legend>6. How would you rate our order processing efficiency?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q6_order_efficiency" value="Very efficient" required /> <span>Very efficient</span></label>
+          <label class="choice"><input type="radio" name="q6_order_efficiency" value="Efficient" /> <span>Efficient</span></label>
+          <label class="choice"><input type="radio" name="q6_order_efficiency" value="Neither efficient nor inefficient" /> <span>Neither efficient nor inefficient</span></label>
+          <label class="choice"><input type="radio" name="q6_order_efficiency" value="Inefficient" /> <span>Inefficient</span></label>
+          <label class="choice"><input type="radio" name="q6_order_efficiency" value="Very inefficient" /> <span>Very inefficient</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q6_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q6_comment" name="q6_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 7 -->
+      <fieldset>
+        <legend>7. How satisfied are you with our transport and delivery services?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q7_transport_delivery" value="Very satisfied" required /> <span>Very satisfied</span></label>
+          <label class="choice"><input type="radio" name="q7_transport_delivery" value="Satisfied" /> <span>Satisfied</span></label>
+          <label class="choice"><input type="radio" name="q7_transport_delivery" value="Neither satisfied nor dissatisfied" /> <span>Neither satisfied nor dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q7_transport_delivery" value="Dissatisfied" /> <span>Dissatisfied</span></label>
+          <label class="choice"><input type="radio" name="q7_transport_delivery" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q7_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q7_comment" name="q7_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 8 -->
+      <fieldset>
+        <legend>8. How reliable do you find our delivery schedules?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q8_delivery_reliability" value="Exceeded expectations" required /> <span>Exceeded expectations</span></label>
+          <label class="choice"><input type="radio" name="q8_delivery_reliability" value="Met expectations" /> <span>Met expectations</span></label>
+          <label class="choice"><input type="radio" name="q8_delivery_reliability" value="Below expectations" /> <span>Below expectations</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q8_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q8_comment" name="q8_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 9 -->
+      <fieldset>
+        <legend>9. How would you rate the quality of our customer communications such as responsiveness, clarity and helpfulness?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q9_comms_quality" value="Very high quality" required /> <span>Very high quality</span></label>
+          <label class="choice"><input type="radio" name="q9_comms_quality" value="High quality" /> <span>High quality</span></label>
+          <label class="choice"><input type="radio" name="q9_comms_quality" value="Neither high nor low quality" /> <span>Neither high nor low quality</span></label>
+          <label class="choice"><input type="radio" name="q9_comms_quality" value="Low quality" /> <span>Low quality</span></label>
+          <label class="choice"><input type="radio" name="q9_comms_quality" value="Very low quality" /> <span>Very low quality</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q9_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q9_comment" name="q9_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 10 -->
+      <fieldset>
+        <legend>10. How easy is it to do business with Rosehill Polymers?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q10_ease_of_business" value="Very easy" required /> <span>Very easy</span></label>
+          <label class="choice"><input type="radio" name="q10_ease_of_business" value="Easy" /> <span>Easy</span></label>
+          <label class="choice"><input type="radio" name="q10_ease_of_business" value="Neither easy nor difficult" /> <span>Neither easy nor difficult</span></label>
+          <label class="choice"><input type="radio" name="q10_ease_of_business" value="Difficult" /> <span>Difficult</span></label>
+          <label class="choice"><input type="radio" name="q10_ease_of_business" value="Very difficult" /> <span>Very difficult</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q10_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q10_comment" name="q10_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 11 -->
+      <fieldset>
+        <legend>11. How would you rate the overall quality of our products?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q11_overall_quality" value="Very high quality" required /> <span>Very high quality</span></label>
+          <label class="choice"><input type="radio" name="q11_overall_quality" value="High quality" /> <span>High quality</span></label>
+          <label class="choice"><input type="radio" name="q11_overall_quality" value="Neither high nor low quality" /> <span>Neither high nor low quality</span></label>
+          <label class="choice"><input type="radio" name="q11_overall_quality" value="Low quality" /> <span>Low quality</span></label>
+          <label class="choice"><input type="radio" name="q11_overall_quality" value="Very low quality" /> <span>Very low quality</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q11_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q11_comment" name="q11_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 12 -->
+      <fieldset>
+        <legend>12. How likely are you to continue purchasing from Rosehill Polymers in the future?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Very likely" required /> <span>Very likely</span></label>
+          <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Likely" /> <span>Likely</span></label>
+          <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Neither likely nor unlikely" /> <span>Neither likely nor unlikely</span></label>
+          <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Unlikely" /> <span>Unlikely</span></label>
+          <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Very unlikely" /> <span>Very unlikely</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q12_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q12_comment" name="q12_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 13 -->
+      <fieldset>
+        <legend>13. Compared to other suppliers, how do we rate in terms of delivery speed?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Much better" required /> <span>Much better</span></label>
+          <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Better" /> <span>Better</span></label>
+          <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="About the same" /> <span>About the same</span></label>
+          <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Worse" /> <span>Worse</span></label>
+          <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Much worse" /> <span>Much worse</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="q13_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q13_comment" name="q13_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 14 free text -->
+      <fieldset>
+        <legend>14. What is the one thing we could do to improve your experience with us?</legend>
+        <textarea name="q14_one_thing" placeholder="Your answer"></textarea>
+      </fieldset>
+
+      <!-- 15 free text -->
+      <fieldset>
+        <legend>15. Is there anything else you would like to share about your experience with Rosehill Polymers?</legend>
+        <textarea name="q15_anything_else" placeholder="Your answer"></textarea>
+      </fieldset>
+
+      <!-- 16 NPS - moved from question 1 -->
+      <fieldset>
+        <legend>16. How likely is it that you would recommend Rosehill Polymers to a colleague or person within the industry?</legend>
+        <div class="hint" id="nps-hint">0 means not at all likely and 10 means extremely likely.</div>
+        <div class="nps" role="radiogroup" aria-describedby="nps-hint">
+          <label>
+            <input type="radio" name="nps_recommend" id="nps-0" value="0" required />
+            <span>0</span>
+          </label>
+          <label><input type="radio" name="nps_recommend" value="1" /><span>1</span></label>
+          <label><input type="radio" name="nps_recommend" value="2" /><span>2</span></label>
+          <label><input type="radio" name="nps_recommend" value="3" /><span>3</span></label>
+          <label><input type="radio" name="nps_recommend" value="4" /><span>4</span></label>
+          <label><input type="radio" name="nps_recommend" value="5" /><span>5</span></label>
+          <label><input type="radio" name="nps_recommend" value="6" /><span>6</span></label>
+          <label><input type="radio" name="nps_recommend" value="7" /><span>7</span></label>
+          <label><input type="radio" name="nps_recommend" value="8" /><span>8</span></label>
+          <label><input type="radio" name="nps_recommend" value="9" /><span>9</span></label>
+          <label><input type="radio" name="nps_recommend" value="10" /><span>10</span></label>
+        </div>
+        <div style="margin-top:1rem">
+          <label for="nps_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="nps_comment" name="nps_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- 17 contact permission -->
+      <fieldset>
+        <legend>17. Would you like to be contacted to discuss your feedback further?</legend>
+        <div class="group">
+          <label class="choice"><input type="radio" name="contact_permission" value="Yes" required /> <span>Yes</span></label>
+          <label class="choice"><input type="radio" name="contact_permission" value="No" /> <span>No</span></label>
+        </div>
+
+        <div id="contact-details" class="two-col hidden" aria-hidden="true">
+          <div>
+            <label for="name">Your name <span class="hint">(optional)</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+          </div>
+          <div>
+            <label for="company">Company <span class="hint">(optional)</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+          <div>
+            <label for="email">Email <span class="req">(required if you would like a reply)</span></label>
+            <input id="email" name="email" type="email" inputmode="email" />
+          </div>
+          <div>
+            <label for="phone">Telephone <span class="hint">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" />
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- reCAPTCHA: enable in Netlify UI if desired -->
+      <div data-netlify-recaptcha="true"></div>
+
+      <div class="actions">
+        <button type="submit">Submit</button>
+        <span class="hint" id="privacy-hint">By submitting, you agree that we may process your responses for service improvement.</span>
+      </div>
+    </form>
+
+    <footer>
+      © Rosehill Group
+    </footer>
+  </main>
+
+  <script>
+    // Show contact fields only when the user selects Yes
+    const contactRadios = document.querySelectorAll('input[name="contact_permission"]');
+    const details = document.getElementById('contact-details');
+    const email = document.getElementById('email');
+
+    function toggleDetails() {
+      const wantsContact = [...contactRadios].some(r => r.checked && r.value === 'Yes');
+      details.classList.toggle('hidden', !wantsContact);
+      details.setAttribute('aria-hidden', wantsContact ? 'false' : 'true');
+      email.required = wantsContact;
+    }
+    contactRadios.forEach(r => r.addEventListener('change', toggleDetails));
+
+    // Improve keyboard focus for NPS tiles
+    document.querySelectorAll('.nps label').forEach(lbl => {
+      const input = lbl.querySelector('input');
+      lbl.addEventListener('click', () => input.checked = true);
+      lbl.tabIndex = 0;
+      lbl.addEventListener('keydown', e => {
+        if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); input.checked = true; input.dispatchEvent(new Event('change')); }
+      });
+    });
+  </script>
+</body>
+</html>
