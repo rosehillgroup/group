@@ -248,12 +248,34 @@
     <p class="hint">Thank you for taking a few minutes to share your feedback. Items marked optional can be left blank.</p>
 
     <!-- Netlify form -->
-    <form name="Customer Satisfaction Survey" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form name="Customer Satisfaction Survey" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
       <!-- Required for Netlify -->
       <input type="hidden" name="form-name" value="Customer Satisfaction Survey" />
       <p class="hidden">
-        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
       </p>
+
+      <!-- Geolocation Hidden Fields -->
+      <!-- Edge geo -->
+      <input type="hidden" name="geo_country" id="geo_country">
+      <input type="hidden" name="geo_region" id="geo_region">
+      <input type="hidden" name="geo_city" id="geo_city">
+      <input type="hidden" name="geo_lat" id="geo_lat">
+      <input type="hidden" name="geo_lon" id="geo_lon">
+      <input type="hidden" name="geo_tz" id="geo_tz">
+
+      <!-- Optional precise GPS (only if user consents) -->
+      <input type="hidden" name="gps_lat" id="gps_lat">
+      <input type="hidden" name="gps_lon" id="gps_lon">
+
+      <!-- Useful context -->
+      <input type="hidden" name="page_url" id="page_url">
+      <input type="hidden" name="referrer" id="referrer">
+      <input type="hidden" name="utm_source" id="utm_source">
+      <input type="hidden" name="utm_medium" id="utm_medium">
+      <input type="hidden" name="utm_campaign" id="utm_campaign">
+      <input type="hidden" name="utm_term" id="utm_term">
+      <input type="hidden" name="utm_content" id="utm_content">
 
       <!-- 1 -->
       <fieldset>
@@ -265,9 +287,9 @@
           <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Dissatisfied" /> <span>Dissatisfied</span></label>
           <label class="choice"><input type="radio" name="q1_overall_satisfaction" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q1_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q1_comment" name="q1_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q1_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q1_comment" name="q1_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -281,9 +303,9 @@
           <label class="choice"><input type="radio" name="q2_product_range" value="Dissatisfied" /> <span>Dissatisfied</span></label>
           <label class="choice"><input type="radio" name="q2_product_range" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q2_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q2_comment" name="q2_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q2_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q2_comment" name="q2_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -295,9 +317,9 @@
           <label class="choice"><input type="radio" name="q3_meet_requirements" value="Met expectations" /> <span>Met expectations</span></label>
           <label class="choice"><input type="radio" name="q3_meet_requirements" value="Below expectations" /> <span>Below expectations</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q3_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q3_comment" name="q3_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q3_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q3_comment" name="q3_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -311,9 +333,9 @@
           <label class="choice"><input type="radio" name="q4_tech_assistance" value="Low quality" /> <span>Low quality</span></label>
           <label class="choice"><input type="radio" name="q4_tech_assistance" value="Very low quality" /> <span>Very low quality</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q4_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q4_comment" name="q4_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q4_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q4_comment" name="q4_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -327,9 +349,9 @@
           <label class="choice"><input type="radio" name="q5_sales_assistance" value="Dissatisfied" /> <span>Dissatisfied</span></label>
           <label class="choice"><input type="radio" name="q5_sales_assistance" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q5_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q5_comment" name="q5_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q5_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q5_comment" name="q5_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -343,9 +365,9 @@
           <label class="choice"><input type="radio" name="q6_order_efficiency" value="Inefficient" /> <span>Inefficient</span></label>
           <label class="choice"><input type="radio" name="q6_order_efficiency" value="Very inefficient" /> <span>Very inefficient</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q6_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q6_comment" name="q6_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q6_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q6_comment" name="q6_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -359,9 +381,9 @@
           <label class="choice"><input type="radio" name="q7_transport_delivery" value="Dissatisfied" /> <span>Dissatisfied</span></label>
           <label class="choice"><input type="radio" name="q7_transport_delivery" value="Very dissatisfied" /> <span>Very dissatisfied</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q7_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q7_comment" name="q7_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q7_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q7_comment" name="q7_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -373,9 +395,9 @@
           <label class="choice"><input type="radio" name="q8_delivery_reliability" value="Met expectations" /> <span>Met expectations</span></label>
           <label class="choice"><input type="radio" name="q8_delivery_reliability" value="Below expectations" /> <span>Below expectations</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q8_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q8_comment" name="q8_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q8_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q8_comment" name="q8_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -389,9 +411,9 @@
           <label class="choice"><input type="radio" name="q9_comms_quality" value="Low quality" /> <span>Low quality</span></label>
           <label class="choice"><input type="radio" name="q9_comms_quality" value="Very low quality" /> <span>Very low quality</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q9_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q9_comment" name="q9_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q9_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q9_comment" name="q9_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -405,9 +427,9 @@
           <label class="choice"><input type="radio" name="q10_ease_of_business" value="Difficult" /> <span>Difficult</span></label>
           <label class="choice"><input type="radio" name="q10_ease_of_business" value="Very difficult" /> <span>Very difficult</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q10_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q10_comment" name="q10_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q10_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q10_comment" name="q10_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -421,9 +443,9 @@
           <label class="choice"><input type="radio" name="q11_overall_quality" value="Low quality" /> <span>Low quality</span></label>
           <label class="choice"><input type="radio" name="q11_overall_quality" value="Very low quality" /> <span>Very low quality</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q11_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q11_comment" name="q11_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q11_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q11_comment" name="q11_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -437,9 +459,9 @@
           <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Unlikely" /> <span>Unlikely</span></label>
           <label class="choice"><input type="radio" name="q12_continue_purchasing" value="Very unlikely" /> <span>Very unlikely</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q12_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q12_comment" name="q12_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q12_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q12_comment" name="q12_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -453,9 +475,9 @@
           <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Worse" /> <span>Worse</span></label>
           <label class="choice"><input type="radio" name="q13_delivery_speed_compare" value="Much worse" /> <span>Much worse</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="q13_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="q13_comment" name="q13_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="q13_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="q13_comment" name="q13_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -491,9 +513,9 @@
           <label><input type="radio" name="nps_recommend" value="9" /><span>9</span></label>
           <label><input type="radio" name="nps_recommend" value="10" /><span>10</span></label>
         </div>
-        <div style="margin-top:1rem">
-          <label for="nps_comment" style="display:block;margin-bottom:.5rem;font-size:.9375rem;color:var(--muted)">Additional comments <span class="hint">(optional)</span></label>
-          <textarea id="nps_comment" name="nps_comment" placeholder="Please share any specific feedback..." style="min-height:80px"></textarea>
+        <div class="comment-section">
+          <label for="nps_comment" class="comment-label">Additional comments <span class="hint">(optional)</span></label>
+          <textarea id="nps_comment" name="nps_comment" placeholder="Please share any specific feedback..."></textarea>
         </div>
       </fieldset>
 
@@ -562,6 +584,62 @@
         if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); input.checked = true; input.dispatchEvent(new Event('change')); }
       });
     });
+  </script>
+
+  <!-- Geolocation and Form Enhancement Script -->
+  <script>
+  (function () {
+      // 1) Fill URL & referrer
+      const pageUrlField = document.getElementById('page_url');
+      const referrerField = document.getElementById('referrer');
+      if (pageUrlField) pageUrlField.value = location.href;
+      if (referrerField) referrerField.value = document.referrer || '';
+
+      // 2) Parse UTM parameters
+      const p = new URLSearchParams(location.search);
+      const utm = k => p.get(k) || '';
+      ['source','medium','campaign','term','content'].forEach(k => {
+          const el = document.getElementById('utm_'+k);
+          if (el) el.value = utm('utm_'+k);
+      });
+
+      // 3) Read edge geo cookie
+      const m = document.cookie.match(/(?:^|;\s*)nl_geo=([^;]+)/);
+      if (m) {
+          try {
+              const geo = JSON.parse(decodeURIComponent(m[1]));
+              const setGeoField = (id, value) => {
+                  const field = document.getElementById(id);
+                  if (field) field.value = value || '';
+              };
+
+              setGeoField('geo_country', geo.country);
+              setGeoField('geo_region', geo.region);
+              setGeoField('geo_city', geo.city);
+              setGeoField('geo_lat', geo.latitude ? String(geo.latitude) : '');
+              setGeoField('geo_lon', geo.longitude ? String(geo.longitude) : '');
+              setGeoField('geo_tz', geo.timezone);
+          } catch (e) {
+              console.log('Error parsing geo cookie:', e);
+          }
+      }
+
+      // 4) Optional precise GPS with explicit consent
+      // Hook this up to a checkbox if you decide to offer it.
+      const wantGPS = false; // Set to true or connect to a user consent checkbox
+      if (wantGPS && 'geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(
+              pos => {
+                  const gpsLatField = document.getElementById('gps_lat');
+                  const gpsLonField = document.getElementById('gps_lon');
+                  if (gpsLatField) gpsLatField.value = String(pos.coords.latitude);
+                  if (gpsLonField) gpsLonField.value = String(pos.coords.longitude);
+              },
+              () => {}, // ignore errors, keep coarse geo
+              { enableHighAccuracy: false, maximumAge: 60000, timeout: 4000 }
+          );
+      }
+  })();
   </script>
 </body>
 </html>
