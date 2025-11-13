@@ -6,7 +6,7 @@
 const bdmAssignments = {
   "Rail": {
     "Dan Rainbird": {
-      "regions": ["Europe (except Czechia)"],
+      "regions": ["Europe (except Czechia)", "United Kingdom (South)"],
       "countries": [
         "AT", "BE", "BG", "HR", "CY", "DK", "EE", "FI", "FR", "DE", "GR", "HU",
         "IS", "IT", "LV", "LT", "LU", "MT", "NL", "XNO", "PL", "PT", "RO", "SK",
@@ -15,9 +15,10 @@ const bdmAssignments = {
       ]
     },
     "Dan Snell": {
-      "regions": ["Rest of World", "Czechia", "Ireland"],
+      "regions": ["Rest of World", "Czechia", "Ireland", "United Kingdom (North)"],
       "countries": [
-        "CZ", "IE", "US", "CA", "MX", "BR", "AR", "CL", "CO", "PE", "VE", "EC",
+        // NOTE: GB appears in both BDMs for Rail - Dan Rainbird covers South, Dan Snell covers North
+        "CZ", "IE", "GB", "US", "CA", "MX", "BR", "AR", "CL", "CO", "PE", "VE", "EC",
         "BO", "PY", "UY", "GY", "SR", "GF", "CN", "JP", "KR", "IN", "ID", "MY",
         "TH", "VN", "PH", "SG", "BD", "PK", "LK", "MM", "KH", "LA", "NP", "BT",
         "MV", "AU", "NZ", "PG", "FJ", "NC", "ZA", "EG", "NG", "KE", "ET", "GH",
@@ -38,7 +39,7 @@ const bdmAssignments = {
     "Dan Rainbird": {
       "regions": ["All of Europe"],
       "countries": [
-        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR",
+        "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GL", "GR",
         "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "XNO", "PL", "PT",
         "RO", "SK", "SI", "ES", "SE", "CH", "RS", "AL", "BA", "MK", "ME", "UA",
         "BY", "MD", "LI", "MC", "AD", "SM", "VA"
@@ -60,7 +61,7 @@ const bdmAssignments = {
         // Russia & CIS
         "RU", "AM", "AZ", "GE",
         // Middle East
-        "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM", "KW", "QA", "BH", "PS",
+        "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM", "KW", "QA", "BH", "PS", "TR",
         // Asia
         "CN", "JP", "KR", "IN", "ID", "MY", "TH", "VN", "PH", "SG", "BD", "PK", "LK", "MM",
         "KH", "LA", "NP", "BT", "MV", "MN", "KZ", "UZ", "TM", "KG", "TJ", "AF",
@@ -71,8 +72,8 @@ const bdmAssignments = {
   },
   "Rosehill TPV": {
     "Dan Fletcher": {
-      "regions": ["North America", "Canada", "Australia", "New Zealand"],
-      "countries": ["US", "CA", "AU", "NZ"]
+      "regions": ["North America", "Oceania"],
+      "countries": ["US", "CA", "GL", "AU", "NZ", "PG"]
     },
     "Dalton Marshall": {
       "regions": ["Mexico", "Central America", "Caribbean", "South America", "East Asia", "Southeast Asia"],
@@ -89,18 +90,20 @@ const bdmAssignments = {
       ]
     },
     "Clare Riley": {
-      "regions": ["Western Europe"],
+      "regions": ["Western Europe", "Southern Europe"],
       "countries": [
-        "GB", "IE", "FR", "DE", "BE", "NL", "LU", "AT", "CH", "IT", "ES", "PT",
-        "DK", "XNO", "SE", "FI", "IS", "LI", "MC", "AD", "SM", "VA"
+        "GB", "IE", "FR", "BE", "NL", "LU", "IT", "ES", "PT",
+        "DK", "LI", "MC", "AD", "SM", "VA", "GR", "HR", "ME"
       ]
     },
     "Josh Jones": {
-      "regions": ["Eastern Europe", "Russia", "Caucasus", "Central Asia", "South Asia", "Africa", "Middle East"],
+      "regions": ["Nordic Countries", "Central Europe", "Eastern Europe", "Russia", "Caucasus", "Central Asia", "South Asia", "Africa", "Middle East"],
       "countries": [
+        // Nordic Countries & Central Europe
+        "XNO", "SE", "FI", "IS", "DE", "CH", "AT",
         // Eastern Europe
-        "PL", "CZ", "SK", "HU", "RO", "BG", "SI", "HR", "BA", "RS", "ME", "AL",
-        "MK", "GR", "CY", "EE", "LV", "LT", "BY", "UA", "MD", "MT",
+        "PL", "CZ", "SK", "HU", "RO", "BG", "SI", "BA", "RS", "AL",
+        "MK", "CY", "EE", "LV", "LT", "BY", "UA", "MD", "MT",
         // Russia
         "RU",
         // Caucasus
@@ -185,7 +188,7 @@ const bdmProfiles = {
   },
   "Dalton Marshall": {
     "name": "Dalton Marshall",
-    "title": "Business Development Manager",
+    "title": "Growth & Strategy Director",
     "email": "dalton.marshall@rosehill.group",
     "phone": "+44 (0)7896 299 974",
     "photo": "images/bdm/dalton-marshall.jpg",
