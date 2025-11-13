@@ -10,16 +10,24 @@ const bdmAssignments = {
       "countries": [
         "AT", "BE", "BG", "HR", "CY", "DK", "EE", "FI", "FR", "DE", "GR", "HU",
         "IS", "IT", "LV", "LT", "LU", "MT", "NL", "XNO", "PL", "PT", "RO", "SK",
-        "SI", "ES", "SE", "CH", "GB", "RS", "AL", "BA", "MK", "ME", "UA", "BY",
+        "SI", "ES", "SE", "CH", "GB_SOUTH", "RS", "AL", "BA", "MK", "ME", "UA", "BY",
         "MD", "LI", "MC", "AD", "SM", "VA"
       ]
     },
     "Dan Snell": {
       "regions": ["Rest of World", "Czechia", "Ireland", "United Kingdom (North)"],
       "countries": [
-        // NOTE: GB appears in both BDMs for Rail - Dan Rainbird covers South, Dan Snell covers North
-        "CZ", "IE", "GB", "US", "CA", "MX", "BR", "AR", "CL", "CO", "PE", "VE", "EC",
-        "BO", "PY", "UY", "GY", "SR", "GF", "CN", "JP", "KR", "IN", "ID", "MY",
+        // NOTE: GB_NORTH/GB_SOUTH split for visual distinction on map
+        "CZ", "IE", "GB_NORTH", "US", "CA", "MX",
+        // Central America
+        "BZ", "GT", "HN", "SV", "NI", "CR", "PA",
+        // Caribbean
+        "CU", "JM", "HT", "DO", "PR", "BS", "TT", "BB", "LC", "GD", "VC", "AG", "DM", "KN",
+        "VG", "AI", "TC", "KY", "AW", "CW", "SX", "BQ", "MF", "BL", "GP", "MQ",
+        // South America
+        "BR", "AR", "CL", "CO", "PE", "VE", "EC", "BO", "PY", "UY", "GY", "SR", "GF",
+        // Asia
+        "CN", "JP", "KR", "IN", "ID", "MY",
         "TH", "VN", "PH", "SG", "BD", "PK", "LK", "MM", "KH", "LA", "NP", "BT",
         "MV", "AU", "NZ", "PG", "FJ", "NC", "ZA", "EG", "NG", "KE", "ET", "GH",
         "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG", "CM", "CI", "NE", "BF",
@@ -584,6 +592,11 @@ function colorMapByBDMs(division, bdmsForDivision) {
             } else if (countryCode === 'XSO') {
                 // XSO = Somaliland (custom code, match by NAME)
                 colorCases.push(['==', ['get', 'NAME'], 'Somaliland'], color);
+            } else if (countryCode === 'GB_NORTH' || countryCode === 'GB_SOUTH') {
+                // GB_NORTH/GB_SOUTH = UK split (both map to 'United Kingdom')
+                // Note: Map will show whichever BDM is processed last since both map to same geography
+                colorCases.push(['==', ['get', 'NAME'], 'United Kingdom'], color);
+                colorCases.push(['==', ['get', 'ISO_A2'], 'GB'], color);
             } else if (countryCode === 'FR') {
                 // FR = France - match by NAME to distinguish from French Guiana
                 colorCases.push(['==', ['get', 'NAME'], 'France'], color);
@@ -696,6 +709,11 @@ function findBDMsForCountry(countryCode, countryName) {
                 if (countryName === 'Norway' && countries.includes('XNO')) {
                     isResponsible = true;
                 } else if (countryName === 'Somaliland' && countries.includes('XSO')) {
+                    isResponsible = true;
+                }
+            } else if (countryCode === 'GB') {
+                // GB (United Kingdom): check for GB_NORTH/GB_SOUTH split
+                if (countries.includes('GB_NORTH') || countries.includes('GB_SOUTH') || countries.includes('GB')) {
                     isResponsible = true;
                 }
             }
@@ -885,6 +903,11 @@ function highlightBDMTerritories(bdmName, territories) {
                     if (!somalilandDivisions.includes(division)) {
                         somalilandDivisions.push(division);
                     }
+                } else if (assignedCode === 'GB_NORTH' || assignedCode === 'GB_SOUTH') {
+                    // GB_NORTH/GB_SOUTH = UK split (both map to GB in GeoJSON)
+                    if (countryToDivisions['GB'] && !countryToDivisions['GB'].includes(division)) {
+                        countryToDivisions['GB'].push(division);
+                    }
                 } else if (assignedCode === 'FR') {
                     // FR = France - handle separately like Norway/Somaliland
                     if (!franceDivisions.includes(division)) {
@@ -1023,6 +1046,10 @@ function highlightBDMTerritories(bdmName, territories) {
             } else if (countryCode === 'XSO') {
                 // Somaliland - match by NAME
                 colorExpression.push(['==', ['get', 'NAME'], 'Somaliland'], color);
+            } else if (countryCode === 'GB_NORTH' || countryCode === 'GB_SOUTH') {
+                // GB_NORTH/GB_SOUTH - both map to United Kingdom
+                colorExpression.push(['==', ['get', 'NAME'], 'United Kingdom'], color);
+                colorExpression.push(['==', ['get', 'ISO_A2'], 'GB'], color);
             } else if (countryCode === 'XFR') {
                 // France - match by NAME to distinguish from French Guiana
                 colorExpression.push(['==', ['get', 'NAME'], 'France'], color);
@@ -1046,6 +1073,9 @@ function highlightBDMTerritories(bdmName, territories) {
                     patternExpression.push(['==', ['get', 'NAME'], 'Norway'], patternId);
                 } else if (countryCode === 'XSO') {
                     patternExpression.push(['==', ['get', 'NAME'], 'Somaliland'], patternId);
+                } else if (countryCode === 'GB_NORTH' || countryCode === 'GB_SOUTH') {
+                    patternExpression.push(['==', ['get', 'NAME'], 'United Kingdom'], patternId);
+                    patternExpression.push(['==', ['get', 'ISO_A2'], 'GB'], patternId);
                 } else if (countryCode === 'XFR') {
                     patternExpression.push(['==', ['get', 'NAME'], 'France'], patternId);
                     patternExpression.push(['==', ['get', 'ADMIN'], 'France'], patternId);
@@ -1062,6 +1092,8 @@ function highlightBDMTerritories(bdmName, territories) {
                     filterConditions.push(['==', ['get', 'NAME'], 'Norway']);
                 } else if (countryCode === 'XSO') {
                     filterConditions.push(['==', ['get', 'NAME'], 'Somaliland']);
+                } else if (countryCode === 'GB_NORTH' || countryCode === 'GB_SOUTH') {
+                    filterConditions.push(['==', ['get', 'NAME'], 'United Kingdom']);
                 } else if (countryCode === 'XFR') {
                     filterConditions.push(['==', ['get', 'NAME'], 'France']);
                 } else {
