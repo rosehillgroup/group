@@ -45,12 +45,27 @@ const bdmAssignments = {
       ]
     },
     "Dan Snell": {
-      "regions": ["USA", "Australia", "Middle East", "Asia"],
+      "regions": ["USA", "Americas", "Africa", "Russia", "Middle East", "Asia", "Oceania"],
       "countries": [
-        "US", "AU", "NZ", "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE",
-        "OM", "KW", "QA", "BH", "PS", "CN", "JP", "KR", "IN", "ID", "MY", "TH",
-        "VN", "PH", "SG", "BD", "PK", "LK", "MM", "KH", "LA", "NP", "BT", "MV",
-        "MN", "KZ", "UZ", "TM", "KG", "TJ", "AF"
+        // Americas
+        "US", "CA", "MX", "BZ", "GT", "HN", "SV", "NI", "CR", "PA",
+        "CU", "JM", "HT", "DO", "PR", "BS", "TT", "BB", "LC", "GD", "VC", "AG", "DM", "KN",
+        "VG", "AI", "TC", "KY", "AW", "CW", "SX", "BQ", "MF", "BL", "GP", "MQ",
+        "BR", "AR", "CL", "CO", "PE", "VE", "EC", "BO", "PY", "UY", "GY", "SR", "GF",
+        // Africa
+        "ZA", "EG", "NG", "KE", "ET", "GH", "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG",
+        "CM", "CI", "NE", "BF", "ML", "MW", "ZM", "ZW", "SN", "SO", "XSO", "TD", "GN", "RW",
+        "BJ", "TN", "BI", "SS", "TG", "SL", "LY", "LR", "MR", "CF", "ER", "GM", "BW", "GA",
+        "NA", "LS", "GW", "GQ", "MU", "SZ", "DJ", "RE", "KM", "CV", "ST", "SC", "CD", "CG",
+        // Russia & CIS
+        "RU", "AM", "AZ", "GE",
+        // Middle East
+        "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM", "KW", "QA", "BH", "PS",
+        // Asia
+        "CN", "JP", "KR", "IN", "ID", "MY", "TH", "VN", "PH", "SG", "BD", "PK", "LK", "MM",
+        "KH", "LA", "NP", "BT", "MV", "MN", "KZ", "UZ", "TM", "KG", "TJ", "AF",
+        // Oceania
+        "AU", "NZ", "PG", "FJ", "NC"
       ]
     }
   },
@@ -60,13 +75,17 @@ const bdmAssignments = {
       "countries": ["US", "CA", "AU", "NZ"]
     },
     "Dalton Marshall": {
-      "regions": ["Mexico", "Central America", "Caribbean", "South America", "Malaysia", "Japan", "Hong Kong"],
+      "regions": ["Mexico", "Central America", "Caribbean", "South America", "East Asia", "Southeast Asia"],
       "countries": [
+        // Americas
         "MX", "BZ", "GT", "HN", "SV", "NI", "CR", "PA", "CU", "JM", "HT", "DO",
         "PR", "BS", "TT", "BB", "LC", "GD", "VC", "AG", "DM", "KN", "VG", "AI",
         "TC", "KY", "AW", "CW", "SX", "BQ", "MF", "BL", "GP", "MQ",
-        "BR", "AR", "CL", "CO", "PE", "VE", "EC", "BO", "PY", "UY", "GY", "SR",
-        "GF", "MY", "JP", "HK"
+        "BR", "AR", "CL", "CO", "PE", "VE", "EC", "BO", "PY", "UY", "GY", "SR", "GF",
+        // East Asia
+        "CN", "KR", "TW", "MN", "JP", "HK",
+        // Southeast Asia
+        "TH", "VN", "PH", "SG", "ID", "KH", "LA", "MM", "BN", "TL", "MY"
       ]
     },
     "Clare Riley": {
@@ -77,17 +96,27 @@ const bdmAssignments = {
       ]
     },
     "Josh Jones": {
-      "regions": ["Eastern Europe", "Africa", "Middle East", "India"],
+      "regions": ["Eastern Europe", "Russia", "Caucasus", "Central Asia", "South Asia", "Africa", "Middle East"],
       "countries": [
+        // Eastern Europe
         "PL", "CZ", "SK", "HU", "RO", "BG", "SI", "HR", "BA", "RS", "ME", "AL",
-        "MK", "GR", "CY", "EE", "LV", "LT", "BY", "UA", "MD", "MT", "ZA", "EG",
-        "NG", "KE", "ET", "GH", "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG",
+        "MK", "GR", "CY", "EE", "LV", "LT", "BY", "UA", "MD", "MT",
+        // Russia
+        "RU",
+        // Caucasus
+        "AM", "AZ", "GE",
+        // Central Asia
+        "KZ", "UZ", "TM", "KG", "TJ",
+        // South Asia
+        "IN", "PK", "BD", "LK", "NP", "BT", "MV", "AF",
+        // Africa
+        "ZA", "EG", "NG", "KE", "ET", "GH", "TZ", "UG", "DZ", "SD", "MA", "AO", "MZ", "MG",
         "CM", "CI", "NE", "BF", "ML", "MW", "ZM", "ZW", "SN", "SO", "XSO", "TD", "GN", "RW",
         "BJ", "TN", "BI", "SS", "TG", "SL", "LY", "LR", "MR", "CF", "ER", "GM",
         "BW", "GA", "NA", "LS", "GW", "GQ", "MU", "SZ", "DJ", "RE", "KM", "CV",
-        "ST", "SC", "CD", "CG", "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM",
-        "KW", "QA", "BH", "PS", "TR", "IN", "PK", "BD", "LK", "NP", "BT", "MV",
-        "AF"
+        "ST", "SC", "CD", "CG",
+        // Middle East
+        "SA", "AE", "IR", "IQ", "IL", "JO", "LB", "SY", "YE", "OM", "KW", "QA", "BH", "PS", "TR"
       ]
     }
   },
