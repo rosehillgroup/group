@@ -952,16 +952,6 @@
                         <p class="sr-only">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
-                        
-                        <!-- Journey Summary Field -->
-                        <textarea name="journey_summary" hidden></textarea>
-
-                        <!-- Enhanced Journey Tracking Fields -->
-                        <input type="hidden" name="entry_page" id="entry_page">
-                        <input type="hidden" name="pages_visited" id="pages_visited">
-                        <input type="hidden" name="session_duration" id="session_duration">
-                        <input type="hidden" name="page_count" id="page_count">
-                        <input type="hidden" name="ga_client_id" id="ga_client_id">
 
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
@@ -1030,15 +1020,6 @@
                         <!-- Optional precise GPS (only if user consents) -->
                         <input type="hidden" name="gps_lat" id="gps_lat">
                         <input type="hidden" name="gps_lon" id="gps_lon">
-
-                        <!-- Useful context -->
-                        <input type="hidden" name="page_url" id="page_url">
-                        <input type="hidden" name="referrer" id="referrer">
-                        <input type="hidden" name="utm_source" id="utm_source">
-                        <input type="hidden" name="utm_medium" id="utm_medium">
-                        <input type="hidden" name="utm_campaign" id="utm_campaign">
-                        <input type="hidden" name="utm_term" id="utm_term">
-                        <input type="hidden" name="utm_content" id="utm_content">
 
                         <button type="submit" id="submit-btn" class="w-full bg-grey-400 text-white py-4 rounded-lg font-semibold text-lg transition-colors cursor-not-allowed" disabled data-i18n="contact.form.submit">
                             Submit enquiry
@@ -1594,24 +1575,10 @@
         });
     </script>
 
-    <!-- Geolocation and Form Enhancement Script -->
+    <!-- Geolocation Script -->
     <script>
     (function () {
-        // 1) Fill URL & referrer
-        const pageUrlField = document.getElementById('page_url');
-        const referrerField = document.getElementById('referrer');
-        if (pageUrlField) pageUrlField.value = location.href;
-        if (referrerField) referrerField.value = document.referrer || '';
-
-        // 2) Parse UTM parameters
-        const p = new URLSearchParams(location.search);
-        const utm = k => p.get(k) || '';
-        ['source','medium','campaign','term','content'].forEach(k => {
-            const el = document.getElementById('utm_'+k);
-            if (el) el.value = utm('utm_'+k);
-        });
-
-        // 3) Read edge geo cookie
+        // Read edge geo cookie
         const m = document.cookie.match(/(?:^|;\s*)nl_geo=([^;]+)/);
         if (m) {
             try {
@@ -1941,179 +1908,6 @@
             
             observer.observe(urgentSupportSection);
         }
-    </script>
-    
-    <!-- Enhanced Journey Tracking Script -->
-    <script>
-        (function () {
-            const MAX_STEPS = 20; // Increased from 10
-            const COOKIE_NAME = 'rh_journey';
-            const SESSION_KEY = 'rh_sess';
-
-            // Initialize or load session
-            const now = Date.now();
-            const sess = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '{}');
-
-            // Track session start
-            if (!sess.started_at) {
-                sess.started_at = now;
-                sess.first_page = location.pathname;
-                sess.referrer = document.referrer || 'direct';
-                sess.landing_params = location.search;
-            }
-
-            // Track page visits with timing
-            sess.steps = sess.steps || [];
-            const lastStep = sess.steps[sess.steps.length - 1];
-
-            if (!lastStep || lastStep.path !== location.pathname) {
-                // Calculate time on previous page
-                if (lastStep) {
-                    lastStep.duration = now - lastStep.ts;
-                }
-
-                sess.steps.push({
-                    path: location.pathname,
-                    ts: now,
-                    duration: 0
-                });
-                sess.steps = sess.steps.slice(-MAX_STEPS);
-            }
-
-            sessionStorage.setItem(SESSION_KEY, JSON.stringify(sess));
-
-            // Get GA Client ID if available
-            function getGAClientId() {
-                const ga = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/);
-                return ga ? ga[1] : '';
-            }
-
-            // Get language preference
-            const currentLang = () => (sessionStorage.getItem("lang") || document.documentElement.lang || "en").slice(0,2);
-
-            // Build comprehensive journey summary
-            function buildJourneySummary() {
-                const s = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '{}');
-                const totalTime = Math.round((Date.now() - (s.started_at || Date.now())) / 1000);
-                const timeFormatted = totalTime < 60 ? `${totalTime}s` : `${Math.floor(totalTime/60)}m ${totalTime%60}s`;
-
-                // Update duration for current page
-                if (s.steps && s.steps.length > 0) {
-                    const currentStep = s.steps[s.steps.length - 1];
-                    currentStep.duration = Date.now() - currentStep.ts;
-                }
-
-                // Format page path with timing
-                const pathsWithTime = (s.steps || []).map(step => {
-                    const dur = step.duration ? ` (${Math.round(step.duration/1000)}s)` : '';
-                    return step.path + dur;
-                }).join(' > ');
-
-                return {
-                    entry_page: s.first_page || '/',
-                    referrer: s.referrer || 'direct',
-                    pages_visited: (s.steps || []).map(x => x.path).join(' > '),
-                    pages_with_timing: pathsWithTime,
-                    session_duration: timeFormatted,
-                    page_count: (s.steps || []).length,
-                    ga_client_id: getGAClientId(),
-                    language: currentLang()
-                };
-            }
-
-            // Find our Netlify form(s)
-            function findForms() {
-                // Prefer a specific id if you have one
-                let forms = Array.from(document.querySelectorAll('form[data-netlify="true"]'));
-                if (!forms.length) forms = Array.from(document.querySelectorAll('form[name="contact"]'));
-                return forms;
-            }
-
-            // Wire up forms
-            function wireForm(form) {
-                if (form.__journeyWired) return;
-                form.__journeyWired = true;
-
-                // Add all tracking fields if they don't exist
-                const fields = {
-                    'journey_summary': 'textarea',
-                    'entry_page': 'input',
-                    'pages_visited': 'input',
-                    'session_duration': 'input',
-                    'page_count': 'input',
-                    'ga_client_id': 'input'
-                };
-
-                Object.entries(fields).forEach(([name, tag]) => {
-                    if (!form.querySelector(`[name="${name}"]`)) {
-                        const field = document.createElement(tag);
-                        field.type = tag === 'input' ? 'hidden' : '';
-                        field.name = name;
-                        field.hidden = true;
-                        form.appendChild(field);
-                    }
-                });
-
-                // Keep fields updated
-                const updateFields = () => {
-                    const journey = buildJourneySummary();
-
-                    // Populate journey summary for backwards compatibility
-                    const summaryField = form.querySelector('[name="journey_summary"]');
-                    if (summaryField) {
-                        summaryField.value = [
-                            `Entry: ${journey.entry_page}`,
-                            `Referrer: ${journey.referrer}`,
-                            `Trail: ${journey.pages_with_timing}`,
-                            `Time on site: ${journey.session_duration}`,
-                            `Pages viewed: ${journey.page_count}`,
-                            `GA ID: ${journey.ga_client_id || 'not available'}`,
-                            `Language: ${journey.language}`
-                        ].join('\n');
-                    }
-
-                    // Individual fields for easier processing
-                    Object.entries(journey).forEach(([key, value]) => {
-                        const field = form.querySelector(`[name="${key}"]`);
-                        if (field && key !== 'pages_with_timing') { // Skip internal field
-                            field.value = String(value);
-                        }
-                    });
-                };
-
-                // Update immediately and periodically
-                updateFields();
-                const iv = setInterval(updateFields, 500);
-
-                // Update fields before submission
-                form.addEventListener('submit', function(e) {
-                    clearInterval(iv);
-                    updateFields(); // Final update
-
-                    // Ensure language-aware thank-you page
-                    const url = new URL(form.action || location.pathname, location.origin);
-                    const params = new URLSearchParams(url.search);
-                    if (!params.get('lang')) params.set('lang', currentLang());
-                    url.search = params.toString();
-                    form.action = url.pathname + (url.search ? '?' + params.toString() : '');
-                }, { capture: true });
-            }
-
-            // Initialize on DOM ready
-            function init() {
-                findForms().forEach(wireForm);
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
-            }
-
-            // For SPA/dynamic content
-            const mo = new MutationObserver(() => init());
-            mo.observe(document.documentElement, { childList: true, subtree: true });
-        })();
     </script>
     
     <!-- Contact Form Validation -->

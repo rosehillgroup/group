@@ -194,15 +194,6 @@
                 }
             });
 
-            // Clear the journey session for next enquiry
-            const keepJourney = qp.get('keepJourney');
-            if (!keepJourney) {
-                try { 
-                    sessionStorage.removeItem('rh_sess'); 
-                } catch (e) {
-                    // Silently handle storage errors
-                }
-            }
         })();
     </script>
 </body>
