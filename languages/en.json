@@ -207,11 +207,11 @@
     "countriesWorldwide": "Countries Worldwide"
   },
   "contact": {
-    "infrastructure": {
-      "title": "Infrastructure Specialists"
+    "bdm": {
+      "title": "Business Development Managers"
     },
-    "materials": {
-      "title": "Materials & Manufacturing Specialists"
+    "directors": {
+      "title": "Division Directors"
     },
     "title": "Get Expert Materials & Infrastructure Advice",
     "subtitle": "Our technical specialists are here to help with product selection, specifications, and project requirements. Get in touch with our team or connect directly with our division experts.",
@@ -266,12 +266,14 @@
     "emailJosh": "Email Josh",
     "emailJack": "Email Jack",
     "emailDalton": "Email Dalton",
+    "emailThomas": "Email Thomas",
     "specialties": {
-      "drainage": "Drainage",
-      "rail": "Rail",
-      "security": "Security",
-      "surfacing": "Surfacing",
-      "highways": "Highways"
+      "railHighwaysEurope": "Rail & Highways – Europe",
+      "railHighwaysUK": "Rail & Highways – UK",
+      "railHighwaysUKNorthROW": "Rail & Highways – UK North & ROW",
+      "sportsPlayUKSEurope": "Sports & Play – UK & S. Europe",
+      "sportsPlayEuropeMEAfrica": "Sports & Play – Europe, ME & Africa",
+      "drainageDefence": "Drainage & Defence"
     },
     "urgentSupport": {
       "title": "Need urgent technical support?",

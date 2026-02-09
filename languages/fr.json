@@ -187,11 +187,11 @@
     }
   },
   "contact": {
-    "infrastructure": {
-      "title": "Spécialistes de l'Infrastructure"
+    "bdm": {
+      "title": "Responsables du Développement Commercial"
     },
-    "materials": {
-      "title": "Spécialistes Matériaux et Fabrication"
+    "directors": {
+      "title": "Directeurs de Division"
     },
     "title": "Obtenez des Conseils d'Experts en Matériaux et Infrastructure",
     "subtitle": "Nos spécialistes techniques sont là pour vous aider avec la sélection de produits, les spécifications et les exigences de projet. Contactez notre équipe ou connectez-vous directement avec nos experts de division.",
@@ -246,12 +246,14 @@
     "emailJosh": "Envoyer un email à Josh",
     "emailJack": "Envoyer un email à Jack",
     "emailDalton": "Envoyer un email à Dalton",
+    "emailThomas": "Envoyer un email à Thomas",
     "specialties": {
-      "drainage": "Drainage",
-      "rail": "Rail",
-      "security": "Sécurité",
-      "surfacing": "Revêtement",
-      "highways": "Autoroutes"
+      "railHighwaysEurope": "Rail et Routes – Europe",
+      "railHighwaysUK": "Rail et Routes – Royaume-Uni",
+      "railHighwaysUKNorthROW": "Rail et Routes – Nord du RU et Reste du Monde",
+      "sportsPlayUKSEurope": "Sports et Loisirs – RU et Sud de l'Europe",
+      "sportsPlayEuropeMEAfrica": "Sports et Loisirs – Europe, MO et Afrique",
+      "drainageDefence": "Drainage et Défense"
     },
     "urgentSupport": {
       "title": "Besoin d'un support technique urgent?",
