@@ -71,6 +71,8 @@
     </script>
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="rtl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -1145,7 +1147,7 @@
                         <picture>
                             <source srcset="dan_rainbird_portrait.avif" type="image/avif">
                             <source srcset="dan_rainbird_portrait.webp" type="image/webp">
-                            <img src="dan_rainbird_portrait.jpg" alt="Dan Rainbird" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="dan_rainbird_portrait.jpg" alt="Dan Rainbird" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Dan Rainbird</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1168,7 +1170,7 @@
                         <picture>
                             <source srcset="jack_ellis_portrait.avif" type="image/avif">
                             <source srcset="jack_ellis_portrait.webp" type="image/webp">
-                            <img src="jack_ellis_portrait.jpg" alt="Jack Ellis" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="jack_ellis_portrait.jpg" alt="Jack Ellis" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Jack Ellis</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1191,7 +1193,7 @@
                         <picture>
                             <source srcset="dan_snell_portrait.avif" type="image/avif">
                             <source srcset="dan_snell_portrait.webp" type="image/webp">
-                            <img src="dan_snell_portrait.jpg" alt="Daniel Snell" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="dan_snell_portrait.jpg" alt="Daniel Snell" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Daniel Snell</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1214,7 +1216,7 @@
                         <picture>
                             <source srcset="clare_riley_portrait.avif" type="image/avif">
                             <source srcset="clare_riley_portrait.webp" type="image/webp">
-                            <img src="clare_riley_portrait.jpg" alt="Clare Riley" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="clare_riley_portrait.jpg" alt="Clare Riley" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Clare Riley</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1237,7 +1239,7 @@
                         <picture>
                             <source srcset="josh_jones_portrait.avif" type="image/avif">
                             <source srcset="josh_jones_portrait.webp" type="image/webp">
-                            <img src="josh_jones_portrait.jpg" alt="Josh Jones" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="josh_jones_portrait.jpg" alt="Josh Jones" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Josh Jones</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1260,7 +1262,7 @@
                         <picture>
                             <source srcset="thomas_celik_portrait.avif" type="image/avif">
                             <source srcset="thomas_celik_portrait.webp" type="image/webp">
-                            <img src="thomas_celik_portrait.jpg" alt="Thomas Celik" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                            <img src="thomas_celik_portrait.jpg" alt="Thomas Celik" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" loading="lazy">
                         </picture>
                         <h3 class="font-semibold text-lg text-rh-blue mb-1">Thomas Celik</h3>
                         <p class="text-grey-600 text-sm mb-2" data-i18n="contact.businessDevelopmentManager">Business Development Manager</p>
@@ -1936,7 +1938,7 @@
                     name: {
                         required: true,
                         minLength: 2,
-                        pattern: /^[a-zA-Z\s\-']+$/,
+                        pattern: /^[\p{L}\s\-']+$/u,
                         message: 'Please enter a valid name (letters, spaces, hyphens, apostrophes only)'
                     },
                     email: {
@@ -2117,12 +2119,5 @@
     
     <!-- Internationalization -->
     <script src="i18n.js"></script>
-    <script>
-        // Initialize i18n system
-        document.addEventListener('DOMContentLoaded', function() {
-            const i18n = new RosehillI18n();
-            window.i18n = i18n;
-        });
-    </script>
 </body>
 </html>

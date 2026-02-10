@@ -106,8 +106,8 @@ class RosehillI18n {
             this.translationCache.set(this.currentLanguage, this.translations);
             this.loadedLanguages.add(this.currentLanguage);
         } catch (error) {
-            // Silently handle translation loading errors
-            
+            console.error('i18n: Failed to load translations for', this.currentLanguage, error);
+
             // Fallback to English if current language fails
             if (this.currentLanguage !== this.defaultLanguage) {
                 this.currentLanguage = this.defaultLanguage;
@@ -127,17 +127,7 @@ class RosehillI18n {
     }
     
     async fetchTranslations(language) {
-        // Always fetch from the root languages directory, not from language-specific paths
-        // Add multiple cache-busting parameters to ensure fresh load
-        const cacheBuster = Date.now();
-        const randomId = Math.random().toString(36).substring(2, 15);
-        const response = await fetch(`/languages/${language}.json?v=${cacheBuster}&r=${randomId}&bust=${Date.now()}`, {
-            cache: 'no-cache',
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache'
-            }
-        });
+        const response = await fetch(`/languages/${language}.json`);
         if (!response.ok) {
             throw new Error(`Failed to load translations for ${language}`);
         }
@@ -658,20 +648,6 @@ class RosehillI18n {
             isRTL: this.isRTL()
         };
     }
-}
-
-// Initialize i18n system
-let i18n;
-
-// Wait for DOM to be ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        i18n = new RosehillI18n();
-        window.i18n = i18n;
-    });
-} else {
-    i18n = new RosehillI18n();
-    window.i18n = i18n;
 }
 
 // Export for potential module use

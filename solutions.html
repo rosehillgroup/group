@@ -81,6 +81,8 @@
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="rtl.css">
     <script src="i18n.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -928,7 +930,7 @@
                         <picture>
         <source srcset="road_safety.avif" type="image/avif">
         <source srcset="road_safety.webp" type="image/webp">
-        <img src="road_safety.jpg" alt="Road Safety Solutions" class="w-full h-full object-cover">
+        <img src="road_safety.jpg" alt="Road Safety Solutions" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/Road Sign,  road,  direction,  safety,  transport.svg" alt="Road Safety" class="w-12 h-12">
@@ -975,7 +977,7 @@
                         <picture>
         <source srcset="rail_infrastructure.avif" type="image/avif">
         <source srcset="rail_infrastructure.webp" type="image/webp">
-        <img src="rail_infrastructure.jpg" alt="Rail Infrastructure" class="w-full h-full object-cover">
+        <img src="rail_infrastructure.jpg" alt="Rail Infrastructure" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/railway,  locomotive,  travel,  public transport,  commute.svg" alt="Rail Infrastructure" class="w-12 h-12">
@@ -1022,7 +1024,7 @@
                         <picture>
         <source srcset="security.avif" type="image/avif">
         <source srcset="security.webp" type="image/webp">
-        <img src="security.jpg" alt="Defence & Security" class="w-full h-full object-cover">
+        <img src="security.jpg" alt="Defence & Security" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/Shield with Checkmark,protection, security, quality, assurance, verified.svg" alt="Defence & Security" class="w-12 h-12">
@@ -1066,7 +1068,7 @@
                         <picture>
         <source srcset="drainage.avif" type="image/avif">
         <source srcset="drainage.webp" type="image/webp">
-        <img src="drainage.jpg" alt="Drainage Solutions" class="w-full h-full object-cover">
+        <img src="drainage.jpg" alt="Drainage Solutions" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/water drop,characteristics,monitoring,analysis,nature.svg" alt="Drainage Solutions" class="w-12 h-12">
@@ -1115,7 +1117,7 @@
                         <picture>
         <source srcset="recreation.avif" type="image/avif">
         <source srcset="recreation.webp" type="image/webp">
-        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover">
+        <img src="recreation.jpg" alt="Sports & Recreation" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/basket ball,  sport,  hoop,  play,  ball.svg" alt="Sports & Recreation" class="w-12 h-12">
@@ -1156,7 +1158,7 @@
                         <picture>
         <source srcset="energy.avif" type="image/avif">
         <source srcset="energy.webp" type="image/webp">
-        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover">
+        <img src="energy.jpg" alt="Energy & Subsea" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/lightning bolt, energy, electricity, power, flash, thunder, storm, electric.svg" alt="Energy & Subsea" class="w-12 h-12">
@@ -1196,7 +1198,7 @@
                         <picture>
         <source srcset="liquid-applied-solutions.avif" type="image/avif">
         <source srcset="liquid-applied-solutions.webp" type="image/webp">
-        <img src="liquid-applied-solutions.jpg" alt="Chemicals" class="w-full h-full object-cover">
+        <img src="liquid-applied-solutions.jpg" alt="Chemicals" class="w-full h-full object-cover" loading="lazy">
     </picture>
                         <div class="sector-icon-overlay">
                             <img src="icons/Glyph/Reaction, Chemistry, Experiment, Chemical, Process.svg" alt="Chemicals" class="w-12 h-12">
@@ -1837,6 +1839,25 @@
                 currentLangSpan.textContent = languageMap[i18n.currentLanguage] || '🇬🇧 English';
             }
         });
+    </script>
+    <script>
+        // Apply search from URL param (when redirected from search overlay)
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+        if (searchQuery) {
+            const term = searchQuery.toLowerCase();
+            const sectors = document.querySelectorAll('.sector-card');
+            for (const sector of sectors) {
+                if (sector.textContent.toLowerCase().includes(term)) {
+                    setTimeout(() => {
+                        sector.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        sector.style.boxShadow = '0 0 0 3px var(--rh-orange)';
+                        setTimeout(() => sector.style.boxShadow = '', 3000);
+                    }, 300);
+                    break;
+                }
+            }
+        }
     </script>
 </body>
 </html>
