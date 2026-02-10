@@ -40,7 +40,7 @@
     "laneSeparators": "Séparateurs de Voies",
     "trafficIslands": "Îlots de Circulation",
     "railInfrastructureProducts": "Infrastructure Ferroviaire",
-    "connectSystem": "Système Connect",
+    "strandLockSystem": "Système StrandLock",
     "defenceSecurityProducts": "Défense et Sécurité",
     "rapidDefender": "Rapid Defender",
     "energySubseaProducts": "Énergie et Sous-Marine",
@@ -276,8 +276,8 @@
     "cycleLaneDefenders": "Défenseurs de Pistes Cyclables",
     "cycleLaneDefendersDesc": "Unités de ségrégation montées en surface robustes offrant une séparation sécurisée entre les véhicules et les cyclistes.",
     "viewSpecs": "Voir les spécifications →",
-    "connectSystem": "Système Connect",
-    "connectSystemDesc": "Système de passage à niveau ferroviaire fabriqué à partir de pneus de voiture recyclés pour une sécurité renforcée de l'infrastructure ferroviaire.",
+    "strandLockSystem": "Système StrandLock",
+    "strandLockSystemDesc": "Système de passage à niveau post-tendu avec renfort en torons d'acier pour une stabilité dimensionnelle exceptionnelle.",
     "rapidDefender": "Rapid Defender",
     "rapidDefenderDesc": "Système d'atténuation des véhicules hostiles fabriqué à partir de pneus de voiture recyclés pour les applications de défense.",
     "troughStacker": "Système Trough & Stacker",
@@ -609,8 +609,8 @@
     "speedCalmers": {
       "description": "Solutions complètes de gestion de vitesse pour des environnements routiers plus sûrs."
     },
-    "connectSystem": {
-      "description": "Système de traversée ferroviaire modulaire conçu pour un trafic lourd et des croisements à angle aigu."
+    "strandLockSystem": {
+      "description": "Système de passage à niveau post-tendu avec renfort en torons d'acier pour une stabilité dimensionnelle verrouillée sur les passages à niveau les plus exigeants."
     },
     "baseplatedSystem": {
       "description": "Panneaux de traversée en caoutchouc polyvalents pour un déploiement rapide conçu."

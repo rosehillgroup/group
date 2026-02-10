@@ -40,7 +40,7 @@
     "laneSeparators": "Separadores de Carril",
     "trafficIslands": "Islas de Tráfico",
     "railInfrastructureProducts": "Infraestructura Ferroviaria",
-    "connectSystem": "Sistema Connect",
+    "strandLockSystem": "Sistema StrandLock",
     "defenceSecurityProducts": "Defensa y Seguridad",
     "rapidDefender": "Rapid Defender",
     "energySubseaProducts": "Energía y Submarina",
@@ -172,8 +172,8 @@
     "cycleLaneDefenders": "Defensores de Carril Bici",
     "cycleLaneDefendersDesc": "Unidades de segregación montadas en superficie robustas que proporcionan separación segura entre vehículos y ciclistas.",
     "viewSpecs": "Ver especificaciones →",
-    "connectSystem": "Sistema Connect",
-    "connectSystemDesc": "Sistema de cruce ferroviario hecho de neumáticos de coche reciclados para mejorar la seguridad de la infraestructura ferroviaria.",
+    "strandLockSystem": "Sistema StrandLock",
+    "strandLockSystemDesc": "Sistema de paso a nivel postensado con refuerzo de torones de acero para una estabilidad dimensional excepcional.",
     "rapidDefender": "Rapid Defender",
     "rapidDefenderDesc": "Sistema de mitigación de vehículos hostiles hecho de neumáticos de coche reciclados para aplicaciones de defensa.",
     "troughStacker": "Sistema Trough & Stacker",
@@ -609,8 +609,8 @@
     "speedCalmers": {
       "description": "Soluciones integrales de gestión de velocidad para entornos viales más seguros."
     },
-    "connectSystem": {
-      "description": "Sistema de cruce ferroviario modular diseñado para tráfico pesado y cruces de ángulo agudo."
+    "strandLockSystem": {
+      "description": "Sistema de paso a nivel postensado con refuerzo de torones de acero para una estabilidad dimensional asegurada en los cruces ferroviarios más exigentes."
     },
     "baseplatedSystem": {
       "description": "Paneles de cruce de caucho versátiles para despliegue rápido diseñado."

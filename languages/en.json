@@ -40,7 +40,7 @@
     "laneSeparators": "Lane Separators",
     "trafficIslands": "Traffic Islands",
     "railInfrastructureProducts": "Rail Infrastructure",
-    "connectSystem": "Connect System",
+    "strandLockSystem": "StrandLock System",
     "defenceSecurityProducts": "Defence & Security",
     "rapidDefender": "Rapid Defender",
     "energySubseaProducts": "Energy & Subsea",
@@ -193,8 +193,8 @@
     "cycleLaneDefenders": "Cycle Lane Defenders",
     "cycleLaneDefendersDesc": "Robust surface-mounted segregation units providing safe separation between vehicles and cyclists.",
     "viewSpecs": "View specs →",
-    "connectSystem": "Connect System",
-    "connectSystemDesc": "Rail crossing system made from recycled car tyres for enhanced rail infrastructure safety.",
+    "strandLockSystem": "StrandLock System",
+    "strandLockSystemDesc": "Post-tensioned level crossing system with steel strand reinforcement for exceptional dimensional stability.",
     "rapidDefender": "Rapid Defender",
     "rapidDefenderDesc": "Hostile vehicle mitigation system made from recycled car tyres for defence applications.",
     "troughStacker": "Trough & Stacker System",
@@ -609,8 +609,8 @@
     "speedCalmers": {
       "description": "Comprehensive speed management solutions for safer road environments."
     },
-    "connectSystem": {
-      "description": "Modular rail crossing system designed for heavy traffic and acute-angle crossings."
+    "strandLockSystem": {
+      "description": "Post-tensioned level crossing system with steel strand reinforcement for locked-in dimensional stability on demanding rail crossings."
     },
     "baseplatedSystem": {
       "description": "Versatile rubber crossing panels for designed rapid deployment."
