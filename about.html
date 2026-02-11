@@ -135,6 +135,13 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
 
+        .facility-card img {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .facility-card:hover img {
+            transform: scale(1.05);
+        }
+
         /* Mobile Menu Styles */
         .mobile-menu-toggle {
             display: none;
@@ -914,7 +921,7 @@
                     <!-- First row - 3 facilities -->
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                         <!-- Rose Hill Mills -->
-                        <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover-lift facility-card">
                             <picture>
                                 <source srcset="rose_hill_mills.avif" type="image/avif">
                                 <source srcset="rose_hill_mills.webp" type="image/webp">
@@ -927,7 +934,7 @@
                         </div>
                         
                         <!-- Watson Mill -->
-                        <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover-lift facility-card">
                             <picture>
                                 <source srcset="watson_mill.avif" type="image/avif">
                                 <source srcset="watson_mill.webp" type="image/webp">
@@ -940,7 +947,7 @@
                         </div>
                         
                         <!-- Hopkinson Mill -->
-                        <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover-lift facility-card">
                             <picture>
                                 <source srcset="hopkinson_mill.avif" type="image/avif">
                                 <source srcset="hopkinson_mill.webp" type="image/webp">
@@ -956,7 +963,7 @@
                     <!-- Second row - 2 facilities centered -->
                     <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                         <!-- Spring Bank Mills -->
-                        <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover-lift facility-card">
                             <picture>
                                 <source srcset="spring_bank_mills.avif" type="image/avif">
                                 <source srcset="spring_bank_mills.webp" type="image/webp">
@@ -969,7 +976,7 @@
                         </div>
                         
                         <!-- Ryburn Mills -->
-                        <div class="rounded-lg overflow-hidden shadow-lg">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover-lift facility-card">
                             <picture>
                                 <source srcset="ryburn_mills_close.avif" type="image/avif">
                                 <source srcset="ryburn_mills_close.webp" type="image/webp">
